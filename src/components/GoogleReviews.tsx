@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchGoogleReviews, fallbackReviews, type GoogleReview } from '@/services/googleReviews';
 
@@ -10,6 +10,9 @@ export const GoogleReviews = () => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Your Google Business Profile URL
+  const GOOGLE_BUSINESS_URL = 'https://www.google.com/maps/place/Two+Trees+Cleaning/@34.274618,-119.229115,17z/data=!3m1!4b1!4m6!3m5!1s0x80e4a0a7b778e7bb:0xe340252e2e3c11f3!8m2!3d34.274618!4d-119.229115!16s%2Fg%2F11j8g3s4qj';
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -53,6 +56,19 @@ export const GoogleReviews = () => {
     return locations[Math.floor(Math.random() * locations.length)];
   };
 
+  const handleReviewClick = () => {
+    // Track the click
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'google_review_click', {
+        event_category: 'Social Proof',
+        event_label: 'Google Business Profile'
+      });
+    }
+    
+    // Open Google Business Profile
+    window.open(GOOGLE_BUSINESS_URL, '_blank');
+  };
+
   if (loading) {
     return (
       <div className="grid md:grid-cols-2 gap-8">
@@ -79,10 +95,17 @@ export const GoogleReviews = () => {
   return (
     <div className="grid md:grid-cols-2 gap-8">
       {reviews.map((review, index) => (
-        <Card key={index} className="border-none shadow-lg">
-          <CardContent className="p-8">
-            <div className="flex mb-4">
-              {renderStars(review.rating)}
+        <Card 
+          key={index} 
+          className="border-none shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+          onClick={handleReviewClick}
+        >
+          <CardContent className="p-8 relative">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex">
+                {renderStars(review.rating)}
+              </div>
+              <ExternalLink className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <p className="text-gray-600 mb-6 italic line-clamp-4">
               "{review.text}"
