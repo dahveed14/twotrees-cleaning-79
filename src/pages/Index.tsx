@@ -47,11 +47,6 @@ const Index = () => {
     window.location.href = 'tel:805-456-1421';
   };
   return <div className="min-h-screen bg-white">
-      {/* UTM Parameter Display (for testing - remove in production) */}
-      {(utmParams.utm_source || utmParams.utm_medium || utmParams.utm_campaign) && <div className="bg-yellow-100 border-yellow-400 border p-2 text-xs">
-          <strong>UTM Tracking Active:</strong> Source: {utmParams.utm_source || 'N/A'} | Medium: {utmParams.utm_medium || 'N/A'} | Campaign: {utmParams.utm_campaign || 'N/A'}
-        </div>}
-
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
         <div className="max-w-7xl mx-auto">
