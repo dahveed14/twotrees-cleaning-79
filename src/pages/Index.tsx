@@ -282,7 +282,7 @@ const Index = () => {
             <Button size="lg" className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Final CTA')}>
               Book a Cleaning
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg" onClick={handlePhoneClick}>
+            <Button variant="outline" size="lg" onClick={handlePhoneClick} className="border-white text-white hover:text-white px-8 py-4 text-lg bg-emerald-950 hover:bg-emerald-800">
               <Phone className="w-5 h-5 mr-2" />
               Call (805) 456-1421
             </Button>
