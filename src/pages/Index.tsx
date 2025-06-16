@@ -35,8 +35,8 @@ const Index = () => {
       (window as any).trackButtonClick('Book a Cleaning', location);
     }
     
-    // For now, we'll just show an alert. Replace with actual booking page URL later
-    alert('Booking page will be integrated here. Conversion tracked!');
+    // Redirect to booking page
+    window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
@@ -46,6 +46,8 @@ const Index = () => {
         event_label: 'Phone Number Click'
       });
     }
+    // Make the phone call
+    window.location.href = 'tel:805-456-1421';
   };
 
   return (
@@ -85,7 +87,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white px-8 py-4 text-lg"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg"
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -319,11 +321,11 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-two-trees-green px-8 py-4 text-lg"
+              className="border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg"
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 123-4567
+              Call (805) 456-1421
             </Button>
           </div>
 
@@ -354,7 +356,7 @@ const Index = () => {
               <div className="space-y-2 text-gray-300">
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>(805) 123-4567</span>
+                  <span>(805) 456-1421</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
@@ -374,7 +376,6 @@ const Index = () => {
                 <p>Oxnard</p>
                 <p>Thousand Oaks</p>
                 <p>Camarillo</p>
-                <p>Simi Valley</p>
               </div>
             </div>
           </div>
