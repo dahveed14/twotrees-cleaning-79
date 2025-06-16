@@ -22,27 +22,29 @@ export interface GoogleReviewsResponse {
 }
 
 // Google Places API configuration
-const GOOGLE_PLACES_API_KEY = 'YOUR_GOOGLE_PLACES_API_KEY';
-const PLACE_ID = 'YOUR_PLACE_ID'; // You'll need to find your Google Places ID
+const GOOGLE_PLACES_API_KEY = 'AIzaSyBJWasL_tDTywYudb5DCJGluPh6TyP9MsE';
+const PLACE_ID = 'ChIJu4j5t6sASQARPfEuLicUNA4'; // Two Trees Cleaning Place ID
 
 export const fetchGoogleReviews = async (): Promise<GoogleReview[]> => {
   try {
-    // Note: This requires a CORS proxy or backend service due to CORS restrictions
-    // For production, you should implement this on your backend
+    // Note: This may require a CORS proxy for production due to CORS restrictions
     const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews,user_ratings_total&key=${GOOGLE_PLACES_API_KEY}`
+      `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews,user_ratings_total&key=${GOOGLE_PLACES_API_KEY}`
     );
     
     if (!response.ok) {
+      console.log('API response not ok, using fallback reviews');
       throw new Error('Failed to fetch reviews');
     }
     
     const data: GoogleReviewsResponse = await response.json();
     
     if (data.status === 'OK' && data.result.reviews) {
+      console.log('Successfully fetched Google reviews:', data.result.reviews.length);
       return data.result.reviews.filter(review => review.rating >= 4); // Only show 4+ star reviews
     }
     
+    console.log('No reviews in API response, using fallback');
     return [];
   } catch (error) {
     console.error('Error fetching Google reviews:', error);
