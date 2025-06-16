@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +11,7 @@ export const GoogleReviews = () => {
   const [error, setError] = useState<string | null>(null);
 
   // Your Google Business Profile URL
-  const GOOGLE_BUSINESS_URL = 'https://www.google.com/maps/place/Two+Trees+Cleaning/@34.274618,-119.229115,17z/data=!3m1!4b1!4m6!3m5!1s0x80e4a0a7b778e7bb:0xe340252e2e3c11f3!8m2!3d34.274618!4d-119.229115!16s%2Fg%2F11j8g3s4qj';
+  const GOOGLE_BUSINESS_URL = 'https://maps.app.goo.gl/r9ZN422dd6uPFXfG9';
 
   useEffect(() => {
     const loadReviews = async () => {
