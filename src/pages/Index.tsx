@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Shield, Award, MapPin, Phone, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { GoogleReviews } from "@/components/GoogleReviews";
+
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   useEffect(() => {
@@ -217,47 +219,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* Social Proof Section with Live Google Reviews */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-two-trees-green mb-4">
             What Our Ventura County Customers Say
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            Don't just take our word for it - here's what busy families like yours are saying
+            Real reviews from real customers - see what busy families like yours are saying
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex mb-4">
-                  {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
-                </div>
-                <p className="text-gray-600 mb-6 italic">
-                  "Two Trees Cleaning has been a game-changer for our family. With two kids and demanding careers, we finally have our weekends back. Their attention to detail is incredible!"
-                </p>
-                <div className="text-left">
-                  <p className="font-semibold text-two-trees-green">Sarah M.</p>
-                  <p className="text-sm text-gray-500">Thousand Oaks</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex mb-4">
-                  {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
-                </div>
-                <p className="text-gray-600 mb-6 italic">
-                  "Reliable, professional, and thorough. They clean places I didn't even know needed cleaning! I can't recommend Two Trees Cleaning enough."
-                </p>
-                <div className="text-left">
-                  <p className="font-semibold text-two-trees-green">Jennifer K.</p>
-                  <p className="text-sm text-gray-500">Ventura</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <GoogleReviews />
 
           <div className="mt-12">
             <Badge variant="secondary" className="bg-two-trees-gold/10 text-two-trees-green border-two-trees-gold/20">
@@ -346,4 +318,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
