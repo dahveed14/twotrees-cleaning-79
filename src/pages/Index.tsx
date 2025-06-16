@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Shield, Award, MapPin, Phone, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
-
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
-
   useEffect(() => {
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
@@ -28,17 +25,15 @@ const Index = () => {
       });
     }
   }, []);
-
   const handleBookingClick = (location: string) => {
     // Track the conversion
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
     }
-    
+
     // Redirect to booking page
     window.open('https://twotreescleaning.com/book', '_blank');
   };
-
   const handlePhoneClick = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'phone_click', {
@@ -49,15 +44,11 @@ const Index = () => {
     // Make the phone call
     window.location.href = 'tel:805-456-1421';
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* UTM Parameter Display (for testing - remove in production) */}
-      {(utmParams.utm_source || utmParams.utm_medium || utmParams.utm_campaign) && (
-        <div className="bg-yellow-100 border-yellow-400 border p-2 text-xs">
+      {(utmParams.utm_source || utmParams.utm_medium || utmParams.utm_campaign) && <div className="bg-yellow-100 border-yellow-400 border p-2 text-xs">
           <strong>UTM Tracking Active:</strong> Source: {utmParams.utm_source || 'N/A'} | Medium: {utmParams.utm_medium || 'N/A'} | Campaign: {utmParams.utm_campaign || 'N/A'}
-        </div>
-      )}
+        </div>}
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
@@ -77,19 +68,10 @@ const Index = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold"
-                  onClick={() => handleBookingClick('Hero Section')}
-                >
+                <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Hero Section')}>
                   Book a Cleaning
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg"
-                  onClick={handlePhoneClick}
-                >
+                <Button variant="outline" size="lg" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg" onClick={handlePhoneClick}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>
@@ -103,11 +85,7 @@ const Index = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
-                alt="Two Trees Cleaning professional cleaning a beautiful Ventura County home"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
+              <img src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" alt="Two Trees Cleaning professional cleaning a beautiful Ventura County home" className="rounded-2xl shadow-2xl w-full h-auto" />
             </div>
           </div>
         </div>
@@ -181,19 +159,13 @@ const Index = () => {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex">
-                  {[1,2,3,4,5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />
-                  ))}
+                  {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
                 </div>
                 <span className="text-gray-600">Trusted by 200+ Ventura County families</span>
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
-                alt="Two Trees Cleaning team - professional house cleaning service owners"
-                className="rounded-2xl shadow-xl w-full h-auto"
-              />
+              <img src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" alt="Two Trees Cleaning team - professional house cleaning service owners" className="rounded-2xl shadow-xl w-full h-auto" />
             </div>
           </div>
         </div>
@@ -259,9 +231,7 @@ const Index = () => {
             <Card className="border-none shadow-lg">
               <CardContent className="p-8">
                 <div className="flex mb-4">
-                  {[1,2,3,4,5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />
-                  ))}
+                  {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
                 </div>
                 <p className="text-gray-600 mb-6 italic">
                   "Two Trees Cleaning has been a game-changer for our family. With two kids and demanding careers, we finally have our weekends back. Their attention to detail is incredible!"
@@ -276,9 +246,7 @@ const Index = () => {
             <Card className="border-none shadow-lg">
               <CardContent className="p-8">
                 <div className="flex mb-4">
-                  {[1,2,3,4,5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />
-                  ))}
+                  {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
                 </div>
                 <p className="text-gray-600 mb-6 italic">
                   "Reliable, professional, and thorough. They clean places I didn't even know needed cleaning! I can't recommend Two Trees Cleaning enough."
@@ -311,19 +279,10 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4 text-lg font-semibold"
-              onClick={() => handleBookingClick('Final CTA')}
-            >
+            <Button size="lg" className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Final CTA')}>
               Book a Cleaning
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg"
-              onClick={handlePhoneClick}
-            >
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg" onClick={handlePhoneClick}>
               <Phone className="w-5 h-5 mr-2" />
               Call (805) 456-1421
             </Button>
@@ -364,7 +323,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
-                  <span>Ventura County, CA</span>
+                  <span>Ventura, CA</span>
                 </div>
               </div>
             </div>
@@ -385,8 +344,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
