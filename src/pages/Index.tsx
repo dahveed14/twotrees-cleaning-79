@@ -188,7 +188,7 @@ const Index = () => {
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
                 </div>
-                <span className="text-gray-600">Trusted by 200+ Ventura County families</span>
+                <span className="text-gray-600 italic">Trusted by 200+ Ventura County families</span>
               </div>
             </div>
             <div className="relative">
