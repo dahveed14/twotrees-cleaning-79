@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X, Building2, Users, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { GoogleReviews } from "@/components/GoogleReviews";
+import { CommercialReviews } from "@/components/CommercialReviews";
 
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
@@ -113,7 +112,7 @@ const Commercial = () => {
             </div>
             
             <div className="relative">
-              <img src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" alt="Two Trees Cleaning professional cleaning a modern Ventura County office space" className="rounded-2xl shadow-2xl w-full h-auto" />
+              <img src="/lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png" alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" className="rounded-2xl shadow-2xl w-full h-auto" />
             </div>
           </div>
         </div>
@@ -245,7 +244,7 @@ const Commercial = () => {
         </div>
       </section>
 
-      {/* Social Proof Section with Live Google Reviews */}
+      {/* Social Proof Section with Commercial Reviews */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-two-trees-green mb-4">
@@ -255,7 +254,7 @@ const Commercial = () => {
             Real reviews from business owners and office managers across Ventura County
           </p>
 
-          <GoogleReviews />
+          <CommercialReviews />
 
           <div className="mt-12">
             <Badge variant="secondary" className="bg-two-trees-gold/10 text-two-trees-green border-two-trees-gold/20">
