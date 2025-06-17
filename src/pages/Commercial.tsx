@@ -113,19 +113,9 @@ const Commercial = () => {
             
             <div className="relative">
               <img 
-                src="/lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png" 
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
                 alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" 
                 className="rounded-2xl shadow-2xl w-full h-auto" 
-                onError={(e) => {
-                  console.log('Image failed to load, trying alternative path:', e.currentTarget.src);
-                  // Try without the leading slash first
-                  if (e.currentTarget.src.includes('/lovable-uploads/')) {
-                    e.currentTarget.src = 'lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png';
-                  } else {
-                    // Final fallback to placeholder
-                    e.currentTarget.src = '/placeholder.svg';
-                  }
-                }}
               />
             </div>
           </div>
@@ -212,7 +202,7 @@ const Commercial = () => {
                 className="rounded-2xl shadow-xl w-full h-auto"
                 onError={(e) => {
                   console.log('Team image failed to load:', e.currentTarget.src);
-                  e.currentTarget.src = '/placeholder.svg';
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
                 }}
               />
             </div>
