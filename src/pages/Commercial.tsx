@@ -113,12 +113,18 @@ const Commercial = () => {
             
             <div className="relative">
               <img 
-                src="lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png" 
+                src="/lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png" 
                 alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" 
                 className="rounded-2xl shadow-2xl w-full h-auto" 
                 onError={(e) => {
-                  console.log('Image failed to load:', e.currentTarget.src);
-                  e.currentTarget.src = '/placeholder.svg';
+                  console.log('Image failed to load, trying alternative path:', e.currentTarget.src);
+                  // Try without the leading slash first
+                  if (e.currentTarget.src.includes('/lovable-uploads/')) {
+                    e.currentTarget.src = 'lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png';
+                  } else {
+                    // Final fallback to placeholder
+                    e.currentTarget.src = '/placeholder.svg';
+                  }
                 }}
               />
             </div>
@@ -200,7 +206,15 @@ const Commercial = () => {
               </div>
             </div>
             <div className="relative">
-              <img src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" alt="Two Trees Cleaning team - professional commercial cleaning service owners" className="rounded-2xl shadow-xl w-full h-auto" />
+              <img 
+                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
+                alt="Two Trees Cleaning team - professional commercial cleaning service owners" 
+                className="rounded-2xl shadow-xl w-full h-auto"
+                onError={(e) => {
+                  console.log('Team image failed to load:', e.currentTarget.src);
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
+              />
             </div>
           </div>
         </div>
