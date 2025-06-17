@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,6 +13,14 @@ export const GoogleReviews = () => {
 
   // Your Google Business Profile URL
   const GOOGLE_BUSINESS_URL = 'https://maps.app.goo.gl/r9ZN422dd6uPFXfG9';
+
+  // Profile images for each reviewer (matching the order in fallbackReviews)
+  const profileImages = [
+    '/lovable-uploads/bbe8108f-d132-4156-8869-023d6ebe830b.png', // Sarah M.
+    '/lovable-uploads/cdfe0a8d-53c5-4665-8343-4375c59e96ad.png', // Jennifer K.
+    '/lovable-uploads/302e16f3-2dcf-4fc9-ac5a-d4aa2eb97027.png', // Michael R.
+    '/lovable-uploads/77a0b0f4-7cad-4fdf-ad34-f5def09d3d9b.png', // Lisa T.
+  ];
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -80,9 +89,12 @@ export const GoogleReviews = () => {
                 ))}
               </div>
               <Skeleton className="h-20 mb-6" />
-              <div className="text-left">
-                <Skeleton className="h-4 w-24 mb-2" />
-                <Skeleton className="h-3 w-20" />
+              <div className="text-left flex items-center gap-3">
+                <Skeleton className="w-10 h-10 rounded-full" />
+                <div>
+                  <Skeleton className="h-4 w-24 mb-2" />
+                  <Skeleton className="h-3 w-20" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -109,13 +121,20 @@ export const GoogleReviews = () => {
             <p className="text-gray-600 mb-6 italic line-clamp-4">
               "{review.text}"
             </p>
-            <div className="text-left">
-              <p className="font-semibold text-two-trees-green">
-                {review.author_name}
-              </p>
-              <p className="text-sm text-gray-500">
-                {getLocationFromName(review.author_name)} • {review.relative_time_description}
-              </p>
+            <div className="text-left flex items-center gap-3">
+              <img 
+                src={profileImages[index] || profileImages[0]} 
+                alt={`${review.author_name} profile`}
+                className="w-10 h-10 rounded-full object-cover border-2 border-gray-200"
+              />
+              <div>
+                <p className="font-semibold text-two-trees-green">
+                  {review.author_name}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {getLocationFromName(review.author_name)} • {review.relative_time_description}
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
