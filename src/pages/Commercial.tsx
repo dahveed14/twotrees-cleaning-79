@@ -33,11 +33,13 @@ const Commercial = () => {
   const handleBookingClick = (location: string) => {
     // Track the commercial conversion
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Book Commercial Cleaning', location);
+      (window as any).trackButtonClick('Email Commercial Inquiry', location);
     }
 
-    // Redirect to commercial booking page
-    window.open('https://twotreescleaning.com/book-commercial', '_blank');
+    // Open email compose window
+    const subject = encodeURIComponent('Commercial Cleaning Quote Request');
+    const body = encodeURIComponent('Hi Two Trees Cleaning,\n\nI would like to request a quote for commercial cleaning services.\n\nPlease contact me to discuss my needs.\n\nThank you!');
+    window.location.href = `mailto:hello@twotreescleaning.com?subject=${subject}&body=${body}`;
   };
 
   const handlePhoneClick = () => {
@@ -89,7 +91,8 @@ const Commercial = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Hero Section')}>
-                  Get Free Quote
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email for Quote
                 </Button>
                 <Button variant="outline" size="lg" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg" onClick={handlePhoneClick}>
                   <Phone className="w-5 h-5 mr-2" />
@@ -289,7 +292,8 @@ const Commercial = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Final CTA')}>
-              Get Free Quote
+              <Mail className="w-5 h-5 mr-2" />
+              Email for Quote
             </Button>
             <Button variant="outline" size="lg" onClick={handlePhoneClick} className="border-white text-white hover:text-white px-8 py-4 text-lg bg-emerald-950 hover:bg-emerald-800">
               <Phone className="w-5 h-5 mr-2" />
