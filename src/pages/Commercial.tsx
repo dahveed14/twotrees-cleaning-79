@@ -112,7 +112,15 @@ const Commercial = () => {
             </div>
             
             <div className="relative">
-              <img src="/lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png" alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" className="rounded-2xl shadow-2xl w-full h-auto" />
+              <img 
+                src="lovable-uploads/20edadbd-10a5-4466-bc16-414d2206f12c.png" 
+                alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" 
+                className="rounded-2xl shadow-2xl w-full h-auto" 
+                onError={(e) => {
+                  console.log('Image failed to load:', e.currentTarget.src);
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
+              />
             </div>
           </div>
         </div>
