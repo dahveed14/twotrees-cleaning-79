@@ -113,9 +113,9 @@ const Commercial = () => {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+                src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png" 
                 alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" 
-                className="rounded-2xl shadow-2xl w-full h-auto" 
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[3/4]" 
               />
             </div>
           </div>
