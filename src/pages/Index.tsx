@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Clock, Shield, Award, MapPin, Phone, Mail } from "lucide-react";
+import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { GoogleReviews } from "@/components/GoogleReviews";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
+  const [showPromoBar, setShowPromoBar] = useState(true);
+
   useEffect(() => {
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
@@ -27,6 +29,7 @@ const Index = () => {
       });
     }
   }, []);
+
   const handleBookingClick = (location: string) => {
     // Track the conversion
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
@@ -36,6 +39,7 @@ const Index = () => {
     // Redirect to booking page
     window.open('https://twotreescleaning.com/book', '_blank');
   };
+
   const handlePhoneClick = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'phone_click', {
@@ -46,7 +50,26 @@ const Index = () => {
     // Make the phone call
     window.location.href = 'tel:805-456-1421';
   };
+
   return <div className="min-h-screen bg-white">
+      {/* Promotional Banner */}
+      {showPromoBar && (
+        <div className="bg-two-trees-gold text-two-trees-green py-3 px-4 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm md:text-base font-semibold">
+              🎉 You unlocked $50 OFF your first cleaning! Use code <span className="font-bold">July50</span> at checkout. Book by July 31st to claim this special offer!
+            </p>
+          </div>
+          <button 
+            onClick={() => setShowPromoBar(false)}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-two-trees-green hover:text-two-trees-green/70 transition-colors"
+            aria-label="Close promotional banner"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
         <div className="max-w-7xl mx-auto">
