@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Star, ExternalLink, Building } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchCommercialReviews, fallbackCommercialReviews, type CommercialReview } from '@/services/commercialReviews';
@@ -14,13 +15,15 @@ export const CommercialReviews = () => {
   // Your Google Business Profile URL
   const GOOGLE_BUSINESS_URL = 'https://maps.app.goo.gl/r9ZN422dd6uPFXfG9';
 
-  // Profile images for commercial reviewers
-  const profileImages = [
-    '/lovable-uploads/bbe8108f-d132-4156-8869-023d6ebe830b.png', // Sarah M.
-    '/lovable-uploads/cdfe0a8d-53c5-4665-8343-4375c59e96ad.png', // Michael C.
-    '/lovable-uploads/302e16f3-2dcf-4fc9-ac5a-d4aa2eb97027.png', // Jennifer W.
-    '/lovable-uploads/77a0b0f4-7cad-4fdf-ad34-f5def09d3d9b.png', // David R.
-  ];
+  // Helper function to get initials from name
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(word => word.charAt(0))
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -116,11 +119,11 @@ export const CommercialReviews = () => {
               "{review.text}"
             </p>
             <div className="text-left flex items-center gap-3">
-              <img 
-                src={profileImages[index] || profileImages[0]} 
-                alt={`${review.author_name} profile`}
-                className="w-10 h-10 rounded-full object-cover border-2 border-gray-200"
-              />
+              <Avatar className="w-10 h-10">
+                <AvatarFallback className="bg-two-trees-green/10 text-two-trees-green font-semibold">
+                  {getInitials(review.author_name)}
+                </AvatarFallback>
+              </Avatar>
               <div>
                 <p className="font-semibold text-two-trees-green">
                   {review.author_name}
