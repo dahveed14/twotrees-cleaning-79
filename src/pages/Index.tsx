@@ -1,13 +1,16 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { GoogleReviews } from "@/components/GoogleReviews";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   const [showPromoBar, setShowPromoBar] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Capture UTM parameters for display
@@ -36,8 +39,8 @@ const Index = () => {
       (window as any).trackButtonClick('Book a Cleaning', location);
     }
 
-    // Redirect to booking page
-    window.open('https://twotreescleaning.com/book', '_blank');
+    // Navigate to internal booking page
+    navigate('/book');
   };
 
   const handlePhoneClick = () => {
