@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -6,6 +5,7 @@ import { ExternalLink } from "lucide-react";
 const Book = () => {
   const [formLoaded, setFormLoaded] = useState(false);
   const [embedError, setEmbedError] = useState<string | null>(null);
+  const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
     // Track page view
@@ -16,32 +16,30 @@ const Book = () => {
       });
     }
 
-    // Debug form loading
-    const checkFormLoad = () => {
-      const iframe = document.querySelector('.Convertlabs') as HTMLIFrameElement;
-      if (iframe) {
-        console.log('ConvertLabs iframe found:', iframe);
-        console.log('Iframe src:', iframe.src);
-        console.log('Iframe dimensions:', iframe.offsetWidth, 'x', iframe.offsetHeight);
-        
-        iframe.onload = () => {
-          console.log('ConvertLabs iframe loaded successfully');
-          setFormLoaded(true);
-        };
-        
-        iframe.onerror = (error) => {
-          console.error('ConvertLabs iframe error:', error);
-          setEmbedError('Failed to load booking form');
-        };
-      } else {
-        console.log('ConvertLabs iframe not found');
-        setEmbedError('Booking form element not found');
+    // Set a timeout to show fallback if form doesn't load
+    const loadingTimeout = setTimeout(() => {
+      if (!formLoaded) {
+        console.log('Form loading timeout - showing fallback');
+        setShowFallback(true);
+        setEmbedError('Form is taking longer than expected to load');
       }
-    };
+    }, 8000);
 
-    // Check after scripts have time to load
-    setTimeout(checkFormLoad, 2000);
-  }, []);
+    // Clean up timeout if component unmounts
+    return () => clearTimeout(loadingTimeout);
+  }, [formLoaded]);
+
+  const handleIframeLoad = () => {
+    console.log('ConvertLabs iframe loaded successfully');
+    setFormLoaded(true);
+    setEmbedError(null);
+  };
+
+  const handleIframeError = () => {
+    console.error('ConvertLabs iframe failed to load');
+    setEmbedError('Failed to load booking form');
+    setShowFallback(true);
+  };
 
   const handleDirectBooking = () => {
     // Open ConvertLabs form in new tab as fallback
@@ -74,11 +72,14 @@ const Book = () => {
       <section className="py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-6">
-            {/* Fallback Button - Show if form hasn't loaded */}
-            {!formLoaded && (
-              <div className="text-center py-8">
+            {/* Show fallback button if form hasn't loaded or there's an error */}
+            {(showFallback || embedError) && (
+              <div className="text-center py-8 mb-6 bg-gray-50 rounded-lg">
                 <p className="text-gray-600 mb-4">
-                  Having trouble with the form? Click below to book directly:
+                  {embedError ? 'Having trouble loading the form?' : 'Form taking a while to load?'}
+                </p>
+                <p className="text-gray-600 mb-4">
+                  Click below to book directly on our secure booking page:
                 </p>
                 <Button 
                   onClick={handleDirectBooking}
@@ -89,61 +90,34 @@ const Book = () => {
               </div>
             )}
 
-            {/* Error Message */}
-            {embedError && !formLoaded && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
-                <p className="text-red-700 text-sm">
-                  <strong>Form Loading Issue:</strong> {embedError}
-                </p>
-              </div>
-            )}
-
-            {/* ConvertLabs Form Embed - Multiple Approaches */}
-            <div id="convertlabs-booking-form">
-              {/* Method 1: Original approach with improved loading */}
-              <div style={{ position: 'relative', minHeight: '600px' }}>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-                <style>{`
-                  .Convertlabs {
-                    width: 1px;
-                    min-width: 100%; 
-                    height: 1px; 
-                    min-height: 600px;
-                    border: none;
-                  }
-                  .convertlabs-loading {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    text-align: center;
-                    color: #666;
-                  }
-                `}</style>
-                
-                {!formLoaded && (
-                  <div className="convertlabs-loading">
+            {/* ConvertLabs Form Embed */}
+            <div className="relative">
+              {/* Loading indicator */}
+              {!formLoaded && !showFallback && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
+                  <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-two-trees-green mx-auto mb-2"></div>
-                    <p>Loading booking form...</p>
+                    <p className="text-gray-600">Loading booking form...</p>
                   </div>
-                )}
-                
-                <script src="https://convertlabs.io/js/booking_embed.js"></script>
-                <iframe 
-                  src="https://convertlabs.io/booking_form/3296" 
-                  frameBorder="0" 
-                  scrolling="no" 
-                  style={{
-                    width: '100%',
-                    minHeight: '600px',
-                    border: 'none',
-                    background: 'transparent'
-                  }} 
-                  className="Convertlabs"
-                  title="Two Trees Cleaning Booking Form"
-                  sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
-                ></iframe>
-              </div>
+                </div>
+              )}
+              
+              {/* Simplified iframe approach */}
+              <iframe 
+                src="https://convertlabs.io/booking_form/3296" 
+                width="100%"
+                height="600"
+                frameBorder="0"
+                scrolling="no"
+                title="Two Trees Cleaning Booking Form"
+                onLoad={handleIframeLoad}
+                onError={handleIframeError}
+                style={{
+                  minHeight: '600px',
+                  border: 'none',
+                  background: 'transparent'
+                }}
+              />
             </div>
           </div>
         </div>
