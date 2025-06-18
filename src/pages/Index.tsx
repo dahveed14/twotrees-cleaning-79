@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { PromoBar } from "@/components/PromoBar";
 import { Hero } from "@/components/Hero";
 import { Benefits } from "@/components/Benefits";
@@ -13,7 +12,6 @@ import { Footer } from "@/components/Footer";
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   const [showPromoBar, setShowPromoBar] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // Capture UTM parameters for display
@@ -42,8 +40,8 @@ const Index = () => {
       (window as any).trackButtonClick('Book a Cleaning', location);
     }
 
-    // Navigate to internal booking page
-    navigate('/book');
+    // Navigate to external booking page
+    window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
