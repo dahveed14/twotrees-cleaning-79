@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, Home } from "lucide-react";
@@ -5,7 +6,7 @@ import { CheckCircle, Phone, Home } from "lucide-react";
 const ThankYou = () => {
   useEffect(() => {
     // Meta Pixel Code
-    !(function(f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
+    (function(f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
       if (f.fbq) return;
       n = f.fbq = function() {
         n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
@@ -24,7 +25,10 @@ const ThankYou = () => {
       window,
       document,
       'script',
-      'https://connect.facebook.net/en_US/fbevents.js'
+      'https://connect.facebook.net/en_US/fbevents.js',
+      null,
+      null,
+      null
     );
     
     (window as any).fbq('init', '991478226474039');
