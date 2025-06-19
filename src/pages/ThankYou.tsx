@@ -1,8 +1,6 @@
-
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, Home } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const ThankYou = () => {
   useEffect(() => {
@@ -30,6 +28,10 @@ const ThankYou = () => {
       });
     }
     window.location.href = 'tel:805-456-1421';
+  };
+
+  const handleBackToHome = () => {
+    window.location.href = 'https://twotreescleaning.com';
   };
 
   return (
@@ -87,13 +89,11 @@ const ThankYou = () => {
             Questions? Call Us
           </Button>
           <Button
-            asChild
+            onClick={handleBackToHome}
             className="w-full sm:w-auto bg-two-trees-green hover:bg-two-trees-green/90"
           >
-            <Link to="/">
-              <Home className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
+            <Home className="w-4 h-4 mr-2" />
+            Back to Home
           </Button>
         </div>
 
