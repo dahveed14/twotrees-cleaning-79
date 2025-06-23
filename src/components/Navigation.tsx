@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
@@ -20,9 +21,12 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
 
   const serviceAreas = [
     { name: "Santa Barbara", href: "/santa-barbara" },
+    { name: "Montecito", href: "/montecito" },
     { name: "Thousand Oaks", href: "/thousand-oaks" },
     { name: "Oxnard", href: "/oxnard" },
     { name: "Camarillo", href: "/camarillo" },
+    { name: "Ventura", href: "/ventura" },
+    { name: "Ojai", href: "/ojai" },
     { name: "All Service Areas", href: "/service-areas" },
   ];
 
@@ -202,3 +206,4 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
     </nav>
   );
 };
+
