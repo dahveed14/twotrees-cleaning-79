@@ -1,12 +1,38 @@
-
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const ServiceAreas = () => {
+  useEffect(() => {
+    const venturaCountyCoordinates = {
+      latitude: "34.3705",
+      longitude: "-119.1391"
+    };
+
+    updateMetaTags({
+      title: "Ventura County House Cleaning Services | Two Trees Cleaning | All Areas Served",
+      description: "Professional house cleaning services throughout Ventura County, CA. Serving Santa Barbara, Thousand Oaks, Oxnard, Camarillo, Ventura & more. Licensed & insured since 2020.",
+      cityName: "Ventura County",
+      cityCoordinates: venturaCountyCoordinates,
+      url: "https://twotreescleaning.com/service-areas",
+      keywords: [
+        ...generateCityKeywords("Santa Barbara"),
+        ...generateCityKeywords("Thousand Oaks"),
+        ...generateCityKeywords("Oxnard"),
+        ...generateCityKeywords("Camarillo"),
+        ...generateCityKeywords("Ventura"),
+        "Ventura County cleaning service",
+        "house cleaning Ventura County"
+      ]
+    });
+  }, []);
+
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -22,6 +48,16 @@ const ServiceAreas = () => {
       });
     }
     window.location.href = 'tel:805-456-1421';
+  };
+
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" }
+  ];
+
+  const venturaCountyCoordinates = {
+    latitude: "34.3705",
+    longitude: "-119.1391"
   };
 
   const serviceAreas = [
@@ -53,6 +89,11 @@ const ServiceAreas = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Ventura County"
+        cityCoordinates={venturaCountyCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 

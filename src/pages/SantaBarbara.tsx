@@ -1,9 +1,9 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
+import { TestimonialSchema } from "@/components/TestimonialSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -256,9 +256,10 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials with Schema */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
+          <TestimonialSchema testimonials={testimonials} cityName="Santa Barbara" />
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
             What Santa Barbara Customers Say
           </h2>
@@ -279,6 +280,64 @@ const SantaBarbara = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Add Nearby Areas Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Montecito</h3>
+                <p className="text-sm text-gray-600 mb-4">Luxury estate cleaning</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/montecito'}
+                >
+                  View Montecito
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
+                <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/ventura'}
+                >
+                  View Ventura
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
+                <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/camarillo'}
+                >
+                  View Camarillo
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

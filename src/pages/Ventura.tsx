@@ -1,29 +1,29 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Anchor } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Ventura = () => {
   useEffect(() => {
-    document.title = "Ventura House Cleaning Services | Two Trees Cleaning | Historic & Coastal";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional house cleaning services in Ventura, CA. Serving historic downtown, pier area, beach communities & missions. Licensed, insured & locally trusted. Book today!');
-    }
+    const venturaCoordinates = {
+      latitude: "34.2818",
+      longitude: "-119.2945"
+    };
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/ventura');
+    updateMetaTags({
+      title: "Ventura House Cleaning Services | Two Trees Cleaning | Historic & Coastal",
+      description: "Professional house cleaning services in Ventura, CA. Serving historic downtown, pier area, beach communities & missions. Licensed, insured & locally trusted. Book today!",
+      cityName: "Ventura",
+      cityCoordinates: venturaCoordinates,
+      url: "https://twotreescleaning.com/ventura",
+      keywords: generateCityKeywords("Ventura")
+    });
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -41,6 +41,17 @@ const Ventura = () => {
       });
     }
     window.location.href = 'tel:805-456-1421';
+  };
+
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+    { name: "Ventura", url: "https://twotreescleaning.com/ventura" }
+  ];
+
+  const venturaCoordinates = {
+    latitude: "34.2818",
+    longitude: "-119.2945"
   };
 
   const neighborhoods = [
@@ -78,6 +89,11 @@ const Ventura = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Ventura"
+        cityCoordinates={venturaCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 
@@ -213,6 +229,80 @@ const Ventura = () => {
                   <li>• Flexible scheduling options</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $135</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas Section before CTA */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Oxnard</h3>
+                <p className="text-sm text-gray-600 mb-4">Affordable cleaning services</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/oxnard'}
+                >
+                  View Oxnard
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
+                <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/camarillo'}
+                >
+                  View Camarillo
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Santa Barbara</h3>
+                <p className="text-sm text-gray-600 mb-4">Premium cleaning services</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/santa-barbara'}
+                >
+                  View Santa Barbara
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Thousand Oaks</h3>
+                <p className="text-sm text-gray-600 mb-4">Family-focused cleaning</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/thousand-oaks'}
+                >
+                  View Thousand Oaks
+                </Button>
               </CardContent>
             </Card>
           </div>
