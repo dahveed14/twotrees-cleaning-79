@@ -8,12 +8,31 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { SocialProof } from "@/components/SocialProof";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   const [showPromoBar, setShowPromoBar] = useState(true);
 
   useEffect(() => {
+    // Set page title and meta description for SEO
+    document.title = "Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140.');
+    }
+
+    // Add canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/');
+
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
     const params = {
@@ -57,6 +76,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup />
       <PromoBar show={showPromoBar} onClose={() => setShowPromoBar(false)} />
       <Hero onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Benefits />
