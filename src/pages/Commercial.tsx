@@ -4,10 +4,31 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X, Building2, Users, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CommercialReviews } from "@/components/CommercialReviews";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Link } from "react-router-dom";
+
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   const [showPromoBar, setShowPromoBar] = useState(true);
   useEffect(() => {
+    // Set page title and meta description for SEO
+    document.title = "Commercial Cleaning Services Ventura County | Two Trees Cleaning - Licensed & Insured Office Cleaning";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional office cleaning services in Ventura County. Two Trees Cleaning provides reliable commercial cleaning for businesses in Santa Barbara, Thousand Oaks, Oxnard & Camarillo. Licensed & insured.');
+    }
+
+    // Add canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/commercial');
+
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
     const params = {
@@ -48,18 +69,31 @@ const Commercial = () => {
     // Make the phone call
     window.location.href = 'tel:805-456-1421';
   };
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
+      <Breadcrumbs 
+        items={[
+          { label: "Commercial Cleaning", current: true }
+        ]} 
+      />
+
       {/* Promotional Banner */}
-      {showPromoBar && <div className="bg-two-trees-gold text-two-trees-green py-3 px-4 relative">
+      {showPromoBar && (
+        <div className="bg-two-trees-gold text-two-trees-green py-3 px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm md:text-base font-semibold">
               🏢 Special offer for new commercial clients! Get 20% OFF your first month of service. Book by July 31st to secure your rate!
             </p>
           </div>
-          <button onClick={() => setShowPromoBar(false)} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-two-trees-green hover:text-two-trees-green/70 transition-colors" aria-label="Close promotional banner">
+          <button 
+            onClick={() => setShowPromoBar(false)} 
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-two-trees-green hover:text-two-trees-green/70 transition-colors" 
+            aria-label="Close promotional banner"
+          >
             <X className="w-4 h-4" />
           </button>
-        </div>}
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
@@ -68,13 +102,13 @@ const Commercial = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
-                  Commercial Cleaning Services
+                  Commercial Cleaning Services in Ventura County
                 </Badge>
                 <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">
-                  Professional Office Cleaning for Busy Businesses
+                  Professional Office Cleaning for Busy Ventura County Businesses
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Two Trees Cleaning helps Ventura County businesses maintain spotless, professional workspaces. Our reliable commercial cleaning team ensures your office always makes the right impression.
+                  Two Trees Cleaning helps Ventura County businesses in Santa Barbara, Thousand Oaks, Oxnard, and Camarillo maintain spotless, professional workspaces. Our reliable commercial cleaning team ensures your office always makes the right impression.
                 </p>
               </div>
               
@@ -101,10 +135,24 @@ const Commercial = () => {
                 </svg>
                 <span>Reviews</span>
               </div>
+
+              <div className="mt-6">
+                <p className="text-sm text-gray-600 mb-2">Need residential house cleaning?</p>
+                <Link 
+                  to="/" 
+                  className="text-two-trees-green hover:text-two-trees-green/80 font-medium underline"
+                >
+                  Explore our house cleaning services for Ventura County families →
+                </Link>
+              </div>
             </div>
             
             <div className="relative">
-              <img src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png" alt="Two Trees Cleaning team professionally cleaning a Ventura County office space" className="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[3/4]" />
+              <img 
+                src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png" 
+                alt="Two Trees Cleaning team professionally cleaning a modern Ventura County office space with commercial cleaning equipment in Santa Barbara area business" 
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[3/4]" 
+              />
             </div>
           </div>
         </div>
@@ -118,7 +166,7 @@ const Commercial = () => {
               Why Ventura County Businesses Choose Two Trees Cleaning
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We understand that your workspace reflects your professionalism. That's why we've built our commercial service around reliability, quality, and maintaining the highest standards.
+              We understand that your workspace reflects your professionalism. That's why we've built our commercial service around reliability, quality, and maintaining the highest standards for businesses throughout Santa Barbara, Thousand Oaks, and surrounding areas.
             </p>
           </div>
 
@@ -130,7 +178,7 @@ const Commercial = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-two-trees-green mb-4">Professional Image</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  A clean office creates the right impression for clients, customers, and employees. We help maintain your professional reputation.
+                  A clean office creates the right impression for clients, customers, and employees. We help maintain your professional reputation across Ventura County.
                 </p>
               </CardContent>
             </Card>
@@ -168,26 +216,33 @@ const Commercial = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl font-bold text-two-trees-green">
-                Commercial Cleaning Experts You Can Trust
+                Commercial Cleaning Experts You Can Trust in Ventura County
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                As a family-owned business, we understand the importance of maintaining professional standards. We've been serving Ventura County businesses since 2020, helping companies create clean, productive work environments.
+                As a family-owned business, we understand the importance of maintaining professional standards. We've been serving Ventura County businesses in Santa Barbara, Oxnard, Camarillo, and Thousand Oaks since 2020, helping companies create clean, productive work environments.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our team is fully insured, bonded, and trained to handle the unique needs of commercial spaces. From small offices to large facilities, we deliver consistent, reliable service.
+                Our team is fully insured, bonded, and trained to handle the unique needs of commercial spaces. From small offices to large facilities, we deliver consistent, reliable service throughout Ventura County.
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex">
-                  {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />)}
+                  {[1, 2, 3, 4, 5].map(star => (
+                    <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />
+                  ))}
                 </div>
                 <span className="text-gray-600 italic">Trusted by 50+ Ventura County businesses</span>
               </div>
             </div>
             <div className="relative">
-              <img src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" alt="Two Trees Cleaning team - professional commercial cleaning service owners" className="rounded-2xl shadow-xl w-full h-auto" onError={e => {
-              console.log('Team image failed to load:', e.currentTarget.src);
-              e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
-            }} />
+              <img 
+                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
+                alt="Two Trees Cleaning team owners - professional commercial cleaning service providers serving Ventura County businesses in Santa Barbara, Thousand Oaks, and surrounding areas" 
+                className="rounded-2xl shadow-xl w-full h-auto" 
+                onError={e => {
+                  console.log('Team image failed to load:', e.currentTarget.src);
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
+                }} 
+              />
             </div>
           </div>
         </div>
@@ -337,6 +392,8 @@ const Commercial = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Commercial;

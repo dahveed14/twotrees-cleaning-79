@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
   onBookingClick: (location: string) => void;
@@ -16,13 +17,13 @@ export const Hero = ({ onBookingClick, onPhoneClick }: HeroProps) => {
           <div className="space-y-8">
             <div className="space-y-4">
               <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
-                Serving Ventura County
+                Serving Ventura County Since 2020
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">
-                Get Your Time Back with Professional House Cleaning
+                Get Your Time Back with Professional House Cleaning in Ventura County
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Two Trees Cleaning helps busy Ventura County families reclaim their weekends. Our reliable, detail-oriented team delivers spotless homes so you can focus on what matters most.
+                Two Trees Cleaning helps busy Ventura County families in Santa Barbara, Thousand Oaks, Oxnard, and Camarillo reclaim their weekends. Our reliable, detail-oriented team delivers spotless homes so you can focus on what matters most.
               </p>
             </div>
             
@@ -48,10 +49,24 @@ export const Hero = ({ onBookingClick, onPhoneClick }: HeroProps) => {
               </svg>
               <span>Reviews</span>
             </div>
+
+            <div className="mt-6">
+              <p className="text-sm text-gray-600 mb-2">Looking for office cleaning?</p>
+              <Link 
+                to="/commercial" 
+                className="text-two-trees-green hover:text-two-trees-green/80 font-medium underline"
+              >
+                Learn about our commercial cleaning services in Ventura County →
+              </Link>
+            </div>
           </div>
           
           <div className="relative">
-            <img src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" alt="Two Trees Cleaning professional cleaning a beautiful Ventura County home" className="rounded-2xl shadow-2xl w-full h-auto" />
+            <img 
+              src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
+              alt="Two Trees Cleaning professional team member cleaning a beautiful Ventura County home in Santa Barbara area with modern cleaning equipment and eco-friendly supplies" 
+              className="rounded-2xl shadow-2xl w-full h-auto" 
+            />
           </div>
         </div>
       </div>
