@@ -1,8 +1,8 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -43,6 +43,17 @@ const SantaBarbara = () => {
     window.location.href = 'tel:805-456-1421';
   };
 
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+    { name: "Santa Barbara", url: "https://twotreescleaning.com/santa-barbara" }
+  ];
+
+  const santaBarbaraCoordinates = {
+    latitude: "34.4208",
+    longitude: "-119.6982"
+  };
+
   const neighborhoods = [
     "State Street Downtown", "Funk Zone", "Mesa", "Riviera", "Mission Canyon",
     "Hope Ranch", "San Roque", "Eastside", "Westside", "Near UCSB", "Goleta Border"
@@ -76,6 +87,11 @@ const SantaBarbara = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Santa Barbara"
+        cityCoordinates={santaBarbaraCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 

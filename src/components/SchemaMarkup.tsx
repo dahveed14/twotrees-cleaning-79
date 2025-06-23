@@ -1,31 +1,47 @@
 
 import { useEffect } from 'react';
 
-export const SchemaMarkup = () => {
+interface SchemaMarkupProps {
+  cityName?: string;
+  cityCoordinates?: {
+    latitude: string;
+    longitude: string;
+  };
+  breadcrumbs?: Array<{
+    name: string;
+    url: string;
+  }>;
+}
+
+export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaMarkupProps) => {
   useEffect(() => {
-    // Local Business Schema
+    const baseUrl = "https://twotreescleaning.com";
+    
+    // Local Business Schema with city-specific data
     const localBusinessSchema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://twotreescleaning.com",
-      "name": "Two Trees Cleaning",
-      "description": "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.",
-      "url": "https://twotreescleaning.com",
+      "@id": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
+      "name": cityName ? `Two Trees Cleaning - ${cityName}` : "Two Trees Cleaning",
+      "description": cityName 
+        ? `Professional house cleaning services for busy families in ${cityName}, Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.`
+        : "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.",
+      "url": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
       "telephone": "+1-805-456-1421",
       "email": "hello@twotreescleaning.com",
       "foundingDate": "2020",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "2252 Channel Dr.",
-        "addressLocality": "Ventura",
+        "addressLocality": cityName || "Ventura",
         "addressRegion": "CA",
         "postalCode": "93001",
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "34.2818",
-        "longitude": "-119.2945"
+        "latitude": cityCoordinates?.latitude || "34.2818",
+        "longitude": cityCoordinates?.longitude || "-119.2945"
       },
       "openingHours": [
         "Mo-Fr 08:00-17:00",
@@ -52,7 +68,13 @@ export const SchemaMarkup = () => {
         "name": "Saturday Availability",
         "value": "By appointment only"
       },
-      "areaServed": [
+      "areaServed": cityName ? [
+        {
+          "@type": "City",
+          "name": cityName,
+          "addressRegion": "CA"
+        }
+      ] : [
         {
           "@type": "City",
           "name": "Santa Barbara",
@@ -128,7 +150,7 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "General House Cleaning",
-              "description": "Regular house cleaning service for busy families in Ventura County"
+              "description": `Regular house cleaning service for busy families in ${cityName || 'Ventura County'}`
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -141,7 +163,7 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "Deep Cleaning",
-              "description": "Comprehensive deep cleaning service for homes in Ventura County"
+              "description": `Comprehensive deep cleaning service for homes in ${cityName || 'Ventura County'}`
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -154,7 +176,7 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service", 
               "name": "Move-in/Move-out Cleaning",
-              "description": "Specialized cleaning for moving situations in Ventura County"
+              "description": `Specialized cleaning for moving situations in ${cityName || 'Ventura County'}`
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -167,7 +189,7 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "Post Construction Cleaning", 
-              "description": "Professional cleaning after construction or renovation in Ventura County"
+              "description": `Professional cleaning after construction or renovation in ${cityName || 'Ventura County'}`
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -189,14 +211,14 @@ export const SchemaMarkup = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Two Trees Cleaning",
-      "url": "https://twotreescleaning.com",
-      "logo": "https://twotreescleaning.com/favicon.ico",
+      "url": baseUrl,
+      "logo": `${baseUrl}/favicon.ico`,
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-805-456-1421",
         "contactType": "customer service",
         "availableLanguage": "English",
-        "areaServed": "Ventura County, CA"
+        "areaServed": cityName ? `${cityName}, CA` : "Ventura County, CA"
       },
       "address": {
         "@type": "PostalAddress",
@@ -212,11 +234,23 @@ export const SchemaMarkup = () => {
       ]
     };
 
+    // Breadcrumb Schema
+    const breadcrumbSchema = breadcrumbs ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url
+      }))
+    } : null;
+
     // Service Schema for each service type
     const servicesSchema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Two Trees Cleaning Services",
+      "name": `Two Trees Cleaning Services${cityName ? ` - ${cityName}` : ''}`,
       "itemListElement": [
         {
           "@type": "Service",
@@ -227,14 +261,16 @@ export const SchemaMarkup = () => {
             "name": "Two Trees Cleaning",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Ventura",
+              "addressLocality": cityName || "Ventura",
               "addressRegion": "CA"
             }
           },
           "areaServed": {
             "@type": "State",
             "name": "California",
-            "containsPlace": [
+            "containsPlace": cityName ? [
+              { "@type": "City", "name": cityName }
+            ] : [
               { "@type": "City", "name": "Santa Barbara" },
               { "@type": "City", "name": "Ventura" },
               { "@type": "City", "name": "Thousand Oaks" }
@@ -258,7 +294,7 @@ export const SchemaMarkup = () => {
             "name": "Two Trees Cleaning",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Ventura",
+              "addressLocality": cityName || "Ventura",
               "addressRegion": "CA"
             }
           },
@@ -284,7 +320,7 @@ export const SchemaMarkup = () => {
             "name": "Two Trees Cleaning",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Ventura",
+              "addressLocality": cityName || "Ventura",
               "addressRegion": "CA"
             }
           },
@@ -310,7 +346,7 @@ export const SchemaMarkup = () => {
             "name": "Two Trees Cleaning",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Ventura",
+              "addressLocality": cityName || "Ventura",
               "addressRegion": "CA"
             }
           },
@@ -347,17 +383,21 @@ export const SchemaMarkup = () => {
     addSchema(localBusinessSchema, 'local-business-schema');
     addSchema(organizationSchema, 'organization-schema');
     addSchema(servicesSchema, 'services-schema');
+    
+    if (breadcrumbSchema) {
+      addSchema(breadcrumbSchema, 'breadcrumb-schema');
+    }
 
     return () => {
       // Cleanup function to remove schemas when component unmounts
-      ['local-business-schema', 'organization-schema', 'services-schema'].forEach(id => {
+      ['local-business-schema', 'organization-schema', 'services-schema', 'breadcrumb-schema'].forEach(id => {
         const script = document.getElementById(id);
         if (script) {
           script.remove();
         }
       });
     };
-  }, []);
+  }, [cityName, cityCoordinates, breadcrumbs]);
 
   return null; // This component doesn't render anything visible
 };

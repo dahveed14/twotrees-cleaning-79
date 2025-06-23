@@ -1,8 +1,8 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -76,8 +76,24 @@ const Oxnard = () => {
     }
   ];
 
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+    { name: "Oxnard", url: "https://twotreescleaning.com/oxnard" }
+  ];
+
+  const oxnardCoordinates = {
+    latitude: "34.1975",
+    longitude: "-119.1771"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Oxnard"
+        cityCoordinates={oxnardCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 
