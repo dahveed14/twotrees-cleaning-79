@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from "react";
-import { PromoBar } from "@/components/PromoBar";
+import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Benefits } from "@/components/Benefits";
 import { About } from "@/components/About";
@@ -12,7 +11,6 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
-  const [showPromoBar, setShowPromoBar] = useState(true);
 
   useEffect(() => {
     // Set page title and meta description for SEO
@@ -77,7 +75,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <SchemaMarkup />
-      <PromoBar show={showPromoBar} onClose={() => setShowPromoBar(false)} />
+      <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Hero onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Benefits />
       <About />
