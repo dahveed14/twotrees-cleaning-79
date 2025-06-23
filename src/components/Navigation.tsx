@@ -31,11 +31,12 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-two-trees-green rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">TT</span>
-            </div>
-            <span className="text-two-trees-green font-bold text-xl">Two Trees Cleaning</span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/20a6f422-6666-433e-a68d-837ce6ed1a67.png" 
+              alt="Two Trees Cleaning" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
