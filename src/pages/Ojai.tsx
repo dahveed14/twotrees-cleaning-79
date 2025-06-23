@@ -1,29 +1,29 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Mountain } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Ojai = () => {
   useEffect(() => {
-    document.title = "Ojai House Cleaning Services | Two Trees Cleaning | Spiritual & Artistic Community";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Eco-friendly house cleaning services in Ojai, CA. Serving artist community, spiritual retreats & luxury vacation rentals. Sustainable, licensed & trusted. Book today!');
-    }
+    const ojaiCoordinates = {
+      latitude: "34.4481",
+      longitude: "-119.2429"
+    };
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/ojai');
+    updateMetaTags({
+      title: "Ojai House Cleaning Services | Two Trees Cleaning | Spiritual & Artistic Community",
+      description: "Eco-friendly house cleaning services in Ojai, CA. Serving artist community, spiritual retreats & luxury vacation rentals. Sustainable, licensed & trusted. Book today!",
+      cityName: "Ojai",
+      cityCoordinates: ojaiCoordinates,
+      url: "https://twotreescleaning.com/ojai",
+      keywords: generateCityKeywords("Ojai")
+    });
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -41,6 +41,17 @@ const Ojai = () => {
       });
     }
     window.location.href = 'tel:805-456-1421';
+  };
+
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+    { name: "Ojai", url: "https://twotreescleaning.com/ojai" }
+  ];
+
+  const ojaiCoordinates = {
+    latitude: "34.4481",
+    longitude: "-119.2429"
   };
 
   const neighborhoods = [
@@ -78,6 +89,11 @@ const Ojai = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Ojai"
+        cityCoordinates={ojaiCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 
