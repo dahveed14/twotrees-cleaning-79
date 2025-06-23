@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
@@ -34,7 +35,7 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
             <img 
               src="/lovable-uploads/20a6f422-6666-433e-a68d-837ce6ed1a67.png" 
               alt="Two Trees Cleaning" 
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
