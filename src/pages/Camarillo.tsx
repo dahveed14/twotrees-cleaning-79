@@ -1,29 +1,29 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Camarillo = () => {
   useEffect(() => {
-    document.title = "Camarillo House Cleaning Services | Two Trees Cleaning | Professional & Reliable";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional house cleaning services in Camarillo, CA. Serving Premium Outlets area, family neighborhoods, and suburban communities. Licensed & insured. Book today!');
-    }
+    const camarilloCoordinates = {
+      latitude: "34.2164",
+      longitude: "-119.0376"
+    };
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/camarillo');
+    updateMetaTags({
+      title: "Camarillo House Cleaning Services | Two Trees Cleaning | Professional & Reliable",
+      description: "Professional house cleaning services in Camarillo, CA. Serving Premium Outlets area, family neighborhoods, and suburban communities. Licensed & insured. Book today!",
+      cityName: "Camarillo",
+      cityCoordinates: camarilloCoordinates,
+      url: "https://twotreescleaning.com/camarillo",
+      keywords: generateCityKeywords("Camarillo")
+    });
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -76,8 +76,24 @@ const Camarillo = () => {
     }
   ];
 
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+    { name: "Camarillo", url: "https://twotreescleaning.com/camarillo" }
+  ];
+
+  const camarilloCoordinates = {
+    latitude: "34.2164",
+    longitude: "-119.0376"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Camarillo"
+        cityCoordinates={camarilloCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 

@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -7,23 +8,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Waves } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Oxnard = () => {
   useEffect(() => {
-    document.title = "Oxnard House Cleaning Services | Two Trees Cleaning | Affordable & Reliable";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Affordable house cleaning services in Oxnard, CA. Serving coastal communities, family neighborhoods, and agricultural areas. Licensed, insured & reliable. Book today!');
-    }
+    const oxnardCoordinates = {
+      latitude: "34.1975",
+      longitude: "-119.1771"
+    };
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/oxnard');
+    updateMetaTags({
+      title: "Oxnard House Cleaning Services | Two Trees Cleaning | Affordable & Reliable",
+      description: "Affordable house cleaning services in Oxnard, CA. Serving coastal communities, family neighborhoods, and agricultural areas. Licensed, insured & reliable. Book today!",
+      cityName: "Oxnard",
+      cityCoordinates: oxnardCoordinates,
+      url: "https://twotreescleaning.com/oxnard",
+      keywords: generateCityKeywords("Oxnard")
+    });
   }, []);
 
   const handleBookingClick = (location: string) => {

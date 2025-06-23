@@ -1,29 +1,29 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Crown } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Montecito = () => {
   useEffect(() => {
-    document.title = "Montecito House Cleaning Services | Two Trees Cleaning | Luxury Home Care";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Premium house cleaning services in Montecito, CA. Serving luxury estates, celebrity homes & the village. Discreet, trusted, and experienced since 2020. Book today!');
-    }
+    const montecitoCoordinates = {
+      latitude: "34.4361",
+      longitude: "-119.6378"
+    };
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/montecito');
+    updateMetaTags({
+      title: "Montecito House Cleaning Services | Two Trees Cleaning | Luxury Home Care",
+      description: "Premium house cleaning services in Montecito, CA. Serving luxury estates, celebrity homes & the village. Discreet, trusted, and experienced since 2020. Book today!",
+      cityName: "Montecito",
+      cityCoordinates: montecitoCoordinates,
+      url: "https://twotreescleaning.com/montecito",
+      keywords: generateCityKeywords("Montecito")
+    });
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -42,6 +42,12 @@ const Montecito = () => {
     }
     window.location.href = 'tel:805-456-1421';
   };
+
+  const breadcrumbData = [
+    { name: "Home", url: "https://twotreescleaning.com/" },
+    { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+    { name: "Montecito", url: "https://twotreescleaning.com/montecito" }
+  ];
 
   const neighborhoods = [
     "Upper Village", "Lower Village", "Coast Village Road", "Olive Mill Road",
@@ -75,8 +81,18 @@ const Montecito = () => {
     }
   ];
 
+  const montecitoCoordinates = {
+    latitude: "34.4361",
+    longitude: "-119.6378"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup 
+        cityName="Montecito"
+        cityCoordinates={montecitoCoordinates}
+        breadcrumbs={breadcrumbData}
+      />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 

@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -7,23 +8,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle } from "lucide-react";
+import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const SantaBarbara = () => {
   useEffect(() => {
-    document.title = "Santa Barbara House Cleaning Services | Two Trees Cleaning | Licensed & Insured";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional house cleaning services in Santa Barbara, CA. Serving State Street, downtown, beach communities & UCSB area. Licensed, insured & trusted since 2020. Book today!');
-    }
+    const santaBarbaraCoordinates = {
+      latitude: "34.4208",
+      longitude: "-119.6982"
+    };
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/santa-barbara');
+    updateMetaTags({
+      title: "Santa Barbara House Cleaning Services | Two Trees Cleaning | Licensed & Insured",
+      description: "Professional house cleaning services in Santa Barbara, CA. Serving State Street, downtown, beach communities & UCSB area. Licensed, insured & trusted since 2020. Book today!",
+      cityName: "Santa Barbara",
+      cityCoordinates: santaBarbaraCoordinates,
+      url: "https://twotreescleaning.com/santa-barbara",
+      keywords: generateCityKeywords("Santa Barbara")
+    });
   }, []);
 
   const handleBookingClick = (location: string) => {
