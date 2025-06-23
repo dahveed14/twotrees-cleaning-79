@@ -9,7 +9,7 @@ export const SchemaMarkup = () => {
       "@type": "LocalBusiness",
       "@id": "https://twotreescleaning.com",
       "name": "Two Trees Cleaning",
-      "description": "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers.",
+      "description": "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.",
       "url": "https://twotreescleaning.com",
       "telephone": "+1-805-456-1421",
       "email": "hello@twotreescleaning.com",
@@ -29,60 +29,84 @@ export const SchemaMarkup = () => {
       },
       "openingHours": [
         "Mo-Fr 08:00-17:00",
-        "Sa 08:00-17:00"
+        "Sa 00:00-00:00"
       ],
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday", 
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "00:00",
+          "closes": "00:00",
+          "validFrom": "2020-01-01",
+          "validThrough": "2030-12-31"
+        }
       ],
+      "additionalProperty": {
+        "@type": "PropertyValue",
+        "name": "Saturday Availability",
+        "value": "By appointment only"
+      },
       "areaServed": [
         {
           "@type": "City",
-          "name": "Santa Barbara, CA"
+          "name": "Santa Barbara",
+          "addressRegion": "CA"
         },
         {
           "@type": "City", 
-          "name": "Montecito, CA"
+          "name": "Montecito",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Summerland, CA"
+          "name": "Summerland",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Carpinteria, CA"
+          "name": "Carpinteria",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Ventura, CA"
+          "name": "Ventura",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Oxnard, CA"
+          "name": "Oxnard",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Port Hueneme, CA"
+          "name": "Port Hueneme",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Camarillo, CA"
+          "name": "Camarillo",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Thousand Oaks, CA"
+          "name": "Thousand Oaks",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Newbury Park, CA"
+          "name": "Newbury Park",
+          "addressRegion": "CA"
         },
         {
           "@type": "City",
-          "name": "Westlake Village, CA"
+          "name": "Westlake Village",
+          "addressRegion": "CA"
         }
       ],
       "priceRange": "$$",
@@ -95,22 +119,6 @@ export const SchemaMarkup = () => {
         "bestRating": "5",
         "worstRating": "1"
       },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sarah M."
-          },
-          "datePublished": "2024-06-01",
-          "reviewBody": "Two Trees Cleaning has been a game-changer for our family. With two kids and demanding careers, we finally have our weekends back. Their attention to detail is incredible!",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        }
-      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "House Cleaning Services",
@@ -120,7 +128,12 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "General House Cleaning",
-              "description": "Regular house cleaning service for busy families"
+              "description": "Regular house cleaning service for busy families in Ventura County"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "140",
+              "priceCurrency": "USD"
             }
           },
           {
@@ -128,7 +141,12 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "Deep Cleaning",
-              "description": "Comprehensive deep cleaning service"
+              "description": "Comprehensive deep cleaning service for homes in Ventura County"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "200",
+              "priceCurrency": "USD"
             }
           },
           {
@@ -136,7 +154,12 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service", 
               "name": "Move-in/Move-out Cleaning",
-              "description": "Specialized cleaning for moving situations"
+              "description": "Specialized cleaning for moving situations in Ventura County"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "180",
+              "priceCurrency": "USD"
             }
           },
           {
@@ -144,7 +167,12 @@ export const SchemaMarkup = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "Post Construction Cleaning", 
-              "description": "Professional cleaning after construction or renovation"
+              "description": "Professional cleaning after construction or renovation in Ventura County"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "250",
+              "priceCurrency": "USD"
             }
           }
         ]
@@ -162,12 +190,21 @@ export const SchemaMarkup = () => {
       "@type": "Organization",
       "name": "Two Trees Cleaning",
       "url": "https://twotreescleaning.com",
-      "logo": "https://twotreescleaning.com/logo.png",
+      "logo": "https://twotreescleaning.com/favicon.ico",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-805-456-1421",
         "contactType": "customer service",
-        "availableLanguage": "English"
+        "availableLanguage": "English",
+        "areaServed": "Ventura County, CA"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2252 Channel Dr.",
+        "addressLocality": "Ventura",
+        "addressRegion": "CA",
+        "postalCode": "93001",
+        "addressCountry": "US"
       },
       "sameAs": [
         "https://www.instagram.com/twotreescleaning/",
@@ -179,15 +216,30 @@ export const SchemaMarkup = () => {
     const servicesSchema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
+      "name": "Two Trees Cleaning Services",
       "itemListElement": [
         {
           "@type": "Service",
+          "position": 1,
           "name": "General House Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning"
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ventura",
+              "addressRegion": "CA"
+            }
           },
-          "areaServed": "Ventura County, CA",
+          "areaServed": {
+            "@type": "State",
+            "name": "California",
+            "containsPlace": [
+              { "@type": "City", "name": "Santa Barbara" },
+              { "@type": "City", "name": "Ventura" },
+              { "@type": "City", "name": "Thousand Oaks" }
+            ]
+          },
           "offers": {
             "@type": "Offer",
             "priceSpecification": {
@@ -198,31 +250,82 @@ export const SchemaMarkup = () => {
           }
         },
         {
-          "@type": "Service", 
+          "@type": "Service",
+          "position": 2,
           "name": "Deep Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning"
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ventura",
+              "addressRegion": "CA"
+            }
           },
-          "areaServed": "Ventura County, CA"
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "200",
+              "priceCurrency": "USD"
+            }
+          }
         },
         {
           "@type": "Service",
+          "position": 3,
           "name": "Move-in/Move-out Cleaning",
           "provider": {
-            "@type": "LocalBusiness", 
-            "name": "Two Trees Cleaning"
+            "@type": "LocalBusiness",
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ventura",
+              "addressRegion": "CA"
+            }
           },
-          "areaServed": "Ventura County, CA"
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "180",
+              "priceCurrency": "USD"
+            }
+          }
         },
         {
           "@type": "Service",
+          "position": 4,
           "name": "Post Construction Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning"
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ventura",
+              "addressRegion": "CA"
+            }
           },
-          "areaServed": "Ventura County, CA"
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "250",
+              "priceCurrency": "USD"
+            }
+          }
         }
       ]
     };
