@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -53,9 +53,24 @@ export const ContactForm = () => {
     }
 
     try {
-      // In a real app, you would send this to your backend
-      console.log('Form submission:', data);
-      
+      // Insert form data into Supabase
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service_type: data.serviceType, // Map serviceType to service_type
+          frequency: data.frequency,
+          location: data.location,
+          message: data.message || null, // Handle optional message
+        });
+
+      if (error) {
+        console.error('Supabase error:', error);
+        throw new Error('Failed to submit form. Please try again.');
+      }
+
       toast({
         title: "Thank you for your message!",
         description: "We'll get back to you within 24 hours with your free quote.",
@@ -64,9 +79,10 @@ export const ContactForm = () => {
       // Navigate to thank you page
       navigate('/thank-you');
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again or call us directly.",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again or call us directly.",
         variant: "destructive",
       });
     } finally {
