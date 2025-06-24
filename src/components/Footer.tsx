@@ -1,5 +1,6 @@
 
 import { Star, Phone, Mail, MapPin, Clock, Shield, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -54,17 +55,39 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Service Areas</h4>
             <div className="text-gray-300 space-y-1 text-sm">
-              <p>Santa Barbara</p>
-              <p>Montecito</p>
-              <p>Summerland</p>
-              <p>Carpinteria</p>
-              <p>Ventura</p>
-              <p>Oxnard</p>
-              <p>Port Hueneme</p>
-              <p>Camarillo</p>
-              <p>Thousand Oaks</p>
-              <p>Newbury Park</p>
-              <p>Westlake Village</p>
+              <Link to="/santa-barbara" className="block hover:text-two-trees-gold transition-colors">
+                Santa Barbara
+              </Link>
+              <Link to="/montecito" className="block hover:text-two-trees-gold transition-colors">
+                Montecito
+              </Link>
+              <Link to="/summerland" className="block hover:text-two-trees-gold transition-colors">
+                Summerland
+              </Link>
+              <Link to="/carpinteria" className="block hover:text-two-trees-gold transition-colors">
+                Carpinteria
+              </Link>
+              <Link to="/ventura" className="block hover:text-two-trees-gold transition-colors">
+                Ventura
+              </Link>
+              <Link to="/oxnard" className="block hover:text-two-trees-gold transition-colors">
+                Oxnard
+              </Link>
+              <Link to="/port-hueneme" className="block hover:text-two-trees-gold transition-colors">
+                Port Hueneme
+              </Link>
+              <Link to="/camarillo" className="block hover:text-two-trees-gold transition-colors">
+                Camarillo
+              </Link>
+              <Link to="/thousand-oaks" className="block hover:text-two-trees-gold transition-colors">
+                Thousand Oaks
+              </Link>
+              <Link to="/newbury-park" className="block hover:text-two-trees-gold transition-colors">
+                Newbury Park
+              </Link>
+              <Link to="/westlake-village" className="block hover:text-two-trees-gold transition-colors">
+                Westlake Village
+              </Link>
             </div>
           </div>
 

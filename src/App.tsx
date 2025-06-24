@@ -16,6 +16,11 @@ import Oxnard from "./pages/Oxnard";
 import Camarillo from "./pages/Camarillo";
 import Ventura from "./pages/Ventura";
 import Ojai from "./pages/Ojai";
+import Summerland from "./pages/Summerland";
+import Carpinteria from "./pages/Carpinteria";
+import PortHueneme from "./pages/PortHueneme";
+import NewburyPark from "./pages/NewburyPark";
+import WestlakeVillage from "./pages/WestlakeVillage";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
@@ -40,6 +45,11 @@ const App = () => (
           <Route path="/camarillo" element={<Camarillo />} />
           <Route path="/ventura" element={<Ventura />} />
           <Route path="/ojai" element={<Ojai />} />
+          <Route path="/summerland" element={<Summerland />} />
+          <Route path="/carpinteria" element={<Carpinteria />} />
+          <Route path="/port-hueneme" element={<PortHueneme />} />
+          <Route path="/newbury-park" element={<NewburyPark />} />
+          <Route path="/westlake-village" element={<WestlakeVillage />} />
           <Route path="/thank-you" element={<ThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
