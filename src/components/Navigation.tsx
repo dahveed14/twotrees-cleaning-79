@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
@@ -108,6 +109,12 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
             <Link to="/about" className="text-gray-700 hover:text-two-trees-green transition-colors">
               About
             </Link>
+            <Link to="/blog" className="text-gray-700 hover:text-two-trees-green transition-colors">
+              Blog
+            </Link>
+            <Link to="/faq" className="text-gray-700 hover:text-two-trees-green transition-colors">
+              FAQ
+            </Link>
             <Link to="/contact" className="text-gray-700 hover:text-two-trees-green transition-colors">
               Contact
             </Link>
@@ -206,6 +213,20 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
+              </Link>
+              <Link 
+                to="/blog" 
+                className="text-gray-700 hover:text-two-trees-green px-4 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link 
+                to="/faq" 
+                className="text-gray-700 hover:text-two-trees-green px-4 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                FAQ
               </Link>
               <Link 
                 to="/contact" 

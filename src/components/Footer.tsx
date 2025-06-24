@@ -115,6 +115,19 @@ export const Footer = () => {
               <p className="text-two-trees-gold font-medium pt-2">Starting at $140</p>
             </div>
             
+            <h5 className="text-md font-semibold mb-2">Resources</h5>
+            <div className="text-gray-300 space-y-1 text-sm mb-4">
+              <Link to="/blog" className="block hover:text-two-trees-gold transition-colors">
+                Cleaning Blog
+              </Link>
+              <Link to="/faq" className="block hover:text-two-trees-gold transition-colors">
+                FAQ
+              </Link>
+              <Link to="/terms" className="block hover:text-two-trees-gold transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+            
             <h5 className="text-md font-semibold mb-2">Follow Us</h5>
             <div className="flex gap-3">
               <a 
