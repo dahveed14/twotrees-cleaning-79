@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,6 +22,12 @@ import NewburyPark from "./pages/NewburyPark";
 import WestlakeVillage from "./pages/WestlakeVillage";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
+import RegularHouseCleaning from "./pages/services/RegularHouseCleaning";
+import DeepCleaning from "./pages/services/DeepCleaning";
+import MoveInMoveOut from "./pages/services/MoveInMoveOut";
+import PostConstruction from "./pages/services/PostConstruction";
+import CommercialCleaning from "./pages/services/CommercialCleaning";
+import VacationRental from "./pages/services/VacationRental";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +56,13 @@ const App = () => (
           <Route path="/newbury-park" element={<NewburyPark />} />
           <Route path="/westlake-village" element={<WestlakeVillage />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          {/* Service Routes */}
+          <Route path="/services/regular-house-cleaning" element={<RegularHouseCleaning />} />
+          <Route path="/services/deep-cleaning" element={<DeepCleaning />} />
+          <Route path="/services/move-in-move-out" element={<MoveInMoveOut />} />
+          <Route path="/services/post-construction" element={<PostConstruction />} />
+          <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />
+          <Route path="/services/vacation-rental" element={<VacationRental />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

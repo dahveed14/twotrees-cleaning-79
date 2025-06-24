@@ -94,11 +94,25 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <div className="text-gray-300 space-y-1 text-sm mb-6">
-              <p>General House Cleaning</p>
-              <p>Deep Cleaning</p>
-              <p>Move-in/Move-out Cleaning</p>
-              <p>Post Construction Cleaning</p>
-              <p className="text-two-trees-gold font-medium">Starting at $140</p>
+              <Link to="/services/regular-house-cleaning" className="block hover:text-two-trees-gold transition-colors">
+                Regular House Cleaning
+              </Link>
+              <Link to="/services/deep-cleaning" className="block hover:text-two-trees-gold transition-colors">
+                Deep Cleaning
+              </Link>
+              <Link to="/services/move-in-move-out" className="block hover:text-two-trees-gold transition-colors">
+                Move-In/Move-Out Cleaning
+              </Link>
+              <Link to="/services/post-construction" className="block hover:text-two-trees-gold transition-colors">
+                Post-Construction Cleaning
+              </Link>
+              <Link to="/services/commercial-cleaning" className="block hover:text-two-trees-gold transition-colors">
+                Commercial Cleaning
+              </Link>
+              <Link to="/services/vacation-rental" className="block hover:text-two-trees-gold transition-colors">
+                Vacation Rental Cleaning
+              </Link>
+              <p className="text-two-trees-gold font-medium pt-2">Starting at $140</p>
             </div>
             
             <h5 className="text-md font-semibold mb-2">Follow Us</h5>
