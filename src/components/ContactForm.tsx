@@ -76,8 +76,8 @@ export const ContactForm = () => {
         description: "We'll get back to you within 24 hours with your free quote.",
       });
 
-      // Navigate to thank you page
-      navigate('/thank-you');
+      // Navigate to contact thank you page
+      navigate('/contact-thank-you');
     } catch (error) {
       console.error('Form submission error:', error);
       toast({

@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +23,7 @@ import PortHueneme from "./pages/PortHueneme";
 import NewburyPark from "./pages/NewburyPark";
 import WestlakeVillage from "./pages/WestlakeVillage";
 import ThankYou from "./pages/ThankYou";
+import ContactThankYou from "./pages/ContactThankYou";
 import NotFound from "./pages/NotFound";
 import RegularHouseCleaning from "./pages/services/RegularHouseCleaning";
 import DeepCleaning from "./pages/services/DeepCleaning";
