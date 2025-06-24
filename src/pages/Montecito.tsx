@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -117,7 +118,7 @@ const Montecito = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Premium cleaning services for Montecito's finest homes. From Coast Village Road estates to 
                 Upper Village properties, we provide discreet, professional service with the highest standards 
-                of quality and confidentiality.
+                of quality and confidentiality along this stunning coastline.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -140,8 +141,8 @@ const Montecito = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop" 
-                alt="Luxury Montecito home cleaning service"
+                src="/lovable-uploads/4042e633-3464-473f-8856-715aa7b5b0f1.png" 
+                alt="Stunning aerial view of Montecito coastline with pristine beaches, dramatic cliffs, and luxury homes nestled between mountains and ocean - Two Trees Cleaning service area"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
