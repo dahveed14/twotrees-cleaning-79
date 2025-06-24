@@ -3,6 +3,13 @@ import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
+// Extend the Window interface to include jQuery
+declare global {
+  interface Window {
+    jQuery: any;
+  }
+}
+
 const Book = () => {
   const handleBookingClick = (location: string) => {
     console.log(`Booking clicked from: ${location}`);
