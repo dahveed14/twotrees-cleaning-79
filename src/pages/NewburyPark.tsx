@@ -7,6 +7,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const NewburyPark = () => {
@@ -183,6 +184,33 @@ const NewburyPark = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Related Areas Section */}
+          <div className="mb-16 bg-gray-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-two-trees-green text-center mb-6">
+              We Also Serve Nearby Communities
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link 
+                to="/thousand-oaks" 
+                className="bg-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+              >
+                Thousand Oaks Cleaning
+              </Link>
+              <Link 
+                to="/westlake-village" 
+                className="bg-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+              >
+                Westlake Village Cleaning
+              </Link>
+              <Link 
+                to="/camarillo" 
+                className="bg-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+              >
+                Camarillo Cleaning
+              </Link>
             </div>
           </div>
 

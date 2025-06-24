@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
 import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
+import { Link } from "react-router-dom";
 
 const PortHueneme = () => {
   useEffect(() => {
@@ -183,6 +183,33 @@ const PortHueneme = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Related Areas Section */}
+          <div className="mb-16 bg-gray-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-two-trees-green text-center mb-6">
+              We Also Serve Nearby Communities
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link 
+                to="/oxnard" 
+                className="bg-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+              >
+                Oxnard Cleaning
+              </Link>
+              <Link 
+                to="/camarillo" 
+                className="bg-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+              >
+                Camarillo Cleaning
+              </Link>
+              <Link 
+                to="/ventura" 
+                className="bg-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+              >
+                Ventura Cleaning
+              </Link>
             </div>
           </div>
 
