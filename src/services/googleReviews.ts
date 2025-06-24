@@ -1,4 +1,6 @@
 
+import { supabase } from '@/integrations/supabase/client';
+
 export interface GoogleReview {
   author_name: string;
   author_url?: string;
@@ -21,33 +23,26 @@ export interface GoogleReviewsResponse {
   status: string;
 }
 
-// Google Places API configuration
-const GOOGLE_PLACES_API_KEY = 'AIzaSyBJWasL_tDTywYudb5DCJGluPh6TyP9MsE';
-const PLACE_ID = 'ChIJu4j5t6sASQARPfEuLicUNA4'; // Two Trees Cleaning Place ID
-
 export const fetchGoogleReviews = async (): Promise<GoogleReview[]> => {
   try {
-    // Note: This may require a CORS proxy for production due to CORS restrictions
-    const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews,user_ratings_total&key=${GOOGLE_PLACES_API_KEY}`
-    );
+    console.log('Calling Supabase Edge Function to fetch Google Reviews...');
     
-    if (!response.ok) {
-      console.log('API response not ok, using fallback reviews');
-      throw new Error('Failed to fetch reviews');
+    const { data, error } = await supabase.functions.invoke('fetch-google-reviews');
+    
+    if (error) {
+      console.error('Supabase function error:', error);
+      throw new Error('Failed to fetch reviews from Edge Function');
+    }
+
+    if (data && data.reviews && data.reviews.length > 0) {
+      console.log('Successfully fetched Google reviews via Edge Function:', data.reviews.length);
+      return data.reviews;
     }
     
-    const data: GoogleReviewsResponse = await response.json();
-    
-    if (data.status === 'OK' && data.result.reviews) {
-      console.log('Successfully fetched Google reviews:', data.result.reviews.length);
-      return data.result.reviews.filter(review => review.rating >= 4); // Only show 4+ star reviews
-    }
-    
-    console.log('No reviews in API response, using fallback');
+    console.log('No reviews returned from Edge Function, using fallback');
     return [];
   } catch (error) {
-    console.error('Error fetching Google reviews:', error);
+    console.error('Error calling Edge Function for Google reviews:', error);
     return [];
   }
 };
