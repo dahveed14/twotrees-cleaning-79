@@ -1,15 +1,10 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { GoogleReviews } from "@/components/GoogleReviews";
-
 export const SocialProof = () => {
-  return (
-    <section className="py-20 px-4">
+  return <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-          What Our Ventura County Customers Say
-        </h2>
+        <h2 className="text-4xl font-bold text-two-trees-green mb-4">What Our Customers Say</h2>
         <p className="text-xl text-gray-600 mb-12">
           Real reviews from real customers - see what busy families like yours are saying
         </p>
@@ -23,6 +18,5 @@ export const SocialProof = () => {
           </Badge>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
