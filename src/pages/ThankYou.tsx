@@ -2,8 +2,11 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, Home } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ThankYou = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Meta Pixel Code
     (function(f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
@@ -61,7 +64,7 @@ const ThankYou = () => {
   };
 
   const handleBackToHome = () => {
-    window.location.href = 'https://twotreescleaning.com';
+    navigate('/');
   };
 
   return (
