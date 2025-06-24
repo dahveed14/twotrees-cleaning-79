@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -55,7 +54,7 @@ const RegularHouseCleaning = () => {
   };
 
   const breadcrumbData = [
-    { name: "Home", url: "https://twotreuscleaning.com/" },
+    { name: "Home", url: "https://twotreescleaning.com/" },
     { name: "Services", url: "https://twotreescleaning.com/services" },
     { name: "Regular House Cleaning", url: "https://twotreescleaning.com/services/regular-house-cleaning" }
   ];

@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
@@ -30,6 +28,16 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
     { name: "All Service Areas", href: "/service-areas" },
   ];
 
+  const services = [
+    { name: "All Services", href: "/services" },
+    { name: "Regular House Cleaning", href: "/services/regular-house-cleaning" },
+    { name: "Deep Cleaning", href: "/services/deep-cleaning" },
+    { name: "Move-In/Move-Out", href: "/services/move-in-move-out" },
+    { name: "Post-Construction", href: "/services/post-construction" },
+    { name: "Commercial Cleaning", href: "/services/commercial-cleaning" },
+    { name: "Vacation Rental", href: "/services/vacation-rental" },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4">
@@ -48,9 +56,29 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
             <Link to="/" className="text-gray-700 hover:text-two-trees-green transition-colors">
               Home
             </Link>
-            <Link to="/" className="text-gray-700 hover:text-two-trees-green transition-colors">
-              Residential
-            </Link>
+            
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-gray-700 hover:text-two-trees-green transition-colors flex items-center gap-1">
+                Services
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg">
+                {services.map((service) => (
+                  <DropdownMenuItem key={service.name} asChild>
+                    <Link 
+                      to={service.href} 
+                      className="text-gray-700 hover:text-two-trees-green hover:bg-gray-50 px-4 py-2 block"
+                    >
+                      {service.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link to="/commercial" className="text-gray-700 hover:text-two-trees-green transition-colors">
               Commercial
             </Link>
@@ -129,13 +157,24 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
               >
                 Home
               </Link>
-              <Link 
-                to="/" 
-                className="text-gray-700 hover:text-two-trees-green px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Residential
-              </Link>
+              
+              {/* Mobile Services */}
+              <div className="px-4">
+                <span className="text-gray-700 font-medium">Services:</span>
+                <div className="ml-4 mt-2 space-y-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.name}
+                      to={service.href}
+                      className="block text-gray-600 hover:text-two-trees-green py-1"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               <Link 
                 to="/commercial" 
                 className="text-gray-700 hover:text-two-trees-green px-4 py-2"
@@ -206,4 +245,3 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
     </nav>
   );
 };
-

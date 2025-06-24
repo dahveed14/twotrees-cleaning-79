@@ -28,6 +28,7 @@ import MoveInMoveOut from "./pages/services/MoveInMoveOut";
 import PostConstruction from "./pages/services/PostConstruction";
 import CommercialCleaning from "./pages/services/CommercialCleaning";
 import VacationRental from "./pages/services/VacationRental";
+import Services from "./pages/Services";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/commercial" element={<Commercial />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/santa-barbara" element={<SantaBarbara />} />
           <Route path="/montecito" element={<Montecito />} />
