@@ -112,7 +112,7 @@ const Services = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 px-8 py-4 text-lg"
+                className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white px-8 py-4 text-lg"
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />
