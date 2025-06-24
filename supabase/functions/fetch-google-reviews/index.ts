@@ -36,11 +36,11 @@ serve(async (req) => {
   }
 
   try {
-    const googlePlacesApiKey = Deno.env.get('GOOGLE_PLACES_API_KEY');
+    const googlePlacesApiKey = Deno.env.get('Google_API_Key');
     const placeId = 'ChIJu4j5t6sASQARPfEuLicUNA4'; // Two Trees Cleaning Place ID
 
     if (!googlePlacesApiKey) {
-      console.error('GOOGLE_PLACES_API_KEY not found in environment variables');
+      console.error('Google_API_Key not found in environment variables');
       return new Response(
         JSON.stringify({ error: 'API key not configured' }),
         { 
