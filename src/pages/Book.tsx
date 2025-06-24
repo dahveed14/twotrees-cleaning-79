@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { GoogleReviews } from "@/components/GoogleReviews";
 
 // Extend the Window interface to include jQuery
 declare global {
@@ -65,9 +66,22 @@ const Book = () => {
             <h1 className="text-4xl font-bold text-two-trees-green mb-4">
               Book Your Cleaning Service
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-8">
               Schedule your professional house cleaning service in Ventura and Santa Barbara Counties
             </p>
+          </div>
+
+          {/* Google Reviews Section - Social Proof Before Booking */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-two-trees-green mb-2">
+                Join Our Happy Customers
+              </h2>
+              <p className="text-gray-600">
+                See what our customers are saying about our cleaning services
+              </p>
+            </div>
+            <GoogleReviews />
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
