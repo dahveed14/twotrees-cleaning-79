@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Phone } from "lucide-react";
@@ -16,11 +17,11 @@ export const Hero = ({
           <div className="space-y-8">
             <div className="space-y-4">
               <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
-                Serving Ventura County Since 2020
+                Serving Ventura & Santa Barbara Counties Since 2020
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Get Your Time Back with Professional House Cleaning in Ventura and Santa Barbara County</h1>
+              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Get Your Time Back with Professional House Cleaning in Ventura and Santa Barbara Counties</h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Two Trees Cleaning helps busy Ventura County families in Santa Barbara, Thousand Oaks, Oxnard, and Camarillo reclaim their weekends. Our reliable, detail-oriented team delivers spotless homes so you can focus on what matters most.
+                Two Trees Cleaning helps busy families across Ventura and Santa Barbara Counties reclaim their weekends. From Santa Barbara to Thousand Oaks, Oxnard to Camarillo, our reliable, detail-oriented team delivers spotless homes so you can focus on what matters most.
               </p>
             </div>
             
