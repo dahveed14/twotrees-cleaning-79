@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
@@ -46,9 +45,9 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/20a6f422-6666-433e-a68d-837ce6ed1a67.png" 
+              src="/lovable-uploads/3c44174a-1cbf-4902-adb1-e67471f0d602.png" 
               alt="Two Trees Cleaning" 
-              className="h-14 w-auto"
+              className="h-18 w-auto"
             />
           </Link>
 
