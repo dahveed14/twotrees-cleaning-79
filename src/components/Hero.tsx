@@ -18,7 +18,7 @@ export const Hero = ({
               <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
                 Serving Ventura & Santa Barbara Counties Since 2020
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Get Your Time Back 
+              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Get Your Time Back  With 
 Ventura & Santa Barbara Counties' Best House Cleaning Service</h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 As the best cleaning company in Ventura and Santa Barbara Counties, Two Trees Cleaning helps busy families reclaim their weekends. From Santa Barbara to Thousand Oaks, Oxnard to Camarillo, our reliable, detail-oriented team delivers spotless homes so you can focus on what matters most.
