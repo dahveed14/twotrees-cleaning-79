@@ -36,7 +36,12 @@ const FAQ = () => {
         "Santa Barbara cleaning questions",
         "house cleaning pricing",
         "cleaning service scheduling",
-        "professional cleaning FAQ"
+        "professional cleaning FAQ",
+        "maid service questions",
+        "residential cleaning FAQ",
+        "cleaning company questions",
+        "house cleaner FAQ",
+        "cleaning service policies"
       ]
     });
   }, []);
@@ -47,19 +52,43 @@ const FAQ = () => {
       questions: [
         {
           question: "How much does house cleaning cost?",
-          answer: "Our house cleaning services start at $140 for regular cleaning. Pricing varies based on home size, cleaning frequency, and specific services requested. We offer regular house cleaning, deep cleaning, move-in/move-out cleaning, and post-construction cleaning. Contact us for a personalized quote."
+          answer: (
+            <>
+              Our <Link to="/services" className="text-two-trees-green hover:underline font-medium">house cleaning services</Link> start at $140 for <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular cleaning</Link>. Pricing varies based on home size, cleaning frequency, and specific services requested. We offer <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">deep cleaning</Link>, <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-in/move-out cleaning</Link>, and <Link to="/services/post-construction" className="text-two-trees-green hover:underline font-medium">post-construction cleaning</Link>. <Link to="/contact" className="text-two-trees-green hover:underline font-medium">Contact us</Link> for a personalized quote based on your specific needs.
+            </>
+          )
         },
         {
           question: "What's included in your regular house cleaning service?",
-          answer: "Our regular house cleaning includes dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathrooms (toilets, sinks, tubs, showers), kitchen cleaning (counters, appliances, sink), and trash removal. We use eco-friendly cleaning products and bring all necessary supplies."
+          answer: (
+            <>
+              Our <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular house cleaning service</Link> includes dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathrooms (toilets, sinks, tubs, showers), kitchen cleaning (counters, appliances, sink), and trash removal. We use eco-friendly cleaning products and bring all necessary supplies. Learn more about what's included on our <Link to="/services" className="text-two-trees-green hover:underline font-medium">services page</Link>.
+            </>
+          )
         },
         {
           question: "What's the difference between regular and deep cleaning?",
-          answer: "Regular cleaning maintains your home's cleanliness with weekly, bi-weekly, or monthly service. Deep cleaning is more thorough and includes cleaning inside appliances, baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. We recommend starting with a deep clean for first-time customers."
+          answer: (
+            <>
+              <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes cleaning inside appliances, baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. We recommend starting with a deep clean for first-time customers to establish a clean baseline.
+            </>
+          )
         },
         {
           question: "Do you offer one-time cleaning services?",
-          answer: "Yes! We offer one-time cleaning services including move-in/move-out cleaning, post-construction cleanup, and special event cleaning. One-time services are priced higher than recurring cleaning services."
+          answer: (
+            <>
+              Yes! We offer one-time cleaning services including <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-in/move-out cleaning</Link>, <Link to="/services/post-construction" className="text-two-trees-green hover:underline font-medium">post-construction cleanup</Link>, and special event cleaning. One-time services are priced higher than recurring cleaning services. <Link to="/book" className="text-two-trees-green hover:underline font-medium">Book online</Link> or call us to schedule your one-time cleaning.
+            </>
+          )
+        },
+        {
+          question: "Do you offer commercial cleaning services?",
+          answer: (
+            <>
+              Yes, we provide <Link to="/services/commercial-cleaning" className="text-two-trees-green hover:underline font-medium">commercial cleaning services</Link> for offices, retail spaces, and other business facilities. We also specialize in <Link to="/services/vacation-rental" className="text-two-trees-green hover:underline font-medium">vacation rental cleaning</Link> for property managers and Airbnb hosts. Visit our <Link to="/commercial" className="text-two-trees-green hover:underline font-medium">commercial cleaning page</Link> for more details about business cleaning solutions.
+            </>
+          )
         }
       ]
     },
@@ -68,19 +97,31 @@ const FAQ = () => {
       questions: [
         {
           question: "How do I schedule a cleaning service?",
-          answer: "You can schedule cleaning services three ways: book online through our website, call us at (805) 456-1421, or text us. We typically respond within a few hours and can often schedule same-week service."
+          answer: (
+            <>
+              You can schedule cleaning services three ways: <Link to="/book" className="text-two-trees-green hover:underline font-medium">book online</Link> through our website, call us at (805) 456-1421, or text us. We typically respond within a few hours and can often schedule same-week service. Our online booking system is available 24/7 for your convenience.
+            </>
+          )
         },
         {
           question: "How far in advance do I need to book?",
-          answer: "We recommend booking at least 3-5 days in advance, especially during busy seasons. However, we often accommodate last-minute requests when possible. Holiday periods and spring cleaning season book up faster."
+          answer: (
+            <>
+              We recommend booking at least 3-5 days in advance, especially during busy seasons. However, we often accommodate last-minute requests when possible. Holiday periods and spring cleaning season book up faster. <Link to="/book" className="text-two-trees-green hover:underline font-medium">Check our availability</Link> and schedule online for the fastest response.
+            </>
+          )
         },
         {
           question: "What if I need to reschedule or cancel?",
-          answer: "We understand plans change! Please give us at least 24 hours notice for cancellations or rescheduling to avoid any fees. Same-day cancellations may incur a charge. You can reach us by phone or text to make changes."
+          answer: (
+            <>
+              We understand plans change! Please give us at least 24 hours notice for cancellations or rescheduling to avoid any fees. Same-day cancellations may incur a charge. You can reach us by phone or text to make changes. Our flexible scheduling policy is detailed in our <Link to="/terms" className="text-two-trees-green hover:underline font-medium">terms and conditions</Link>.
+            </>
+          )
         },
         {
           question: "Do you clean on weekends?",
-          answer: "Yes, we offer Saturday cleaning services by appointment. Sunday service is limited and available for special circumstances. Weekday appointments are most readily available."
+          answer: "Yes, we offer Saturday cleaning services by appointment. Sunday service is limited and available for special circumstances. Weekday appointments are most readily available. Weekend slots fill up quickly, so book in advance."
         }
       ]
     },
@@ -89,11 +130,19 @@ const FAQ = () => {
       questions: [
         {
           question: "Which areas do you serve?",
-          answer: "We provide house cleaning services throughout Ventura County and parts of Santa Barbara County, including Santa Barbara, Montecito, Summerland, Carpinteria, Ventura, Oxnard, Camarillo, Thousand Oaks, Newbury Park, Westlake Village, and Ojai. Contact us to confirm service in your specific area."
+          answer: (
+            <>
+              We provide house cleaning services throughout Ventura County and parts of Santa Barbara County. Our service areas include <Link to="/santa-barbara" className="text-two-trees-green hover:underline font-medium">Santa Barbara</Link>, <Link to="/montecito" className="text-two-trees-green hover:underline font-medium">Montecito</Link>, <Link to="/summerland" className="text-two-trees-green hover:underline font-medium">Summerland</Link>, <Link to="/carpinteria" className="text-two-trees-green hover:underline font-medium">Carpinteria</Link>, <Link to="/ventura" className="text-two-trees-green hover:underline font-medium">Ventura</Link>, <Link to="/oxnard" className="text-two-trees-green hover:underline font-medium">Oxnard</Link>, <Link to="/camarillo" className="text-two-trees-green hover:underline font-medium">Camarillo</Link>, <Link to="/thousand-oaks" className="text-two-trees-green hover:underline font-medium">Thousand Oaks</Link>, <Link to="/newbury-park" className="text-two-trees-green hover:underline font-medium">Newbury Park</Link>, <Link to="/westlake-village" className="text-two-trees-green hover:underline font-medium">Westlake Village</Link>, and <Link to="/ojai" className="text-two-trees-green hover:underline font-medium">Ojai</Link>. Visit our <Link to="/service-areas" className="text-two-trees-green hover:underline font-medium">service areas page</Link> for complete coverage details.
+            </>
+          )
         },
         {
           question: "Do you charge extra for travel to certain areas?",
-          answer: "Our standard pricing covers our main service areas. Some remote locations may have a small travel fee, which we'll discuss upfront. Most areas in Ventura and Santa Barbara Counties have no additional charges."
+          answer: (
+            <>
+              Our standard pricing covers our main service areas throughout <Link to="/service-areas" className="text-two-trees-green hover:underline font-medium">Ventura and Santa Barbara Counties</Link>. Some remote locations may have a small travel fee, which we'll discuss upfront during scheduling. Most areas we serve have no additional charges.
+            </>
+          )
         }
       ]
     },
@@ -102,19 +151,23 @@ const FAQ = () => {
       questions: [
         {
           question: "Do you bring your own cleaning supplies?",
-          answer: "Yes, we bring all necessary cleaning supplies and equipment. We use professional-grade, eco-friendly cleaning products that are safe for your family and pets. If you prefer us to use your specific products, just let us know."
+          answer: "Yes, we bring all necessary cleaning supplies and equipment. We use professional-grade, eco-friendly cleaning products that are safe for your family and pets. If you prefer us to use your specific products, just let us know during booking."
         },
         {
           question: "Are your cleaning products safe for children and pets?",
-          answer: "Absolutely! We use eco-friendly, non-toxic cleaning products that are safe for children and pets. Our products are effective yet gentle, providing a clean and healthy environment for your family."
+          answer: "Absolutely! We use eco-friendly, non-toxic cleaning products that are safe for children and pets. Our products are effective yet gentle, providing a clean and healthy environment for your family. We prioritize green cleaning methods without compromising on cleanliness."
         },
         {
           question: "Do I need to be home during the cleaning?",
-          answer: "No, you don't need to be home during cleaning. Many clients provide us with access instructions or a spare key. We're fully licensed, bonded, and insured for your peace of mind. We'll secure your home when we leave."
+          answer: "No, you don't need to be home during cleaning. Many clients provide us with access instructions or a spare key. We're fully licensed, bonded, and insured for your peace of mind. We'll secure your home when we leave and can provide updates on the cleaning progress."
         },
         {
           question: "How long does a typical cleaning take?",
-          answer: "Cleaning time varies by home size and service type. A typical 2-3 bedroom home takes 2-3 hours for regular cleaning and 3-5 hours for deep cleaning. We'll provide an estimated timeframe when scheduling your service."
+          answer: (
+            <>
+              Cleaning time varies by home size and service type. A typical 2-3 bedroom home takes 2-3 hours for <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular cleaning</Link> and 3-5 hours for <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">deep cleaning</Link>. <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">Move-in/move-out cleaning</Link> typically takes 4-6 hours. We'll provide an estimated timeframe when scheduling your service.
+            </>
+          )
         }
       ]
     },
@@ -123,15 +176,27 @@ const FAQ = () => {
       questions: [
         {
           question: "Are you licensed and insured?",
-          answer: "Yes, Two Trees Cleaning is fully licensed, bonded, and insured. We carry comprehensive liability insurance and workers' compensation insurance to protect both our clients and team members."
+          answer: (
+            <>
+              Yes, Two Trees Cleaning is fully licensed, bonded, and insured. We carry comprehensive liability insurance and workers' compensation insurance to protect both our clients and team members. You can learn more about our credentials and commitment to quality on our <Link to="/about" className="text-two-trees-green hover:underline font-medium">about page</Link>.
+            </>
+          )
         },
         {
           question: "What if something gets damaged during cleaning?",
-          answer: "While rare, accidents can happen. We're fully insured and will take responsibility for any damage caused by our team. Please report any concerns immediately so we can address them promptly and professionally."
+          answer: (
+            <>
+              While rare, accidents can happen. We're fully insured and will take responsibility for any damage caused by our team. Please report any concerns immediately so we can address them promptly and professionally. Our insurance policy and damage procedures are outlined in our <Link to="/terms" className="text-two-trees-green hover:underline font-medium">terms and conditions</Link>.
+            </>
+          )
         },
         {
           question: "Do you do background checks on your cleaners?",
-          answer: "Yes, all our team members undergo thorough background checks and are carefully screened before joining our team. We maintain high standards for professionalism and trustworthiness."
+          answer: (
+            <>
+              Yes, all our team members undergo thorough background checks and are carefully screened before joining our team. We maintain high standards for professionalism and trustworthiness. Learn more about our team and hiring practices on our <Link to="/about" className="text-two-trees-green hover:underline font-medium">about page</Link>.
+            </>
+          )
         }
       ]
     }
@@ -162,7 +227,7 @@ const FAQ = () => {
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Get answers to the most common questions about our professional house cleaning services 
-              in Ventura and Santa Barbara Counties.
+              in Ventura and Santa Barbara Counties. Find information about pricing, scheduling, service areas, and more.
             </p>
             
             {/* Quick Action Buttons */}
@@ -219,7 +284,7 @@ const FAQ = () => {
               </h3>
               <p className="text-gray-600 mb-6">
                 Can't find the answer you're looking for? We're here to help! 
-                Contact us directly and we'll get back to you promptly.
+                Contact us directly and we'll get back to you promptly. You can also explore our <Link to="/services" className="text-two-trees-green hover:underline font-medium">services page</Link> or check out our <Link to="/blog" className="text-two-trees-green hover:underline font-medium">cleaning tips blog</Link>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
@@ -243,7 +308,7 @@ const FAQ = () => {
 
       <Footer />
 
-      {/* Structured Data for FAQ */}
+      {/* Enhanced Structured Data for FAQ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -256,10 +321,27 @@ const FAQ = () => {
                 "name": faq.question,
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": faq.answer
+                  "text": typeof faq.answer === 'string' ? faq.answer : faq.question // Fallback for JSX answers
                 }
               }))
-            )
+            ),
+            "about": {
+              "@type": "Service",
+              "name": "House Cleaning Services",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Two Trees Cleaning",
+                "url": "https://twotreescleaning.com",
+                "telephone": "805-456-1421",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2252 Channel Dr.",
+                  "addressLocality": "Ventura",
+                  "addressRegion": "CA",
+                  "postalCode": "93001"
+                }
+              }
+            }
           })
         }}
       />
