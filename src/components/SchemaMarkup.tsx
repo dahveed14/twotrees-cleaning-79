@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 
 interface SchemaMarkupProps {
@@ -196,6 +195,58 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
               "minPrice": "250",
               "priceCurrency": "USD"
             }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Office Cleaning",
+              "description": `Professional office cleaning services for businesses in ${cityName || 'Ventura County'}`
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Cleaning",
+              "description": `Comprehensive commercial cleaning services for businesses in ${cityName || 'Ventura County'}`
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Janitorial Services",
+              "description": `Regular janitorial services for offices and commercial facilities in ${cityName || 'Ventura County'}`
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Facility Cleaning",
+              "description": `Professional facility cleaning and maintenance services in ${cityName || 'Ventura County'}`
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
           }
         ]
       },
@@ -359,6 +410,110 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
             "priceSpecification": {
               "@type": "PriceSpecification",
               "minPrice": "250",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "Service",
+          "position": 5,
+          "name": "Office Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": cityName || "Ventura",
+              "addressRegion": "CA"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "Service",
+          "position": 6,
+          "name": "Commercial Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": cityName || "Ventura",
+              "addressRegion": "CA"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "Service",
+          "position": 7,
+          "name": "Janitorial Services",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": cityName || "Ventura",
+              "addressRegion": "CA"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "Service",
+          "position": 8,
+          "name": "Facility Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": cityName || "Ventura",
+              "addressRegion": "CA"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "Custom Quote",
               "priceCurrency": "USD"
             }
           }
