@@ -11,7 +11,13 @@ import { Calendar, User, ArrowRight } from "lucide-react";
 
 const Blog = () => {
   const handleBookingClick = (location: string) => {
-    console.log(`Booking clicked from: ${location}`);
+    // Track booking clicks without console logging
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'booking_click', {
+        event_category: 'Blog',
+        event_label: location
+      });
+    }
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 

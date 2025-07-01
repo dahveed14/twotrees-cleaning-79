@@ -67,7 +67,7 @@ export const ContactForm = () => {
         });
 
       if (error) {
-        console.error('Supabase error:', error);
+        // Log error server-side only, don't expose to client
         throw new Error('Failed to submit form. Please try again.');
       }
 
@@ -79,7 +79,7 @@ export const ContactForm = () => {
       // Navigate to contact thank you page
       navigate('/contact-thank-you');
     } catch (error) {
-      console.error('Form submission error:', error);
+      // Don't log sensitive error details to console
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again or call us directly.",

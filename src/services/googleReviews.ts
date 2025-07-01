@@ -25,24 +25,21 @@ export interface GoogleReviewsResponse {
 
 export const fetchGoogleReviews = async (): Promise<GoogleReview[]> => {
   try {
-    console.log('Calling Supabase Edge Function to fetch Google Reviews...');
-    
     const { data, error } = await supabase.functions.invoke('fetch-google-reviews');
     
     if (error) {
-      console.error('Supabase function error:', error);
+      // Don't expose internal errors to console
       throw new Error('Failed to fetch reviews from Edge Function');
     }
 
     if (data && data.reviews && data.reviews.length > 0) {
-      console.log('Successfully fetched Google reviews via Edge Function:', data.reviews.length);
       return data.reviews;
     }
     
-    console.log('No reviews returned from Edge Function, using fallback');
+    // Use fallback reviews silently
     return [];
   } catch (error) {
-    console.error('Error calling Edge Function for Google reviews:', error);
+    // Fail silently, don't expose internal errors
     return [];
   }
 };

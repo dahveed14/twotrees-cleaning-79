@@ -12,7 +12,13 @@ declare global {
 
 const Book = () => {
   const handleBookingClick = (location: string) => {
-    console.log(`Booking clicked from: ${location}`);
+    // Track booking clicks without console logging
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'booking_click', {
+        event_category: 'Book',
+        event_label: location
+      });
+    }
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 

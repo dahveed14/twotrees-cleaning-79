@@ -239,9 +239,9 @@ const Commercial = () => {
                 alt="Two Trees Cleaning team owners - professional commercial cleaning service providers serving Ventura County businesses in Santa Barbara, Thousand Oaks, and surrounding areas" 
                 className="rounded-2xl shadow-xl w-full h-auto" 
                 onError={e => {
-                  console.log('Team image failed to load:', e.currentTarget.src);
+                  // Silently fallback to default image without logging
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
-                }} 
+                }}
               />
             </div>
           </div>
