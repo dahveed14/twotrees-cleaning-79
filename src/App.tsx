@@ -36,7 +36,6 @@ import Book from "./pages/Book";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import Terms from "./pages/Terms";
-import SitemapRoute from "./components/SitemapRoute";
 
 const queryClient = new QueryClient();
 
@@ -79,8 +78,6 @@ const App = () => (
           <Route path="/services/post-construction" element={<PostConstruction />} />
           <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />
           <Route path="/services/vacation-rental" element={<VacationRental />} />
-          {/* Sitemap route */}
-          <Route path="/sitemap.xml" element={<SitemapRoute />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
