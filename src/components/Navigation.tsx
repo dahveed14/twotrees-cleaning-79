@@ -19,7 +19,7 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/images/two-trees-logo.png" 
+              src="/lovable-uploads/9cdcaf28-1e78-458c-901b-553f5567dac3.png" 
               alt="Two Trees Cleaning" 
               className="h-20 w-auto"
             />
