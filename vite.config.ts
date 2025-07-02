@@ -8,10 +8,16 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    headers: {
-      'Content-Type': 'application/xml; charset=utf-8'
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // Ensure clean production builds without dev scripts
+        manualChunks: undefined,
+      }
     }
   },
+  assetsInclude: ['**/*.xml'],
   plugins: [
     react(),
     mode === 'development' &&

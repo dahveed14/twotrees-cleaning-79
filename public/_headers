@@ -1,11 +1,17 @@
-# Headers for XML files
+# Static XML files - serve directly without processing
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
 
 /robots.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=86400
+
+# Ensure all XML files are served with correct MIME type
+/*.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
 
 # Security headers for all files
 /*
