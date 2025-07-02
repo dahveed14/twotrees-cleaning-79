@@ -1,7 +1,7 @@
-# Static files should be served directly, not processed by React Router
-/sitemap.xml /sitemap.xml 200
-/robots.txt /robots.txt 200
-/*.xml /:splat.xml 200
+# Static XML and text files - serve directly
+/sitemap.xml /sitemap.xml 200!
+/robots.txt /robots.txt 200!
+/*.xml /:splat 200!
 
-# SPA fallback - all other routes go to index.html
+# SPA fallback - all other routes go to index.html  
 /* /index.html 200
