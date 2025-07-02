@@ -6,28 +6,33 @@ import { useEffect, useState } from "react";
 import { CommercialReviews } from "@/components/CommercialReviews";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
+import { updateMetaTags } from "@/utils/metaTags";
 
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   const [showPromoBar, setShowPromoBar] = useState(true);
   useEffect(() => {
-    // Set page title and meta description for SEO
-    document.title = "Commercial Cleaning Services Ventura County | Two Trees Cleaning - Licensed & Insured Office Cleaning";
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional office cleaning services in Ventura County. Two Trees Cleaning provides reliable commercial cleaning for businesses in Santa Barbara, Thousand Oaks, Oxnard & Camarillo. Licensed & insured.');
-    }
+    const venturaCountyCoordinates = {
+      latitude: "34.3705",
+      longitude: "-119.1391"
+    };
 
-    // Add canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/commercial');
+    updateMetaTags({
+      title: "Commercial Cleaning Services Ventura County | Two Trees Cleaning - Licensed & Insured Office Cleaning",
+      description: "Professional office cleaning services in Ventura County. Two Trees Cleaning provides reliable commercial cleaning for businesses in Santa Barbara, Thousand Oaks, Oxnard & Camarillo. Licensed & insured.",
+      cityName: "Ventura County",
+      cityCoordinates: venturaCountyCoordinates,
+      url: "https://twotreescleaning.com/commercial",
+      image: "https://twotreescleaning.com/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png",
+      keywords: [
+        "commercial cleaning Ventura County",
+        "office cleaning service",
+        "business cleaning Ventura County",
+        "commercial janitorial service",
+        "workplace cleaning Ventura County",
+        "professional business cleaning"
+      ]
+    });
 
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
