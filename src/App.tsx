@@ -80,8 +80,7 @@ const App = () => (
           <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />
           <Route path="/services/vacation-rental" element={<VacationRental />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          {/* Exclude XML and static files from React Router */}
-          <Route path="*" element={window.location.pathname.endsWith('.xml') || window.location.pathname.endsWith('.txt') ? null : <NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
