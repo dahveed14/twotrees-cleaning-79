@@ -33,7 +33,7 @@ export const MobileNavigation = ({
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden py-4 border-t border-gray-200">
+        <div className="md:hidden py-4 border-t border-gray-200 bg-white shadow-lg">
           <div className="flex flex-col space-y-4">
             <Link 
               to="/" 
