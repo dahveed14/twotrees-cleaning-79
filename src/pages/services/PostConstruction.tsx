@@ -31,7 +31,22 @@ const PostConstruction = () => {
         "construction debris cleanup",
         "builder cleaning Ventura County",
         "new construction cleaning",
-        "contractor cleaning service"
+        "contractor cleaning service",
+        "post renovation cleanup",
+        "construction site cleaning",
+        "final construction cleaning",
+        "construction dust removal",
+        "paint removal cleaning service",
+        "window cleaning after construction",
+        "floor cleaning post construction",
+        "HVAC cleaning after construction",
+        "fixture cleaning post construction",
+        "construction cleanup Santa Barbara",
+        "construction cleanup Thousand Oaks",
+        "construction cleanup Oxnard",
+        "construction cleanup Camarillo",
+        "residential construction cleanup",
+        "commercial construction cleanup"
       ]
     });
   }, []);
@@ -226,6 +241,124 @@ const PostConstruction = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 text-center text-sm">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Our Process */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-two-trees-green text-center mb-12">
+              Our 4-Step Construction Cleanup Process
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  step: "1",
+                  title: "Site Assessment",
+                  description: "We evaluate the construction site, identify debris types, and plan the safest cleanup approach."
+                },
+                {
+                  step: "2", 
+                  title: "Debris Removal",
+                  description: "Safe removal of construction materials, dust, and debris using professional-grade equipment."
+                },
+                {
+                  step: "3",
+                  title: "Deep Cleaning",
+                  description: "Detailed cleaning of all surfaces, fixtures, windows, and HVAC systems to remove construction residue."
+                },
+                {
+                  step: "4",
+                  title: "Final Inspection",
+                  description: "Thorough walkthrough to ensure your space is move-in ready and meets our quality standards."
+                }
+              ].map((process, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow text-center">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-two-trees-green text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                      {process.step}
+                    </div>
+                    <CardTitle className="text-xl text-two-trees-green">
+                      {process.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 text-sm">{process.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Related Services */}
+          <div className="mb-16 bg-gray-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-two-trees-green text-center mb-8">
+              Related Cleaning Services
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Deep Cleaning",
+                  description: "Comprehensive cleaning for homes that need extra attention",
+                  href: "/services/deep-cleaning"
+                },
+                {
+                  title: "Move-Out Cleaning", 
+                  description: "Detailed cleaning for properties being vacated",
+                  href: "/services/move-in-move-out"
+                },
+                {
+                  title: "Commercial Cleaning",
+                  description: "Professional cleaning for offices and commercial spaces",
+                  href: "/services/commercial-cleaning"
+                }
+              ].map((service, index) => (
+                <Link
+                  key={index}
+                  to={service.href}
+                  className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow block"
+                >
+                  <h3 className="text-lg font-semibold text-two-trees-green mb-2">{service.title}</h3>
+                  <p className="text-gray-600 text-sm">{service.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-two-trees-green text-center mb-12">
+              Post-Construction Cleaning FAQ
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  question: "How long does post-construction cleanup take?",
+                  answer: "Timeline varies by project size, but most residential projects take 1-2 days for final cleanup, while commercial projects may take 3-5 days."
+                },
+                {
+                  question: "Do you remove construction debris?",
+                  answer: "Yes, we safely remove and dispose of construction debris, dust, paint splatters, and other construction-related materials."
+                },
+                {
+                  question: "Is post-construction cleaning safe?",
+                  answer: "Absolutely. Our team uses proper safety equipment and follows OSHA guidelines for construction site cleanup to ensure safe working conditions."
+                },
+                {
+                  question: "What areas do you serve for construction cleanup?",
+                  answer: "We provide post-construction cleaning throughout Ventura County, including Santa Barbara, Thousand Oaks, Oxnard, Camarillo, and surrounding areas."
+                }
+              ].map((faq, index) => (
+                <Card key={index} className="border-none shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-two-trees-green">
+                      {faq.question}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">{faq.answer}</p>
                   </CardContent>
                 </Card>
               ))}

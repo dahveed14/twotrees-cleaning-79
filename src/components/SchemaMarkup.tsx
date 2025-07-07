@@ -183,19 +183,19 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
               "priceCurrency": "USD"
             }
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Post Construction Cleaning", 
-              "description": `Professional cleaning after construction or renovation in ${cityName || 'Ventura County'}`
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Post Construction Cleaning", 
+                "description": `Professional cleaning after construction or renovation in ${cityName || 'Ventura County'}`
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": "300",
+                "priceCurrency": "USD"
+              }
             },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": "250",
-              "priceCurrency": "USD"
-            }
-          },
           {
             "@type": "Offer",
             "itemOffered": {
@@ -409,7 +409,7 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
             "@type": "Offer",
             "priceSpecification": {
               "@type": "PriceSpecification",
-              "minPrice": "250",
+              "minPrice": "300",
               "priceCurrency": "USD"
             }
           }
