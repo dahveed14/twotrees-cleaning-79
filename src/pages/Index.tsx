@@ -8,28 +8,28 @@ import { SocialProof } from "@/components/SocialProof";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
+import { updateMetaTags } from "@/utils/metaTags";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
 
   useEffect(() => {
-    // Set page title and meta description for SEO
-    document.title = "Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured";
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140.');
-    }
-
-    // Add canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://twotreescleaning.com/');
+    // Set meta tags using the utility function
+    updateMetaTags({
+      title: "Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured",
+      description: "Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140.",
+      url: "https://twotreescleaning.com/",
+      keywords: [
+        "house cleaning Ventura County",
+        "professional cleaning service",
+        "housekeeping Ventura",
+        "reliable cleaning Oxnard",
+        "home cleaning Thousand Oaks",
+        "maid service Camarillo",
+        "deep cleaning Santa Barbara",
+        "move out cleaning Westlake Village"
+      ]
+    });
 
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
