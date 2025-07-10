@@ -4,7 +4,6 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
-import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Shield, Users } from "lucide-react";
@@ -25,6 +24,26 @@ const Contact = () => {
         "cleaning service contact form"
       ]
     });
+
+    // Load Convert Labs scripts
+    const jqueryScript = document.createElement('script');
+    jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
+    document.head.appendChild(jqueryScript);
+
+    const convertLabsScript = document.createElement('script');
+    convertLabsScript.src = 'https://convertlabs.io/js/booking_embed.js';
+    document.head.appendChild(convertLabsScript);
+
+    const style = document.createElement('style');
+    style.textContent = '.Convertlabs{width: 1px;min-width: 100%; height: 1px; min-height: 100%;}';
+    document.head.appendChild(style);
+
+    return () => {
+      // Cleanup scripts on unmount
+      if (document.head.contains(jqueryScript)) document.head.removeChild(jqueryScript);
+      if (document.head.contains(convertLabsScript)) document.head.removeChild(convertLabsScript);
+      if (document.head.contains(style)) document.head.removeChild(style);
+    };
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -94,9 +113,26 @@ const Contact = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
+            {/* Convert Labs Form */}
             <div className="lg:col-span-2">
-              <ContactForm />
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl font-bold text-two-trees-green mb-4">
+                    Get Your Free Quote
+                  </h2>
+                  <p className="text-lg text-gray-600">
+                    Fill out the form below and we'll get back to you within 24 hours
+                  </p>
+                </div>
+                <iframe 
+                  src="https://convertlabs.io/quote_form/3296" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  style={{width: '100%'}}
+                  className="Convertlabs"
+                  title="Two Trees Cleaning Quote Form"
+                />
+              </div>
             </div>
 
             {/* Contact Information */}
