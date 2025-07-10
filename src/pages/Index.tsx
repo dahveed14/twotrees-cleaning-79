@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Benefits } from "@/components/Benefits";
@@ -74,6 +75,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured</title>
+        <meta name="description" content="Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140." />
+        <link rel="canonical" href="https://twotreescleaning.com/" />
+      </Helmet>
       <SchemaMarkup />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Hero onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />

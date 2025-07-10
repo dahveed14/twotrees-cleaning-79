@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -56,6 +57,11 @@ const Summerland = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Summerland House Cleaning Services | Two Trees Cleaning | Beach Community Specialists</title>
+        <meta name="description" content="Professional house cleaning services in Summerland, CA. Serving beachside homes, vacation rentals & coastal properties. Licensed & insured. Book your cleaning today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/summerland" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Summerland"
         cityCoordinates={summerlandCoordinates}

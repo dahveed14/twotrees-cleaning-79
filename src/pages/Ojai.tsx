@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -89,6 +90,11 @@ const Ojai = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Ojai House Cleaning Services | Two Trees Cleaning | Spiritual & Artistic Community</title>
+        <meta name="description" content="Eco-friendly house cleaning services in Ojai, CA. Serving artist community, spiritual retreats & luxury vacation rentals. Sustainable, licensed & trusted. Book today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/ojai" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Ojai"
         cityCoordinates={ojaiCoordinates}

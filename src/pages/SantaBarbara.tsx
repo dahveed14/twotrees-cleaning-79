@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -88,6 +89,11 @@ const SantaBarbara = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Santa Barbara House Cleaning Services | Two Trees Cleaning | Premium Luxury Care</title>
+        <meta name="description" content="Premium house cleaning services in Santa Barbara, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners." />
+        <link rel="canonical" href="https://twotreescleaning.com/santa-barbara" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Santa Barbara"
         cityCoordinates={santaBarbaraCoordinates}

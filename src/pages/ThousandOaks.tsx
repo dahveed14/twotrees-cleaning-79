@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -89,6 +90,11 @@ const ThousandOaks = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Thousand Oaks House Cleaning Services | Two Trees Cleaning | Family-Owned</title>
+        <meta name="description" content="Professional house cleaning services in Thousand Oaks, CA. Serving Conejo Valley families, Westlake Village border, and all neighborhoods. Licensed & insured. Book today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/thousand-oaks" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Thousand Oaks"
         cityCoordinates={thousandOaksCoordinates}

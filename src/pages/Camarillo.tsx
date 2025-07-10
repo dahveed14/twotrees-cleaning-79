@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -89,6 +90,11 @@ const Camarillo = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Camarillo House Cleaning Services | Two Trees Cleaning | Professional & Reliable</title>
+        <meta name="description" content="Professional house cleaning services in Camarillo, CA. Serving Premium Outlets area, family neighborhoods, and suburban communities. Licensed & insured. Book today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/camarillo" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Camarillo"
         cityCoordinates={camarilloCoordinates}

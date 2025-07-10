@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -90,6 +91,11 @@ const Oxnard = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Oxnard House Cleaning Services | Two Trees Cleaning | Affordable & Reliable</title>
+        <meta name="description" content="Affordable house cleaning services in Oxnard, CA. Serving coastal communities, family neighborhoods, and agricultural areas. Licensed, insured & reliable. Book today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/oxnard" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Oxnard"
         cityCoordinates={oxnardCoordinates}

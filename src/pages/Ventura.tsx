@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -89,6 +90,11 @@ const Ventura = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Ventura House Cleaning Services | Two Trees Cleaning | Historic & Coastal</title>
+        <meta name="description" content="Professional house cleaning services in Ventura, CA. Serving historic downtown, pier area, beach communities & missions. Licensed, insured & locally trusted. Book today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/ventura" />
+      </Helmet>
       <SchemaMarkup 
         cityName="Ventura"
         cityCoordinates={venturaCoordinates}
