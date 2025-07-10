@@ -7,25 +7,10 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
+
 import { Link } from "react-router-dom";
 
 const PortHueneme = () => {
-  useEffect(() => {
-    const portHuenemeCoordinates = {
-      latitude: "34.1478",
-      longitude: "-119.1951"
-    };
-
-    updateMetaTags({
-      title: "Port Hueneme House Cleaning Services | Two Trees Cleaning | Military Family Specialists",
-      description: "Professional house cleaning services in Port Hueneme, CA. Serving military families and working professionals. Affordable, reliable cleaning. Licensed & insured.",
-      cityName: "Port Hueneme",
-      cityCoordinates: portHuenemeCoordinates,
-      url: "https://twotreescleaning.com/port-hueneme",
-      keywords: generateCityKeywords("Port Hueneme")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

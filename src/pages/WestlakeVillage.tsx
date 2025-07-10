@@ -7,24 +7,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
+
 
 const WestlakeVillage = () => {
-  useEffect(() => {
-    const westlakeVillageCoordinates = {
-      latitude: "34.1458",
-      longitude: "-118.8056"
-    };
-
-    updateMetaTags({
-      title: "Westlake Village House Cleaning Services | Two Trees Cleaning | Luxury Home Specialists",
-      description: "Premium house cleaning services in Westlake Village, CA. Serving upscale homes with meticulous attention to detail. Licensed, insured & trusted by luxury homeowners.",
-      cityName: "Westlake Village",
-      cityCoordinates: westlakeVillageCoordinates,
-      url: "https://twotreescleaning.com/westlake-village",
-      keywords: generateCityKeywords("Westlake Village")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
