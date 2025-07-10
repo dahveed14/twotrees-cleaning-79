@@ -1,5 +1,4 @@
 
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,24 +7,8 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Summerland = () => {
-  useEffect(() => {
-    const summerlandCoordinates = {
-      latitude: "34.4208",
-      longitude: "-119.5951"
-    };
-
-    updateMetaTags({
-      title: "Summerland House Cleaning Services | Two Trees Cleaning | Beach Community Specialists",
-      description: "Professional house cleaning services in Summerland, CA. Serving beachside homes, vacation rentals & coastal properties. Licensed & insured. Book your cleaning today!",
-      cityName: "Summerland",
-      cityCoordinates: summerlandCoordinates,
-      url: "https://twotreescleaning.com/summerland",
-      keywords: generateCityKeywords("Summerland")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

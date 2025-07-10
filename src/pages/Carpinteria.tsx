@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,24 +8,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
+
 
 const Carpinteria = () => {
-  useEffect(() => {
-    const carpinteriaCoordinates = {
-      latitude: "34.3988",
-      longitude: "-119.5143"
-    };
-
-    updateMetaTags({
-      title: "Carpinteria House Cleaning Services | Two Trees Cleaning | World's Safest Beach Community",
-      description: "Professional house cleaning services in Carpinteria, CA. Serving family homes near the World's Safest Beach. Licensed & insured cleaning company. Book today!",
-      cityName: "Carpinteria",
-      cityCoordinates: carpinteriaCoordinates,
-      url: "https://twotreescleaning.com/carpinteria",
-      keywords: generateCityKeywords("Carpinteria")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

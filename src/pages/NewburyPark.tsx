@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,24 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
 import { Link } from "react-router-dom";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const NewburyPark = () => {
-  useEffect(() => {
-    const newburyParkCoordinates = {
-      latitude: "34.1858",
-      longitude: "-118.9100"
-    };
-
-    updateMetaTags({
-      title: "Newbury Park House Cleaning Services | Two Trees Cleaning | Conejo Valley Families",
-      description: "Professional house cleaning services in Newbury Park, CA. Serving suburban families in Conejo Valley. Licensed, insured & trusted. Book your cleaning today!",
-      cityName: "Newbury Park",
-      cityCoordinates: newburyParkCoordinates,
-      url: "https://twotreescleaning.com/newbury-park",
-      keywords: generateCityKeywords("Newbury Park")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

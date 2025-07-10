@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,24 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Mountain } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Ojai = () => {
-  useEffect(() => {
-    const ojaiCoordinates = {
-      latitude: "34.4481",
-      longitude: "-119.2429"
-    };
-
-    updateMetaTags({
-      title: "Ojai House Cleaning Services | Two Trees Cleaning | Spiritual & Artistic Community",
-      description: "Eco-friendly house cleaning services in Ojai, CA. Serving artist community, spiritual retreats & luxury vacation rentals. Sustainable, licensed & trusted. Book today!",
-      cityName: "Ojai",
-      cityCoordinates: ojaiCoordinates,
-      url: "https://twotreescleaning.com/ojai",
-      keywords: generateCityKeywords("Ojai")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

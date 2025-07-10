@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,24 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Anchor } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Ventura = () => {
-  useEffect(() => {
-    const venturaCoordinates = {
-      latitude: "34.2818",
-      longitude: "-119.2945"
-    };
-
-    updateMetaTags({
-      title: "Ventura House Cleaning Services | Two Trees Cleaning | Historic & Coastal",
-      description: "Professional house cleaning services in Ventura, CA. Serving historic downtown, pier area, beach communities & missions. Licensed, insured & locally trusted. Book today!",
-      cityName: "Ventura",
-      cityCoordinates: venturaCoordinates,
-      url: "https://twotreescleaning.com/ventura",
-      keywords: generateCityKeywords("Ventura")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

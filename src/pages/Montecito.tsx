@@ -9,24 +9,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Crown } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
+
 
 const Montecito = () => {
-  useEffect(() => {
-    const montecitoCoordinates = {
-      latitude: "34.4361",
-      longitude: "-119.6378"
-    };
-
-    updateMetaTags({
-      title: "Montecito House Cleaning Services | Two Trees Cleaning | Luxury Home Care",
-      description: "Premium house cleaning services in Montecito, CA. Serving luxury estates, celebrity homes & the village. Discreet, trusted, and experienced since 2020. Book today!",
-      cityName: "Montecito",
-      cityCoordinates: montecitoCoordinates,
-      url: "https://twotreescleaning.com/montecito",
-      keywords: generateCityKeywords("Montecito")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

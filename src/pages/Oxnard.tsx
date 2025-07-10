@@ -1,5 +1,4 @@
 
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -9,24 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Waves } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const Oxnard = () => {
-  useEffect(() => {
-    const oxnardCoordinates = {
-      latitude: "34.1975",
-      longitude: "-119.1771"
-    };
-
-    updateMetaTags({
-      title: "Oxnard House Cleaning Services | Two Trees Cleaning | Affordable & Reliable",
-      description: "Affordable house cleaning services in Oxnard, CA. Serving coastal communities, family neighborhoods, and agricultural areas. Licensed, insured & reliable. Book today!",
-      cityName: "Oxnard",
-      cityCoordinates: oxnardCoordinates,
-      url: "https://twotreescleaning.com/oxnard",
-      keywords: generateCityKeywords("Oxnard")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

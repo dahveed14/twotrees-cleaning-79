@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,24 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Home } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const ThousandOaks = () => {
-  useEffect(() => {
-    const thousandOaksCoordinates = {
-      latitude: "34.1706",
-      longitude: "-118.8376"
-    };
-
-    updateMetaTags({
-      title: "Thousand Oaks House Cleaning Services | Two Trees Cleaning | Family-Owned",
-      description: "Professional house cleaning services in Thousand Oaks, CA. Serving Conejo Valley families, Westlake Village border, and all neighborhoods. Licensed & insured. Book today!",
-      cityName: "Thousand Oaks",
-      cityCoordinates: thousandOaksCoordinates,
-      url: "https://twotreescleaning.com/thousand-oaks",
-      keywords: generateCityKeywords("Thousand Oaks")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {

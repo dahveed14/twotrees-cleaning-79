@@ -8,24 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
+
 
 const Camarillo = () => {
-  useEffect(() => {
-    const camarilloCoordinates = {
-      latitude: "34.2164",
-      longitude: "-119.0376"
-    };
-
-    updateMetaTags({
-      title: "Camarillo House Cleaning Services | Two Trees Cleaning | Professional & Reliable",
-      description: "Professional house cleaning services in Camarillo, CA. Serving Premium Outlets area, family neighborhoods, and suburban communities. Licensed & insured. Book today!",
-      cityName: "Camarillo",
-      cityCoordinates: camarilloCoordinates,
-      url: "https://twotreescleaning.com/camarillo",
-      keywords: generateCityKeywords("Camarillo")
-    });
-  }, []);
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
