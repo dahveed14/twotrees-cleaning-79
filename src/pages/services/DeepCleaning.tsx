@@ -120,7 +120,7 @@ const DeepCleaning = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    "Inside/outside of all appliances",
+                    "Exterior of all appliances (plus inside microwave)",
                     "Cabinet fronts and handles",
                     "Countertops and backsplash scrubbing",
                     "Sink and faucet deep sanitizing",
