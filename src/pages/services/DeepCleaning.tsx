@@ -166,8 +166,6 @@ const DeepCleaning = () => {
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  "Baseboards and trim cleaning",
-                  "Window sills and tracks",
                   "Light switches and outlets",
                   "Door frames and handles",
                   "Ceiling fan blades",
