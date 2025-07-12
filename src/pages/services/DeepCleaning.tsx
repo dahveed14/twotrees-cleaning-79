@@ -144,7 +144,7 @@ const DeepCleaning = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    "Tile and grout scrubbing",
+                    "Tile and grout scrubbing (non-restorative)",
                     "Shower/tub deep cleaning",
                     "Toilet cleaning inside and out",
                     "Mirror and glass cleaning",
