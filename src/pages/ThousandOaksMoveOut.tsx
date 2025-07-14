@@ -228,10 +228,7 @@ const ThousandOaksMoveOut = () => {
                     "Light fixtures and ceiling fans",
                     "Door frames and switches",
                     "Closet cleaning",
-                    "All surfaces dusted",
-                    "Interior window cleaning",
-                    "Garage cleaning (if applicable)",
-                    "Final walkthrough prep"
+                    "All surfaces dusted"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
