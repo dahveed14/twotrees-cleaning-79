@@ -151,8 +151,8 @@ const ThousandOaksMoveOut = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" 
-                alt="Move-out cleaning service in Thousand Oaks"
+                src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
+                alt="Two Trees Cleaning professional move-out cleaning service in Thousand Oaks - expert team member preparing a home for final inspection to help tenants get their security deposit back"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
