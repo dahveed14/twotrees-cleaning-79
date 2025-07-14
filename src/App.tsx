@@ -24,6 +24,7 @@ import PortHueneme from "./pages/PortHueneme";
 import NewburyPark from "./pages/NewburyPark";
 import WestlakeVillage from "./pages/WestlakeVillage";
 import ThousandOaksMoveOut from "./pages/ThousandOaksMoveOut";
+import VenturaMoveOut from "./pages/VenturaMoveOut";
 import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
 import NotFound from "./pages/NotFound";
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/services/vacation-rental" element={<VacationRental />} />
           {/* Location-specific service routes */}
           <Route path="/thousand-oaks/move-out-cleaning" element={<ThousandOaksMoveOut />} />
+          <Route path="/ventura/move-out-cleaning" element={<VenturaMoveOut />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
