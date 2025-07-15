@@ -149,43 +149,57 @@ export default function OjaiMoveOut() {
       <main className="min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <section 
-            className="relative py-20 px-4 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&h=400&fit=crop)' }}
-          >
-            <div className="absolute inset-0 bg-black/40"></div>
-            <div className="relative max-w-4xl mx-auto text-center text-white">
-              <Badge className="mb-4 bg-white/10 text-white border-white/20">
-                Move-Out Cleaning Specialists
-              </Badge>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Move-Out Cleaning in Ojai
-              </h1>
-              
-              <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Whether you're leaving a cottage in the East End or a rental in Meiners Oaks, Two Trees Cleaning provides move-out cleanings that meet landlord checklists and leave your space spotless.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-white px-8 py-4 text-lg font-semibold"
-                  onClick={handleBookingClick}
-                >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Get a Free Quote
-                </Button>
+          <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
+                    Move-Out Cleaning Specialists in Ojai
+                  </Badge>
+                  
+                  <h1 className="text-4xl md:text-6xl font-bold text-two-trees-green leading-tight">
+                    Move-Out Cleaning in Ojai
+                  </h1>
+                  
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    Whether you're leaving a cottage in the East End or a rental in Meiners Oaks, Two Trees Cleaning provides move-out cleanings that meet landlord checklists and leave your space spotless.
+                  </p>
+                </div>
                 
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white/20 px-8 py-4 text-lg"
-                  onClick={handlePhoneClick}
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  (805) 456-1421
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button 
+                    size="lg" 
+                    className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold"
+                    onClick={handleBookingClick}
+                  >
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Get a Free Quote
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg"
+                    onClick={handlePhoneClick}
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    (805) 456-1421
+                  </Button>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Star className="w-4 h-4 fill-two-trees-gold text-two-trees-gold" />
+                  <span className="font-semibold">4.9/5 stars</span>
+                  <span>from over 200+ families who trust our move-out cleaning</span>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
+                  alt="Move-out cleaning service in Ojai - professional cleaner working in a spotless home with beautiful mountain views" 
+                  className="rounded-2xl shadow-2xl w-full h-auto" 
+                />
               </div>
             </div>
           </section>
