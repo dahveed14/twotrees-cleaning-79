@@ -91,7 +91,7 @@ const SantaBarbaraMoveOut = () => {
           {/* Hero Section */}
           <section 
             className="relative py-20 px-4 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/lovable-uploads/77a0b0f4-7cad-4fdf-ad34-f5def09d3d9b.png)' }}
+            style={{ backgroundImage: 'url(/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.png)' }}
           >
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative max-w-4xl mx-auto text-center text-white">
