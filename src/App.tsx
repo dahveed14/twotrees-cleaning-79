@@ -25,6 +25,7 @@ import NewburyPark from "./pages/NewburyPark";
 import WestlakeVillage from "./pages/WestlakeVillage";
 import ThousandOaksMoveOut from "./pages/ThousandOaksMoveOut";
 import VenturaMoveOut from "./pages/VenturaMoveOut";
+import CamarilloMoveOut from "./pages/CamarilloMoveOut";
 import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
 import NotFound from "./pages/NotFound";
@@ -86,6 +87,7 @@ const App = () => (
           {/* Location-specific service routes */}
           <Route path="/thousand-oaks/move-out-cleaning" element={<ThousandOaksMoveOut />} />
           <Route path="/ventura/move-out-cleaning" element={<VenturaMoveOut />} />
+          <Route path="/camarillo/move-out-cleaning" element={<CamarilloMoveOut />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
