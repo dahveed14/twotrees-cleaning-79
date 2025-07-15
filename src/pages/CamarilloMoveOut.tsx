@@ -103,7 +103,7 @@ const CamarilloMoveOut = () => {
                       onClick={handlePhoneClick}
                       asChild
                     >
-                      <a href="tel:(805) 665-9272">(805) 665-9272</a>
+                      <a href="tel:805-456-1421">805-456-1421</a>
                     </Button>
                   </div>
                   
@@ -121,7 +121,7 @@ const CamarilloMoveOut = () => {
                 
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/20a6f422-6666-433e-a68d-837ce6ed1a67.png"
+                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png"
                     alt="Professional move-out cleaning service in Camarillo by Two Trees Cleaning team"
                     className="rounded-2xl shadow-2xl w-full h-auto"
                   />
@@ -454,7 +454,7 @@ const CamarilloMoveOut = () => {
                   onClick={handlePhoneClick}
                   asChild
                 >
-                  <a href="tel:(805) 665-9272">Call (805) 665-9272</a>
+                  <a href="tel:805-456-1421">Call 805-456-1421</a>
                 </Button>
               </div>
             </div>
