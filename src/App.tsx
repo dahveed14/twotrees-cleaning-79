@@ -27,6 +27,7 @@ import ThousandOaksMoveOut from "./pages/ThousandOaksMoveOut";
 import VenturaMoveOut from "./pages/VenturaMoveOut";
 import CamarilloMoveOut from "./pages/CamarilloMoveOut";
 import WestlakeVillageMoveOut from "./pages/WestlakeVillageMoveOut";
+import SantaBarbaraMoveOut from "./pages/SantaBarbaraMoveOut";
 import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
 import NotFound from "./pages/NotFound";
@@ -90,6 +91,7 @@ const App = () => (
           <Route path="/ventura/move-out-cleaning" element={<VenturaMoveOut />} />
           <Route path="/camarillo/move-out-cleaning" element={<CamarilloMoveOut />} />
           <Route path="/westlake-village/move-out-cleaning" element={<WestlakeVillageMoveOut />} />
+          <Route path="/santa-barbara/move-out-cleaning" element={<SantaBarbaraMoveOut />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
