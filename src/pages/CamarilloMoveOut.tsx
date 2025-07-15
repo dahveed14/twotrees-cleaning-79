@@ -449,8 +449,8 @@ const CamarilloMoveOut = () => {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline"
-                  className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  variant="secondary"
+                  className="text-lg px-8 py-6"
                   onClick={handlePhoneClick}
                   asChild
                 >
