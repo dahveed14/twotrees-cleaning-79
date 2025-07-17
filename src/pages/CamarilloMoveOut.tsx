@@ -427,6 +427,64 @@ const CamarilloMoveOut = () => {
             </div>
           </section>
 
+          {/* Related Services & Other Locations */}
+          <section className="py-16 bg-muted/30">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="grid md:grid-cols-2 gap-12">
+                
+                {/* Related Services */}
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-6">Related Services in Camarillo</h3>
+                  <div className="space-y-4">
+                    <div className="bg-background p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/camarillo" className="hover:underline">Regular House Cleaning</a>
+                      </h4>
+                      <p className="text-muted-foreground text-sm">Ongoing cleaning services for your Camarillo home</p>
+                    </div>
+                    <div className="bg-background p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/services/deep-cleaning" className="hover:underline">Deep Cleaning</a>
+                      </h4>
+                      <p className="text-muted-foreground text-sm">Comprehensive one-time cleaning service</p>
+                    </div>
+                    <div className="bg-background p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/services/move-in-move-out" className="hover:underline">Move-In Cleaning</a>
+                      </h4>
+                      <p className="text-muted-foreground text-sm">Fresh start cleaning for your new home</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Other Locations */}
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-6">Move-Out Cleaning in Other Areas</h3>
+                  <div className="space-y-4">
+                    <div className="bg-background p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/thousand-oaks/move-out-cleaning" className="hover:underline">Thousand Oaks Move-Out</a>
+                      </h4>
+                      <p className="text-muted-foreground text-sm">Premium move-out cleaning for Thousand Oaks properties</p>
+                    </div>
+                    <div className="bg-background p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/westlake-village/move-out-cleaning" className="hover:underline">Westlake Village Move-Out</a>
+                      </h4>
+                      <p className="text-muted-foreground text-sm">Luxury property move-out cleaning services</p>
+                    </div>
+                    <div className="bg-background p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/ventura/move-out-cleaning" className="hover:underline">Ventura Move-Out Cleaning</a>
+                      </h4>
+                      <p className="text-muted-foreground text-sm">Coastal property move-out cleaning services</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Final CTA Section */}
           <section className="py-20 bg-primary text-primary-foreground">
             <div className="container mx-auto px-4 max-w-6xl text-center">

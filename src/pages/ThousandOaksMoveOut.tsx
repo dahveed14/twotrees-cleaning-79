@@ -436,26 +436,60 @@ const ThousandOaksMoveOut = () => {
         </div>
       </section>
 
-      {/* Internal Linking Section */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-semibold text-two-trees-green mb-6">Related Services</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/services/move-in-move-out">
-              <Button variant="outline" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10">
-                All Move-In/Move-Out Services
-              </Button>
-            </Link>
-            <Link to="/thousand-oaks">
-              <Button variant="outline" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10">
-                Thousand Oaks Cleaning Services
-              </Button>
-            </Link>
-            <Link to="/book">
-              <Button variant="outline" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10">
-                Book Online
-              </Button>
-            </Link>
+      {/* Related Services & Other Locations */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            
+            {/* Related Services */}
+            <div>
+              <h3 className="text-2xl font-bold text-two-trees-green mb-6">Related Services in Thousand Oaks</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <h4 className="font-semibold text-two-trees-green mb-2">
+                    <Link to="/thousand-oaks" className="hover:underline">Regular House Cleaning</Link>
+                  </h4>
+                  <p className="text-gray-600 text-sm">Ongoing cleaning services for your Thousand Oaks home</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <h4 className="font-semibold text-two-trees-green mb-2">
+                    <Link to="/services/deep-cleaning" className="hover:underline">Deep Cleaning</Link>
+                  </h4>
+                  <p className="text-gray-600 text-sm">Comprehensive one-time cleaning service</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <h4 className="font-semibold text-two-trees-green mb-2">
+                    <Link to="/services/move-in-move-out" className="hover:underline">Move-In Cleaning</Link>
+                  </h4>
+                  <p className="text-gray-600 text-sm">Fresh start cleaning for your new home</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Other Locations */}
+            <div>
+              <h3 className="text-2xl font-bold text-two-trees-green mb-6">Move-Out Cleaning in Other Areas</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <h4 className="font-semibold text-two-trees-green mb-2">
+                    <Link to="/westlake-village/move-out-cleaning" className="hover:underline">Westlake Village Move-Out</Link>
+                  </h4>
+                  <p className="text-gray-600 text-sm">Premium move-out cleaning for Westlake Village properties</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <h4 className="font-semibold text-two-trees-green mb-2">
+                    <Link to="/ventura/move-out-cleaning" className="hover:underline">Ventura Move-Out Cleaning</Link>
+                  </h4>
+                  <p className="text-gray-600 text-sm">Coastal property move-out cleaning services</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <h4 className="font-semibold text-two-trees-green mb-2">
+                    <Link to="/camarillo/move-out-cleaning" className="hover:underline">Camarillo Move-Out Cleaning</Link>
+                  </h4>
+                  <p className="text-gray-600 text-sm">Family-focused move-out cleaning in Camarillo</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
