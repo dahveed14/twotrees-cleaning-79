@@ -247,6 +247,19 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
               "price": "Custom Quote",
               "priceCurrency": "USD"
             }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vacation Rental Cleaning",
+              "description": `Specialized cleaning for Airbnb, VRBO, and short-term rentals in ${cityName || 'Ventura County'}`
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "180",
+              "priceCurrency": "USD"
+            }
           }
         ]
       },
@@ -514,6 +527,32 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
             "priceSpecification": {
               "@type": "PriceSpecification",
               "price": "Custom Quote",
+              "priceCurrency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "Service",
+          "position": 9,
+          "name": "Vacation Rental Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Two Trees Cleaning",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": cityName || "Ventura",
+              "addressRegion": "CA"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "California"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "180",
               "priceCurrency": "USD"
             }
           }
