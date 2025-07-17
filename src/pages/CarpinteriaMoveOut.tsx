@@ -307,7 +307,7 @@ export const CarpinteriaMoveOut = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-white hover:text-two-trees-green px-8 py-4"
+                className="border-white text-white hover:bg-white hover:text-two-trees-green bg-transparent px-8 py-4"
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-4 h-4 mr-2" />
