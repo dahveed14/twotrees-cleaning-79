@@ -66,14 +66,32 @@ serve(async (req) => {
 
     if (data.status === 'OK' && data.result.reviews) {
       console.log('Successfully fetched reviews:', data.result.reviews.length);
-      // Filter for 4+ star reviews
-      const filteredReviews = data.result.reviews.filter(review => review.rating >= 4);
+      
+      // List of family member names to filter out (add family names here)
+      const familyNames = [
+        // Add family member names here to filter them out
+        // Example: 'John Smith', 'Jane Smith', etc.
+      ];
+      
+      // Filter for 4+ star reviews and exclude family members
+      const filteredReviews = data.result.reviews.filter(review => {
+        const isHighRating = review.rating >= 4;
+        const isNotFamily = !familyNames.some(familyName => 
+          review.author_name.toLowerCase().includes(familyName.toLowerCase())
+        );
+        return isHighRating && isNotFamily;
+      });
+      
+      // If we have customer reviews after filtering, use them
+      // Otherwise, return empty array to trigger fallback reviews on frontend
+      const reviewsToReturn = filteredReviews.length >= 3 ? filteredReviews : [];
       
       return new Response(
         JSON.stringify({ 
-          reviews: filteredReviews,
+          reviews: reviewsToReturn,
           total_rating: data.result.rating,
-          total_reviews: data.result.user_ratings_total
+          total_reviews: data.result.user_ratings_total,
+          filtered_family_reviews: data.result.reviews.length - filteredReviews.length
         }),
         { 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
