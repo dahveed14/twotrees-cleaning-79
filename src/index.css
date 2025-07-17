@@ -111,3 +111,11 @@
 .border-two-trees-gold {
   border-color: var(--two-trees-gold);
 }
+
+.fill-two-trees-green {
+  fill: var(--two-trees-green);
+}
+
+.fill-two-trees-gold {
+  fill: var(--two-trees-gold);
+}
