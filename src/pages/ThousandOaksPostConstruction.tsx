@@ -65,15 +65,15 @@ const ThousandOaksPostConstruction = () => {
   const faqs = [
     {
       question: "Do you bring your own equipment?",
-      answer: "Yes, we bring all professional-grade equipment, specialized tools, and eco-friendly supplies needed for thorough post-construction cleanup. This includes HEPA vacuums, dust removal tools, and safety equipment."
+      answer: "Yes, we bring all professional-grade equipment, specialized tools, and eco-friendly supplies needed for thorough post-construction cleanup. This includes HEPA vacuums, dust removal tools, and safety equipment - everything contractors need for a complete job site cleanup."
     },
     {
       question: "Can you clean after remodels, not just new builds?",
-      answer: "Absolutely! We specialize in cleanup after kitchen remodels, bathroom renovations, room additions, and all types of construction projects - from small home improvements to complete renovations."
+      answer: "Absolutely! We specialize in cleanup after kitchen remodels, bathroom renovations, room additions, and all types of construction projects. Whether it's a small home improvement or complete renovation, we help contractors deliver project-ready results."
     },
     {
       question: "Do you clean construction debris?",
-      answer: "We handle fine dust, paint splatters, and construction residue. However, large debris and materials should be removed by your contractor first. We focus on detailed cleaning to make your space move-in ready."
+      answer: "We handle fine dust, paint splatters, adhesive residue, and construction cleaning residue. Large debris and materials should be removed by contractors first. We focus on detailed cleaning that transforms job sites into move-in ready spaces."
     }
   ];
 
@@ -151,16 +151,16 @@ const ThousandOaksPostConstruction = () => {
               <CardHeader>
                 <CardTitle className="text-xl text-two-trees-green flex items-center gap-2">
                   <HardHat className="w-6 h-6" />
-                  Dust & Debris Removal
+                  Fine Dust Removal
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   {[
-                    "Fine dust removal from walls and floors",
-                    "Cleaning of air vents and fixtures",
-                    "Surface dust elimination",
-                    "HEPA vacuum filtration"
+                    "Fine dust removal from walls, floors, vents, fixtures",
+                    "HEPA vacuum filtration of all surfaces",
+                    "Air vent and ductwork cleaning",
+                    "Comprehensive surface dust elimination"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
@@ -175,16 +175,16 @@ const ThousandOaksPostConstruction = () => {
               <CardHeader>
                 <CardTitle className="text-xl text-two-trees-green flex items-center gap-2">
                   <Hammer className="w-6 h-6" />
-                  Windows & Glass
+                  Windows & Surfaces
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   {[
-                    "Interior window cleaning",
-                    "Window sills and frames",
-                    "Glass door cleaning",
-                    "Mirror and fixture polishing"
+                    "Cleaning of interior windows, sills, and frames",
+                    "Glass door and mirror cleaning",
+                    "Fixture and appliance cleaning",
+                    "Wipe-down of cabinets, counters, doors, and baseboards"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
@@ -204,8 +204,8 @@ const ThousandOaksPostConstruction = () => {
                   {[
                     "Deep clean of bathrooms and kitchens",
                     "Sweeping, vacuuming, and mopping floors",
-                    "Wipe-down of cabinets and counters",
-                    "Cleaning of doors and baseboards"
+                    "Complete floor cleaning and polishing",
+                    "Move-in ready final inspection"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
@@ -308,14 +308,15 @@ const ThousandOaksPostConstruction = () => {
                 </div>
               </div>
               <p className="text-gray-600 mb-6">
-                We serve all of greater Thousand Oaks and surrounding communities with fast, reliable post-construction cleanup services.
+                We serve Newbury Park, Lynn Ranch, Westlake-adjacent, and greater Thousand Oaks 
+                (91320, 91360, 91362) with fast, reliable post-construction cleanup services.
               </p>
               <Button 
                 size="lg" 
                 className="bg-two-trees-green hover:bg-two-trees-green/90 px-8 py-4 text-lg"
                 onClick={() => handleBookingClick('Service Area')}
               >
-                Get a Quote for Your Project Today
+                Get a Quote for Your Post-Construction Project Today
               </Button>
             </CardContent>
           </Card>
