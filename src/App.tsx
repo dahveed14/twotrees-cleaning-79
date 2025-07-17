@@ -32,6 +32,7 @@ import SantaBarbaraMoveOut from "./pages/SantaBarbaraMoveOut";
 import OjaiMoveOut from "./pages/OjaiMoveOut";
 import OxnardMoveOut from "./pages/OxnardMoveOut";
 import SantaPaulaMoveOut from "./pages/SantaPaulaMoveOut";
+import { CarpinteriaMoveOut } from "./pages/CarpinteriaMoveOut";
 import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
 import NotFound from "./pages/NotFound";
@@ -100,6 +101,7 @@ const App = () => (
           <Route path="/oxnard/move-out-cleaning" element={<OxnardMoveOut />} />
         <Route path="/santa-paula" element={<SantaPaula />} />
         <Route path="/santa-paula/move-out-cleaning" element={<SantaPaulaMoveOut />} />
+        <Route path="/carpinteria/move-out-cleaning" element={<CarpinteriaMoveOut />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
