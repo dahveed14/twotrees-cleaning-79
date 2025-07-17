@@ -8,7 +8,7 @@ export const Benefits = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-            Why Busy Professionals Choose Two Trees Cleaning
+            Why Busy Families Choose Two Trees Cleaning
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We understand your time is valuable. That's why we've built our service around reliability, quality, and attention to detail.
