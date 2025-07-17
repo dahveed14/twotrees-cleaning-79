@@ -1,21 +1,18 @@
-
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
-import { TestimonialSchema } from "@/components/TestimonialSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Star, Clock, Shield, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Truck } from "lucide-react";
 
-
-const SantaBarbara = () => {
+const SantaPaula = () => {
 
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Book a Cleaning', `Santa Barbara - ${location}`);
+      (window as any).trackButtonClick('Book a Cleaning', `Santa Paula - ${location}`);
     }
     window.open('https://twotreescleaning.com/book', '_blank');
   };
@@ -24,7 +21,7 @@ const SantaBarbara = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'phone_click', {
         event_category: 'Contact',
-        event_label: 'Santa Barbara Phone Click'
+        event_label: 'Santa Paula Phone Click'
       });
     }
     window.location.href = 'tel:805-456-1421';
@@ -33,55 +30,57 @@ const SantaBarbara = () => {
   const breadcrumbData = [
     { name: "Home", url: "https://twotreescleaning.com/" },
     { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
-    { name: "Santa Barbara", url: "https://twotreescleaning.com/santa-barbara" }
+    { name: "Santa Paula", url: "https://twotreescleaning.com/santa-paula" }
   ];
 
-  const santaBarbaraCoordinates = {
-    latitude: "34.4208",
-    longitude: "-119.6982"
+  const santaPaulaCoordinates = {
+    latitude: "34.3542",
+    longitude: "-119.0593"
   };
 
   const neighborhoods = [
-    "State Street Downtown", "Funk Zone", "Mesa", "Riviera", "Mission Canyon",
-    "Hope Ranch", "San Roque", "Eastside", "Westside", "Near UCSB", "Goleta Border"
+    "Downtown Santa Paula", "The Oaks", "McKevett Heights", "East Santa Paula",
+    "West Santa Paula", "Ventura River Area", "Agricultural Properties", "Mobile Home Parks",
+    "Saticoy Border", "Fillmore Border", "Rural Residential"
   ];
 
   const landmarks = [
-    "State Street", "Santa Barbara Harbor", "Stearns Wharf", "Santa Barbara Mission",
-    "County Courthouse", "Paseo Nuevo", "UCSB Campus", "Leadbetter Beach", "East Beach"
+    "Santa Paula Depot", "Union Oil Museum", "California Oil Museum", "Ventura River",
+    "Santa Paula Peak", "Historic Main Street", "Glen City Park", "Isbell Park",
+    "Faulkner Farm", "Santa Paula Creek"
   ];
 
   const testimonials = [
     {
-      name: "Jennifer M.",
-      location: "State Street Area",
+      name: "Robert M.",
+      location: "The Oaks",
       rating: 5,
-      text: "Two Trees Cleaning has been a lifesaver for our downtown condo. They're always professional and work around our busy schedules."
+      text: "Two Trees is reliable and affordable. They've been cleaning our family home for over a year and always do excellent work."
     },
     {
-      name: "David R.",
-      location: "Mesa District",
+      name: "Isabel V.",
+      location: "Downtown Santa Paula",
       rating: 5,
-      text: "Living near UCSB means lots of entertaining. Two Trees keeps our home spotless for guests. Highly recommend!"
+      text: "Great communication and flexible scheduling. They work around our farm schedule and always leave the house spotless."
     },
     {
-      name: "Maria S.",
-      location: "Mission Canyon",
+      name: "Michael K.",
+      location: "McKevett Heights",
       rating: 5,
-      text: "After our kitchen remodel, Two Trees did an amazing post-construction cleanup. They're detail-oriented and trustworthy."
+      text: "Professional service at fair prices. Two Trees understands the needs of working families in Santa Paula."
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Santa Barbara House Cleaning Services | Two Trees Cleaning | Premium Luxury Care</title>
-        <meta name="description" content="Premium house cleaning services in Santa Barbara, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners." />
-        <link rel="canonical" href="https://twotreescleaning.com/santa-barbara" />
+        <title>Santa Paula House Cleaning Services | Two Trees Cleaning | Reliable & Affordable</title>
+        <meta name="description" content="Reliable house cleaning services in Santa Paula, CA. Serving families, farms, and mobile homes throughout 93060. Licensed, insured & affordable. Book today!" />
+        <link rel="canonical" href="https://twotreescleaning.com/santa-paula" />
       </Helmet>
       <SchemaMarkup 
-        cityName="Santa Barbara"
-        cityCoordinates={santaBarbaraCoordinates}
+        cityName="Santa Paula"
+        cityCoordinates={santaPaulaCoordinates}
         breadcrumbs={breadcrumbData}
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
@@ -89,7 +88,7 @@ const SantaBarbara = () => {
       <Breadcrumbs 
         items={[
           { label: "Service Areas", href: "/service-areas" },
-          { label: "Santa Barbara", current: true }
+          { label: "Santa Paula", current: true }
         ]} 
       />
 
@@ -99,15 +98,16 @@ const SantaBarbara = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4 bg-two-trees-gold/10 text-two-trees-green border-two-trees-gold/20">
-                <MapPin className="w-4 h-4 mr-1" />
-                Santa Barbara, CA
+                <Truck className="w-4 h-4 mr-1" />
+                Santa Paula, CA 93060
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green mb-6">
-                Santa Barbara House Cleaning Services
+                Santa Paula House Cleaning Services
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Professional house cleaning for busy Santa Barbara families. From State Street condos to Mesa estates, 
-                we've been trusted by 200+ local customers since 2020. Licensed, insured, and locally owned.
+                Reliable, affordable house cleaning for Santa Paula families and agricultural properties. 
+                From downtown historic homes to rural residences, we provide quality cleaning services 
+                that work with your budget and schedule. Trusted locally since 2020.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -115,7 +115,7 @@ const SantaBarbara = () => {
                   className="bg-two-trees-green hover:bg-two-trees-green/90 px-8 py-4 text-lg"
                   onClick={() => handleBookingClick('Hero')}
                 >
-                  Book Santa Barbara Cleaning
+                  Book Santa Paula Cleaning
                 </Button>
                 <Button 
                   variant="outline" 
@@ -131,7 +131,7 @@ const SantaBarbara = () => {
             <div className="relative">
               <img 
                 src="/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.png" 
-                alt="Elegant Santa Barbara luxury resort with arched colonnade, palm trees, and ocean views - showcasing the sophisticated coastal lifestyle Two Trees Cleaning serves"
+                alt="Santa Paula house cleaning service"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
@@ -143,7 +143,7 @@ const SantaBarbara = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            Santa Barbara Neighborhoods We Serve
+            Santa Paula Areas We Serve
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {neighborhoods.map((neighborhood, index) => (
@@ -160,34 +160,11 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      {/* Local Landmarks */}
+      {/* Affordable Services */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-two-trees-green mb-6 text-center">
-            Serving All of Santa Barbara
-          </h2>
-          <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            From the historic Santa Barbara Mission to the bustling State Street corridor, we provide 
-            professional cleaning services throughout the American Riviera.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {landmarks.map((landmark, index) => (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-6 h-6 text-two-trees-green" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{landmark}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            Santa Barbara Cleaning Services
+            Reliable Santa Paula Cleaning Services
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
@@ -198,11 +175,29 @@ const SantaBarbara = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600">Perfect for busy State Street professionals and UCSB families.</p>
+                <p className="text-gray-600">Consistent cleaning for hardworking Santa Paula families.</p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Weekly, bi-weekly, or monthly service</li>
-                  <li>• All rooms thoroughly cleaned</li>
-                  <li>• Flexible scheduling around your life</li>
+                  <li>• Weekly, bi-weekly, monthly</li>
+                  <li>• Flexible farm schedules</li>
+                  <li>• Budget-friendly pricing</li>
+                </ul>
+                <p className="font-semibold text-two-trees-green">Starting at $110</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-two-trees-green">
+                  <Truck className="w-6 h-6" />
+                  Rural & Agricultural Properties
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">Specialized cleaning for farms and rural homes.</p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Mud room deep cleaning</li>
+                  <li>• Agricultural dust removal</li>
+                  <li>• Flexible rural scheduling</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $140</p>
               </CardContent>
@@ -212,42 +207,24 @@ const SantaBarbara = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-two-trees-green">
                   <Shield className="w-6 h-6" />
-                  Deep Cleaning
+                  Move-Out Cleaning
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600">Comprehensive cleaning for Santa Barbara homes and condos.</p>
+                <p className="text-gray-600">Thorough cleaning for Santa Paula rentals and sales.</p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Detailed cleaning of all surfaces</li>
-                  <li>• Inside appliances and cabinets</li>
-                  <li>• Perfect for seasonal cleaning</li>
+                  <li>• Mobile homes & houses</li>
+                  <li>• Rural properties included</li>
+                  <li>• Deposit recovery focus</li>
                 </ul>
-                <p className="font-semibold text-two-trees-green">Starting at $200</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-two-trees-green">
-                  <Clock className="w-6 h-6" />
-                  Move-in/Move-out
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">Essential for Santa Barbara real estate transitions.</p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Complete property cleaning</li>
-                  <li>• Real estate ready standards</li>
-                  <li>• Deposit-back guarantee focus</li>
-                </ul>
-                <p className="font-semibold text-two-trees-green">Starting at $180</p>
+                <p className="font-semibold text-two-trees-green">Starting at $160</p>
                 <Button 
                   variant="outline" 
                   size="sm"
                   className="w-full mt-3 border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/santa-barbara/move-out-cleaning'}
+                  onClick={() => window.location.href = '/santa-paula/move-out-cleaning'}
                 >
-                  Santa Barbara Move-Out Cleaning
+                  Santa Paula Move-Out Cleaning
                 </Button>
               </CardContent>
             </Card>
@@ -255,12 +232,11 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      {/* Testimonials with Schema */}
-      <section className="py-20 px-4 bg-gray-50">
+      {/* Testimonials */}
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <TestimonialSchema testimonials={testimonials} cityName="Santa Barbara" />
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            What Santa Barbara Customers Say
+            What Santa Paula Customers Say
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -283,8 +259,8 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      {/* Add Nearby Areas Section */}
-      <section className="py-20 px-4">
+      {/* Nearby Areas Section */}
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
             Nearby Service Areas
@@ -293,19 +269,35 @@ const SantaBarbara = () => {
             <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
               <CardContent className="p-6 text-center">
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">Montecito</h3>
-                <p className="text-sm text-gray-600 mb-4">Luxury estate cleaning</p>
+                <h3 className="font-semibold text-gray-900 mb-2">Fillmore</h3>
+                <p className="text-sm text-gray-600 mb-4">Agricultural community cleaning</p>
                 <Button 
                   variant="outline" 
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/montecito'}
+                  onClick={() => window.location.href = '/contact'}
                 >
-                  View Montecito
+                  Contact for Service
                 </Button>
               </CardContent>
             </Card>
             
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Oxnard</h3>
+                <p className="text-sm text-gray-600 mb-4">Coastal & family cleaning</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/oxnard'}
+                >
+                  View Oxnard
+                </Button>
+              </CardContent>
+            </Card>
+
             <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
               <CardContent className="p-6 text-center">
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
@@ -321,22 +313,6 @@ const SantaBarbara = () => {
                 </Button>
               </CardContent>
             </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
-              <CardContent className="p-6 text-center">
-                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
-                <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/camarillo'}
-                >
-                  View Camarillo
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -345,10 +321,10 @@ const SantaBarbara = () => {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-two-trees-green mb-6">
-            Ready for a Spotless Santa Barbara Home?
+            Ready for Reliable Santa Paula Cleaning?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join 200+ satisfied customers throughout Santa Barbara. Licensed, insured, and locally trusted since 2020.
+            Join hardworking Santa Paula families who trust Two Trees Cleaning for affordable, reliable service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -356,7 +332,7 @@ const SantaBarbara = () => {
               className="bg-two-trees-green hover:bg-two-trees-green/90 px-8 py-4 text-lg"
               onClick={() => handleBookingClick('Final CTA')}
             >
-              Book Your Santa Barbara Cleaning
+              Book Your Santa Paula Cleaning
             </Button>
             <Button 
               variant="outline" 
@@ -376,4 +352,4 @@ const SantaBarbara = () => {
   );
 };
 
-export default SantaBarbara;
+export default SantaPaula;

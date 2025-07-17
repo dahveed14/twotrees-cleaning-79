@@ -218,6 +218,14 @@ const Ojai = () => {
                   <li>• Flexible creative schedules</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $160</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="w-full mt-3 border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/ojai/move-out-cleaning'}
+                >
+                  Ojai Move-Out Cleaning
+                </Button>
               </CardContent>
             </Card>
           </div>

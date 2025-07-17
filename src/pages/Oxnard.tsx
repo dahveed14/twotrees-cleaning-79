@@ -219,6 +219,14 @@ const Oxnard = () => {
                   <li>• Same-day availability</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $180</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="w-full mt-3 border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/oxnard/move-out-cleaning'}
+                >
+                  Oxnard Move-Out Cleaning
+                </Button>
               </CardContent>
             </Card>
           </div>

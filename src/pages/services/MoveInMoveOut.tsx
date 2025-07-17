@@ -263,27 +263,52 @@ const MoveInMoveOut = () => {
           {/* Service Areas */}
           <div className="mb-16 bg-gray-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-two-trees-green text-center mb-6">
-              Move-In/Move-Out Service Areas
+              Location-Specific Move-Out Cleaning Services
             </h2>
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+            <p className="text-center text-gray-600 mb-8">
+              Click for specialized move-out cleaning information for your area:
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {[
-                { name: "Santa Barbara", href: "/santa-barbara" },
-                { name: "Montecito", href: "/montecito" },
-                { name: "Thousand Oaks", href: "/thousand-oaks" },
-                { name: "Oxnard", href: "/oxnard" },
-                { name: "Camarillo", href: "/camarillo" },
-                { name: "Ventura", href: "/ventura" },
-                { name: "Summerland", href: "/summerland" },
-                { name: "Carpinteria", href: "/carpinteria" }
+                { name: "Santa Barbara Move-Out", href: "/santa-barbara/move-out-cleaning", description: "Luxury home & condo cleaning" },
+                { name: "Ojai Move-Out", href: "/ojai/move-out-cleaning", description: "Eco-friendly & artistic space cleaning" },
+                { name: "Oxnard Move-Out", href: "/oxnard/move-out-cleaning", description: "Affordable & reliable family service" },
+                { name: "Santa Paula Move-Out", href: "/santa-paula/move-out-cleaning", description: "Rural & residential cleaning" }
               ].map((area) => (
                 <Link
                   key={area.name}
                   to={area.href}
-                  className="bg-white px-4 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+                  className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 hover:border-two-trees-green/30"
                 >
-                  {area.name}
+                  <h3 className="font-semibold text-two-trees-green mb-2">{area.name}</h3>
+                  <p className="text-sm text-gray-600">{area.description}</p>
                 </Link>
               ))}
+            </div>
+            <div className="border-t pt-6">
+              <h3 className="text-lg font-semibold text-two-trees-green text-center mb-4">
+                All Service Areas
+              </h3>
+              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+                {[
+                  { name: "Santa Barbara", href: "/santa-barbara" },
+                  { name: "Montecito", href: "/montecito" },
+                  { name: "Thousand Oaks", href: "/thousand-oaks" },
+                  { name: "Oxnard", href: "/oxnard" },
+                  { name: "Camarillo", href: "/camarillo" },
+                  { name: "Ventura", href: "/ventura" },
+                  { name: "Summerland", href: "/summerland" },
+                  { name: "Carpinteria", href: "/carpinteria" }
+                ].map((area) => (
+                  <Link
+                    key={area.name}
+                    to={area.href}
+                    className="bg-white px-4 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80"
+                  >
+                    {area.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 

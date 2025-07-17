@@ -23,6 +23,7 @@ import Carpinteria from "./pages/Carpinteria";
 import PortHueneme from "./pages/PortHueneme";
 import NewburyPark from "./pages/NewburyPark";
 import WestlakeVillage from "./pages/WestlakeVillage";
+import SantaPaula from "./pages/SantaPaula";
 import ThousandOaksMoveOut from "./pages/ThousandOaksMoveOut";
 import VenturaMoveOut from "./pages/VenturaMoveOut";
 import CamarilloMoveOut from "./pages/CamarilloMoveOut";
@@ -97,7 +98,8 @@ const App = () => (
         <Route path="/santa-barbara/move-out-cleaning" element={<SantaBarbaraMoveOut />} />
           <Route path="/ojai/move-out-cleaning" element={<OjaiMoveOut />} />
           <Route path="/oxnard/move-out-cleaning" element={<OxnardMoveOut />} />
-          <Route path="/santa-paula/move-out-cleaning" element={<SantaPaulaMoveOut />} />
+        <Route path="/santa-paula" element={<SantaPaula />} />
+        <Route path="/santa-paula/move-out-cleaning" element={<SantaPaulaMoveOut />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
