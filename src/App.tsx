@@ -25,6 +25,7 @@ import NewburyPark from "./pages/NewburyPark";
 import WestlakeVillage from "./pages/WestlakeVillage";
 import SantaPaula from "./pages/SantaPaula";
 import ThousandOaksMoveOut from "./pages/ThousandOaksMoveOut";
+import ThousandOaksPostConstruction from "./pages/ThousandOaksPostConstruction";
 import VenturaMoveOut from "./pages/VenturaMoveOut";
 import CamarilloMoveOut from "./pages/CamarilloMoveOut";
 import WestlakeVillageMoveOut from "./pages/WestlakeVillageMoveOut";
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/services/vacation-rental" element={<VacationRental />} />
           {/* Location-specific service routes */}
           <Route path="/thousand-oaks/move-out-cleaning" element={<ThousandOaksMoveOut />} />
+          <Route path="/thousand-oaks/post-construction-cleaning" element={<ThousandOaksPostConstruction />} />
           <Route path="/ventura/move-out-cleaning" element={<VenturaMoveOut />} />
           <Route path="/camarillo/move-out-cleaning" element={<CamarilloMoveOut />} />
         <Route path="/westlake-village/move-out-cleaning" element={<WestlakeVillageMoveOut />} />
