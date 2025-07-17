@@ -36,6 +36,7 @@ import OjaiPostConstruction from "./pages/OjaiPostConstruction";
 import OxnardMoveOut from "./pages/OxnardMoveOut";
 import OxnardPostConstruction from "./pages/OxnardPostConstruction";
 import SantaPaulaMoveOut from "./pages/SantaPaulaMoveOut";
+import SantaPaulaPostConstruction from "./pages/SantaPaulaPostConstruction";
 import { CarpinteriaMoveOut } from "./pages/CarpinteriaMoveOut";
 import CamarilloPostConstruction from "./pages/CamarilloPostConstruction";
 import WestlakeVillagePostConstruction from "./pages/WestlakeVillagePostConstruction";
@@ -115,6 +116,7 @@ const App = () => (
           <Route path="/oxnard/post-construction-cleaning" element={<OxnardPostConstruction />} />
         <Route path="/santa-paula" element={<SantaPaula />} />
         <Route path="/santa-paula/move-out-cleaning" element={<SantaPaulaMoveOut />} />
+        <Route path="/santa-paula/post-construction-cleaning" element={<SantaPaulaPostConstruction />} />
         <Route path="/carpinteria/move-out-cleaning" element={<CarpinteriaMoveOut />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
