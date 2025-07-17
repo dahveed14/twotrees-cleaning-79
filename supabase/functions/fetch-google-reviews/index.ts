@@ -69,8 +69,7 @@ serve(async (req) => {
       
       // List of family member names to filter out (add family names here)
       const familyNames = [
-        // Add family member names here to filter them out
-        // Example: 'John Smith', 'Jane Smith', etc.
+        'Rubalcava' // Filter out family reviews
       ];
       
       // Filter for 4+ star reviews and exclude family members
