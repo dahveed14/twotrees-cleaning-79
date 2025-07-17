@@ -104,7 +104,7 @@ const SantaBarbaraPostConstruction = () => {
                     Post-Construction Cleaning in Santa Barbara
                   </h1>
                   <p className="text-xl text-gray-600 leading-relaxed">
-                    Santa Barbara's builders, homeowners, and interior designers trust Two Trees Cleaning for post-construction cleaning that matches the quality of the work. We leave every surface dust-free, polished, and camera-ready.
+                    <a href="/santa-barbara" className="text-two-trees-green hover:underline">Santa Barbara's</a> builders, homeowners, and interior designers trust Two Trees Cleaning for <a href="/services/post-construction" className="text-two-trees-green hover:underline">post-construction cleaning</a> that matches the quality of the work. We leave every surface dust-free, polished, and camera-ready.
                   </p>
                   <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold">
                     <a href="/contact">Get a Quote for Santa Barbara Post-Construction Cleaning</a>
