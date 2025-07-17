@@ -268,12 +268,16 @@ const MoveInMoveOut = () => {
             <p className="text-center text-gray-600 mb-8">
               Click for specialized move-out cleaning information for your area:
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {[
                 { name: "Santa Barbara Move-Out", href: "/santa-barbara/move-out-cleaning", description: "Luxury home & condo cleaning" },
                 { name: "Ojai Move-Out", href: "/ojai/move-out-cleaning", description: "Eco-friendly & artistic space cleaning" },
                 { name: "Oxnard Move-Out", href: "/oxnard/move-out-cleaning", description: "Affordable & reliable family service" },
-                { name: "Santa Paula Move-Out", href: "/santa-paula/move-out-cleaning", description: "Rural & residential cleaning" }
+                { name: "Santa Paula Move-Out", href: "/santa-paula/move-out-cleaning", description: "Rural & residential cleaning" },
+                { name: "Ventura Move-Out", href: "/ventura/move-out-cleaning", description: "Historic & coastal property cleaning" },
+                { name: "Camarillo Move-Out", href: "/camarillo/move-out-cleaning", description: "Professional family-focused service" },
+                { name: "Thousand Oaks Move-Out", href: "/thousand-oaks/move-out-cleaning", description: "Conejo Valley family cleaning" },
+                { name: "Westlake Village Move-Out", href: "/westlake-village/move-out-cleaning", description: "Luxury property specialists" }
               ].map((area) => (
                 <Link
                   key={area.name}
@@ -294,11 +298,15 @@ const MoveInMoveOut = () => {
                   { name: "Santa Barbara", href: "/santa-barbara" },
                   { name: "Montecito", href: "/montecito" },
                   { name: "Thousand Oaks", href: "/thousand-oaks" },
+                  { name: "Westlake Village", href: "/westlake-village" },
                   { name: "Oxnard", href: "/oxnard" },
                   { name: "Camarillo", href: "/camarillo" },
                   { name: "Ventura", href: "/ventura" },
+                  { name: "Ojai", href: "/ojai" },
+                  { name: "Santa Paula", href: "/santa-paula" },
                   { name: "Summerland", href: "/summerland" },
-                  { name: "Carpinteria", href: "/carpinteria" }
+                  { name: "Carpinteria", href: "/carpinteria" },
+                  { name: "Port Hueneme", href: "/port-hueneme" }
                 ].map((area) => (
                   <Link
                     key={area.name}

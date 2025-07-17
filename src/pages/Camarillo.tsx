@@ -253,8 +253,66 @@ const Camarillo = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Move-Out Cleaning Section */}
       <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-two-trees-green mb-6">
+                Moving Out of Camarillo?
+              </h2>
+              <p className="text-xl text-gray-600 mb-6">
+                Professional move-out cleaning for Camarillo families. Whether you're leaving Sterling Hills, 
+                Spanish Hills, or near the Premium Outlets, we ensure your property is inspection-ready.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Family-friendly scheduling</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Complete property cleaning</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Competitive pricing</span>
+                </div>
+              </div>
+              <Button 
+                size="lg"
+                className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4"
+                onClick={() => window.location.href = '/camarillo/move-out-cleaning'}
+              >
+                Learn About Camarillo Move-Out Cleaning
+              </Button>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-two-trees-green mb-4 text-center">
+                Move-Out Cleaning Starting at $170
+              </h3>
+              <p className="text-gray-600 text-center mb-6">
+                Perfect for Camarillo families and rental properties
+              </p>
+              <div className="space-y-3 mb-6">
+                <p className="text-sm text-gray-500 text-center">✓ All Camarillo neighborhoods</p>
+                <p className="text-sm text-gray-500 text-center">✓ Fast turnaround time</p>
+                <p className="text-sm text-gray-500 text-center">✓ Deposit-ready standards</p>
+              </div>
+              <Button 
+                size="lg"
+                className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
+                onClick={() => handleBookingClick('Camarillo Move-Out')}
+              >
+                Get Free Quote
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-two-trees-green mb-6">
             Ready for Professional Camarillo Cleaning?

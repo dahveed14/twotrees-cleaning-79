@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
+import { MapPin, Phone, Star, Shield, Award, CheckCircle } from "lucide-react";
 
 
 const WestlakeVillage = () => {
@@ -173,6 +173,57 @@ const WestlakeVillage = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Move-Out Cleaning Section */}
+          <div className="mb-16 bg-gray-50 rounded-2xl p-8">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-two-trees-green mb-4">
+                  Moving Out of Westlake Village?
+                </h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  Our specialized move-out cleaning service ensures your luxury property is spotless 
+                  for final inspections. Perfect for North Ranch, Westlake Trails, and all Westlake Village neighborhoods.
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-two-trees-gold" />
+                    <span className="text-gray-700">Deep cleaning all rooms</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-two-trees-gold" />
+                    <span className="text-gray-700">Inside appliance cleaning</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-two-trees-gold" />
+                    <span className="text-gray-700">Luxury finish-safe products</span>
+                  </div>
+                </div>
+                <Button 
+                  className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green"
+                  onClick={() => window.location.href = '/westlake-village/move-out-cleaning'}
+                >
+                  Learn About Move-Out Cleaning
+                </Button>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-two-trees-green mb-4 text-center">
+                  Move-Out Cleaning Starting at $200
+                </h3>
+                <div className="space-y-3 text-center">
+                  <p className="text-gray-600">Perfect for luxury properties</p>
+                  <p className="text-sm text-gray-500">Pricing varies by property size and condition</p>
+                  <Button 
+                    size="lg"
+                    className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
+                    onClick={() => handleBookingClick('Westlake Village Move-Out')}
+                  >
+                    Get Free Quote
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -376,8 +376,110 @@ const WestlakeVillageMoveOut = () => {
             </div>
           </section>
 
-          {/* FAQ Section */}
+          {/* Related Services Section */}
+          <section className="py-20">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                  Related Services in Westlake Village
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Explore our other professional cleaning services for Westlake Village residents.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">Regular House Cleaning</h3>
+                    <p className="text-muted-foreground mb-6">Luxury home maintenance cleaning for Westlake Village properties</p>
+                    <Button variant="outline" asChild>
+                      <a href="/westlake-village">Learn More</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">Deep Cleaning Service</h3>
+                    <p className="text-muted-foreground mb-6">Comprehensive seasonal cleaning for luxury homes</p>
+                    <Button variant="outline" asChild>
+                      <a href="/services/deep-cleaning">Learn More</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">Post-Construction Cleanup</h3>
+                    <p className="text-muted-foreground mb-6">Specialized cleaning after home renovations</p>
+                    <Button variant="outline" asChild>
+                      <a href="/services/post-construction">Learn More</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Other Locations Section */}
           <section className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                  Move-Out Cleaning in Other Locations
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  We also provide specialized move-out cleaning services in these nearby areas.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="font-semibold text-foreground mb-2">Thousand Oaks Move-Out</h3>
+                    <p className="text-sm text-muted-foreground mb-4">Family-focused Conejo Valley service</p>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="/thousand-oaks/move-out-cleaning">View Details</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="font-semibold text-foreground mb-2">Camarillo Move-Out</h3>
+                    <p className="text-sm text-muted-foreground mb-4">Professional family cleaning</p>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="/camarillo/move-out-cleaning">View Details</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="font-semibold text-foreground mb-2">Santa Barbara Move-Out</h3>
+                    <p className="text-sm text-muted-foreground mb-4">Luxury coastal property cleaning</p>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="/santa-barbara/move-out-cleaning">View Details</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="font-semibold text-foreground mb-2">Ventura Move-Out</h3>
+                    <p className="text-sm text-muted-foreground mb-4">Historic & coastal cleaning</p>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="/ventura/move-out-cleaning">View Details</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="py-20">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="text-center mb-16">
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">

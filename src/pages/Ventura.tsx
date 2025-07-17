@@ -224,6 +224,64 @@ const Ventura = () => {
         </div>
       </section>
 
+      {/* Move-Out Cleaning Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-two-trees-green mb-6">
+                Moving Out of Ventura?
+              </h2>
+              <p className="text-xl text-gray-600 mb-6">
+                Our specialized move-out cleaning service is perfect for historic and coastal properties. 
+                From Pierpont Bay to downtown Ventura, we handle the unique challenges of coastal cleaning.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Salt air and sand removal expertise</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Historic home gentle cleaning methods</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Deposit-back guarantee focus</span>
+                </div>
+              </div>
+              <Button 
+                size="lg"
+                className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4"
+                onClick={() => window.location.href = '/ventura/move-out-cleaning'}
+              >
+                Learn About Ventura Move-Out Cleaning
+              </Button>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-two-trees-green mb-4 text-center">
+                Move-Out Cleaning Starting at $200
+              </h3>
+              <p className="text-gray-600 text-center mb-6">
+                Specialized for coastal and historic Ventura properties
+              </p>
+              <div className="space-y-3 mb-6">
+                <p className="text-sm text-gray-500 text-center">✓ All Ventura neighborhoods served</p>
+                <p className="text-sm text-gray-500 text-center">✓ Coastal property expertise</p>
+                <p className="text-sm text-gray-500 text-center">✓ Historic home experience</p>
+              </div>
+              <Button 
+                size="lg"
+                className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
+                onClick={() => handleBookingClick('Ventura Move-Out')}
+              >
+                Get Free Quote
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Nearby Areas Section before CTA */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">

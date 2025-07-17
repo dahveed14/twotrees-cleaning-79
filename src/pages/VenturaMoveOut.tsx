@@ -386,6 +386,128 @@ const VenturaMoveOut = () => {
         </div>
       </section>
 
+      {/* Related Services Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Related Services in Ventura
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">Regular House Cleaning</h3>
+                <p className="text-gray-600 mb-6">Historic and coastal home maintenance cleaning</p>
+                <Button 
+                  variant="outline" 
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/ventura'}
+                >
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">Deep Cleaning Service</h3>
+                <p className="text-gray-600 mb-6">Comprehensive cleaning for coastal properties</p>
+                <Button 
+                  variant="outline" 
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/services/deep-cleaning'}
+                >
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">Vacation Rental Cleaning</h3>
+                <p className="text-gray-600 mb-6">Specialized cleaning for Ventura coastal rentals</p>
+                <Button 
+                  variant="outline" 
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/services/vacation-rental'}
+                >
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Locations Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Move-Out Cleaning in Other Locations
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6 text-center">
+                <h3 className="font-semibold text-two-trees-green mb-2">Santa Barbara Move-Out</h3>
+                <p className="text-sm text-gray-600 mb-4">Luxury coastal property cleaning</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/santa-barbara/move-out-cleaning'}
+                >
+                  View Details
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6 text-center">
+                <h3 className="font-semibold text-two-trees-green mb-2">Oxnard Move-Out</h3>
+                <p className="text-sm text-gray-600 mb-4">Affordable family-focused service</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/oxnard/move-out-cleaning'}
+                >
+                  View Details
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6 text-center">
+                <h3 className="font-semibold text-two-trees-green mb-2">Camarillo Move-Out</h3>
+                <p className="text-sm text-gray-600 mb-4">Professional family cleaning</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/camarillo/move-out-cleaning'}
+                >
+                  View Details
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6 text-center">
+                <h3 className="font-semibold text-two-trees-green mb-2">Thousand Oaks Move-Out</h3>
+                <p className="text-sm text-gray-600 mb-4">Family-focused Conejo Valley service</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/thousand-oaks/move-out-cleaning'}
+                >
+                  View Details
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
