@@ -218,6 +218,58 @@ const SantaBarbaraPostConstruction = () => {
             </div>
           </section>
 
+          {/* Related Services & Areas Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Related Services & Areas</h2>
+                <p className="text-xl text-gray-600">
+                  Explore our other cleaning services and coverage areas
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                {/* Related Services */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Our Other Services</h3>
+                  <div className="space-y-4">
+                    <a href="/services/regular-house-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <span className="text-lg font-medium text-two-trees-green">Regular House Cleaning</span>
+                      <p className="text-gray-600 mt-1">Weekly, bi-weekly, and monthly cleaning services</p>
+                    </a>
+                    <a href="/services/deep-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <span className="text-lg font-medium text-two-trees-green">Deep Cleaning</span>
+                      <p className="text-gray-600 mt-1">Comprehensive top-to-bottom cleaning</p>
+                    </a>
+                    <a href="/services/move-in-move-out" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <span className="text-lg font-medium text-two-trees-green">Move-In/Move-Out Cleaning</span>
+                      <p className="text-gray-600 mt-1">Perfect for transitions and new beginnings</p>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Other Areas */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Other Areas We Serve</h3>
+                  <div className="space-y-4">
+                    <a href="/ventura/post-construction-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <span className="text-lg font-medium text-two-trees-green">Ventura Post-Construction</span>
+                      <p className="text-gray-600 mt-1">Professional cleaning for Ventura builds</p>
+                    </a>
+                    <a href="/thousand-oaks/post-construction-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <span className="text-lg font-medium text-two-trees-green">Thousand Oaks Post-Construction</span>
+                      <p className="text-gray-600 mt-1">Expert cleaning for Thousand Oaks projects</p>
+                    </a>
+                    <a href="/westlake-village/post-construction-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <span className="text-lg font-medium text-two-trees-green">Westlake Village Post-Construction</span>
+                      <p className="text-gray-600 mt-1">Premium cleaning for luxury properties</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Final CTA Section */}
           <section className="py-20 bg-gray-900 text-white">
             <div className="container mx-auto px-4 max-w-4xl text-center">
