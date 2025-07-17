@@ -38,11 +38,11 @@ const ThousandOaksPostConstruction = () => {
     });
   }, []);
 
-  const handleBookingClick = (location: string) => {
+  const handleQuoteClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Book a Cleaning', `Thousand Oaks Post Construction - ${location}`);
+      (window as any).trackButtonClick('Request Quote', `Thousand Oaks Post Construction - ${location}`);
     }
-    window.open('https://twotreescleaning.com/book', '_blank');
+    window.location.href = '/contact';
   };
 
   const handlePhoneClick = () => {
@@ -84,7 +84,7 @@ const ThousandOaksPostConstruction = () => {
         cityCoordinates={{ latitude: "34.1706", longitude: "-118.8376" }}
         breadcrumbs={breadcrumbData}
       />
-      <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
+      <Navigation onBookingClick={handleQuoteClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 
         items={[
@@ -114,7 +114,7 @@ const ThousandOaksPostConstruction = () => {
                 <Button 
                   size="lg" 
                   className="bg-two-trees-green hover:bg-two-trees-green/90 px-8 py-4 text-lg"
-                  onClick={() => handleBookingClick('Hero')}
+                  onClick={() => handleQuoteClick('Hero')}
                 >
                   Request a Post-Construction Quote
                 </Button>
@@ -314,7 +314,7 @@ const ThousandOaksPostConstruction = () => {
               <Button 
                 size="lg" 
                 className="bg-two-trees-green hover:bg-two-trees-green/90 px-8 py-4 text-lg"
-                onClick={() => handleBookingClick('Service Area')}
+                onClick={() => handleQuoteClick('Service Area')}
               >
                 Get a Quote for Your Post-Construction Project Today
               </Button>
@@ -414,7 +414,7 @@ const ThousandOaksPostConstruction = () => {
             <Button 
               size="lg" 
               className="bg-white text-two-trees-green hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-              onClick={() => handleBookingClick('Final CTA')}
+              onClick={() => handleQuoteClick('Final CTA')}
             >
               Request a Post-Construction Quote
             </Button>
