@@ -37,6 +37,7 @@ import SantaPaulaMoveOut from "./pages/SantaPaulaMoveOut";
 import { CarpinteriaMoveOut } from "./pages/CarpinteriaMoveOut";
 import CamarilloPostConstruction from "./pages/CamarilloPostConstruction";
 import WestlakeVillagePostConstruction from "./pages/WestlakeVillagePostConstruction";
+import SantaBarbaraPostConstruction from "./pages/SantaBarbaraPostConstruction";
 import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
 import NotFound from "./pages/NotFound";
@@ -103,6 +104,7 @@ const App = () => (
           <Route path="/camarillo/move-out-cleaning" element={<CamarilloMoveOut />} />
           <Route path="/camarillo/post-construction-cleaning" element={<CamarilloPostConstruction />} />
           <Route path="/westlake-village/post-construction-cleaning" element={<WestlakeVillagePostConstruction />} />
+          <Route path="/santa-barbara/post-construction-cleaning" element={<SantaBarbaraPostConstruction />} />
         <Route path="/westlake-village/move-out-cleaning" element={<WestlakeVillageMoveOut />} />
         <Route path="/santa-barbara/move-out-cleaning" element={<SantaBarbaraMoveOut />} />
           <Route path="/ojai/move-out-cleaning" element={<OjaiMoveOut />} />
