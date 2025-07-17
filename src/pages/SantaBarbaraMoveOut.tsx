@@ -252,6 +252,64 @@ const SantaBarbaraMoveOut = () => {
             </div>
           </section>
 
+          {/* Related Services & Other Locations */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="grid md:grid-cols-2 gap-12">
+                
+                {/* Related Services */}
+                <div>
+                  <h3 className="text-2xl font-bold text-primary mb-6">Related Services in Santa Barbara</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/santa-barbara" className="hover:underline">Regular House Cleaning</a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">Ongoing cleaning services for your Santa Barbara home</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/services/deep-cleaning" className="hover:underline">Deep Cleaning</a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">Comprehensive one-time cleaning service</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/services/move-in-move-out" className="hover:underline">Move-In Cleaning</a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">Fresh start cleaning for your new home</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Other Locations */}
+                <div>
+                  <h3 className="text-2xl font-bold text-primary mb-6">Move-Out Cleaning in Other Areas</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/ojai/move-out-cleaning" className="hover:underline">Ojai Move-Out Cleaning</a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">Eco-friendly move-out cleaning for Ojai properties</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/oxnard/move-out-cleaning" className="hover:underline">Oxnard Move-Out Cleaning</a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">Affordable move-out cleaning for Oxnard families</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <h4 className="font-semibold text-primary mb-2">
+                        <a href="/santa-paula/move-out-cleaning" className="hover:underline">Santa Paula Move-Out Cleaning</a>
+                      </h4>
+                      <p className="text-gray-600 text-sm">Rural and residential move-out cleaning</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* FAQ Section */}
           <section className="py-20 bg-gray-50">
             <div className="max-w-4xl mx-auto px-4">
