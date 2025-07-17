@@ -2,15 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+
 interface HeroProps {
   onBookingClick: (location: string) => void;
   onPhoneClick: () => void;
 }
+
 export const Hero = ({
   onBookingClick,
   onPhoneClick
 }: HeroProps) => {
-  return <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
+  return (
+    <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -18,8 +21,7 @@ export const Hero = ({
               <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
                 Serving Ventura & Santa Barbara Counties Since 2020
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Get Your Time Back  With 
-Ventura & Santa Barbara Counties' Best House Cleaning Service</h1>
+              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Trusted House Cleaning Service</h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 As the best cleaning company in Ventura and Santa Barbara Counties, Two Trees Cleaning helps busy families reclaim their weekends. From Santa Barbara to Thousand Oaks, Oxnard to Camarillo, our reliable, detail-oriented team delivers spotless homes so you can focus on what matters most.
               </p>
@@ -61,5 +63,6 @@ Ventura & Santa Barbara Counties' Best House Cleaning Service</h1>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
