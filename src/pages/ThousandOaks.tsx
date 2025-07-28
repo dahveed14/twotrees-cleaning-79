@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Home } from "lucide-react";
+import thousandOaksHero from "@/assets/thousand-oaks-hero.jpg";
 
 const ThousandOaks = () => {
 
@@ -130,7 +131,7 @@ const ThousandOaks = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" 
+                src={thousandOaksHero} 
                 alt="Thousand Oaks family home cleaning service"
                 className="rounded-2xl shadow-2xl"
               />
