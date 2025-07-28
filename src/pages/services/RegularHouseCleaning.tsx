@@ -119,8 +119,7 @@ const RegularHouseCleaning = () => {
                 "Bathroom cleaning and disinfecting", 
                 "Trash removal and replacement",
                 "Bed making and tidying",
-                "Light fixture cleaning",
-                "Baseboards and window sills"
+                "Light fixture cleaning"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-two-trees-gold flex-shrink-0 mt-1" />

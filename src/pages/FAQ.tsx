@@ -76,7 +76,7 @@ const FAQ = () => {
           question: "What's the difference between regular and deep cleaning?",
           answer: (
             <>
-              <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes cleaning inside appliances, baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. We recommend starting with a deep clean for first-time customers to establish a clean baseline.
+              <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. Inside appliances are only included in <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-out cleaning services</Link>. We recommend starting with a deep clean for first-time customers to establish a clean baseline.
             </>
           )
         },
