@@ -130,8 +130,8 @@ const Ventura = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop" 
-                alt="Ventura house cleaning service"
+                src="/lovable-uploads/75bded66-c848-4790-a808-6efcbd3b250f.png" 
+                alt="Ventura Pier at sunset with golden beach and coastal buildings - professional house cleaning services available throughout Ventura CA including Pierpont Bay, downtown historic district, and beachfront properties near the pier"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
