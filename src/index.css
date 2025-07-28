@@ -46,9 +46,9 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom Two Trees Colors */
-    --two-trees-green: #0d483f;
-    --two-trees-gold: #d4af37;
+    /* Custom Two Trees Colors - HSL format for consistency */
+    --two-trees-green: 151 71% 17%; /* #0d483f converted to HSL */
+    --two-trees-gold: 45 87% 52%; /* #d4af37 converted to HSL */
   }
 
   .dark {
@@ -89,33 +89,33 @@
 }
 
 .bg-two-trees-green {
-  background-color: var(--two-trees-green);
+  background-color: hsl(var(--two-trees-green));
 }
 
 .bg-two-trees-gold {
-  background-color: var(--two-trees-gold);
+  background-color: hsl(var(--two-trees-gold));
 }
 
 .text-two-trees-green {
-  color: var(--two-trees-green);
+  color: hsl(var(--two-trees-green));
 }
 
 .text-two-trees-gold {
-  color: var(--two-trees-gold);
+  color: hsl(var(--two-trees-gold));
 }
 
 .border-two-trees-green {
-  border-color: var(--two-trees-green);
+  border-color: hsl(var(--two-trees-green));
 }
 
 .border-two-trees-gold {
-  border-color: var(--two-trees-gold);
+  border-color: hsl(var(--two-trees-gold));
 }
 
 .fill-two-trees-green {
-  fill: var(--two-trees-green);
+  fill: hsl(var(--two-trees-green));
 }
 
 .fill-two-trees-gold {
-  fill: var(--two-trees-gold);
+  fill: hsl(var(--two-trees-gold));
 }

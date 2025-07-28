@@ -122,7 +122,7 @@ const Commercial = () => {
                   <Mail className="w-5 h-5 mr-2" />
                   Email for Quote
                 </Button>
-                <Button variant="outline" size="lg" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg" onClick={handlePhoneClick}>
+                <Button variant="outline-green" size="lg" className="px-8 py-4 text-lg" onClick={handlePhoneClick}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>
@@ -335,7 +335,7 @@ const Commercial = () => {
               <Mail className="w-5 h-5 mr-2" />
               Email for Quote
             </Button>
-            <Button variant="outline" size="lg" onClick={handlePhoneClick} className="border-white text-white hover:text-white px-8 py-4 text-lg bg-emerald-950 hover:bg-emerald-800">
+            <Button variant="outline-white" size="lg" onClick={handlePhoneClick} className="px-8 py-4 text-lg">
               <Phone className="w-5 h-5 mr-2" />
               Call (805) 456-1421
             </Button>

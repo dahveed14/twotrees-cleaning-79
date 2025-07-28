@@ -28,8 +28,8 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				'two-trees-green': '#0d483f',
-				'two-trees-gold': '#d4af37',
+				'two-trees-green': 'hsl(var(--two-trees-green))',
+				'two-trees-gold': 'hsl(var(--two-trees-gold))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

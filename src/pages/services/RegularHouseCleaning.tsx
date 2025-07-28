@@ -94,9 +94,9 @@ const RegularHouseCleaning = () => {
                 Book Regular Cleaning - Starting at $140
               </Button>
               <Button 
-                variant="outline" 
+                variant="outline-green" 
                 size="lg" 
-                className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 px-8 py-4 text-lg"
+                className="px-8 py-4 text-lg"
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -244,9 +244,9 @@ const RegularHouseCleaning = () => {
                 Start Your Regular Service Today
               </Button>
               <Button 
-                variant="outline" 
+                variant="outline-white" 
                 size="lg" 
-                className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg"
+                className="px-8 py-4 text-lg"
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />

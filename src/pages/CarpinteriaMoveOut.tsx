@@ -260,7 +260,7 @@ export const CarpinteriaMoveOut = () => {
                 <CardContent className="p-0">
                   <h3 className="text-xl font-bold text-two-trees-green mb-3">General Move-Out Cleaning</h3>
                   <p className="text-gray-600 mb-4">Comprehensive move-out cleaning services for all locations</p>
-                  <Button variant="outline" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white" asChild>
+                  <Button variant="outline-green" asChild>
                     <a href="/services/move-in-move-out">Learn More</a>
                   </Button>
                 </CardContent>
@@ -269,7 +269,7 @@ export const CarpinteriaMoveOut = () => {
                 <CardContent className="p-0">
                   <h3 className="text-xl font-bold text-two-trees-green mb-3">Carpinteria Cleaning Services</h3>
                   <p className="text-gray-600 mb-4">All our cleaning services available in Carpinteria</p>
-                  <Button variant="outline" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white" asChild>
+                  <Button variant="outline-green" asChild>
                     <a href="/carpinteria">View All Services</a>
                   </Button>
                 </CardContent>

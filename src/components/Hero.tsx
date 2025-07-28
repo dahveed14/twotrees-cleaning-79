@@ -31,7 +31,7 @@ export const Hero = ({
               <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold" onClick={() => onBookingClick('Hero Section')}>
                 Book Online
               </Button>
-              <Button variant="outline" size="lg" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 hover:text-two-trees-green px-8 py-4 text-lg" onClick={onPhoneClick}>
+              <Button variant="outline-green" size="lg" className="px-8 py-4 text-lg" onClick={onPhoneClick}>
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now
               </Button>

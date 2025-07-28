@@ -22,7 +22,7 @@ export const FinalCTA = ({ onBookingClick, onPhoneClick }: FinalCTAProps) => {
           <Button size="lg" className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4 text-lg font-semibold" onClick={() => onBookingClick('Final CTA')}>
             Book Online
           </Button>
-          <Button variant="outline" size="lg" onClick={onPhoneClick} className="border-white text-white hover:text-white px-8 py-4 text-lg bg-emerald-950 hover:bg-emerald-800">
+          <Button variant="outline-white" size="lg" onClick={onPhoneClick} className="px-8 py-4 text-lg">
             <Phone className="w-5 h-5 mr-2" />
             Call (805) 456-1421
           </Button>

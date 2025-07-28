@@ -116,7 +116,7 @@ const WestlakeVillagePostConstruction = () => {
               <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4" asChild>
                 <a href="/contact">Request a Post-Construction Quote</a>
               </Button>
-              <Button variant="outline" size="lg" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white px-8 py-4" asChild>
+              <Button variant="outline-green" size="lg" className="px-8 py-4" asChild>
                 <a href="tel:(805) 626-0555">
                   <Phone className="w-4 h-4 mr-2" />
                   (805) 626-0555
@@ -242,7 +242,7 @@ const WestlakeVillagePostConstruction = () => {
               <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4" asChild>
                 <a href="/contact">Get Started Today</a>
               </Button>
-              <Button variant="outline" size="lg" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white px-8 py-4" asChild>
+              <Button variant="outline-green" size="lg" className="px-8 py-4" asChild>
                 <a href="/services/post-construction">Learn More About Our Services</a>
               </Button>
             </div>
