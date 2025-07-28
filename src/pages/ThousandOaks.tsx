@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Home } from "lucide-react";
-import thousandOaksHero from "@/assets/thousand-oaks-hero.jpg";
+const thousandOaksHero = "/lovable-uploads/9c1b3024-acd2-473d-8874-bcf5134eefbe.png";
 
 const ThousandOaks = () => {
 
