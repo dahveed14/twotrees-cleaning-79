@@ -1,6 +1,7 @@
 
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
+import { Link } from "react-router-dom";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
@@ -176,7 +177,9 @@ const ServiceAreas = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-two-trees-green text-xl">
                     <MapPin className="w-5 h-5" />
-                    {area.name}
+                    <Link to={area.href} className="hover:underline">
+                      {area.name}
+                    </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -190,17 +193,26 @@ const ServiceAreas = () => {
                     ))}
                   </ul>
                   <div className="flex gap-2 pt-3">
+                    <Link to={area.href}>
+                      <Button 
+                        size="sm"
+                        variant="outline-green"
+                        className="text-xs"
+                      >
+                        View {area.name} Services
+                      </Button>
+                    </Link>
                     <Button 
                       size="sm"
                       className="bg-two-trees-green hover:bg-two-trees-green/90 text-xs"
                       onClick={() => handleBookingClick(`Service Areas - ${area.name}`)}
                     >
-                      Book {area.name}
+                      Book Now
                     </Button>
                     <Button 
-                      variant="outline" 
+                      variant="outline-green" 
                       size="sm"
-                      className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 text-xs"
+                      className="text-xs"
                       onClick={handlePhoneClick}
                     >
                       <Phone className="w-3 h-3 mr-1" />
@@ -230,9 +242,9 @@ const ServiceAreas = () => {
                 Book Your Cleaning Today
               </Button>
               <Button 
-                variant="outline" 
+                variant="outline-green" 
                 size="lg" 
-                className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 px-8 py-4 text-lg"
+                className="px-8 py-4 text-lg"
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />
