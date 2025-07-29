@@ -130,8 +130,8 @@ const Ojai = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&h=400&fit=crop" 
-                alt="Ojai valley house cleaning service"
+                src="/lovable-uploads/a841cb20-105c-4965-926c-7c1867b4524b.png" 
+                alt="Ojai Valley Topa Topa Mountains with dramatic layered sandstone formations and blue sky - professional house cleaning services for mountain homes, artist studios, spiritual retreats, and vacation rentals throughout Ojai CA including downtown Ojai, East End, Arbolada, and Meiners Oaks neighborhoods"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
