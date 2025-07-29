@@ -131,8 +131,8 @@ const Oxnard = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop" 
-                alt="Oxnard house cleaning service"
+                src="/lovable-uploads/de28bd66-86d3-414e-8667-81b7b728d9c4.png" 
+                alt="Channel Islands Harbor marina in Oxnard with boats, waterfront homes, and palm trees - professional house cleaning services available for coastal properties, beach homes, and neighborhoods throughout Oxnard CA including Oxnard Shores, La Colonia, and downtown areas"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
