@@ -132,8 +132,8 @@ const Camarillo = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop" 
-                alt="Camarillo house cleaning service"
+                src="/lovable-uploads/6233f4b8-7ae7-45c2-897d-96684e21c575.png" 
+                alt="Beautiful Spanish Colonial Revival home in Camarillo CA with white stucco walls, red clay tile roof, lush tropical landscaping featuring banana plants and bougainvillea, brick walkway and arched entrance - professional house cleaning services for luxury homes, family residences, and suburban communities throughout Camarillo including Sterling Hills, Mission Oaks, Spanish Hills, and Premium Outlets area"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
