@@ -23,7 +23,18 @@ export const NiceJobWidget = ({
       script.type = 'text/javascript';
       script.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
       script.defer = true;
+      script.onload = () => {
+        // Force widget initialization after script loads
+        if ((window as any).niceJob) {
+          (window as any).niceJob.init();
+        }
+      };
       document.head.appendChild(script);
+    } else {
+      // Script already exists, try to initialize
+      if ((window as any).niceJob) {
+        (window as any).niceJob.init();
+      }
     }
 
     // Track analytics
