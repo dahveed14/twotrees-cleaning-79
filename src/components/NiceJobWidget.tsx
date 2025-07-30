@@ -23,18 +23,7 @@ export const NiceJobWidget = ({
       script.type = 'text/javascript';
       script.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
       script.defer = true;
-      script.onload = () => {
-        // Force widget initialization after script loads
-        if ((window as any).niceJob) {
-          (window as any).niceJob.init();
-        }
-      };
       document.head.appendChild(script);
-    } else {
-      // Script already exists, try to initialize
-      if ((window as any).niceJob) {
-        (window as any).niceJob.init();
-      }
     }
 
     // Track analytics
@@ -46,25 +35,12 @@ export const NiceJobWidget = ({
     }
   }, []);
 
-  const handleReviewClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click_reviews', {
-        event_category: 'Reviews',
-        event_label: 'NiceJob Widget Clicked'
-      });
-    }
-  };
-
   if (compact) {
     return (
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-two-trees-green mb-4">Trusted by Happy Customers</h2>
-          <div 
-            className="nj-stories" 
-            onClick={handleReviewClick}
-            style={{ minHeight: '200px' }}
-          ></div>
+          <div className="nj-stories" style={{ minHeight: '200px' }}></div>
           {showBadge && (
             <div className="mt-8">
               <Badge variant="secondary" className="bg-two-trees-gold/10 text-two-trees-green border-two-trees-gold/20">
@@ -84,11 +60,7 @@ export const NiceJobWidget = ({
         <h2 className="text-4xl font-bold text-two-trees-green mb-4">{title}</h2>
         <p className="text-xl text-gray-600 mb-12">{description}</p>
 
-        <div 
-          className="nj-stories" 
-          onClick={handleReviewClick}
-          style={{ minHeight: '400px' }}
-        ></div>
+        <div className="nj-stories" style={{ minHeight: '400px' }}></div>
 
         {showBadge && (
           <div className="mt-12">
