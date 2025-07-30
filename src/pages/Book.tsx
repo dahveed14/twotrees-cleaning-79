@@ -40,6 +40,13 @@ const Book = () => {
     convertLabsScript.async = true;
     document.head.appendChild(convertLabsScript);
 
+    // Load NiceJob SDK for badge widget
+    const niceJobScript = document.createElement('script');
+    niceJobScript.type = 'text/javascript';
+    niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
+    niceJobScript.defer = true;
+    document.head.appendChild(niceJobScript);
+
     // Add ConvertLabs styles
     const style = document.createElement('style');
     style.textContent = '.Convertlabs{width: 1px;min-width: 100%; height: 1px; min-height: 100%;}';
@@ -48,7 +55,7 @@ const Book = () => {
     // Cleanup function
     return () => {
       // Remove scripts and styles when component unmounts
-      const scripts = document.querySelectorAll('script[src*="convertlabs.io"], script[src*="jquery"]');
+      const scripts = document.querySelectorAll('script[src*="convertlabs.io"], script[src*="jquery"], script[src*="nicejob.co"]');
       scripts.forEach(script => script.remove());
       
       const convertLabsStyles = document.querySelectorAll('style');
@@ -73,6 +80,13 @@ const Book = () => {
             <p className="text-xl text-gray-600 mb-8">
               Schedule your professional house cleaning service in Ventura and Santa Barbara Counties
             </p>
+          </div>
+
+          {/* Customer Trust Badge - Social Proof Before Booking */}
+          <div className="text-center mb-8">
+            <div className="inline-block">
+              <div className="nj-badge" data-show-reviews="1"></div>
+            </div>
           </div>
 
           
