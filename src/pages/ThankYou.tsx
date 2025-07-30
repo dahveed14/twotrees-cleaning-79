@@ -101,7 +101,7 @@ const ThankYou = () => {
                 1
               </div>
               <p className="text-gray-700">
-                You'll receive a confirmation email with all the details
+                You'll receive a confirmation text with all the details
               </p>
             </div>
             <div className="flex items-start space-x-3">
@@ -109,7 +109,7 @@ const ThankYou = () => {
                 2
               </div>
               <p className="text-gray-700">
-                We'll send a reminder 24 hours before your cleaning
+                Please fill out the Client Consent & Service Agreement that was texted to you
               </p>
             </div>
             <div className="flex items-start space-x-3">
@@ -117,7 +117,7 @@ const ThankYou = () => {
                 3
               </div>
               <p className="text-gray-700">
-                Our professional team will arrive on time and ready to clean
+                Review our <a href="/services" className="text-two-trees-green hover:underline font-medium">service checklist</a> to see everything we offer
               </p>
             </div>
           </div>
