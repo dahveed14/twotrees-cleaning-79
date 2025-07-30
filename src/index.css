@@ -119,3 +119,20 @@
 .fill-two-trees-gold {
   fill: hsl(var(--two-trees-gold));
 }
+
+/* NiceJob Widget Star Fix */
+.nj-stories .nj-star {
+  color: #fbbf24 !important;
+  fill: #fbbf24 !important;
+}
+
+.nj-stories .nj-stars .nj-star {
+  font-family: inherit !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+.nj-stories .nj-star::before {
+  content: "★" !important;
+  color: #fbbf24 !important;
+}

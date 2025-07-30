@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { NiceJobWidget } from "@/components/NiceJobWidget";
 
 // Extend the Window interface to include jQuery
 declare global {
@@ -76,17 +75,6 @@ const Book = () => {
             </p>
           </div>
 
-          {/* Compact Google Reviews Section - Social Proof Before Booking */}
-          <div className="mb-12">
-            <div className="text-center mb-6">
-              <h2 className="text-xl font-bold text-two-trees-green mb-2">
-                Trusted by Happy Customers
-              </h2>
-            </div>
-            <div className="max-w-2xl mx-auto">
-              <NiceJobWidget compact />
-            </div>
-          </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <iframe 
