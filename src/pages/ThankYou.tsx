@@ -101,7 +101,7 @@ const ThankYou = () => {
                 1
               </div>
               <p className="text-gray-700">
-                You'll receive a confirmation text with all the details
+                <span className="font-semibold">Confirmation</span> – You'll receive a text with all the booking details.
               </p>
             </div>
             <div className="flex items-start space-x-3">
@@ -109,7 +109,7 @@ const ThankYou = () => {
                 2
               </div>
               <p className="text-gray-700">
-                Please fill out the Client Consent & Service Agreement that was texted to you
+                <span className="font-semibold">Agreement</span> – Please complete the Client Consent & Service Agreement we texted you.
               </p>
             </div>
             <div className="flex items-start space-x-3">
@@ -117,7 +117,7 @@ const ThankYou = () => {
                 3
               </div>
               <p className="text-gray-700">
-                Review our <a href="/services" className="text-two-trees-green hover:underline font-medium">service checklist</a> to see everything we offer
+                <span className="font-semibold">Checklist</span> – Take a look at our <a href="/services" className="text-two-trees-green hover:underline font-medium">service checklist</a> to see what's included.
               </p>
             </div>
           </div>
