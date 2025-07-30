@@ -3,63 +3,21 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, Home } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { trackPageView, trackConversion, trackPhoneClick } from "@/utils/gtm";
 
 const ContactThankYou = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Meta Pixel Code
-    (function(f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      'script',
-      'https://connect.facebook.net/en_US/fbevents.js',
-      null,
-      null,
-      null
-    );
-    
-    (window as any).fbq('init', '991478226474039');
-    (window as any).fbq('track', 'PageView');
-
     // Track page view for contact thank you page
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_view', {
-        page_title: 'Thank You - Contact Form Submitted',
-        page_location: window.location.href
-      });
-      
-      // Track conversion event
-      (window as any).gtag('event', 'conversion', {
-        event_category: 'Contact',
-        event_label: 'Contact Form Submitted',
-        value: 1
-      });
-    }
+    trackPageView('Thank You - Contact Form Submitted', window.location.href);
+    
+    // Track conversion event
+    trackConversion('Contact Form Submitted', 'contact_thank_you');
   }, []);
 
   const handlePhoneClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'phone_click', {
-        event_category: 'Contact',
-        event_label: 'Contact Thank You Page Phone Click'
-      });
-    }
+    trackPhoneClick('contact_thank_you');
     window.location.href = 'tel:805-456-1421';
   };
 
@@ -69,17 +27,6 @@ const ContactThankYou = () => {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
-      {/* Meta Pixel noscript fallback */}
-      <noscript>
-        <img 
-          height="1" 
-          width="1" 
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=991478226474039&ev=PageView&noscript=1"
-          alt=""
-        />
-      </noscript>
-      
       <div className="max-w-2xl mx-auto text-center">
         <div className="mb-8">
           <CheckCircle className="w-20 h-20 text-two-trees-green mx-auto mb-6" />

@@ -10,6 +10,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { updateMetaTags } from "@/utils/metaTags";
+import { trackPageView, trackButtonClick, trackPhoneClick } from "@/utils/gtm";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
@@ -51,12 +52,7 @@ const Index = () => {
     document.head.appendChild(niceJobScript);
 
     // Track page view
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_view', {
-        page_title: 'Two Trees Cleaning Landing Page',
-        page_location: window.location.href
-      });
-    }
+    trackPageView('Two Trees Cleaning Landing Page', window.location.href);
 
     // Cleanup function
     return () => {
@@ -67,21 +63,14 @@ const Index = () => {
 
   const handleBookingClick = (location: string) => {
     // Track the conversion
-    if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Book a Cleaning', location);
-    }
+    trackButtonClick('Book a Cleaning', location);
 
     // Navigate to external booking page
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'phone_click', {
-        event_category: 'Contact',
-        event_label: 'Phone Number Click'
-      });
-    }
+    trackPhoneClick('homepage');
     // Make the phone call
     window.location.href = 'tel:805-456-1421';
   };

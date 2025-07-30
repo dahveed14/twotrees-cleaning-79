@@ -7,6 +7,7 @@ import { NiceJobWidget } from "@/components/NiceJobWidget";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { updateMetaTags } from "@/utils/metaTags";
+import { trackPageView, trackButtonClick, trackCommercialContact } from "@/utils/gtm";
 
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
@@ -46,18 +47,11 @@ const Commercial = () => {
     setUtmParams(params);
 
     // Track page view for commercial
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_view', {
-        page_title: 'Two Trees Commercial Cleaning Landing Page',
-        page_location: window.location.href
-      });
-    }
+    trackPageView('Two Trees Commercial Cleaning Landing Page', window.location.href);
   }, []);
   const handleBookingClick = (location: string) => {
     // Track the commercial conversion
-    if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Email Commercial Inquiry', location);
-    }
+    trackButtonClick('Email Commercial Inquiry', location);
 
     // Open email compose window
     const subject = encodeURIComponent('Commercial Cleaning Quote Request');
@@ -65,12 +59,7 @@ const Commercial = () => {
     window.location.href = `mailto:hello@twotreescleaning.com?subject=${subject}&body=${body}`;
   };
   const handlePhoneClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'commercial_phone_click', {
-        event_category: 'Commercial Contact',
-        event_label: 'Phone Number Click'
-      });
-    }
+    trackCommercialContact('Phone Call', 'commercial');
     // Make the phone call
     window.location.href = 'tel:805-456-1421';
   };

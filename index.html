@@ -55,74 +55,20 @@
     <!-- Content Security Policy (CSP) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://convertlabs.io https://ajax.googleapis.com https://cdn.nicejob.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.nicejob.co; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://urjcjboxtesntibsvgvp.supabase.co https://api.supabase.io wss://urjcjboxtesntibsvgvp.supabase.co https://cdn.nicejob.co https://api.nicejob.co; frame-src https://convertlabs.io; object-src 'none'; base-uri 'self'; form-action 'self';">
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2QNHXH7QRD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-2QNHXH7QRD', {
-        page_title: 'Two Trees Cleaning Landing Page',
-        custom_map: {
-          'custom_parameter_1': 'utm_source',
-          'custom_parameter_2': 'utm_medium', 
-          'custom_parameter_3': 'utm_campaign'
-        }
-      });
-
-      // UTM Parameter tracking
-      function captureUTMParameters() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const utmData = {
-          utm_source: urlParams.get('utm_source'),
-          utm_medium: urlParams.get('utm_medium'),
-          utm_campaign: urlParams.get('utm_campaign'),
-          utm_term: urlParams.get('utm_term'),
-          utm_content: urlParams.get('utm_content')
-        };
-        
-        // Store UTM data in sessionStorage for form submissions
-        sessionStorage.setItem('utmData', JSON.stringify(utmData));
-        
-        // Send UTM data to GA4
-        if (utmData.utm_source || utmData.utm_medium || utmData.utm_campaign) {
-          gtag('event', 'utm_capture', {
-            utm_source: utmData.utm_source,
-            utm_medium: utmData.utm_medium,
-            utm_campaign: utmData.utm_campaign,
-            utm_term: utmData.utm_term,
-            utm_content: utmData.utm_content
-          });
-        }
-      }
-
-      // Track conversion events
-      function trackConversion(action, location) {
-        gtag('event', 'conversion', {
-          event_category: 'Two Trees Cleaning',
-          event_label: action,
-          custom_parameter_1: location,
-          value: 1
-        });
-      }
-
-      // Track button clicks
-      function trackButtonClick(buttonText, location) {
-        gtag('event', 'cta_click', {
-          event_category: 'CTA',
-          event_label: buttonText,
-          custom_parameter_1: location
-        });
-        trackConversion('Book Cleaning Click', location);
-      }
-
-      // Capture UTM parameters on page load
-      window.addEventListener('load', captureUTMParameters);
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDJHRG9J');</script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDJHRG9J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
