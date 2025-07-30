@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-// Extend the Window interface to include jQuery
+// Extend the Window interface to include jQuery and NiceJob
 declare global {
   interface Window {
     jQuery: any;
+    NiceJob: any;
   }
 }
 
@@ -41,12 +42,23 @@ const Book = () => {
     document.head.appendChild(convertLabsScript);
 
     // Load NiceJob SDK for badge widget
+    console.log('Loading NiceJob script...');
     const niceJobScript = document.createElement('script');
     niceJobScript.type = 'text/javascript';
     niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
     niceJobScript.defer = true;
     niceJobScript.onload = () => {
       console.log('NiceJob script loaded successfully');
+      // Force widget initialization after a delay
+      setTimeout(() => {
+        console.log('Attempting to initialize NiceJob widgets...');
+        if (window.NiceJob) {
+          window.NiceJob.init();
+          console.log('NiceJob init called');
+        } else {
+          console.log('NiceJob object not found on window');
+        }
+      }, 1000);
     };
     niceJobScript.onerror = () => {
       console.error('Failed to load NiceJob script');
