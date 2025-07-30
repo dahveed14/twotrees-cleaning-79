@@ -42,27 +42,10 @@ const Book = () => {
     document.head.appendChild(convertLabsScript);
 
     // Load NiceJob SDK for badge widget
-    console.log('Loading NiceJob script...');
     const niceJobScript = document.createElement('script');
     niceJobScript.type = 'text/javascript';
     niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
     niceJobScript.defer = true;
-    niceJobScript.onload = () => {
-      console.log('NiceJob script loaded successfully');
-      // Force widget initialization after a delay
-      setTimeout(() => {
-        console.log('Attempting to initialize NiceJob widgets...');
-        if (window.NiceJob) {
-          window.NiceJob.init();
-          console.log('NiceJob init called');
-        } else {
-          console.log('NiceJob object not found on window');
-        }
-      }, 1000);
-    };
-    niceJobScript.onerror = () => {
-      console.error('Failed to load NiceJob script');
-    };
     document.head.appendChild(niceJobScript);
 
     // Add ConvertLabs styles
@@ -90,9 +73,8 @@ const Book = () => {
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       {/* Floating NiceJob Badge - Right Side */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 bg-red-100 border border-red-300 p-4 rounded">
-        <div>Testing Badge Position</div>
-        <div className="nj-badge" data-show-reviews="1"></div>
+      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50">
+        <div className="nj-badge"></div>
       </div>
       
       <main className="py-20 px-4">
