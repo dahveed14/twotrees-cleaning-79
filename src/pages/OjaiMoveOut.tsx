@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Star, CheckCircle, Clock, Shield, Sparkles, Users, MapPin, Calendar, Home, Heart } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
-import { CompactGoogleReviews } from "@/components/CompactGoogleReviews";
+import { NiceJobWidget } from "@/components/NiceJobWidget";
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { updateMetaTags } from "@/utils/metaTags";
@@ -428,7 +428,7 @@ export default function OjaiMoveOut() {
                 </div>
               </div>
               
-              <CompactGoogleReviews />
+              <NiceJobWidget compact />
             </div>
           </section>
 

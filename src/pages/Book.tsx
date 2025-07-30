@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { CompactGoogleReviews } from "@/components/CompactGoogleReviews";
+import { NiceJobWidget } from "@/components/NiceJobWidget";
 
 // Extend the Window interface to include jQuery
 declare global {
@@ -84,7 +84,7 @@ const Book = () => {
               </h2>
             </div>
             <div className="max-w-2xl mx-auto">
-              <CompactGoogleReviews />
+              <NiceJobWidget compact />
             </div>
           </div>
           
