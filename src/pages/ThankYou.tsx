@@ -51,6 +51,27 @@ const ThankYou = () => {
         value: 1
       });
     }
+
+    // Enhanced Ecommerce Purchase Tracking
+    if (typeof window !== 'undefined') {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "purchase",
+        ecommerce: {
+          transaction_id: "TTC-001",
+          value: 249,
+          currency: "USD",
+          items: [
+            {
+              item_name: "Move-In/Out Cleaning",
+              item_category: "Service",
+              price: 249,
+              quantity: 1
+            }
+          ]
+        }
+      });
+    }
   }, []);
 
   const handlePhoneClick = () => {
