@@ -23,7 +23,7 @@ export const Hero = ({
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">Trusted House Cleaning Service</h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                At Two Trees Cleaning, we help busy families across Ventura, Santa Barbara, and Los Angeles Counties enjoy more free time and less stress. From Santa Barbara to Thousand Oaks, Westlake Village to Camarillo, our detail-oriented team delivers consistently spotless homes—so you can focus on what matters most.
+                At Two Trees Cleaning, we help busy families across Ventura and Santa Barbara Counties enjoy more free time and less stress. From Santa Barbara to Thousand Oaks, Westlake Village to Camarillo, our detail-oriented team delivers consistently spotless homes—so you can focus on what matters most.
               </p>
             </div>
             
