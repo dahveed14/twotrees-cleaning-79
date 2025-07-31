@@ -10,24 +10,22 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
 
 
-
 const Camarillo = () => {
 
   const handleBookingClick = (location: string) => {
-    gtag('event', 'cta_click', {
-      event_category: 'CTA',
-      event_label: 'Book a Cleaning',
-      location: `Camarillo - ${location}`
-    });
+    if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
+      (window as any).trackButtonClick('Book a Cleaning', `Camarillo - ${location}`);
+    }
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
-    gtag('event', 'phone_click', {
-      event_category: 'Contact',
-      event_label: 'Phone Number Click',
-      location: 'camarillo'
-    });
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'phone_click', {
+        event_category: 'Contact',
+        event_label: 'Camarillo Phone Click'
+      });
+    }
     window.location.href = 'tel:805-456-1421';
   };
 

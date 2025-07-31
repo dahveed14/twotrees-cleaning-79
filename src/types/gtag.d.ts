@@ -1,1 +1,0 @@
-declare function gtag(command: 'event', eventName: string, parameters?: Record<string, any>): void;

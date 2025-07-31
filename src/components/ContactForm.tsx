@@ -11,7 +11,6 @@ import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
-
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
@@ -46,11 +45,12 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     // Track form submission
-    gtag('event', 'form_submit', {
-      event_category: 'Form',
-      event_label: 'Contact Form Submission',
-      location: 'contact'
-    });
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Contact Form Submission'
+      });
+    }
 
     try {
       // Insert form data into Supabase
