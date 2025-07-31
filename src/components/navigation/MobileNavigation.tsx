@@ -106,13 +106,19 @@ export const MobileNavigation = ({
             >
               FAQ
             </Link>
-            <Link 
-              to="/contact" 
-              className="text-gray-700 hover:text-two-trees-green px-4 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            <div className="px-4">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="w-full border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                onClick={() => {
+                  window.location.href = '/contact';
+                  setMobileMenuOpen(false);
+                }}
+              >
+                Get Quote
+              </Button>
+            </div>
             
             {/* Mobile CTA Buttons */}
             <div className="px-4 pt-4 space-y-2 border-t border-gray-200">

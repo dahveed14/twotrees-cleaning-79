@@ -36,9 +36,14 @@ export const DesktopNavigation = ({ onBookingClick, onPhoneClick }: DesktopNavig
         <Link to="/faq" className="text-gray-700 hover:text-two-trees-green transition-colors">
           FAQ
         </Link>
-        <Link to="/contact" className="text-gray-700 hover:text-two-trees-green transition-colors">
-          Contact
-        </Link>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+          onClick={() => window.location.href = '/contact'}
+        >
+          Get Quote
+        </Button>
       </div>
 
       {/* Desktop CTA Buttons */}
