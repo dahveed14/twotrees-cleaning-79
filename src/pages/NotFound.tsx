@@ -1,13 +1,17 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { track404Error } from "@/utils/gtm";
+
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
     // Track 404 errors for analytics
-    track404Error(location.pathname);
+    gtag('event', 'page_error', {
+      event_category: 'Error',
+      event_label: '404 Page Not Found',
+      page_path: location.pathname
+    });
   }, [location.pathname]);
 
   return (

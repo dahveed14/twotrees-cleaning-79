@@ -10,7 +10,6 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { updateMetaTags } from "@/utils/metaTags";
-import { trackPageView, trackButtonClick, trackPhoneClick } from "@/utils/gtm";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
@@ -52,7 +51,10 @@ const Index = () => {
     document.head.appendChild(niceJobScript);
 
     // Track page view
-    trackPageView('Two Trees Cleaning Landing Page', window.location.href);
+    gtag('event', 'page_view', {
+      page_title: 'Two Trees Cleaning - Professional House Cleaning Service in Ventura County',
+      page_location: window.location.href
+    });
 
     // Cleanup function
     return () => {
@@ -62,16 +64,21 @@ const Index = () => {
   }, []);
 
   const handleBookingClick = (location: string) => {
-    // Track the conversion
-    trackButtonClick('Book a Cleaning', location);
-
-    // Navigate to external booking page
+    gtag('event', 'conversion', {
+      event_category: 'Two Trees Cleaning',
+      event_label: 'Book Cleaning Click',
+      location: location,
+      value: 1
+    });
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
-    trackPhoneClick('homepage');
-    // Make the phone call
+    gtag('event', 'phone_click', {
+      event_category: 'Contact',
+      event_label: 'Phone Number Click',
+      location: 'header'
+    });
     window.location.href = 'tel:805-456-1421';
   };
 

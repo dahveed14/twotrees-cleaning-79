@@ -3,21 +3,33 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, Home } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { trackPageView, trackConversion, trackPhoneClick } from "@/utils/gtm";
+
 
 const ContactThankYou = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     // Track page view for contact thank you page
-    trackPageView('Thank You - Contact Form Submitted', window.location.href);
+    gtag('event', 'page_view', {
+      page_title: 'Thank You - Contact Form Submitted',
+      page_location: window.location.href
+    });
     
     // Track conversion event
-    trackConversion('Contact Form Submitted', 'contact_thank_you');
+    gtag('event', 'conversion', {
+      event_category: 'Two Trees Cleaning',
+      event_label: 'Contact Form Submitted',
+      location: 'contact_thank_you',
+      value: 1
+    });
   }, []);
 
   const handlePhoneClick = () => {
-    trackPhoneClick('contact_thank_you');
+    gtag('event', 'phone_click', {
+      event_category: 'Contact',
+      event_label: 'Phone Number Click',
+      location: 'contact_thank_you'
+    });
     window.location.href = 'tel:805-456-1421';
   };
 

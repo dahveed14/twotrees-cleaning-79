@@ -8,18 +8,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
-import { trackButtonClick, trackPhoneClick } from "@/utils/gtm";
+
 
 
 const Camarillo = () => {
 
   const handleBookingClick = (location: string) => {
-    trackButtonClick('Book a Cleaning', `Camarillo - ${location}`);
+    gtag('event', 'cta_click', {
+      event_category: 'CTA',
+      event_label: 'Book a Cleaning',
+      location: `Camarillo - ${location}`
+    });
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
-    trackPhoneClick('camarillo');
+    gtag('event', 'phone_click', {
+      event_category: 'Contact',
+      event_label: 'Phone Number Click',
+      location: 'camarillo'
+    });
     window.location.href = 'tel:805-456-1421';
   };
 

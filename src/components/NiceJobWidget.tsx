@@ -27,13 +27,10 @@ export const NiceJobWidget = ({
     }
 
     // Track analytics
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
-        event: 'view_reviews',
-        event_category: 'Reviews',
-        event_label: 'NiceJob Widget Loaded'
-      });
-    }
+    gtag('event', 'view_reviews', {
+      event_category: 'Reviews',
+      event_label: 'NiceJob Widget Loaded'
+    });
   }, []);
 
   if (compact) {

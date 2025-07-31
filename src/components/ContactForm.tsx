@@ -10,7 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { trackFormSubmit } from "@/utils/gtm";
+
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -46,7 +46,11 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     // Track form submission
-    trackFormSubmit('Contact Form Submission', 'contact');
+    gtag('event', 'form_submit', {
+      event_category: 'Form',
+      event_label: 'Contact Form Submission',
+      location: 'contact'
+    });
 
     try {
       // Insert form data into Supabase
