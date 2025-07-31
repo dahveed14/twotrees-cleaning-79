@@ -26,21 +26,16 @@ const Contact = () => {
     });
 
     // Load Convert Labs scripts
-    const jqueryScript = document.createElement('script');
-    jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
-    document.head.appendChild(jqueryScript);
+    const style = document.createElement('style');
+    style.textContent = '.Convert27{width: 1px;min-width: 100%;}';
+    document.head.appendChild(style);
 
     const convertLabsScript = document.createElement('script');
-    convertLabsScript.src = 'https://convertlabs.io/js/booking_embed.js';
+    convertLabsScript.src = '//convertlabs.io/js/embed.js';
     document.head.appendChild(convertLabsScript);
-
-    const style = document.createElement('style');
-    style.textContent = '.Convertlabs{width: 1px;min-width: 100%; height: 1px; min-height: 100%;}';
-    document.head.appendChild(style);
 
     return () => {
       // Cleanup scripts on unmount
-      if (document.head.contains(jqueryScript)) document.head.removeChild(jqueryScript);
       if (document.head.contains(convertLabsScript)) document.head.removeChild(convertLabsScript);
       if (document.head.contains(style)) document.head.removeChild(style);
     };
@@ -125,11 +120,11 @@ const Contact = () => {
                   </p>
                 </div>
                 <iframe 
-                  src="https://convertlabs.io/quote_form/3296" 
+                  src="//convertlabs.io/booking_forms/endpoint.php?widget_id=16598"
                   frameBorder="0" 
-                  scrolling="no" 
+                  scrolling="0" 
                   style={{width: '100%'}}
-                  className="Convertlabs"
+                  className="Convert27"
                   title="Two Trees Cleaning Quote Form"
                 />
               </div>
