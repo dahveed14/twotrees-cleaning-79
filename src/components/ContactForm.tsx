@@ -45,12 +45,9 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     // Track form submission
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'form_submit', {
-        event_category: 'Contact',
-        event_label: 'Contact Form Submission'
-      });
-    }
+    import('../utils/analytics').then(({ trackFormSubmit }) => {
+      trackFormSubmit('contact');
+    });
 
     try {
       // Insert form data into Supabase

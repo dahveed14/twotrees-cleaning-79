@@ -51,12 +51,9 @@ const Index = () => {
     document.head.appendChild(niceJobScript);
 
     // Track page view
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_view', {
-        page_title: 'Two Trees Cleaning Landing Page',
-        page_location: window.location.href
-      });
-    }
+    import('../utils/analytics').then(({ trackPageView }) => {
+      trackPageView('Two Trees Cleaning Landing Page');
+    });
 
     // Cleanup function
     return () => {
@@ -67,22 +64,18 @@ const Index = () => {
 
   const handleBookingClick = (location: string) => {
     // Track the conversion
-    if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Book a Cleaning', location);
-    }
+    import('../utils/analytics').then(({ trackBookingClick }) => {
+      trackBookingClick(location);
+    });
 
     // Navigate to external booking page
     window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'phone_click', {
-        event_category: 'Contact',
-        event_label: 'Phone Number Click'
-      });
-    }
-    // Make the phone call
+    import('../utils/analytics').then(({ trackPhoneClick }) => {
+      trackPhoneClick('home');
+    });
     window.location.href = 'tel:805-456-1421';
   };
 
