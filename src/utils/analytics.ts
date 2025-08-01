@@ -34,3 +34,12 @@ export const trackConversion = (conversionType: string, value: number = 1) => {
     conversion_value: value
   });
 };
+
+// Additional tracking functions for specific events
+export const track404Error = (pageLocation: string) => {
+  trackEvent('404_error', { page_location: pageLocation });
+};
+
+export const trackReviewsView = (page: string) => {
+  trackEvent('view_reviews', { page });
+};
