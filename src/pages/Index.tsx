@@ -97,7 +97,9 @@ const Index = () => {
       <Helmet>
         <title>Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured</title>
         <meta name="description" content="Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140." />
-        
+        <meta name="geo.region" content="US-CA" />
+        <meta name="geo.placename" content="Ventura" />
+        <meta name="geo.position" content="34.2746;-119.2290" />
       </Helmet>
       <SchemaMarkup />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
