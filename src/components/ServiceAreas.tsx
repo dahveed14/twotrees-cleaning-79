@@ -17,7 +17,7 @@ export const ServiceAreas = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[hsl(var(--primary))] mb-6">
-            Serving All of Ventura County
+            Serving All of Ventura and Beyond
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We proudly serve <Link to="/santa-barbara" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] transition-colors underline">Santa Barbara</Link>, <Link to="/thousand-oaks" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] transition-colors underline">Thousand Oaks</Link>, <Link to="/ventura" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] transition-colors underline">Ventura</Link>, <Link to="/oxnard" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] transition-colors underline">Oxnard</Link>, <Link to="/camarillo" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] transition-colors underline">Camarillo</Link>, <Link to="/ojai" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] transition-colors underline">Ojai</Link>, and surrounding areas with professional house cleaning services.
