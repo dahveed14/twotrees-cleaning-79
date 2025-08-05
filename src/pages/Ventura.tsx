@@ -104,10 +104,21 @@ const Ventura = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green mb-6">
                 Ventura House Cleaning Services
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Professional house cleaning for historic and coastal Ventura. From downtown's charming streets 
                 to Pierpont Bay beachfront homes, we provide reliable cleaning services that respect your 
                 home's character. Serving Ventura families since 2020.
+              </p>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Ventura's unique blend of historic charm and coastal living requires specialized cleaning expertise. 
+                Whether you own a vintage Craftsman near the San Buenaventura Mission, a modern beachfront condo at 
+                Pierpont Bay, or are renovating a downtown property near Main Street, we understand the specific 
+                challenges of maintaining homes in this beautiful coastal city.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                From post-construction cleanup after home renovations to regular maintenance that protects against 
+                salt air and coastal elements, our comprehensive services include deep cleaning, move-in/move-out 
+                cleaning, and specialized post-construction cleaning for Ventura's growing renovation market.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -207,19 +218,91 @@ const Ventura = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-two-trees-green">
                   <Shield className="w-6 h-6" />
-                  Regular Maintenance
+                  Post-Construction Cleaning
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600">Consistent cleaning for all Ventura neighborhoods.</p>
+                <p className="text-gray-600">Essential cleanup after renovations and construction projects.</p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Weekly or bi-weekly service</li>
-                  <li>• All areas thoroughly cleaned</li>
-                  <li>• Flexible scheduling options</li>
+                  <li>• Construction dust removal</li>
+                  <li>• Window and fixture cleaning</li>
+                  <li>• Safe debris cleanup</li>
                 </ul>
-                <p className="font-semibold text-two-trees-green">Starting at $135</p>
+                <p className="font-semibold text-two-trees-green">Starting at $200</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="w-full mt-3 border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  onClick={() => window.location.href = '/ventura/post-construction-cleaning'}
+                >
+                  Ventura Post-Construction Cleaning
+                </Button>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Post-Construction Focus Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-two-trees-green mb-6">
+                Ventura Post-Construction Cleaning Specialists
+              </h2>
+              <p className="text-xl text-gray-600 mb-6">
+                Ventura's building boom means more renovation and construction projects than ever. From historic home 
+                restorations downtown to new coastal construction, we specialize in the thorough cleanup required 
+                after construction work.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Safe removal of construction dust and debris</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Historic property renovation experience</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Coastal construction cleanup expertise</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-two-trees-gold" />
+                  <span className="text-gray-700">Professional-grade equipment and techniques</span>
+                </div>
+              </div>
+              <Button 
+                size="lg"
+                className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4"
+                onClick={() => window.location.href = '/ventura/post-construction-cleaning'}
+              >
+                Learn About Ventura Post-Construction Cleaning
+              </Button>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-two-trees-green mb-4 text-center">
+                Post-Construction Cleaning Starting at $200
+              </h3>
+              <p className="text-gray-600 text-center mb-6">
+                Specialized for historic and coastal Ventura properties
+              </p>
+              <div className="space-y-3 mb-6">
+                <p className="text-sm text-gray-500 text-center">✓ All Ventura neighborhoods served</p>
+                <p className="text-sm text-gray-500 text-center">✓ Historic property expertise</p>
+                <p className="text-sm text-gray-500 text-center">✓ Coastal construction experience</p>
+                <p className="text-sm text-gray-500 text-center">✓ Professional dust removal equipment</p>
+              </div>
+              <Button 
+                size="lg"
+                className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
+                onClick={() => handleBookingClick('Ventura Post-Construction')}
+              >
+                Get Free Quote
+              </Button>
+            </div>
           </div>
         </div>
       </section>
