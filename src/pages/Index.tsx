@@ -7,6 +7,7 @@ import { ServiceAreas } from "@/components/ServiceAreas";
 import { About } from "@/components/About";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SocialProof } from "@/components/SocialProof";
+import { HomepageFAQ } from "@/components/HomepageFAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
@@ -114,6 +115,9 @@ const Index = () => {
       </LazySection>
       <LazySection>
         <SocialProof />
+      </LazySection>
+      <LazySection>
+        <HomepageFAQ />
       </LazySection>
       <LazySection>
         <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
