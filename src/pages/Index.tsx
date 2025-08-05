@@ -45,15 +45,18 @@ const Index = () => {
 
     // Delay NiceJob SDK loading for better performance
     const loadNiceJobScript = () => {
-      const niceJobScript = document.createElement('script');
-      niceJobScript.type = 'text/javascript';
-      niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
-      niceJobScript.defer = true;
-      document.head.appendChild(niceJobScript);
+      const existingScript = document.querySelector('script[src*="nicejob.co"]');
+      if (!existingScript) {
+        const niceJobScript = document.createElement('script');
+        niceJobScript.type = 'text/javascript';
+        niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
+        niceJobScript.defer = true;
+        document.head.appendChild(niceJobScript);
+      }
     };
 
     // Load after initial render to avoid blocking
-    const timer = setTimeout(loadNiceJobScript, 2000);
+    const timer = setTimeout(loadNiceJobScript, 3000);
 
     // Track page view
     import('../utils/analytics').then(({ trackPageView }) => {
