@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Benefits } from "@/components/Benefits";
+import { ServiceAreas } from "@/components/ServiceAreas";
 import { About } from "@/components/About";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SocialProof } from "@/components/SocialProof";
@@ -102,6 +103,7 @@ const Index = () => {
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Hero onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Benefits />
+      <ServiceAreas />
       <LazySection>
         <About />
       </LazySection>
