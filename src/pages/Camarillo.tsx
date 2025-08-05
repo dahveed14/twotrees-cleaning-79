@@ -109,7 +109,8 @@ const Camarillo = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Professional house cleaning for Camarillo families and communities. From Sterling Hills to 
                 Old Town Camarillo, we provide reliable, thorough cleaning services that fit your lifestyle. 
-                Serving the Premium Outlets area and beyond since 2020.
+                Serving the Premium Outlets area, Spanish Hills, and Mission Oaks with regular house cleaning, 
+                deep cleaning, move-in/move-out, and post-construction cleaning services since 2020.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -162,13 +163,91 @@ const Camarillo = () => {
         </div>
       </section>
 
-      {/* Professional Services */}
+      {/* Why Choose Us Section */}
       <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-two-trees-green mb-6">
+              Why Camarillo Families Choose Two Trees Cleaning
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              As a trusted cleaning service in Ventura County, we understand the unique needs of Camarillo's 
+              diverse communities - from the historic charm of Old Town to the modern developments near Premium Outlets.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-two-trees-green">
+                  <MapPin className="w-6 h-6" />
+                  Local Camarillo Expertise
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  We know Camarillo's neighborhoods inside and out. From the family-oriented communities 
+                  of Sterling Hills to the established areas near Las Posas Country Club, we tailor our 
+                  services to each area's specific needs.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Spanish Hills custom home expertise</li>
+                  <li>• Mission Oaks family-friendly scheduling</li>
+                  <li>• Premium Outlets area convenience</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-two-trees-green">
+                  <Shield className="w-6 h-6" />
+                  Trusted & Reliable Service
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  Licensed, bonded, and insured for your peace of mind. Our consistent team approach 
+                  means you'll get to know your cleaners, building trust and ensuring quality every visit.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Background-checked staff</li>
+                  <li>• Consistent cleaning teams</li>
+                  <li>• 100% satisfaction guarantee</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-two-trees-green">
+                  <Clock className="w-6 h-6" />
+                  Flexible Scheduling
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  We work around your busy Camarillo lifestyle. Whether you need weekly service for 
+                  your family home or one-time deep cleaning before hosting guests, we accommodate your schedule.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Weekend availability</li>
+                  <li>• Last-minute scheduling</li>
+                  <li>• Holiday cleaning services</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Services */}
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
             Professional Camarillo Cleaning Services
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-two-trees-green">
@@ -179,9 +258,10 @@ const Camarillo = () => {
               <CardContent className="space-y-4">
                 <p className="text-gray-600">Consistent, reliable cleaning for busy Camarillo families.</p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Weekly, bi-weekly options</li>
+                  <li>• Weekly, bi-weekly, monthly</li>
                   <li>• Flexible scheduling</li>
                   <li>• All rooms thoroughly cleaned</li>
+                  <li>• Custom cleaning checklists</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $130</p>
               </CardContent>
@@ -195,10 +275,11 @@ const Camarillo = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600">Comprehensive cleaning for Camarillo homes.</p>
+                <p className="text-gray-600">Comprehensive deep cleaning for Camarillo homes.</p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Detailed surface cleaning</li>
-                  <li>• Inside appliances</li>
+                  <li>• Inside appliances & cabinets</li>
+                  <li>• Baseboards & window sills</li>
                   <li>• Seasonal deep cleaning</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $190</p>
@@ -216,10 +297,30 @@ const Camarillo = () => {
                 <p className="text-gray-600">Perfect for relocating within Camarillo area.</p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Complete property cleaning</li>
-                  <li>• Fast turnaround time</li>
+                  <li>• Appliance interior cleaning</li>
+                  <li>• Cabinet & drawer cleaning</li>
                   <li>• Deposit-ready standards</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $170</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-two-trees-green">
+                  <ShoppingBag className="w-6 h-6" />
+                  Post-Construction
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">Specialized cleaning after renovations and construction.</p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Dust & debris removal</li>
+                  <li>• Paint overspray cleaning</li>
+                  <li>• Window & fixture cleaning</li>
+                  <li>• Construction cleanup</li>
+                </ul>
+                <p className="font-semibold text-two-trees-green">Starting at $210</p>
               </CardContent>
             </Card>
           </div>
@@ -311,6 +412,96 @@ const Camarillo = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Frequently Asked Questions - Camarillo Cleaning
+          </h2>
+          <div className="space-y-8">
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">
+                  Do you clean homes in all Camarillo neighborhoods?
+                </h3>
+                <p className="text-gray-600">
+                  Yes! We provide professional cleaning services throughout Camarillo, including Sterling Hills, 
+                  Spanish Hills, Mission Oaks, Old Town Camarillo, Camarillo Heights, Villa Campana, and all 
+                  areas near the Premium Outlets. Our team is familiar with the unique characteristics of each 
+                  neighborhood and adjusts our services accordingly.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">
+                  What makes your Camarillo cleaning service different?
+                </h3>
+                <p className="text-gray-600">
+                  As a local Ventura County company, we understand Camarillo's community values and family-oriented 
+                  lifestyle. We're not a franchise - we're your neighbors who take pride in maintaining the beauty 
+                  of our shared community. Our consistent teams, flexible scheduling, and personal attention set us apart.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">
+                  How do you handle post-construction cleaning in Camarillo?
+                </h3>
+                <p className="text-gray-600">
+                  With Camarillo's growing development and home renovations, we specialize in post-construction cleanup. 
+                  Our team uses specialized equipment to remove construction dust, paint residue, and debris. We're 
+                  experienced with both new construction near the Premium Outlets area and renovation projects in 
+                  established neighborhoods like Spanish Hills.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">
+                  Can you accommodate families with children and pets in Camarillo?
+                </h3>
+                <p className="text-gray-600">
+                  Absolutely! Many of our Camarillo clients are families with children and pets. We use safe, 
+                  non-toxic cleaning products and can work around your family's schedule. Our team is experienced 
+                  with pet-friendly homes and understands the importance of maintaining a safe environment for your loved ones.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">
+                  What's your pricing for Camarillo homes?
+                </h3>
+                <p className="text-gray-600">
+                  Our pricing is competitive and fair for Camarillo's market. Regular cleaning starts at $130, 
+                  deep cleaning at $190, and move-out cleaning at $170. Prices vary based on home size, condition, 
+                  and specific needs. We provide free estimates and transparent pricing - no hidden fees or surprises.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-two-trees-green mb-4">
+                  How far in advance should I book cleaning services?
+                </h3>
+                <p className="text-gray-600">
+                  For regular weekly or bi-weekly service, we recommend booking 1-2 weeks in advance. For one-time 
+                  services like deep cleaning or move-out cleaning, we often accommodate same-week requests. During 
+                  busy seasons (spring cleaning, holidays), earlier booking ensures your preferred time slot.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -318,7 +509,8 @@ const Camarillo = () => {
             Ready for Professional Camarillo Cleaning?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join satisfied families throughout Camarillo. Licensed, insured, and trusted since 2020.
+            Join satisfied families throughout Camarillo. Licensed, insured, and trusted since 2020. 
+            Experience the difference local expertise makes for your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
