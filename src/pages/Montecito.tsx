@@ -106,10 +106,20 @@ const Montecito = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green mb-6">
                 Montecito Luxury House Cleaning
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Premium cleaning services for Montecito's finest homes. From Coast Village Road estates to 
                 Upper Village properties, we provide discreet, professional service with the highest standards 
                 of quality and confidentiality along this stunning coastline.
+              </p>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                As Montecito's premier house cleaning service since 2020, we understand the unique needs of luxury estates, 
+                celebrity homes, and vacation rentals in this exclusive enclave. Our experienced team is fully licensed, 
+                insured, and trained in discretion - essential qualities for serving Montecito's discerning residents.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Whether you own a sprawling estate near San Ysidro Ranch, a charming cottage in the Upper Village, 
+                or a luxury vacation rental near Butterfly Beach, we deliver the meticulous care your property deserves. 
+                Our services range from regular housekeeping to deep cleaning, move-in/move-out cleaning, and post-construction cleanup.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -220,6 +230,130 @@ const Montecito = () => {
                   <li>• Outdoor space cleaning</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Custom pricing</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us for Montecito */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Why Choose Two Trees for Your Montecito Home?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 className="text-2xl font-bold text-two-trees-green mb-6">Local Expertise & Discretion</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Montecito is unlike anywhere else in California. From the historic charm of the Upper Village to the 
+                oceanfront estates along Butterfly Beach, each property requires specialized care. Our team understands 
+                the unique challenges of maintaining luxury homes in this coastal environment, from salt air exposure 
+                to the demands of high-traffic vacation rentals.
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Privacy and discretion are paramount in Montecito. Our staff is background-checked, bonded, and trained 
+                in confidentiality protocols. We've earned the trust of celebrity clients, tech executives, and longtime 
+                Montecito families who demand the highest standards of professionalism.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Fully licensed & insured cleaning service</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Background-checked & bonded team members</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Eco-friendly products safe for luxury surfaces</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Same-day service available for urgent needs</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+                <CardContent className="p-8">
+                  <h4 className="text-xl font-bold text-two-trees-green mb-4">Montecito Service Highlights</h4>
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Estate Management Support</h5>
+                      <p className="text-sm text-gray-600">Coordinate with property managers, staff, and contractors for seamless estate maintenance.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Vacation Rental Excellence</h5>
+                      <p className="text-sm text-gray-600">Meet Airbnb Superhost standards with 5-star cleaning protocols and guest amenity preparation.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Luxury Surface Care</h5>
+                      <p className="text-sm text-gray-600">Specialized cleaning for marble, travertine, hardwood, and high-end appliances common in Montecito homes.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Event Support</h5>
+                      <p className="text-sm text-gray-600">Pre and post-event cleaning for dinner parties, weddings, and charitable galas at your estate.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Frequently Asked Questions - Montecito Cleaning
+          </h2>
+          <div className="space-y-8">
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">Do you provide cleaning services for vacation rentals in Montecito?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Yes! We're experienced in high-end vacation rental turnovers throughout Montecito. We understand the quick 
+                  turnaround times needed for luxury Airbnb properties and can coordinate same-day cleaning between guests. 
+                  Our service includes deep cleaning, linen changes, amenity restocking, and final inspection to ensure 
+                  5-star guest experiences.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">Can you handle large estates and multiple buildings?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Absolutely. Many of our Montecito clients have sprawling estates with main houses, guest houses, pool houses, 
+                  and staff quarters. We can coordinate comprehensive cleaning of all buildings and outdoor living spaces. 
+                  Our team is equipped to handle properties ranging from 3,000 to 20,000+ square feet.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">What areas of Montecito do you serve?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We serve all of Montecito including the Upper Village, Lower Village, Coast Village Road corridor, 
+                  Olive Mill Road, Hot Springs Road, East Valley Road, Romero Canyon, Eucalyptus Hill, and the areas 
+                  near San Ysidro Ranch, Coral Casino, and Butterfly Beach. No property is too remote or exclusive.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">How do you ensure privacy and discretion?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Privacy is essential in Montecito. All team members sign confidentiality agreements and undergo background 
+                  checks. We arrive in unmarked vehicles if requested, work quietly around family schedules, and maintain 
+                  strict confidentiality about our clients and their properties. Many celebrity and executive clients trust 
+                  us with their most private spaces.
+                </p>
               </CardContent>
             </Card>
           </div>
