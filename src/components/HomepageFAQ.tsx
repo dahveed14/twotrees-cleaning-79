@@ -82,7 +82,7 @@ export const HomepageFAQ = () => {
             <p className="text-gray-600 mb-4">Have more questions?</p>
             <a 
               href="tel:805-456-1421"
-              className="inline-flex items-center px-6 py-3 bg-[hsl(var(--primary))] text-white rounded-lg hover:bg-[hsl(var(--primary-glow))] transition-colors font-medium"
+              className="inline-flex items-center px-6 py-3 bg-[hsl(var(--primary))] text-white rounded-lg hover:bg-[hsl(var(--primary))]/90 transition-colors font-medium"
             >
               Call Us: (805) 456-1421
             </a>
