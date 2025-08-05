@@ -36,7 +36,7 @@ export const About = () => {
           <div className="relative">
             <img 
               src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
-              alt="Two Trees Cleaning team - professional house cleaning service owners" 
+              alt="Two Trees Cleaning team owners - professional house cleaning service providers serving Ventura County and Santa Barbara County since 2020, licensed and insured"
               className="rounded-2xl shadow-xl w-full h-auto"
               loading="lazy"
               decoding="async"

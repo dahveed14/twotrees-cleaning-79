@@ -20,7 +20,7 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/9cdcaf28-1e78-458c-901b-553f5567dac3.png" 
-              alt="Two Trees Cleaning" 
+              alt="Two Trees Cleaning logo - professional house cleaning services in Ventura County and Santa Barbara County" 
               className="h-20 w-auto"
               loading="eager"
               decoding="async"

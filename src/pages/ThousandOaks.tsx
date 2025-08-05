@@ -132,7 +132,7 @@ const ThousandOaks = () => {
             <div className="relative">
               <img 
                 src={thousandOaksHero} 
-                alt="Thousand Oaks family home cleaning service"
+                alt="Beautiful Thousand Oaks residential neighborhood with Spanish-style homes and oak trees - professional house cleaning services available for families in Thousand Oaks, Westlake Village, and surrounding areas"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
