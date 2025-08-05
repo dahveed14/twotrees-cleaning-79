@@ -130,7 +130,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
           "addressRegion": "CA"
         }
       ],
-      "priceRange": "$$",
+      "image": [
+        `${baseUrl}/lovable-uploads/c95b0054-77f3-4718-819c-e36e27daae21.png`,
+        `${baseUrl}/favicon.ico`
+      ],
+      "priceRange": "$140-$500",
       "currenciesAccepted": "USD",
       "paymentAccepted": "Cash, Credit Card, Check",
       "aggregateRating": {
