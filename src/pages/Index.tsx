@@ -9,6 +9,7 @@ import { SocialProof } from "@/components/SocialProof";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
+import { LazySection } from "@/components/LazySection";
 import { updateMetaTags } from "@/utils/metaTags";
 
 const Index = () => {
@@ -55,8 +56,8 @@ const Index = () => {
       }
     };
 
-    // Load after initial render to avoid blocking
-    const timer = setTimeout(loadNiceJobScript, 3000);
+    // Load after initial render to avoid blocking - increased delay for mobile performance
+    const timer = setTimeout(loadNiceJobScript, 5000);
 
     // Track page view
     import('../utils/analytics').then(({ trackPageView }) => {
@@ -101,10 +102,18 @@ const Index = () => {
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Hero onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Benefits />
-      <About />
-      <HowItWorks />
-      <SocialProof />
-      <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
+      <LazySection>
+        <About />
+      </LazySection>
+      <LazySection>
+        <HowItWorks />
+      </LazySection>
+      <LazySection>
+        <SocialProof />
+      </LazySection>
+      <LazySection>
+        <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
+      </LazySection>
       <Footer />
     </div>
   );
