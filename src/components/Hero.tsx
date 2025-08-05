@@ -59,7 +59,16 @@ export const Hero = ({
           </div>
           
           <div className="relative">
-            <img src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" alt="Two Trees Cleaning - best cleaning company in Ventura and Santa Barbara Counties - professional team member cleaning a beautiful home with modern cleaning equipment and eco-friendly supplies" className="rounded-2xl shadow-2xl w-full h-auto" />
+            <img 
+              src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
+              alt="Two Trees Cleaning - best cleaning company in Ventura and Santa Barbara Counties - professional team member cleaning a beautiful home with modern cleaning equipment and eco-friendly supplies" 
+              className="rounded-2xl shadow-2xl w-full h-auto" 
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              width="800"
+              height="600"
+            />
           </div>
         </div>
       </div>

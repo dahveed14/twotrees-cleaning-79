@@ -22,6 +22,10 @@ export const Navigation = ({ onBookingClick, onPhoneClick }: NavigationProps) =>
               src="/lovable-uploads/9cdcaf28-1e78-458c-901b-553f5567dac3.png" 
               alt="Two Trees Cleaning" 
               className="h-20 w-auto"
+              loading="eager"
+              decoding="async"
+              width="200"
+              height="80"
             />
           </Link>
 

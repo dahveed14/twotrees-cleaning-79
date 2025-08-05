@@ -16,15 +16,20 @@ export const NiceJobWidget = ({
   description = "Real reviews from real customers - see what busy families like yours are saying"
 }: NiceJobWidgetProps) => {
   useEffect(() => {
-    // Load NiceJob SDK if not already loaded
-    const existingScript = document.querySelector('script[src*="nicejob.co"]');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
-      script.defer = true;
-      document.head.appendChild(script);
-    }
+    // Delay NiceJob SDK loading for better performance
+    const loadNiceJobScript = () => {
+      const existingScript = document.querySelector('script[src*="nicejob.co"]');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
+        script.defer = true;
+        document.head.appendChild(script);
+      }
+    };
+
+    // Load after a slight delay to avoid blocking critical rendering
+    const timer = setTimeout(loadNiceJobScript, 1500);
 
     // Track analytics
     if (typeof window !== 'undefined') {
@@ -34,6 +39,8 @@ export const NiceJobWidget = ({
         page: 'widget'
       });
     }
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (compact) {

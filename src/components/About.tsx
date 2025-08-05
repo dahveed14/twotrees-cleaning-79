@@ -34,7 +34,15 @@ export const About = () => {
             </Link>
           </div>
           <div className="relative">
-            <img src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" alt="Two Trees Cleaning team - professional house cleaning service owners" className="rounded-2xl shadow-xl w-full h-auto" />
+            <img 
+              src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
+              alt="Two Trees Cleaning team - professional house cleaning service owners" 
+              className="rounded-2xl shadow-xl w-full h-auto"
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
         </div>
       </div>

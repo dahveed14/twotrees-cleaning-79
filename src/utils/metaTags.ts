@@ -81,6 +81,9 @@ export const updateMetaTags = (config: MetaTagsConfig) => {
   updateMetaTag('business:contact_data:region', 'CA');
   updateMetaTag('business:contact_data:country_name', 'United States');
 
+  // Add hreflang for better geographic targeting
+  updateMetaTag('hreflang', 'en-US', true);
+
   // Mobile optimization tags
   updateMetaTag('mobile-web-app-capable', 'yes');
   updateMetaTag('apple-mobile-web-app-capable', 'yes');
@@ -91,7 +94,11 @@ export const updateMetaTags = (config: MetaTagsConfig) => {
 
   // Performance hints
   updateMetaTag('dns-prefetch', 'https://fonts.googleapis.com');
+  updateMetaTag('dns-prefetch', 'https://fonts.gstatic.com');
+  updateMetaTag('dns-prefetch', 'https://cdn.nicejob.co');
+  updateMetaTag('dns-prefetch', 'https://www.googletagmanager.com');
   updateMetaTag('preconnect', 'https://fonts.gstatic.com');
+  updateMetaTag('preconnect', 'https://cdn.nicejob.co');
 
   // Update canonical link
   let canonicalLink = document.querySelector('link[rel="canonical"]');

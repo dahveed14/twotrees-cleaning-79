@@ -43,12 +43,17 @@ const Index = () => {
     };
     setUtmParams(params);
 
-    // Load NiceJob SDK for engage widget
-    const niceJobScript = document.createElement('script');
-    niceJobScript.type = 'text/javascript';
-    niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
-    niceJobScript.defer = true;
-    document.head.appendChild(niceJobScript);
+    // Delay NiceJob SDK loading for better performance
+    const loadNiceJobScript = () => {
+      const niceJobScript = document.createElement('script');
+      niceJobScript.type = 'text/javascript';
+      niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
+      niceJobScript.defer = true;
+      document.head.appendChild(niceJobScript);
+    };
+
+    // Load after initial render to avoid blocking
+    const timer = setTimeout(loadNiceJobScript, 2000);
 
     // Track page view
     import('../utils/analytics').then(({ trackPageView }) => {
@@ -57,6 +62,7 @@ const Index = () => {
 
     // Cleanup function
     return () => {
+      clearTimeout(timer);
       const scripts = document.querySelectorAll('script[src*="nicejob.co"]');
       scripts.forEach(script => script.remove());
     };
