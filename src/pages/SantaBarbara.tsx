@@ -105,9 +105,19 @@ const SantaBarbara = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green mb-6">
                 Santa Barbara House Cleaning Services
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Professional house cleaning for busy Santa Barbara families. From State Street condos to Mesa estates, 
                 we've been trusted by 200+ local customers since 2020. Licensed, insured, and locally owned.
+              </p>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Santa Barbara's unique coastal climate and diverse neighborhoods require specialized cleaning expertise. 
+                Whether you live in a historic downtown condo near the Santa Barbara Mission, a luxury Mesa estate with 
+                ocean views, or a family home near UCSB, we understand the specific needs of American Riviera living.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                From managing salt air effects in beachfront properties to maintaining the elegance of Riviera homes, 
+                our experienced team provides meticulous cleaning services tailored to Santa Barbara's distinctive lifestyle. 
+                We offer regular housekeeping, deep cleaning, vacation rental turnovers, and specialized post-construction cleanup.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -283,7 +293,133 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      {/* Add Nearby Areas Section */}
+      {/* Why Choose Two Trees for Santa Barbara */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Why Choose Two Trees for Your Santa Barbara Home?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 className="text-2xl font-bold text-two-trees-green mb-6">American Riviera Expertise</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Santa Barbara's Mediterranean climate and coastal location create unique cleaning challenges. From the 
+                historic adobe buildings downtown to modern beachfront properties, each area requires specialized knowledge. 
+                Our team understands how ocean moisture affects homes near Leadbetter Beach and manages the dust from 
+                the Santa Ynez Mountains that settles in Riviera properties.
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We've built relationships with property managers serving UCSB students, vacation rental owners in the 
+                Funk Zone, and families throughout the Mesa district. Our cleaning protocols are designed to protect 
+                expensive finishes common in Santa Barbara homes while maintaining the pristine standards expected 
+                in this luxury market.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Licensed & insured throughout Santa Barbara County</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Coastal cleaning expertise for salt air protection</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">Historic property experience with gentle methods</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
+                  <span className="text-gray-700">UCSB area and vacation rental specialists</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+                <CardContent className="p-8">
+                  <h4 className="text-xl font-bold text-two-trees-green mb-4">Santa Barbara Service Highlights</h4>
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Student Housing Expertise</h5>
+                      <p className="text-sm text-gray-600">Specialized cleaning for UCSB area rentals, including move-out services and parent weekend preparation.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Vacation Rental Mastery</h5>
+                      <p className="text-sm text-gray-600">Funk Zone and waterfront property turnovers with same-day service and 5-star cleanliness standards.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Luxury Home Care</h5>
+                      <p className="text-sm text-gray-600">Mesa and Riviera estate cleaning with attention to high-end surfaces, art collections, and luxury amenities.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-2">Historic Property Care</h5>
+                      <p className="text-sm text-gray-600">Gentle cleaning methods for adobe structures and vintage homes throughout downtown and near the Mission.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Frequently Asked Questions - Santa Barbara Cleaning
+          </h2>
+          <div className="space-y-8">
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">Do you clean UCSB student rentals and apartments?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Yes! We specialize in UCSB area cleaning including Isla Vista, student apartments near campus, and family 
+                  homes in the university district. We offer move-out cleaning for deposit returns, parent weekend deep cleans, 
+                  and regular maintenance for student housing. We understand the unique needs of student properties and work 
+                  with parents and property managers for seamless service.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">Can you handle vacation rental turnovers in the Funk Zone?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Absolutely! The Funk Zone and waterfront areas are key markets for us. We provide rapid turnovers between 
+                  guests, often within 4-6 hours for standard properties. Our service includes deep cleaning, linen changes, 
+                  amenity restocking, and final inspection to ensure every guest enjoys that pristine Santa Barbara experience. 
+                  We coordinate with property managers and cleaning schedules.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">How do you protect expensive finishes in luxury Santa Barbara homes?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Santa Barbara homes often feature expensive materials like travertine, marble, hardwood, and custom tile work. 
+                  We use pH-neutral products specifically designed for natural stone, protective treatments for wood surfaces, 
+                  and gentle techniques for hand-painted tiles and artistic features. Our team is trained to identify and properly 
+                  care for luxury finishes common in Mesa and Riviera properties.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-two-trees-green mb-3">What areas of Santa Barbara do you serve?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We serve all of Santa Barbara including downtown State Street corridor, the Mesa district, Riviera, Mission Canyon, 
+                  Hope Ranch, San Roque, Eastside, Westside, near UCSB areas, and the Goleta border. We also serve the Funk Zone, 
+                  waterfront properties near the harbor, and historic neighborhoods near the Santa Barbara Mission and Courthouse.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Areas Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
