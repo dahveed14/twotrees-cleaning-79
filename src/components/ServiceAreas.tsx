@@ -58,7 +58,7 @@ export const ServiceAreas = () => {
         <div className="text-center mt-12">
           <Link 
             to="/service-areas"
-            className="inline-flex items-center px-8 py-4 bg-[hsl(var(--primary))] text-white rounded-lg hover:bg-[hsl(var(--primary-glow))] transition-colors font-medium shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-[hsl(var(--primary))] text-white rounded-lg hover:bg-[hsl(var(--primary))]/90 transition-colors font-medium shadow-lg hover:shadow-xl"
           >
             View All Service Areas
             <span className="ml-2">→</span>
