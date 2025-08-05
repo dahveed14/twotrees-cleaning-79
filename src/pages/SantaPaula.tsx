@@ -76,7 +76,7 @@ const SantaPaula = () => {
       <Helmet>
         <title>Santa Paula House Cleaning Services | Two Trees Cleaning | Reliable & Affordable</title>
         <meta name="description" content="Reliable house cleaning services in Santa Paula, CA. Serving families, farms, and mobile homes throughout 93060. Licensed, insured & affordable. Book today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/santa-paula" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Santa Paula"

@@ -68,7 +68,7 @@ const WestlakeVillagePostConstruction = () => {
       <Helmet>
         <title>Westlake Village Post-Construction Cleaning | Two Trees Cleaning</title>
         <meta name="description" content="Post-construction cleaning in Westlake Village for remodels and luxury new builds. Licensed, insured, and trusted by homeowners and contractors." />
-        <link rel="canonical" href="https://twotreescleaning.com/westlake-village/post-construction-cleaning" />
+        
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

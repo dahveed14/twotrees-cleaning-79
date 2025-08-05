@@ -101,7 +101,7 @@ export const CarpinteriaMoveOut = () => {
         <title>Carpinteria Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Reliable move-out cleaning in Carpinteria. Trusted by 200+ families across the coast. Great for renters, landlords, and vacation homes." />
         <meta name="keywords" content="move out cleaning Carpinteria, end of lease cleaning, vacation rental cleaning, Carpinteria cleaning services, move out cleaners 93013" />
-        <link rel="canonical" href="https://twotreescleaning.com/carpinteria/move-out-cleaning" />
+        
         <meta property="og:title" content="Carpinteria Move-Out Cleaning Services | Two Trees Cleaning" />
         <meta property="og:description" content="Reliable move-out cleaning in Carpinteria. Trusted by 200+ families across the coast. Great for renters, landlords, and vacation homes." />
         <meta property="og:url" content="https://twotreescleaning.com/carpinteria/move-out-cleaning" />

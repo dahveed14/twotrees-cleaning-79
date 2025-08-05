@@ -45,7 +45,7 @@ const Carpinteria = () => {
       <Helmet>
         <title>Carpinteria House Cleaning Services | Two Trees Cleaning | World's Safest Beach Community</title>
         <meta name="description" content="Professional house cleaning services in Carpinteria, CA. Serving family homes near the World's Safest Beach. Licensed & insured cleaning company. Book today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/carpinteria" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Carpinteria"

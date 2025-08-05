@@ -77,7 +77,7 @@ const ThousandOaks = () => {
       <Helmet>
         <title>Thousand Oaks House Cleaning Services | Two Trees Cleaning | Family-Owned</title>
         <meta name="description" content="Professional house cleaning services in Thousand Oaks, CA. Serving Conejo Valley families, Westlake Village border, and all neighborhoods. Licensed & insured. Book today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/thousand-oaks" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Thousand Oaks"

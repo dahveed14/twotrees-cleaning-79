@@ -45,7 +45,7 @@ const PortHueneme = () => {
       <Helmet>
         <title>Port Hueneme House Cleaning Services | Two Trees Cleaning | Military Family Specialists</title>
         <meta name="description" content="Professional house cleaning services in Port Hueneme, CA. Serving military families and working professionals. Affordable, reliable cleaning. Licensed & insured." />
-        <link rel="canonical" href="https://twotreescleaning.com/port-hueneme" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Port Hueneme"

@@ -110,7 +110,7 @@ export default function OxnardMoveOut() {
         <title>Oxnard Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Affordable and thorough move-out cleaning in Oxnard. Trusted by 200+ families. We serve RiverPark, Channel Islands, and surrounding neighborhoods." />
         <meta name="keywords" content="Oxnard move out cleaning, move out cleaning Oxnard, rental cleaning Oxnard, deep cleaning Oxnard, cleaning service Oxnard, Two Trees Cleaning Oxnard" />
-        <link rel="canonical" href="https://twotreescleaning.com/oxnard/move-out-cleaning" />
+        
         
         {/* Open Graph tags */}
         <meta property="og:title" content="Oxnard Move-Out Cleaning Services | Two Trees Cleaning" />

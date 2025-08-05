@@ -78,7 +78,7 @@ const Camarillo = () => {
       <Helmet>
         <title>Camarillo House Cleaning Services | Two Trees Cleaning | Professional & Reliable</title>
         <meta name="description" content="Professional house cleaning services in Camarillo, CA. Serving Premium Outlets area, family neighborhoods, and suburban communities. Licensed & insured. Book today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/camarillo" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Camarillo"

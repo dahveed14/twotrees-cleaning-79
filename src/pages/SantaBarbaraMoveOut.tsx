@@ -64,7 +64,7 @@ const SantaBarbaraMoveOut = () => {
         <title>Santa Barbara Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Move-out cleaning for Santa Barbara homes and apartments. Trusted, detailed, and 5-star rated. Serving Montecito, Mesa, and downtown areas." />
         <meta name="keywords" content="move out cleaning Santa Barbara, move out cleaners Santa Barbara, end of lease cleaning Santa Barbara, Montecito move out cleaning, Mesa move out cleaning" />
-        <link rel="canonical" href="https://twotreescleaningvc.com/santa-barbara/move-out-cleaning" />
+        
       </Helmet>
 
       <SchemaMarkup 

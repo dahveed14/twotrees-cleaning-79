@@ -72,7 +72,7 @@ const SantaPaulaPostConstruction = () => {
       <Helmet>
         <title>Santa Paula Post-Construction Cleaning | Two Trees Cleaning</title>
         <meta name="description" content="Affordable post-construction cleaning in Santa Paula. We serve remodels, rentals, and new builds. Trusted, licensed, and locally loved." />
-        <link rel="canonical" href="https://twotreescleaning.com/santa-paula/post-construction-cleaning" />
+        
       </Helmet>
 
       <SchemaMarkup 

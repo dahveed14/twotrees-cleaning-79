@@ -32,7 +32,7 @@ const CamarilloPostConstruction = () => {
         <title>Camarillo Post-Construction Cleaning | Two Trees Cleaning</title>
         <meta name="description" content="Post-construction cleaning in Camarillo for new builds and remodels. Trusted by builders, contractors, and homeowners. 5-star rated and insured." />
         <meta name="keywords" content="post construction cleaning Camarillo, construction cleanup Camarillo, move in cleaning Camarillo, contractor cleaning services" />
-        <link rel="canonical" href="https://twotreescleaning.com/camarillo/post-construction-cleaning" />
+        
         <meta property="og:title" content="Camarillo Post-Construction Cleaning | Two Trees Cleaning" />
         <meta property="og:description" content="Post-construction cleaning in Camarillo for new builds and remodels. Trusted by builders, contractors, and homeowners. 5-star rated and insured." />
         <meta property="og:url" content="https://twotreescleaning.com/camarillo/post-construction-cleaning" />

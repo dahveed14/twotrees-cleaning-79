@@ -43,7 +43,7 @@ const NewburyPark = () => {
       <Helmet>
         <title>Newbury Park House Cleaning Services | Two Trees Cleaning | Conejo Valley Families</title>
         <meta name="description" content="Professional house cleaning services in Newbury Park, CA. Serving suburban families in Conejo Valley. Licensed, insured & trusted. Book your cleaning today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/newbury-park" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Newbury Park"

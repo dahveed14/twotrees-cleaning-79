@@ -44,7 +44,7 @@ const WestlakeVillage = () => {
       <Helmet>
         <title>Westlake Village House Cleaning Services | Two Trees Cleaning | Luxury Home Specialists</title>
         <meta name="description" content="Premium house cleaning services in Westlake Village, CA. Serving upscale homes with meticulous attention to detail. Licensed, insured & trusted by luxury homeowners." />
-        <link rel="canonical" href="https://twotreescleaning.com/westlake-village" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Westlake Village"

@@ -73,7 +73,7 @@ const SantaBarbaraPostConstruction = () => {
       <Helmet>
         <title>Santa Barbara Post-Construction Cleaning | Two Trees Cleaning</title>
         <meta name="description" content="High-end post-construction cleaning in Santa Barbara, Montecito, and surrounding areas. Trusted by homeowners, designers, and contractors. Licensed & insured." />
-        <link rel="canonical" href="https://twotreescleaning.com/santa-barbara/post-construction-cleaning" />
+        
       </Helmet>
 
       <SchemaMarkup 

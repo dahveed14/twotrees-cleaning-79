@@ -56,7 +56,7 @@ const CamarilloMoveOut = () => {
       <Helmet>
         <title>Camarillo Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Professional move-out cleaning in Camarillo. Trusted by 200+ families. Licensed, insured, and ready to help you leave your space spotless." />
-        <link rel="canonical" href="https://twotreescleaning.com/camarillo/move-out-cleaning" />
+        
       </Helmet>
 
       <div className="min-h-screen bg-background">

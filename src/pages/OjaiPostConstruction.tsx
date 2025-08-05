@@ -72,7 +72,7 @@ const OjaiPostConstruction = () => {
       <Helmet>
         <title>Ojai Post-Construction Cleaning | Two Trees Cleaning</title>
         <meta name="description" content="Post-construction cleaning in Ojai for remodels, new builds, and retreats. Eco-conscious, licensed, and trusted by homeowners and builders." />
-        <link rel="canonical" href="https://twotreescleaning.com/ojai/post-construction-cleaning" />
+        
       </Helmet>
 
       <SchemaMarkup 

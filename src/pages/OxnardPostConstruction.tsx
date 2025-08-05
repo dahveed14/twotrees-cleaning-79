@@ -72,7 +72,7 @@ const OxnardPostConstruction = () => {
       <Helmet>
         <title>Oxnard Post-Construction Cleaning | Two Trees Cleaning</title>
         <meta name="description" content="Post-construction cleaning in Oxnard for remodels, flips, and new builds. Trusted by contractors and homeowners. Licensed, insured, and thorough." />
-        <link rel="canonical" href="https://twotreescleaning.com/oxnard/post-construction-cleaning" />
+        
       </Helmet>
 
       <SchemaMarkup 

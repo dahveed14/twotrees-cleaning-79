@@ -43,7 +43,7 @@ const Summerland = () => {
       <Helmet>
         <title>Summerland House Cleaning Services | Two Trees Cleaning | Beach Community Specialists</title>
         <meta name="description" content="Professional house cleaning services in Summerland, CA. Serving beachside homes, vacation rentals & coastal properties. Licensed & insured. Book your cleaning today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/summerland" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Summerland"

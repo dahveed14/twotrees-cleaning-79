@@ -110,7 +110,7 @@ export default function OjaiMoveOut() {
         <title>Ojai Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Gentle, detailed move-out cleaning for Ojai homes and rentals. Trusted by 200+ families. Local, insured, and eco-conscious service." />
         <meta name="keywords" content="Ojai move out cleaning, move out cleaning Ojai, rental cleaning Ojai, deep cleaning Ojai, cleaning service Ojai, Two Trees Cleaning Ojai" />
-        <link rel="canonical" href="https://twotreescleaning.com/ojai/move-out-cleaning" />
+        
         
         {/* Open Graph tags */}
         <meta property="og:title" content="Ojai Move-Out Cleaning Services | Two Trees Cleaning" />

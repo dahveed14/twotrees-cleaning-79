@@ -77,7 +77,7 @@ const SantaBarbara = () => {
       <Helmet>
         <title>Santa Barbara House Cleaning Services | Two Trees Cleaning | Premium Luxury Care</title>
         <meta name="description" content="Premium house cleaning services in Santa Barbara, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners." />
-        <link rel="canonical" href="https://twotreescleaning.com/santa-barbara" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Santa Barbara"

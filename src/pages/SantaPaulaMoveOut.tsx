@@ -105,7 +105,7 @@ export default function SantaPaulaMoveOut() {
         <title>Santa Paula Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Move-out cleaning for homes and rentals in Santa Paula. Trusted by 200+ families. Fast, affordable, and thorough. We serve all of 93060 and nearby." />
         <meta name="keywords" content="Santa Paula move out cleaning, move out cleaning Santa Paula, rental cleaning Santa Paula, deep cleaning Santa Paula, cleaning service Santa Paula, Two Trees Cleaning Santa Paula" />
-        <link rel="canonical" href="https://twotreescleaning.com/santa-paula/move-out-cleaning" />
+        
         
         {/* Open Graph tags */}
         <meta property="og:title" content="Santa Paula Move-Out Cleaning Services | Two Trees Cleaning" />

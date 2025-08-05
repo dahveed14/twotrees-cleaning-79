@@ -56,7 +56,7 @@ const WestlakeVillageMoveOut = () => {
       <Helmet>
         <title>Westlake Village Move-Out Cleaning Services | Two Trees Cleaning</title>
         <meta name="description" content="Move-out cleaning for homes and apartments in Westlake Village. Trusted, licensed, and locally loved. 5-star rated and move-in ready results." />
-        <link rel="canonical" href="https://twotreescleaning.com/westlake-village/move-out-cleaning" />
+        
       </Helmet>
 
       <div className="min-h-screen bg-background">

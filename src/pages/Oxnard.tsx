@@ -77,7 +77,7 @@ const Oxnard = () => {
       <Helmet>
         <title>Oxnard House Cleaning Services | Two Trees Cleaning | Affordable & Reliable</title>
         <meta name="description" content="Affordable house cleaning services in Oxnard, CA. Serving coastal communities, family neighborhoods, and agricultural areas. Licensed, insured & reliable. Book today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/oxnard" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Oxnard"

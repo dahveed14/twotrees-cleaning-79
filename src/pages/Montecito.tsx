@@ -78,7 +78,7 @@ const Montecito = () => {
       <Helmet>
         <title>Montecito House Cleaning Services | Two Trees Cleaning | Luxury Home Care</title>
         <meta name="description" content="Premium house cleaning services in Montecito, CA. Serving luxury estates, celebrity homes & the village. Discreet, trusted, and experienced since 2020. Book today!" />
-        <link rel="canonical" href="https://twotreescleaning.com/montecito" />
+        
       </Helmet>
       <SchemaMarkup 
         cityName="Montecito"
