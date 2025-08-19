@@ -104,7 +104,6 @@ const WhatsIncludedInCleaning = () => {
     { category: "Construction", task: "Dust removal from all surfaces", regular: false, firstTime: false, moveout: false, construction: true },
     { category: "Construction", task: "Construction debris cleanup", regular: false, firstTime: false, moveout: false, construction: true },
     { category: "Construction", task: "Paint overspray removal", regular: false, firstTime: false, moveout: false, construction: true },
-    { category: "Construction", task: "Window cleaning (interior)", regular: "addon", firstTime: "addon", moveout: true, construction: true },
   ];
 
   const getStatusIcon = (status: boolean | string) => {
