@@ -51,6 +51,7 @@ import MoveInMoveOut from "./pages/services/MoveInMoveOut";
 import PostConstruction from "./pages/services/PostConstruction";
 import CommercialCleaning from "./pages/services/CommercialCleaning";
 import VacationRental from "./pages/services/VacationRental";
+import WhatsIncludedInCleaning from "./pages/services/WhatsIncludedInCleaning";
 import Services from "./pages/Services";
 import Book from "./pages/Book";
 import Blog from "./pages/Blog";
@@ -100,6 +101,7 @@ const App = () => (
           <Route path="/services/post-construction" element={<PostConstruction />} />
           <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />
           <Route path="/services/vacation-rental" element={<VacationRental />} />
+          <Route path="/services/whats-included-in-cleaning" element={<WhatsIncludedInCleaning />} />
           {/* Location-specific service routes */}
           <Route path="/thousand-oaks/move-out-cleaning" element={<ThousandOaksMoveOut />} />
           <Route path="/thousand-oaks/post-construction-cleaning" element={<ThousandOaksPostConstruction />} />
