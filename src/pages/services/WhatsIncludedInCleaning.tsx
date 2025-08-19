@@ -96,6 +96,7 @@ const WhatsIncludedInCleaning = () => {
     { category: "General", task: "Light switch/outlet cleaning", regular: "spot", firstTime: true, moveout: true, construction: true },
     { category: "General", task: "Door frames and handles", regular: "spot", firstTime: true, moveout: true, construction: true },
     { category: "General", task: "Window sill cleaning", regular: false, firstTime: true, moveout: true, construction: true },
+    { category: "General", task: "Interior windows", regular: "addon", firstTime: "addon", moveout: "addon", construction: true },
     { category: "General", task: "Light fixture cleaning", regular: false, firstTime: true, moveout: true, construction: true },
     { category: "General", task: "Blind/shade cleaning", regular: false, firstTime: true, moveout: true, construction: false },
     
