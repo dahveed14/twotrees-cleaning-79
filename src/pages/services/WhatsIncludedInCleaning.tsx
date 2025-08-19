@@ -62,51 +62,49 @@ const WhatsIncludedInCleaning = () => {
   // Service comparison data
   const cleaningTasks = [
     // Kitchen Tasks
-    { category: "Kitchen", task: "Wipe down countertops", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Kitchen", task: "Clean sink and faucet", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Kitchen", task: "Exterior appliance cleaning", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Kitchen", task: "Inside microwave cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
-    { category: "Kitchen", task: "Cabinet fronts and handles", regular: "spot", deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Kitchen", task: "Inside refrigerator cleaning", regular: false, deep: false, moveout: "addon", construction: false, commercial: false },
-    { category: "Kitchen", task: "Inside oven cleaning", regular: false, deep: false, moveout: "addon", construction: false, commercial: false },
-    { category: "Kitchen", task: "Range hood deep cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
+    { category: "Kitchen", task: "Wipe down countertops", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Kitchen", task: "Clean sink and faucet", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Kitchen", task: "Exterior appliance cleaning", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Kitchen", task: "Inside microwave cleaning", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Kitchen", task: "Cabinet fronts and handles", regular: "spot", firstTime: true, moveout: true, construction: true },
+    { category: "Kitchen", task: "Inside refrigerator cleaning", regular: false, firstTime: false, moveout: true, construction: false },
+    { category: "Kitchen", task: "Inside oven cleaning", regular: false, firstTime: false, moveout: true, construction: false },
+    { category: "Kitchen", task: "Range Hood Exterior Cleaning", regular: true, firstTime: true, moveout: true, construction: true },
     
     // Bathroom Tasks
-    { category: "Bathroom", task: "Toilet cleaning (inside & out)", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Bathroom", task: "Shower/tub cleaning", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Bathroom", task: "Mirror and glass cleaning", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Bathroom", task: "Sink and vanity cleaning", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Bathroom", task: "Tile and grout scrubbing", regular: false, deep: true, moveout: true, construction: true, commercial: false },
-    { category: "Bathroom", task: "Exhaust fan cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
+    { category: "Bathroom", task: "Toilet cleaning (inside & out)", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bathroom", task: "Shower/tub cleaning", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bathroom", task: "Mirror and glass cleaning", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bathroom", task: "Sink and vanity cleaning", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bathroom", task: "Tile and grout scrubbing", regular: false, firstTime: true, moveout: true, construction: true },
     
     // Living Areas
-    { category: "Living Areas", task: "Vacuum carpets/rugs", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Living Areas", task: "Mop hard floors", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Living Areas", task: "Dust furniture surfaces", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Living Areas", task: "Detailed furniture dusting", regular: false, deep: true, moveout: true, construction: true, commercial: false },
-    { category: "Living Areas", task: "Vacuum upholstered furniture", regular: false, deep: false, moveout: false, construction: false, commercial: false },
-    { category: "Living Areas", task: "Ceiling fan cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
+    { category: "Living Areas", task: "Vacuum carpets/rugs", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Living Areas", task: "Mop hard floors", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Living Areas", task: "Dust furniture surfaces", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Living Areas", task: "Detailed furniture dusting", regular: false, firstTime: true, moveout: true, construction: true },
+    { category: "Living Areas", task: "Vacuum upholstered furniture", regular: false, firstTime: false, moveout: false, construction: false },
+    { category: "Living Areas", task: "Ceiling fan cleaning", regular: false, firstTime: true, moveout: true, construction: true },
     
     // Bedrooms
-    { category: "Bedrooms", task: "Make beds (if linens present)", regular: true, deep: true, moveout: false, construction: false, commercial: false },
-    { category: "Bedrooms", task: "Vacuum floors", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Bedrooms", task: "Dust surfaces", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "Bedrooms", task: "Closet cleaning", regular: false, deep: false, moveout: "addon", construction: false, commercial: false },
+    { category: "Bedrooms", task: "Make beds (if linens present)", regular: true, firstTime: true, moveout: false, construction: false },
+    { category: "Bedrooms", task: "Vacuum floors", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bedrooms", task: "Dust surfaces", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bedrooms", task: "Closet cleaning", regular: false, firstTime: false, moveout: true, construction: false },
     
     // General Tasks
-    { category: "General", task: "Empty trash bins", regular: true, deep: true, moveout: true, construction: true, commercial: true },
-    { category: "General", task: "Light switch/outlet cleaning", regular: "spot", deep: true, moveout: true, construction: true, commercial: true },
-    { category: "General", task: "Door frames and handles", regular: "spot", deep: true, moveout: true, construction: true, commercial: true },
-    { category: "General", task: "Window sill cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
-    { category: "General", task: "Air vent cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
-    { category: "General", task: "Light fixture cleaning", regular: false, deep: true, moveout: true, construction: true, commercial: false },
-    { category: "General", task: "Blind/shade cleaning", regular: false, deep: true, moveout: true, construction: false, commercial: false },
+    { category: "General", task: "Empty trash bins", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "General", task: "Light switch/outlet cleaning", regular: "spot", firstTime: true, moveout: true, construction: true },
+    { category: "General", task: "Door frames and handles", regular: "spot", firstTime: true, moveout: true, construction: true },
+    { category: "General", task: "Window sill cleaning", regular: false, firstTime: true, moveout: true, construction: true },
+    { category: "General", task: "Light fixture cleaning", regular: false, firstTime: true, moveout: true, construction: true },
+    { category: "General", task: "Blind/shade cleaning", regular: false, firstTime: true, moveout: true, construction: false },
     
     // Construction Specific
-    { category: "Construction", task: "Dust removal from all surfaces", regular: false, deep: false, moveout: false, construction: true, commercial: false },
-    { category: "Construction", task: "Construction debris cleanup", regular: false, deep: false, moveout: false, construction: true, commercial: false },
-    { category: "Construction", task: "Paint overspray removal", regular: false, deep: false, moveout: false, construction: true, commercial: false },
-    { category: "Construction", task: "Window cleaning (interior)", regular: false, deep: false, moveout: false, construction: true, commercial: false },
+    { category: "Construction", task: "Dust removal from all surfaces", regular: false, firstTime: false, moveout: false, construction: true },
+    { category: "Construction", task: "Construction debris cleanup", regular: false, firstTime: false, moveout: false, construction: true },
+    { category: "Construction", task: "Paint overspray removal", regular: false, firstTime: false, moveout: false, construction: true },
+    { category: "Construction", task: "Window cleaning (interior)", regular: false, firstTime: false, moveout: false, construction: true },
   ];
 
   const getStatusIcon = (status: boolean | string) => {
@@ -151,17 +149,9 @@ const WhatsIncludedInCleaning = () => {
             <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
               What's Included in a Cleaning?
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A comprehensive guide to understanding exactly what's included (and what's not) in each of our cleaning services. No surprises, just transparent service expectations.
             </p>
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-2xl mx-auto">
-              <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <p className="text-amber-800 text-sm">
-                  This page is designed to educate and inform. For pricing and booking, please visit our individual service pages or contact us directly.
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Service Comparison Table */}
@@ -196,10 +186,9 @@ const WhatsIncludedInCleaning = () => {
                   <TableRow>
                     <TableHead className="font-semibold text-primary">Task</TableHead>
                     <TableHead className="text-center font-semibold text-primary">Regular</TableHead>
-                    <TableHead className="text-center font-semibold text-primary">Deep</TableHead>
+                    <TableHead className="text-center font-semibold text-primary">First Time</TableHead>
                     <TableHead className="text-center font-semibold text-primary">Move-Out</TableHead>
                     <TableHead className="text-center font-semibold text-primary">Post-Construction</TableHead>
-                    <TableHead className="text-center font-semibold text-primary">Commercial</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -212,7 +201,7 @@ const WhatsIncludedInCleaning = () => {
                   ).map(([category, tasks]) => (
                     <>
                       <TableRow key={category} className="bg-gray-50">
-                        <TableCell colSpan={6} className="font-semibold text-primary text-center py-3">
+                        <TableCell colSpan={5} className="font-semibold text-primary text-center py-3">
                           {category}
                         </TableCell>
                       </TableRow>
@@ -229,9 +218,9 @@ const WhatsIncludedInCleaning = () => {
                           </TableCell>
                           <TableCell className="text-center">
                             <div className="flex flex-col items-center gap-1">
-                              {getStatusIcon(task.deep)}
+                              {getStatusIcon(task.firstTime)}
                               <span className="text-xs text-muted-foreground">
-                                {getStatusText(task.deep)}
+                                {getStatusText(task.firstTime)}
                               </span>
                             </div>
                           </TableCell>
@@ -248,14 +237,6 @@ const WhatsIncludedInCleaning = () => {
                               {getStatusIcon(task.construction)}
                               <span className="text-xs text-muted-foreground">
                                 {getStatusText(task.construction)}
-                              </span>
-                            </div>
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <div className="flex flex-col items-center gap-1">
-                              {getStatusIcon(task.commercial)}
-                              <span className="text-xs text-muted-foreground">
-                                {getStatusText(task.commercial)}
                               </span>
                             </div>
                           </TableCell>
@@ -302,10 +283,10 @@ const WhatsIncludedInCleaning = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-xl text-primary">Deep Cleaning</CardTitle>
+                  <CardTitle className="text-xl text-primary">First Time Cleaning</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">Comprehensive top-to-bottom cleaning for special occasions.</p>
+                  <p className="text-muted-foreground">Comprehensive top-to-bottom cleaning for special occasions or first-time service.</p>
                   <div>
                     <h4 className="font-semibold mb-2">Always Included:</h4>
                     <ul className="text-sm space-y-1 text-muted-foreground">
@@ -313,7 +294,7 @@ const WhatsIncludedInCleaning = () => {
                       <li>• Detailed scrubbing and sanitizing</li>
                       <li>• Light fixtures and ceiling fans</li>
                       <li>• Inside microwave cleaning</li>
-                      <li>• Air vent cleaning</li>
+                      <li>• Range hood exterior cleaning</li>
                     </ul>
                   </div>
                   <div>
