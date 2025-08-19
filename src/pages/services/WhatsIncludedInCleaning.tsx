@@ -470,19 +470,19 @@ const WhatsIncludedInCleaning = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <Link to="/services" className="text-primary-foreground hover:text-secondary transition-colors">
+              <Link to="/services" className="text-primary-foreground hover:text-secondary transition-colors underline hover:no-underline">
                 <div className="text-center">
                   <h3 className="font-semibold">All Services</h3>
                   <p className="text-sm opacity-75">Browse all cleaning options</p>
                 </div>
               </Link>
-              <Link to="/service-areas" className="text-primary-foreground hover:text-secondary transition-colors">
+              <Link to="/service-areas" className="text-primary-foreground hover:text-secondary transition-colors underline hover:no-underline">
                 <div className="text-center">
                   <h3 className="font-semibold">Service Areas</h3>
                   <p className="text-sm opacity-75">Check if we serve your area</p>
                 </div>
               </Link>
-              <Link to="/contact" className="text-primary-foreground hover:text-secondary transition-colors">
+              <Link to="/contact" className="text-primary-foreground hover:text-secondary transition-colors underline hover:no-underline">
                 <div className="text-center">
                   <h3 className="font-semibold">Custom Quote</h3>
                   <p className="text-sm opacity-75">Need something specific?</p>
