@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { BookOpen, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Extend the Window interface to include jQuery and NiceJob
 declare global {
@@ -78,8 +81,27 @@ const Book = () => {
             </p>
           </div>
 
+          {/* What's Included Link Section */}
+          <div className="mb-8">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+              <div className="flex justify-center mb-3">
+                <BookOpen className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                Want to know what's included in your cleaning?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                See our comprehensive guide to what's included (and what's not) in each cleaning service
+              </p>
+              <Link to="/services/whats-included-in-cleaning">
+                <Button variant="outline" className="inline-flex items-center gap-2">
+                  View What's Included
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
 
-          
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <iframe 
               src="https://convertlabs.io/booking_form/3296" 
