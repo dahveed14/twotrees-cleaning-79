@@ -67,8 +67,8 @@ const WhatsIncludedInCleaning = () => {
     { category: "Kitchen", task: "Exterior appliance cleaning", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Kitchen", task: "Inside microwave cleaning", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Kitchen", task: "Cabinet fronts and handles", regular: "spot", firstTime: true, moveout: true, construction: true },
-    { category: "Kitchen", task: "Inside refrigerator cleaning", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
-    { category: "Kitchen", task: "Inside oven cleaning", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
+    { category: "Kitchen", task: "Inside refrigerator cleaning", regular: "addon", firstTime: "addon", moveout: true, construction: true },
+    { category: "Kitchen", task: "Inside oven cleaning", regular: "addon", firstTime: "addon", moveout: true, construction: true },
     { category: "Kitchen", task: "Range Hood Exterior Cleaning", regular: true, firstTime: true, moveout: true, construction: true },
     
     // Bathroom Tasks
@@ -103,7 +103,7 @@ const WhatsIncludedInCleaning = () => {
     { category: "Construction", task: "Dust removal from all surfaces", regular: false, firstTime: false, moveout: false, construction: true },
     { category: "Construction", task: "Construction debris cleanup", regular: false, firstTime: false, moveout: false, construction: true },
     { category: "Construction", task: "Paint overspray removal", regular: false, firstTime: false, moveout: false, construction: true },
-    { category: "Construction", task: "Window cleaning (interior)", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
+    { category: "Construction", task: "Window cleaning (interior)", regular: "addon", firstTime: "addon", moveout: true, construction: true },
   ];
 
   const getStatusIcon = (status: boolean | string) => {
