@@ -82,7 +82,6 @@ const WhatsIncludedInCleaning = () => {
     { category: "Living Areas", task: "Vacuum carpets/rugs", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Living Areas", task: "Mop hard floors", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Living Areas", task: "Dust furniture surfaces", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Living Areas", task: "Detailed furniture dusting", regular: false, firstTime: true, moveout: true, construction: true },
     { category: "Living Areas", task: "Vacuum upholstered furniture", regular: false, firstTime: false, moveout: false, construction: false },
     { category: "Living Areas", task: "Ceiling fan cleaning", regular: false, firstTime: true, moveout: true, construction: true },
     
