@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Phone, Home } from "lucide-react";
+import { CheckCircle, Phone, ClipboardList } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const ThankYou = () => {
@@ -57,8 +57,8 @@ const ThankYou = () => {
     window.location.href = 'tel:805-456-1421';
   };
 
-  const handleBackToHome = () => {
-    navigate('/');
+  const handleViewWhatsIncluded = () => {
+    navigate('/services/whats-included-in-cleaning');
   };
 
   return (
@@ -101,7 +101,7 @@ const ThankYou = () => {
                 3
               </div>
               <p className="text-gray-700">
-                <span className="font-semibold">Checklist</span> – Take a look at our <a href="/services" className="text-two-trees-green hover:underline font-medium">service checklist</a> to see what's included.
+                <span className="font-semibold">Checklist</span> – Take a look at our <a href="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">detailed service checklist</a> to see what's included.
               </p>
             </div>
           </div>
@@ -117,11 +117,11 @@ const ThankYou = () => {
             Questions? Call Us
           </Button>
           <Button
-            onClick={handleBackToHome}
+            onClick={handleViewWhatsIncluded}
             className="w-full sm:w-auto bg-two-trees-green hover:bg-two-trees-green/90"
           >
-            <Home className="w-4 h-4 mr-2" />
-            Back to Home
+            <ClipboardList className="w-4 h-4 mr-2" />
+            View What's Included
           </Button>
         </div>
 
