@@ -99,6 +99,8 @@ const WhatsIncludedInCleaning = () => {
     { category: "General", task: "Interior windows", regular: "addon", firstTime: "addon", moveout: "addon", construction: true },
     { category: "General", task: "Light fixture cleaning", regular: false, firstTime: true, moveout: true, construction: true },
     { category: "General", task: "Blind/shade cleaning", regular: false, firstTime: true, moveout: true, construction: false },
+    { category: "General", task: "Load of laundry", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
+    { category: "General", task: "Dishes", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
     
     // Construction Specific
     { category: "Construction", task: "Dust removal from all surfaces", regular: false, firstTime: false, moveout: false, construction: true },
@@ -372,10 +374,10 @@ const WhatsIncludedInCleaning = () => {
                 "Pet waste cleanup",
                 "Biohazard cleanup",
                 "Home repairs or maintenance",
-                "Laundry or ironing",
-                "Dish washing (unless empty)",
                 "Carpet shampooing",
-                "Furniture moving"
+                "Furniture moving",
+                "Garage or basement cleaning",
+                "Outdoor area cleaning"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
@@ -385,7 +387,7 @@ const WhatsIncludedInCleaning = () => {
             </div>
             <div className="mt-6 text-center">
               <p className="text-red-700 text-sm">
-                Some of these services may be available as special add-ons. Contact us for custom requests.
+                Many services are available as add-ons, including laundry and dishes. Contact us for custom requests.
               </p>
             </div>
           </div>
