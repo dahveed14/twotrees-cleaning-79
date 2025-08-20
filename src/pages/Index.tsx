@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Benefits } from "@/components/Benefits";
 import { ServiceAreas } from "@/components/ServiceAreas";
+import { WhatsIncludedSection } from "@/components/WhatsIncludedSection";
 import { About } from "@/components/About";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SocialProof } from "@/components/SocialProof";
@@ -107,6 +108,7 @@ const Index = () => {
       <Hero onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       <Benefits />
       <ServiceAreas />
+      <WhatsIncludedSection />
       <LazySection>
         <About />
       </LazySection>
