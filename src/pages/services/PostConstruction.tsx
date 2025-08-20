@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, CheckCircle, HardHat, Hammer } from "lucide-react";
+import { Phone, CheckCircle, HardHat, Hammer, BookOpen, ArrowRight } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
@@ -117,6 +117,27 @@ const PostConstruction = () => {
                 <Phone className="w-5 h-5 mr-2" />
                 (805) 456-1421
               </Button>
+            </div>
+          </div>
+
+          {/* What's Included Link Section */}
+          <div className="mb-16 flex justify-center">
+            <div className="max-w-lg p-6 bg-primary/5 border border-primary/20 rounded-xl text-center">
+              <div className="flex justify-center mb-3">
+                <BookOpen className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                Wondering what's included in post-construction cleaning?
+              </h3>
+              <p className="text-muted-foreground mb-4 text-sm">
+                See our detailed breakdown of what's covered in our specialized construction cleanup services
+              </p>
+              <Link to="/services/whats-included-in-cleaning">
+                <Button variant="outline" className="inline-flex items-center gap-2">
+                  View Complete Service Details
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 

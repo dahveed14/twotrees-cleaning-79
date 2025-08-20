@@ -12,6 +12,7 @@ export const serviceAreas = [
 
 export const services = [
   { name: "All Services", href: "/services" },
+  { name: "What's Included in Cleaning", href: "/services/whats-included-in-cleaning" },
   { name: "Regular House Cleaning", href: "/services/regular-house-cleaning" },
   { name: "Deep Cleaning", href: "/services/deep-cleaning" },
   { name: "Move-In/Move-Out", href: "/services/move-in-move-out" },

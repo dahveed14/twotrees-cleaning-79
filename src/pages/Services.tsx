@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Home, Sparkles, Truck, HardHat, Building, Key } from "lucide-react";
+import { Phone, Home, Sparkles, Truck, HardHat, Building, Key, BookOpen, ArrowRight } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
@@ -119,6 +119,29 @@ const Services = () => {
                 (805) 456-1421
               </Button>
             </div>
+          </div>
+
+          {/* What's Included Section */}
+          <div className="mb-16">
+            <Card className="border-none shadow-lg bg-gradient-to-r from-primary/5 to-secondary/5">
+              <CardContent className="p-8 text-center">
+                <BookOpen className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h2 className="text-2xl font-bold text-two-trees-green mb-4">
+                  Not Sure What's Included?
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                  Get complete transparency about what's included (and what's not) in each of our cleaning services. 
+                  No surprises, just clear expectations.
+                </p>
+                <Link to="/services/whats-included-in-cleaning">
+                  <Button size="lg" variant="outline" className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    View What's Included Guide
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

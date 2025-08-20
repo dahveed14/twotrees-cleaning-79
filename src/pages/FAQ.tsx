@@ -68,7 +68,7 @@ const FAQ = () => {
           question: "What's included in your regular house cleaning service?",
           answer: (
             <>
-              Our <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular house cleaning service</Link> includes dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathrooms (toilets, sinks, tubs, showers), kitchen cleaning (counters, appliances, sink), and trash removal. We use eco-friendly cleaning products and bring all necessary supplies. Learn more about what's included on our <Link to="/services" className="text-two-trees-green hover:underline font-medium">services page</Link>.
+              Our <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular house cleaning service</Link> includes dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathrooms (toilets, sinks, tubs, showers), kitchen cleaning (counters, appliances, sink), and trash removal. We use eco-friendly cleaning products and bring all necessary supplies. For complete details, check out our <Link to="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">comprehensive cleaning checklist</Link> that explains exactly what's included and what's not.
             </>
           )
         },
@@ -76,7 +76,7 @@ const FAQ = () => {
           question: "What's the difference between regular and deep cleaning?",
           answer: (
             <>
-              <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. Inside appliances are only included in <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-out cleaning services</Link>. We recommend starting with a deep clean for first-time customers to establish a clean baseline.
+              <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. Inside appliances are only included in <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-out cleaning services</Link>. We recommend starting with a deep clean for first-time customers to establish a clean baseline. See our detailed <Link to="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">what's included guide</Link> for a complete breakdown of each service.
             </>
           )
         },

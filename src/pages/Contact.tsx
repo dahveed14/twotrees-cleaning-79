@@ -6,8 +6,9 @@ import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, Shield, Users } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Shield, Users, BookOpen, ArrowRight } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   useEffect(() => {
@@ -82,14 +83,29 @@ const Contact = () => {
             {/* Convert Labs Form */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold text-two-trees-green mb-4">
-                    Get Your Free Quote
-                  </h2>
-                  <p className="text-lg text-gray-600">
-                    Fill out the form below and we'll get back to you within 24 hours
-                  </p>
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-two-trees-green mb-4">
+                  Get Your Free Quote
+                </h2>
+                <p className="text-lg text-gray-600 mb-4">
+                  Fill out the form below and we'll get back to you within 24 hours
+                </p>
+                
+                {/* What's Included Link */}
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6">
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-2">
+                    <BookOpen className="w-4 h-4" />
+                    Want to know exactly what's included in your cleaning?
+                  </div>
+                  <Link 
+                    to="/services/whats-included-in-cleaning" 
+                    className="text-two-trees-green hover:underline font-medium inline-flex items-center gap-1"
+                  >
+                    View our comprehensive cleaning checklist
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
                 </div>
+              </div>
                 <iframe 
                   src="//convertlabs.io/booking_forms/endpoint.php?widget_id=16598"
                   frameBorder="0" 

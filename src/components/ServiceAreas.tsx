@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin } from "lucide-react";
+import { MapPin, BookOpen } from "lucide-react";
 
 export const ServiceAreas = () => {
   const serviceAreas = [
@@ -55,7 +55,7 @@ export const ServiceAreas = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 space-y-4">
           <Link 
             to="/service-areas"
             className="inline-flex items-center px-8 py-4 bg-[hsl(var(--primary))] text-white rounded-lg hover:bg-[hsl(var(--primary))]/90 transition-colors font-medium shadow-lg hover:shadow-xl"
@@ -63,6 +63,18 @@ export const ServiceAreas = () => {
             View All Service Areas
             <span className="ml-2">→</span>
           </Link>
+          
+          {/* What's Included Link */}
+          <div className="max-w-md mx-auto">
+            <p className="text-sm text-gray-600 mb-2">Not sure what's included in your cleaning?</p>
+            <Link 
+              to="/services/whats-included-in-cleaning"
+              className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-glow))] font-medium inline-flex items-center gap-1 text-sm transition-colors"
+            >
+              <BookOpen className="w-4 h-4" />
+              View our detailed cleaning checklist
+            </Link>
+          </div>
         </div>
       </div>
     </section>

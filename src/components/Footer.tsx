@@ -94,6 +94,9 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <div className="text-gray-300 space-y-1 text-sm mb-6">
+              <Link to="/services/whats-included-in-cleaning" className="block hover:text-two-trees-gold transition-colors font-medium">
+                What's Included in Cleaning
+              </Link>
               <Link to="/services/regular-house-cleaning" className="block hover:text-two-trees-gold transition-colors">
                 Regular House Cleaning
               </Link>
