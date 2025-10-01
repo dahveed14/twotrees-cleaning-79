@@ -57,6 +57,7 @@ import Book from "./pages/Book";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 
 const queryClient = new QueryClient();
@@ -79,6 +80,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/santa-barbara" element={<SantaBarbara />} />
           <Route path="/montecito" element={<Montecito />} />

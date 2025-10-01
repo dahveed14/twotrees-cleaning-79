@@ -129,6 +129,9 @@ export const Footer = () => {
               <Link to="/terms" className="block hover:text-two-trees-gold transition-colors">
                 Terms & Conditions
               </Link>
+              <Link to="/privacy" className="block hover:text-two-trees-gold transition-colors">
+                Privacy Policy
+              </Link>
             </div>
             
             <h5 className="text-md font-semibold mb-2">Follow Us</h5>
