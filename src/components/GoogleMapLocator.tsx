@@ -63,38 +63,40 @@ export const GoogleMapLocator = ({
 
     const initializeMap = async () => {
       try {
-        // Load the Extended Component Library
+        // Load the Extended Component Library once
         if (!document.querySelector('script[src*="extended-component-library"]')) {
           const script = document.createElement('script');
           script.type = 'module';
           script.src = 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js';
           document.body.appendChild(script);
           
-          await new Promise((resolve) => {
-            script.onload = resolve;
+          await new Promise<void>((resolve, reject) => {
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error('ECL script failed to load'));
           });
         }
 
         // Wait for custom element to be defined
         await customElements.whenDefined('gmpx-store-locator');
         
-        const locator = containerRef.current?.querySelector('gmpx-store-locator');
-        if (locator && typeof (locator as any).configureFromQuickBuilder === 'function') {
-          (locator as any).configureFromQuickBuilder(CONFIGURATION);
+        const locator = containerRef.current?.querySelector('gmpx-store-locator') as any;
+        if (locator?.configureFromQuickBuilder) {
+          locator.configureFromQuickBuilder(CONFIGURATION);
           isInitialized.current = true;
-          console.log('Google Maps Store Locator initialized successfully');
+          console.log('Store Locator initialized');
+        } else {
+          console.error('configureFromQuickBuilder missing on gmpx-store-locator');
         }
       } catch (error) {
         console.error('Failed to initialize Google Maps Store Locator:', error);
       }
     };
 
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(initializeMap, 100);
+    // Render on client only
+    if (typeof window !== 'undefined') {
+      initializeMap().catch(console.error);
+    }
 
-    return () => {
-      clearTimeout(timer);
-    };
   }, []);
 
   return (
@@ -113,11 +115,8 @@ export const GoogleMapLocator = ({
           ref={containerRef}
           className="rounded-2xl overflow-hidden shadow-2xl"
           style={{ minHeight: '500px' }}
+          suppressHydrationWarning
         >
-          <gmpx-api-loader 
-            api-key="AIzaSyC1xjAt6WIFIjN_dF5CQqvmJyvDbPSZGy8" 
-            solution-channel="GMP_QB_locatorplus_v11_cF"
-          />
           <gmpx-store-locator
             style={{
               width: '100%',
