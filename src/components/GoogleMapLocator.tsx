@@ -5,6 +5,7 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'gmpx-api-loader': {
+        key?: string;
         'api-key'?: string;
         'solution-channel'?: string;
       };
@@ -117,6 +118,7 @@ export const GoogleMapLocator = ({
           style={{ minHeight: '500px' }}
           suppressHydrationWarning
         >
+          <gmpx-api-loader api-key={import.meta.env.VITE_GOOGLE_MAPS_API_KEY} solution-channel="GMP_QB_locatorplus_v10_cABCE" />
           <gmpx-store-locator
             style={{
               width: '100%',
