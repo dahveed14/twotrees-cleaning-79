@@ -14,6 +14,7 @@ import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { LazySection } from "@/components/LazySection";
 import { updateMetaTags } from "@/utils/metaTags";
+import { GoogleMapLocator } from "@/components/GoogleMapLocator";
 
 const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
@@ -120,6 +121,9 @@ const Index = () => {
       </LazySection>
       <LazySection>
         <HomepageFAQ />
+      </LazySection>
+      <LazySection>
+        <GoogleMapLocator />
       </LazySection>
       <LazySection>
         <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
