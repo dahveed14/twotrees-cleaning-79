@@ -4,7 +4,10 @@ import { useEffect, useRef } from "react";
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'gmpx-api-loader': any;
+      'gmpx-api-loader': {
+        'api-key'?: string;
+        'solution-channel'?: string;
+      };
       'gmpx-store-locator': any;
     }
   }
@@ -66,8 +69,7 @@ export const GoogleMapLocator = ({
               streetViewControl: false,
               zoom: 10,
               zoomControl: true,
-              maxZoom: 17,
-              mapId: ""
+              maxZoom: 17
             },
             mapsApiKey: "AIzaSyC1xjAt6WIFIjN_dF5CQqvmJyvDbPSZGy8",
             capabilities: {
@@ -118,11 +120,10 @@ export const GoogleMapLocator = ({
           style={{ minHeight: '500px' }}
         >
           <gmpx-api-loader 
-            key="AIzaSyC1xjAt6WIFIjN_dF5CQqvmJyvDbPSZGy8" 
+            api-key="AIzaSyC1xjAt6WIFIjN_dF5CQqvmJyvDbPSZGy8" 
             solution-channel="GMP_QB_locatorplus_v11_cABD"
           />
-          <gmpx-store-locator 
-            map-id="DEMO_MAP_ID"
+          <gmpx-store-locator
             style={{
               width: '100%',
               height: '500px',
