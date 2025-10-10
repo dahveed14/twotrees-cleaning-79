@@ -27,52 +27,67 @@ export const GoogleMapLocator = ({
     if (isInitialized.current) return;
 
     const loadGoogleMapsComponents = async () => {
-      // Load API loader script
-      if (!document.querySelector('script[src*="extended-component-library"]')) {
-        const libraryScript = document.createElement('script');
-        libraryScript.type = 'module';
-        libraryScript.src = 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js';
-        document.body.appendChild(libraryScript);
-      }
+      try {
+        // Load API loader script
+        if (!document.querySelector('script[src*="extended-component-library"]')) {
+          const libraryScript = document.createElement('script');
+          libraryScript.type = 'module';
+          libraryScript.src = 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js';
+          document.body.appendChild(libraryScript);
+          
+          // Wait for script to load
+          await new Promise((resolve) => {
+            libraryScript.onload = resolve;
+          });
+        }
 
-      // Wait for custom elements to be defined
-      await customElements.whenDefined('gmpx-store-locator');
-      
-      const locator = containerRef.current?.querySelector('gmpx-store-locator');
-      if (locator && typeof (locator as any).configureFromQuickBuilder === 'function') {
-        const configuration = {
-          locations: [
-            {
-              title: "Two Trees Cleaning",
-              address1: "2252 Channel Dr",
-              address2: "Ventura, CA, United States",
-              coords: { lat: 34.2686019, lng: -119.2689508 },
-              placeId: "ChIJu4j5t6sASQARPfEuLicUNA4"
+        // Wait for custom elements to be defined with timeout
+        await Promise.race([
+          customElements.whenDefined('gmpx-store-locator'),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 10000))
+        ]);
+        
+        const locator = containerRef.current?.querySelector('gmpx-store-locator');
+        if (locator && typeof (locator as any).configureFromQuickBuilder === 'function') {
+          const configuration = {
+            locations: [
+              {
+                title: "Two Trees Cleaning",
+                address1: "2252 Channel Dr",
+                address2: "Ventura, CA, United States",
+                coords: { lat: 34.2686019, lng: -119.2689508 },
+                placeId: "ChIJu4j5t6sASQARPfEuLicUNA4"
+              }
+            ],
+            mapOptions: {
+              center: { lat: 34.2686019, lng: -119.2689508 },
+              fullscreenControl: true,
+              mapTypeControl: false,
+              streetViewControl: false,
+              zoom: 10,
+              zoomControl: true,
+              maxZoom: 17,
+              mapId: ""
+            },
+            mapsApiKey: "AIzaSyC1xjAt6WIFIjN_dF5CQqvmJyvDbPSZGy8",
+            capabilities: {
+              input: true,
+              autocomplete: true,
+              directions: false,
+              distanceMatrix: true,
+              details: false,
+              actions: false
             }
-          ],
-          mapOptions: {
-            center: { lat: 34.2686019, lng: -119.2689508 },
-            fullscreenControl: true,
-            mapTypeControl: false,
-            streetViewControl: false,
-            zoom: 10,
-            zoomControl: true,
-            maxZoom: 17,
-            mapId: ""
-          },
-          mapsApiKey: "AIzaSyC1xjAt6WIFIjN_dF5CQqvmJyvDbPSZGy8",
-          capabilities: {
-            input: true,
-            autocomplete: true,
-            directions: false,
-            distanceMatrix: true,
-            details: false,
-            actions: false
-          }
-        };
+          };
 
-        (locator as any).configureFromQuickBuilder(configuration);
-        isInitialized.current = true;
+          (locator as any).configureFromQuickBuilder(configuration);
+          isInitialized.current = true;
+          console.log('Google Maps Store Locator initialized successfully');
+        } else {
+          console.error('Store locator element not found or configureFromQuickBuilder method missing');
+        }
+      } catch (error) {
+        console.error('Failed to load Google Maps components:', error);
       }
     };
 
