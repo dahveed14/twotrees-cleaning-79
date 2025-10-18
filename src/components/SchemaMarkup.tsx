@@ -10,9 +10,11 @@ interface SchemaMarkupProps {
     name: string;
     url: string;
   }>;
+  businessName?: string;
+  phoneNumber?: string;
 }
 
-export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaMarkupProps) => {
+export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessName, phoneNumber }: SchemaMarkupProps) => {
   useEffect(() => {
     const baseUrl = "https://twotreescleaning.com";
     
@@ -21,12 +23,12 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
-      "name": cityName ? `Two Trees Cleaning - ${cityName}` : "Two Trees Cleaning",
+      "name": businessName || (cityName ? `Two Trees Cleaning - ${cityName}` : "Two Trees Cleaning"),
       "description": cityName 
         ? `Professional house cleaning services for busy families in ${cityName}, Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.`
         : "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.",
       "url": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
-      "telephone": "+1-805-456-1421",
+      "telephone": phoneNumber || "+1-805-456-1421",
       "email": "hello@twotreescleaning.com",
       "foundingDate": "2020",
       "address": {
@@ -283,7 +285,7 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs }: SchemaM
       "logo": `${baseUrl}/favicon.ico`,
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-805-456-1421",
+        "telephone": phoneNumber || "+1-805-456-1421",
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": cityName ? `${cityName}, CA` : "Ventura County, CA"

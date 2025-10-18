@@ -27,7 +27,7 @@ const SantaBarbara = () => {
         event_label: 'Santa Barbara Phone Click'
       });
     }
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-892-6881';
   };
 
   const breadcrumbData = [
@@ -75,14 +75,16 @@ const SantaBarbara = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Santa Barbara House Cleaning Services | Two Trees Cleaning | Premium Luxury Care</title>
-        <meta name="description" content="Premium house cleaning services in Santa Barbara, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners." />
+        <title>Santa Barbara House Cleaning Services | Two Trees Cleaning - Santa Barbara and Goleta</title>
+        <meta name="description" content="Premium house cleaning services in Santa Barbara and Goleta, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners. Call 805-892-6881" />
         
       </Helmet>
       <SchemaMarkup 
         cityName="Santa Barbara"
         cityCoordinates={santaBarbaraCoordinates}
         breadcrumbs={breadcrumbData}
+        businessName="Two Trees Cleaning - Santa Barbara and Goleta"
+        phoneNumber="+1-805-892-6881"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
@@ -134,7 +136,7 @@ const SantaBarbara = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 456-1421
+                  (805) 892-6881
                 </Button>
               </div>
             </div>
@@ -501,7 +503,7 @@ const SantaBarbara = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 456-1421
+              Call (805) 892-6881
             </Button>
           </div>
         </div>
