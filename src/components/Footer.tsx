@@ -27,7 +27,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Two Office Locations</h4>
+            <h4 className="text-lg font-semibold mb-4">Three Office Locations</h4>
             <div className="space-y-3 text-gray-300">
               <div>
                 <div className="flex items-center gap-2 mb-2">
@@ -47,6 +47,16 @@ export const Footer = () => {
                 <div className="flex items-center gap-2 ml-6">
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">(805) 892-6881</span>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-two-trees-gold" />
+                  <span className="text-sm font-semibold">Thousand Oaks Office</span>
+                </div>
+                <div className="flex items-center gap-2 ml-6">
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm">(805) 262-9691</span>
                 </div>
               </div>
               <div className="flex items-center gap-2 pt-2">
