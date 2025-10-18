@@ -1,17 +1,10 @@
-import { useEffect } from "react";
+
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Extend the Window interface to include jQuery and NiceJob
-declare global {
-  interface Window {
-    jQuery: any;
-    NiceJob: any;
-  }
-}
 
 const Book = () => {
   const handleBookingClick = (location: string) => {
@@ -29,41 +22,6 @@ const Book = () => {
     window.location.href = 'tel:8054561421';
   };
 
-  useEffect(() => {
-    // Load jQuery if not already loaded
-    if (!window.jQuery) {
-      const jqueryScript = document.createElement('script');
-      jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
-      jqueryScript.async = true;
-      document.head.appendChild(jqueryScript);
-    }
-
-    // Load ConvertLabs booking script
-    const convertLabsScript = document.createElement('script');
-    convertLabsScript.src = 'https://convertlabs.io/js/booking_embed.js';
-    convertLabsScript.async = true;
-    document.head.appendChild(convertLabsScript);
-
-
-    // Add ConvertLabs styles
-    const style = document.createElement('style');
-    style.textContent = '.Convertlabs{width: 1px;min-width: 100%; height: 1px; min-height: 100%;}';
-    document.head.appendChild(style);
-
-    // Cleanup function
-    return () => {
-      // Remove scripts and styles when component unmounts
-      const scripts = document.querySelectorAll('script[src*="convertlabs.io"], script[src*="jquery"], script[src*="nicejob.co"]');
-      scripts.forEach(script => script.remove());
-      
-      const convertLabsStyles = document.querySelectorAll('style');
-      convertLabsStyles.forEach(styleEl => {
-        if (styleEl.textContent?.includes('Convertlabs')) {
-          styleEl.remove();
-        }
-      });
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -102,16 +60,6 @@ const Book = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <iframe 
-              src="https://convertlabs.io/booking_form/3296" 
-              frameBorder="0" 
-              scrolling="no" 
-              style={{ width: '100%' }} 
-              className="Convertlabs"
-              title="Two Trees Cleaning Booking Form"
-            />
-          </div>
         </div>
       </main>
       
