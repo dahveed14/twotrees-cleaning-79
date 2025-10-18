@@ -293,68 +293,54 @@ const SantaBarbara = () => {
       {/* Why Choose Two Trees for Santa Barbara */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-4 text-center">
             Why Choose Two Trees for Your Santa Barbara Home?
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 className="text-2xl font-bold text-two-trees-green mb-6">American Riviera Expertise</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Santa Barbara's Mediterranean climate and coastal location create unique cleaning challenges. From the 
-                historic adobe buildings downtown to modern beachfront properties, each area requires specialized knowledge. 
-                Our team understands how ocean moisture affects homes near Leadbetter Beach and manages the dust from 
-                the Santa Ynez Mountains that settles in Riviera properties.
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                We've built relationships with property managers serving UCSB students, vacation rental owners in the 
-                Funk Zone, and families throughout the Mesa district. Our cleaning protocols are designed to protect 
-                expensive finishes common in Santa Barbara homes while maintaining the pristine standards expected 
-                in this luxury market.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
-                  <span className="text-gray-700">Licensed & insured throughout Santa Barbara County</span>
+          <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            We bring professional expertise, reliable service, and local knowledge to every Santa Barbara home we clean.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-8 h-8 text-two-trees-green" />
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
-                  <span className="text-gray-700">Coastal cleaning expertise for salt air protection</span>
+                <h3 className="text-2xl font-bold text-two-trees-green mb-4">
+                  Professionally Trained & Certified
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our team is professionally trained and certified through the Americas Maids Association, ensuring industry-leading cleaning standards and best practices in every home we service.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Clock className="w-8 h-8 text-two-trees-green" />
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
-                  <span className="text-gray-700">Historic property experience with gentle methods</span>
+                <h3 className="text-2xl font-bold text-two-trees-green mb-4">
+                  Reliable & Consistent Service
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We show up on time, every time. With consistent cleaning teams and streamlined scheduling, you can count on the same exceptional service with every visit to your Santa Barbara home.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MapPin className="w-8 h-8 text-two-trees-green" />
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-two-trees-green" />
-                  <span className="text-gray-700">UCSB area and vacation rental specialists</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Card className="hover:shadow-xl transition-shadow border-none shadow-lg">
-                <CardContent className="p-8">
-                  <h4 className="text-xl font-bold text-two-trees-green mb-4">Santa Barbara Service Highlights</h4>
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Student Housing Expertise</h5>
-                      <p className="text-sm text-gray-600">Specialized cleaning for UCSB area rentals, including move-out services and parent weekend preparation.</p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Vacation Rental Mastery</h5>
-                      <p className="text-sm text-gray-600">Funk Zone and waterfront property turnovers with same-day service and 5-star cleanliness standards.</p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Luxury Home Care</h5>
-                      <p className="text-sm text-gray-600">Mesa and Riviera estate cleaning with attention to high-end surfaces, art collections, and luxury amenities.</p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Historic Property Care</h5>
-                      <p className="text-sm text-gray-600">Gentle cleaning methods for adobe structures and vintage homes throughout downtown and near the Mission.</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                <h3 className="text-2xl font-bold text-two-trees-green mb-4">
+                  Santa Barbara Home Expertise
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  From coastal salt air effects to Spanish Colonial tile work, we understand the unique needs of Santa Barbara homes. Our specialized knowledge protects your investment and maintains your home's beauty.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
