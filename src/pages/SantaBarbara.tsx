@@ -142,8 +142,8 @@ const SantaBarbara = () => {
             </div>
             <div className="relative">
               <img 
-                src="/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.png" 
-                alt="Elegant Santa Barbara luxury resort with arched colonnade, palm trees, and ocean views - showcasing the sophisticated coastal lifestyle Two Trees Cleaning serves"
+                src="/lovable-uploads/santa-barbara-hero.jpg" 
+                alt="Beautiful Spanish Colonial Revival home in Santa Barbara with vibrant bougainvillea, decorative tile work, and lush landscaping - exemplifying the elegant homes Two Trees Cleaning serves"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
