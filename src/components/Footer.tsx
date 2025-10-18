@@ -27,17 +27,29 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4">Two Office Locations</h4>
             <div className="space-y-3 text-gray-300">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span className="text-sm">2252 Channel Dr.<br />Ventura, CA 93001</span>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-two-trees-gold" />
+                  <span className="text-sm font-semibold">Ventura Office</span>
+                </div>
+                <div className="flex items-center gap-2 ml-6">
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm">(805) 456-1421</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">(805) 456-1421</span>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-two-trees-gold" />
+                  <span className="text-sm font-semibold">Santa Barbara Office</span>
+                </div>
+                <div className="flex items-center gap-2 ml-6">
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm">(805) 892-6881</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 pt-2">
                 <Mail className="w-4 h-4" />
                 <span className="text-sm">hello@twotreescleaning.com</span>
               </div>
