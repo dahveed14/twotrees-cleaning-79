@@ -77,7 +77,7 @@ const Book = () => {
               Request a Quote
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Request a personalized quote for professional house cleaning in Ventura and Santa Barbara Counties
+              We'll get back to you within 2-3 hours with a personalized quote for your cleaning needs
             </p>
           </div>
 

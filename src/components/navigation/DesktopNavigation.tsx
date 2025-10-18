@@ -44,10 +44,9 @@ export const DesktopNavigation = ({ onBookingClick, onPhoneClick }: DesktopNavig
           variant="outline" 
           size="sm" 
           className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-          onClick={onPhoneClick}
+          onClick={() => window.location.href = '/contact'}
         >
-          <Phone className="w-4 h-4 mr-2" />
-          (805) 456-1421
+          Contact Us
         </Button>
         <Button 
           size="sm" 

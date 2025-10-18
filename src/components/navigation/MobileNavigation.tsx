@@ -113,12 +113,11 @@ export const MobileNavigation = ({
                 variant="outline" 
                 className="w-full border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
                 onClick={() => {
-                  onPhoneClick();
+                  window.location.href = '/contact';
                   setMobileMenuOpen(false);
                 }}
               >
-                <Phone className="w-4 h-4 mr-2" />
-                (805) 456-1421
+                Contact Us
               </Button>
               <Button 
                 className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
