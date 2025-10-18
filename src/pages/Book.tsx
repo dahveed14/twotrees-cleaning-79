@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ContactForm } from "@/components/ContactForm";
 
 
 const Book = () => {
@@ -32,10 +33,10 @@ const Book = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-two-trees-green mb-4">
-              Book Your Cleaning Service
+              Get Your Free Cleaning Quote
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Schedule your professional house cleaning service in Ventura and Santa Barbara Counties
+              Request a personalized quote for professional house cleaning in Ventura and Santa Barbara Counties
             </p>
           </div>
 
@@ -58,6 +59,11 @@ const Book = () => {
                 </Button>
               </Link>
             </div>
+          </div>
+
+          {/* Quote Form */}
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <ContactForm />
           </div>
 
         </div>
