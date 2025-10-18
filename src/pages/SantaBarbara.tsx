@@ -143,9 +143,12 @@ const SantaBarbara = () => {
             <div className="relative">
               <img 
                 src="/lovable-uploads/santa-barbara-hero.jpg" 
-                alt="Beautiful Spanish Colonial Revival home in Santa Barbara with vibrant bougainvillea, decorative tile work, and lush landscaping - exemplifying the elegant homes Two Trees Cleaning serves"
+                alt="Santa Barbara house cleaning service for Spanish Colonial homes with tile work and bougainvillea landscaping"
                 className="rounded-2xl shadow-2xl"
               />
+              <p className="text-center text-sm text-gray-600 mt-4 italic">
+                Professional house cleaning services for Santa Barbara and Goleta homes - from historic Spanish Colonial estates to modern coastal properties
+              </p>
             </div>
           </div>
         </div>
