@@ -1,13 +1,54 @@
-
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ContactForm } from "@/components/ContactForm";
+
+// Extend the Window interface to include jQuery
+declare global {
+  interface Window {
+    jQuery: any;
+  }
+}
 
 
 const Book = () => {
+  useEffect(() => {
+    // Load jQuery if not already loaded
+    if (!window.jQuery) {
+      const jqueryScript = document.createElement('script');
+      jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
+      jqueryScript.async = true;
+      document.head.appendChild(jqueryScript);
+    }
+
+    // Load ConvertLabs booking script
+    const convertLabsScript = document.createElement('script');
+    convertLabsScript.src = 'https://convertlabs.io/js/booking_embed.js';
+    convertLabsScript.async = true;
+    document.head.appendChild(convertLabsScript);
+
+    // Add ConvertLabs styles
+    const style = document.createElement('style');
+    style.textContent = '.Convertlabs{width: 1px;min-width: 100%; height: 1px; min-height: 100%;}';
+    document.head.appendChild(style);
+
+    // Cleanup function
+    return () => {
+      // Remove scripts and styles when component unmounts
+      const scripts = document.querySelectorAll('script[src*="convertlabs.io"], script[src*="jquery"]');
+      scripts.forEach(script => script.remove());
+      
+      const convertLabsStyles = document.querySelectorAll('style');
+      convertLabsStyles.forEach(styleEl => {
+        if (styleEl.textContent?.includes('Convertlabs')) {
+          styleEl.remove();
+        }
+      });
+    };
+  }, []);
+
   const handleBookingClick = (location: string) => {
     // Track booking clicks without console logging
     if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -63,7 +104,14 @@ const Book = () => {
 
           {/* Quote Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <ContactForm />
+            <iframe 
+              src="https://convertlabs.io/quote_form/3296" 
+              frameBorder="0" 
+              scrolling="no" 
+              style={{ width: '100%' }} 
+              className="Convertlabs"
+              title="Two Trees Cleaning Quote Form"
+            />
           </div>
 
         </div>
