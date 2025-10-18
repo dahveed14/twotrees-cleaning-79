@@ -36,14 +36,6 @@ export const DesktopNavigation = ({ onBookingClick, onPhoneClick }: DesktopNavig
         <Link to="/faq" className="text-gray-700 hover:text-two-trees-green transition-colors">
           FAQ
         </Link>
-        <Button 
-          variant="outline" 
-          size="sm" 
-          className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-          onClick={() => window.location.href = '/contact'}
-        >
-          Get Quote
-        </Button>
       </div>
 
       {/* Desktop CTA Buttons */}
@@ -60,9 +52,9 @@ export const DesktopNavigation = ({ onBookingClick, onPhoneClick }: DesktopNavig
         <Button 
           size="sm" 
           className="bg-two-trees-green hover:bg-two-trees-green/90"
-          onClick={() => onBookingClick('Navigation')}
+          onClick={() => window.location.href = '/book'}
         >
-          Book Online
+          Get a Quote
         </Button>
       </div>
     </>

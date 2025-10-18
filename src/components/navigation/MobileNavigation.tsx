@@ -106,19 +106,6 @@ export const MobileNavigation = ({
             >
               FAQ
             </Link>
-            <div className="px-4">
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="w-full border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                onClick={() => {
-                  window.location.href = '/contact';
-                  setMobileMenuOpen(false);
-                }}
-              >
-                Get Quote
-              </Button>
-            </div>
             
             {/* Mobile CTA Buttons */}
             <div className="px-4 pt-4 space-y-2 border-t border-gray-200">
@@ -136,11 +123,11 @@ export const MobileNavigation = ({
               <Button 
                 className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
                 onClick={() => {
-                  onBookingClick('Mobile Navigation');
+                  window.location.href = '/book';
                   setMobileMenuOpen(false);
                 }}
               >
-                Book Online
+                Get a Quote
               </Button>
             </div>
           </div>
