@@ -108,18 +108,10 @@ const SantaBarbara = () => {
                 Santa Barbara House Cleaning Services
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Professional house cleaning for busy Santa Barbara families. From State Street condos to Mesa estates, 
-                we've been trusted by 200+ local customers since 2020. Licensed, insured, and locally owned.
-              </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Santa Barbara's unique coastal climate and diverse neighborhoods require specialized cleaning expertise. 
-                Whether you live in a historic downtown condo near the Santa Barbara Mission, a luxury Mesa estate with 
-                ocean views, or a family home near UCSB, we understand the specific needs of American Riviera living.
+                Professional house cleaning for Santa Barbara families. From downtown condos on State Street to Riviera homes, Two Trees Cleaning has served 200+ local clients since 2020. Locally owned and professionally trained.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                From managing salt air effects in beachfront properties to maintaining the elegance of Riviera homes, 
-                our experienced team provides meticulous cleaning services tailored to Santa Barbara's distinctive lifestyle. 
-                We offer regular housekeeping, deep cleaning, vacation rental turnovers, and specialized post-construction cleanup.
+                We specialize in Santa Barbara's unique coastal homes — offering regular cleanings, deep cleanings, move-outs, and vacation rental turnovers. Every service is tailored to keep your home fresh, bright, and ready for coastal living.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
