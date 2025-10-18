@@ -309,7 +309,7 @@ const SantaBarbara = () => {
                   Professionally Trained & Certified
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Our team is professionally trained and certified through the Americas Maids Association, ensuring industry-leading cleaning standards and best practices in every home we service.
+                  Our team is professionally trained and certified through the <strong className="underline">Americas Maids Association</strong>, ensuring industry-leading cleaning standards and best practices in every home we service.
                 </p>
               </CardContent>
             </Card>
@@ -337,7 +337,7 @@ const SantaBarbara = () => {
                   Santa Barbara Home Expertise
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  From coastal salt air effects to Spanish Colonial tile work, we understand the unique needs of Santa Barbara homes. Our specialized knowledge protects your investment and maintains your home's beauty.
+                  We understand the unique needs of Santa Barbara homes. Our specialized knowledge protects your investment and maintains your home's beauty.
                 </p>
               </CardContent>
             </Card>
