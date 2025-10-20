@@ -3,9 +3,15 @@ import { StaticRouter } from "react-router-dom/server";
 import App from "./App";
 
 export function render(url: string) {
-  return ReactDOMServer.renderToString(
-    <StaticRouter location={url}>
-      <App />
-    </StaticRouter>
-  );
+  try {
+    return ReactDOMServer.renderToString(
+      <StaticRouter location={url}>
+        <App />
+      </StaticRouter>
+    );
+  } catch (error) {
+    console.error(`[SSR] Failed to render ${url}:`, error);
+    // Return a basic fallback HTML that will hydrate on client
+    return `<div id="root"></div>`;
+  }
 }
