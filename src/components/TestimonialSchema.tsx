@@ -47,6 +47,9 @@ export const TestimonialSchema = ({ testimonials, cityName }: TestimonialSchemaP
       }))
     };
 
+    // Only run on client side
+    if (typeof document === 'undefined') return;
+
     const existingScript = document.getElementById('testimonial-schema');
     if (existingScript) {
       existingScript.remove();
@@ -59,6 +62,7 @@ export const TestimonialSchema = ({ testimonials, cityName }: TestimonialSchemaP
     document.head.appendChild(script);
 
     return () => {
+      if (typeof document === 'undefined') return;
       const script = document.getElementById('testimonial-schema');
       if (script) {
         script.remove();
