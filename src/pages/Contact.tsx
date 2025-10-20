@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Shield, Users, BookOpen, ArrowRight } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
-import { GoogleMapLocator } from "@/components/GoogleMapLocator";
+
 
 
 const Contact = () => {
@@ -219,10 +219,6 @@ const Contact = () => {
         </div>
       </section>
 
-      <GoogleMapLocator 
-        title="Find Us on the Map"
-        subtitle="Proudly serving Ventura County and Santa Barbara County with professional house cleaning services"
-      />
 
       <Footer />
     </div>

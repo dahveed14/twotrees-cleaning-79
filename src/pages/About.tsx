@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Shield, Users, Heart } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
-import { GoogleMapLocator } from "@/components/GoogleMapLocator";
+
 
 
 const About = () => {
@@ -238,10 +238,6 @@ const About = () => {
         </div>
       </section>
 
-      <GoogleMapLocator 
-        title="Our Location & Service Area"
-        subtitle="Based in Ventura County, we're proud to serve families throughout Santa Barbara and Ventura Counties"
-      />
 
       <Footer />
     </div>
