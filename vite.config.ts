@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => ({
       }
     }
   },
+  ssr: {
+    noExternal: ['react-helmet-async', '@tanstack/react-query'],
+  },
   assetsInclude: ['**/*.xml'],
   plugins: [
     react(),
