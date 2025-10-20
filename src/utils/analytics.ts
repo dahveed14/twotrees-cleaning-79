@@ -22,12 +22,9 @@ export const trackFormSubmit = (formType: string) => {
 };
 
 export const trackPageView = (pageTitle: string, pageLocation?: string) => {
-  // Only access window.location on the client side
-  const location = pageLocation || (typeof window !== 'undefined' ? window.location.href : '');
-  
   trackEvent('page_view', { 
     page_title: pageTitle,
-    page_location: location
+    page_location: pageLocation || window.location.href
   });
 };
 

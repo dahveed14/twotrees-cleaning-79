@@ -16,9 +16,6 @@ export const NiceJobWidget = ({
   description = "Real reviews from real customers - see what busy families like yours are saying"
 }: NiceJobWidgetProps) => {
   useEffect(() => {
-    // Only run on client side
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
-
     // Delay NiceJob SDK loading for better performance
     const loadNiceJobScript = () => {
       const existingScript = document.querySelector('script[src*="nicejob.co"]');
@@ -35,11 +32,13 @@ export const NiceJobWidget = ({
     const timer = setTimeout(loadNiceJobScript, 1500);
 
     // Track analytics
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push({
-      event: 'view_reviews',
-      page: 'widget'
-    });
+    if (typeof window !== 'undefined') {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: 'view_reviews',
+        page: 'widget'
+      });
+    }
 
     return () => clearTimeout(timer);
   }, []);

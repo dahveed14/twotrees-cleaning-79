@@ -38,37 +38,31 @@ const Index = () => {
       ]
     });
 
-    // Capture UTM parameters for display (browser only)
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      const params = {
-        utm_source: urlParams.get('utm_source'),
-        utm_medium: urlParams.get('utm_medium'),
-        utm_campaign: urlParams.get('utm_campaign'),
-        utm_term: urlParams.get('utm_term'),
-        utm_content: urlParams.get('utm_content')
-      };
-      setUtmParams(params);
-    }
+    // Capture UTM parameters for display
+    const urlParams = new URLSearchParams(window.location.search);
+    const params = {
+      utm_source: urlParams.get('utm_source'),
+      utm_medium: urlParams.get('utm_medium'),
+      utm_campaign: urlParams.get('utm_campaign'),
+      utm_term: urlParams.get('utm_term'),
+      utm_content: urlParams.get('utm_content')
+    };
+    setUtmParams(params);
 
-    // Delay NiceJob SDK loading for better performance (browser only)
-    let timer: NodeJS.Timeout | undefined;
-    
-    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      const loadNiceJobScript = () => {
-        const existingScript = document.querySelector('script[src*="nicejob.co"]');
-        if (!existingScript) {
-          const niceJobScript = document.createElement('script');
-          niceJobScript.type = 'text/javascript';
-          niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
-          niceJobScript.defer = true;
-          document.head.appendChild(niceJobScript);
-        }
-      };
+    // Delay NiceJob SDK loading for better performance
+    const loadNiceJobScript = () => {
+      const existingScript = document.querySelector('script[src*="nicejob.co"]');
+      if (!existingScript) {
+        const niceJobScript = document.createElement('script');
+        niceJobScript.type = 'text/javascript';
+        niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
+        niceJobScript.defer = true;
+        document.head.appendChild(niceJobScript);
+      }
+    };
 
-      // Load after initial render to avoid blocking - increased delay for mobile performance
-      timer = setTimeout(loadNiceJobScript, 5000);
-    }
+    // Load after initial render to avoid blocking - increased delay for mobile performance
+    const timer = setTimeout(loadNiceJobScript, 5000);
 
     // Track page view
     import('../utils/analytics').then(({ trackPageView }) => {
@@ -77,11 +71,9 @@ const Index = () => {
 
     // Cleanup function
     return () => {
-      if (timer) clearTimeout(timer);
-      if (typeof document !== 'undefined') {
-        const scripts = document.querySelectorAll('script[src*="nicejob.co"]');
-        scripts.forEach(script => script.remove());
-      }
+      clearTimeout(timer);
+      const scripts = document.querySelectorAll('script[src*="nicejob.co"]');
+      scripts.forEach(script => script.remove());
     };
   }, []);
 
@@ -91,21 +83,15 @@ const Index = () => {
       trackBookingClick(location);
     });
 
-    // Navigate to external booking page (browser only)
-    if (typeof window !== 'undefined') {
-      window.open('https://twotreescleaning.com/book', '_blank');
-    }
+    // Navigate to external booking page
+    window.open('https://twotreescleaning.com/book', '_blank');
   };
 
   const handlePhoneClick = () => {
     import('../utils/analytics').then(({ trackPhoneClick }) => {
       trackPhoneClick('home');
     });
-    
-    // Navigate to phone (browser only)
-    if (typeof window !== 'undefined') {
-      window.location.href = 'tel:805-456-1421';
-    }
+    window.location.href = 'tel:805-456-1421';
   };
 
   return (

@@ -30,8 +30,6 @@ export const GoogleMapLocator = ({
   const isInitialized = useRef(false);
 
   useEffect(() => {
-    // Only run on client side
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
     if (isInitialized.current) return;
 
     const CONFIGURATION = {
@@ -95,8 +93,11 @@ export const GoogleMapLocator = ({
       }
     };
 
-    // Initialize map
-    initializeMap().catch(console.error);
+    // Render on client only
+    if (typeof window !== 'undefined') {
+      initializeMap().catch(console.error);
+    }
+
   }, []);
 
   return (

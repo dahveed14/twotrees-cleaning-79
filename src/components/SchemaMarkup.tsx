@@ -566,9 +566,6 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       ]
     };
 
-    // Only run on client side
-    if (typeof document === 'undefined') return;
-
     // Add schemas to head
     const addSchema = (schema: object, id: string) => {
       const existingScript = document.getElementById(id);
@@ -593,7 +590,6 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
 
     return () => {
       // Cleanup function to remove schemas when component unmounts
-      if (typeof document === 'undefined') return;
       ['local-business-schema', 'organization-schema', 'services-schema', 'breadcrumb-schema'].forEach(id => {
         const script = document.getElementById(id);
         if (script) {
