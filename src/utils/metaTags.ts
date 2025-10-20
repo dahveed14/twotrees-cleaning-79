@@ -13,6 +13,9 @@ interface MetaTagsConfig {
 }
 
 export const updateMetaTags = (config: MetaTagsConfig) => {
+  // SSR guard - only run in browser
+  if (typeof document === 'undefined') return;
+  
   const { title, description, cityName, cityCoordinates, url, image, keywords } = config;
   
   // Update title
