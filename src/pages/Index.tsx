@@ -49,32 +49,12 @@ const Index = () => {
     };
     setUtmParams(params);
 
-    // Delay NiceJob SDK loading for better performance
-    const loadNiceJobScript = () => {
-      const existingScript = document.querySelector('script[src*="nicejob.co"]');
-      if (!existingScript) {
-        const niceJobScript = document.createElement('script');
-        niceJobScript.type = 'text/javascript';
-        niceJobScript.src = 'https://cdn.nicejob.co/js/sdk.min.js?id=5598836875984896';
-        niceJobScript.defer = true;
-        document.head.appendChild(niceJobScript);
-      }
-    };
-
-    // Load after initial render to avoid blocking - increased delay for mobile performance
-    const timer = setTimeout(loadNiceJobScript, 5000);
 
     // Track page view
     import('../utils/analytics').then(({ trackPageView }) => {
       trackPageView('Two Trees Cleaning Landing Page');
     });
 
-    // Cleanup function
-    return () => {
-      clearTimeout(timer);
-      const scripts = document.querySelectorAll('script[src*="nicejob.co"]');
-      scripts.forEach(script => script.remove());
-    };
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -96,8 +76,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* NiceJob Engage Widget */}
-      <div className="nj-engage" data-position="left"></div>
       <Helmet>
         <title>Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured</title>
         <meta name="description" content="Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140." />

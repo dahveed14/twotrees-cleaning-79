@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle, MapPin, Clock, Star, Shield, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { NiceJobWidget } from "@/components/NiceJobWidget";
+
 import { FinalCTA } from "@/components/FinalCTA";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 
@@ -189,8 +189,6 @@ const CamarilloPostConstruction = () => {
               </div>
             </section>
 
-            {/* Reviews Section */}
-            <NiceJobWidget compact />
 
             {/* Internal Links Section */}
             <section className="py-16">

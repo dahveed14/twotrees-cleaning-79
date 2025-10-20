@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Star, CheckCircle, Clock, Shield, Sparkles, Users, MapPin, Calendar, Home, Heart } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
-import { NiceJobWidget } from "@/components/NiceJobWidget";
+
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { updateMetaTags } from "@/utils/metaTags";
@@ -427,8 +427,6 @@ export default function OxnardMoveOut() {
                   <span className="text-xl font-semibold text-gray-700 ml-2">5.0 Stars</span>
                 </div>
               </div>
-              
-              <NiceJobWidget compact />
             </div>
           </section>
 

@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X, Building2, Users, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { NiceJobWidget } from "@/components/NiceJobWidget";
+
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { updateMetaTags } from "@/utils/metaTags";
@@ -308,11 +308,6 @@ const Commercial = () => {
           <p className="text-xl text-gray-600 mb-12">
             Real reviews from business owners and office managers across Ventura County
           </p>
-
-        <NiceJobWidget 
-          title="What Our Commercial Clients Say"
-          description="Trusted by businesses across Ventura County for professional cleaning services"
-        />
 
           <div className="mt-12">
             <Badge variant="secondary" className="bg-two-trees-gold/10 text-two-trees-green border-two-trees-gold/20">
