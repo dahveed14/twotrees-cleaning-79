@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
@@ -68,8 +68,9 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <ScrollToTop />
-        <Routes>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -112,20 +113,21 @@ const App = () => (
           <Route path="/camarillo/post-construction-cleaning" element={<CamarilloPostConstruction />} />
           <Route path="/westlake-village/post-construction-cleaning" element={<WestlakeVillagePostConstruction />} />
           <Route path="/santa-barbara/post-construction-cleaning" element={<SantaBarbaraPostConstruction />} />
-          <Route path="/westlake-village/move-out-cleaning" element={<WestlakeVillageMoveOut />} />
-          <Route path="/santa-barbara/move-out-cleaning" element={<SantaBarbaraMoveOut />} />
+        <Route path="/westlake-village/move-out-cleaning" element={<WestlakeVillageMoveOut />} />
+        <Route path="/santa-barbara/move-out-cleaning" element={<SantaBarbaraMoveOut />} />
           <Route path="/ojai/move-out-cleaning" element={<OjaiMoveOut />} />
           <Route path="/ojai/post-construction-cleaning" element={<OjaiPostConstruction />} />
           <Route path="/oxnard/move-out-cleaning" element={<OxnardMoveOut />} />
           <Route path="/oxnard/post-construction-cleaning" element={<OxnardPostConstruction />} />
-          <Route path="/santa-paula" element={<SantaPaula />} />
-          <Route path="/santa-paula/move-out-cleaning" element={<SantaPaulaMoveOut />} />
-          <Route path="/santa-paula/post-construction-cleaning" element={<SantaPaulaPostConstruction />} />
-          <Route path="/carpinteria/move-out-cleaning" element={<CarpinteriaMoveOut />} />
-          <Route path="/carpinteria/post-construction-cleaning" element={<CarpinteriaPostConstruction />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Route path="/santa-paula" element={<SantaPaula />} />
+        <Route path="/santa-paula/move-out-cleaning" element={<SantaPaulaMoveOut />} />
+         <Route path="/santa-paula/post-construction-cleaning" element={<SantaPaulaPostConstruction />} />
+         <Route path="/carpinteria/move-out-cleaning" element={<CarpinteriaMoveOut />} />
+         <Route path="/carpinteria/post-construction-cleaning" element={<CarpinteriaPostConstruction />} />
+           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+           <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>

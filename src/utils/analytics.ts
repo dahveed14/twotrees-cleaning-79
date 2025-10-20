@@ -22,10 +22,9 @@ export const trackFormSubmit = (formType: string) => {
 };
 
 export const trackPageView = (pageTitle: string, pageLocation?: string) => {
-  if (typeof window === 'undefined') return;
   trackEvent('page_view', { 
     page_title: pageTitle,
-    page_location: pageLocation || (typeof window !== 'undefined' ? window.location.href : '')
+    page_location: pageLocation || window.location.href
   });
 };
 

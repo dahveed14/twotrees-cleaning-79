@@ -13,9 +13,6 @@ interface TestimonialSchemaProps {
 
 export const TestimonialSchema = ({ testimonials, cityName }: TestimonialSchemaProps) => {
   useEffect(() => {
-    // Skip on server-side rendering
-    if (typeof document === 'undefined') return;
-    
     const reviewSchema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
