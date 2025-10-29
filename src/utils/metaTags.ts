@@ -13,6 +13,8 @@ interface MetaTagsConfig {
 }
 
 export const updateMetaTags = (config: MetaTagsConfig) => {
+  if (typeof document === 'undefined') return;
+  
   const { title, description, cityName, cityCoordinates, url, image, keywords } = config;
   
   // Update title

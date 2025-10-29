@@ -33,9 +33,11 @@ export default function OxnardMoveOut() {
       description: "Scroll down to fill out our form for a free quote!",
     });
     
-    const formSection = document.getElementById('contact-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
