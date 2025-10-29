@@ -17,6 +17,10 @@ export default defineConfig(({ mode }) => ({
       }
     }
   },
+  ssr: {
+    // SSR entry point for prerendering
+    noExternal: ['react-helmet-async'],
+  },
   assetsInclude: ['**/*.xml'],
   plugins: [
     react(),
