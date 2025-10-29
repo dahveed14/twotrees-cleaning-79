@@ -21,6 +21,8 @@ const Index = () => {
   const [utmParams, setUtmParams] = useState<any>({});
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     // Set meta tags using the utility function
     updateMetaTags({
       title: "Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured",

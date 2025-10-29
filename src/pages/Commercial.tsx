@@ -12,6 +12,8 @@ const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
   const [showPromoBar, setShowPromoBar] = useState(true);
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const venturaCountyCoordinates = {
       latitude: "34.3705",
       longitude: "-119.1391"
