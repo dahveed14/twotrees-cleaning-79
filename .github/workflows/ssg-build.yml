@@ -1,0 +1,67 @@
+name: SSG Build (Vite + React)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install deps (ci)
+        run: npm ci
+
+      - name: Show environment
+        run: |
+          node -v
+          npm -v
+          echo "PWD=$(pwd)"
+          ls -la
+
+      - name: Build client
+        run: |
+          set -e
+          npm run build:client | tee build-client.log
+          echo "--- dist listing after client ---" | tee -a build-client.log
+          ls -la dist | tee -a build-client.log
+
+      - name: Build server (SSR bundle)
+        run: |
+          set -e
+          npm run build:server | tee build-server.log
+          echo "--- dist/server listing ---" | tee -a build-server.log
+          ls -la dist/server | tee -a build-server.log
+
+      - name: Prerender routes
+        run: |
+          set -e
+          node prerender.js | tee prerender.log
+          echo "--- dist tree after prerender ---" | tee -a prerender.log
+          find dist -maxdepth 3 -type f | sort | tee -a prerender.log
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            build-client.log
+            build-server.log
+            prerender.log
+
+      - name: Upload dist (artifact)
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
