@@ -15,6 +15,8 @@ declare global {
 
 const Book = () => {
   useEffect(() => {
+    if (typeof document === 'undefined' || typeof window === 'undefined') return;
+    
     // Load jQuery if not already loaded
     if (!window.jQuery) {
       const jqueryScript = document.createElement('script');

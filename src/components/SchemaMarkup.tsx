@@ -16,6 +16,8 @@ interface SchemaMarkupProps {
 
 export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessName, phoneNumber }: SchemaMarkupProps) => {
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+    
     const baseUrl = "https://twotreescleaning.com";
     
     // Local Business Schema with city-specific data

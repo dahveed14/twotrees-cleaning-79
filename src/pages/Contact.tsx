@@ -14,6 +14,8 @@ import { Link } from "react-router-dom";
 
 const Contact = () => {
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+    
     updateMetaTags({
       title: "Contact Two Trees Cleaning - Get Your Free Quote | Ventura County House Cleaning",
       description: "Get a free quote for professional house cleaning services in Ventura County. Contact David and Eli at Two Trees Cleaning. Licensed, insured, and serving 200+ families.",
