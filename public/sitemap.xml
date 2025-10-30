@@ -80,7 +80,13 @@
   </url>
   <url>
     <loc>https://twotreescleaning.com/services/vacation-rental</loc>
-    <lastmod>2025-01-05</lastmod>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twotreescleaning.com/services/whats-included-in-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -175,110 +181,110 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/camarillo-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/camarillo/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/camarillo-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/camarillo/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/carpinteria-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/carpinteria/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/carpinteria-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/carpinteria/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/ojai-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/ojai/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/ojai-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/ojai/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/oxnard-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/oxnard/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/oxnard-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/oxnard/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/santa-barbara-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/santa-barbara/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/santa-barbara-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/santa-barbara/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/santa-paula-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/santa-paula/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/santa-paula-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/santa-paula/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/thousand-oaks-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/thousand-oaks/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/thousand-oaks-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/thousand-oaks/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/ventura-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/ventura/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/ventura-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/ventura/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/westlake-village-move-out</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/westlake-village/move-out-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://twotreescleaning.com/westlake-village-post-construction</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://twotreescleaning.com/westlake-village/post-construction-cleaning</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
