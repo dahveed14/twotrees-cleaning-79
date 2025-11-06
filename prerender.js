@@ -80,6 +80,7 @@ const routesToPrerender = [
   "/santa-paula/post-construction-cleaning",
   "/carpinteria/move-out-cleaning",
   "/carpinteria/post-construction-cleaning",
+  "/crm-test",
 ];
 
 let ok = 0;

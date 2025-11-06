@@ -44,6 +44,7 @@ import WestlakeVillagePostConstruction from "./pages/WestlakeVillagePostConstruc
 import SantaBarbaraPostConstruction from "./pages/SantaBarbaraPostConstruction";
 import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
+import CRMTest from "./pages/CRMTest";
 import NotFound from "./pages/NotFound";
 import RegularHouseCleaning from "./pages/services/RegularHouseCleaning";
 import DeepCleaning from "./pages/services/DeepCleaning";
@@ -123,6 +124,7 @@ const App = () => (
          <Route path="/santa-paula/post-construction-cleaning" element={<SantaPaulaPostConstruction />} />
          <Route path="/carpinteria/move-out-cleaning" element={<CarpinteriaMoveOut />} />
          <Route path="/carpinteria/post-construction-cleaning" element={<CarpinteriaPostConstruction />} />
+         <Route path="/crm-test" element={<CRMTest />} />
            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
            <Route path="*" element={<NotFound />} />
         </Routes>
