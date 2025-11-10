@@ -114,6 +114,16 @@ const Book = () => {
               className="Convertlabs"
               title="Two Trees Cleaning Quote Form"
             />
+            
+            {/* SMS Opt-in Disclosure */}
+            <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+              <p className="text-xs text-gray-600 leading-relaxed">
+                <strong className="text-gray-800">SMS/Text Message Consent:</strong> By providing your phone number and submitting this form, you consent to receive automated text messages from Two Trees Cleaning, including appointment reminders, service confirmations, and promotional offers. Message frequency varies (approx. 2-8 messages/month). Message and data rates may apply. Consent is not required to purchase services. Reply STOP to opt out or HELP for assistance at any time. For more information, see our{' '}
+                <Link to="/privacy" className="text-two-trees-green hover:underline font-medium">
+                  Privacy Policy
+                </Link>.
+              </p>
+            </div>
           </div>
 
         </div>
