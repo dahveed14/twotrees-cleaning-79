@@ -61,7 +61,7 @@ const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-lg text-gray-600">
-              Last updated: January 2025
+              Last updated: February 2025
             </p>
           </div>
         </section>
@@ -102,6 +102,7 @@ const Privacy = () => {
                 <li><strong>Service Information:</strong> Service type requested, scheduling preferences, special cleaning requirements</li>
                 <li><strong>Payment Information:</strong> Billing address, payment method (processed securely through third-party payment processors)</li>
                 <li><strong>Communication Records:</strong> Records of your communications with us, including emails, text messages, and phone calls</li>
+                <li><strong>SMS/Text Messaging Data:</strong> Phone numbers for SMS communications, SMS consent records, opt-in/opt-out preferences, SMS delivery status, and interaction timestamps</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Automatically Collected Information</h3>
@@ -124,10 +125,11 @@ const Privacy = () => {
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li><strong>Service Delivery:</strong> To provide, schedule, and perform cleaning services at your property</li>
                 <li><strong>Communication:</strong> To respond to inquiries, send appointment confirmations, and provide customer support</li>
+                <li><strong>SMS Communications:</strong> To send appointment reminders, service confirmations, and booking updates via text message (with your consent)</li>
                 <li><strong>Payment Processing:</strong> To process payments and send invoices and receipts</li>
                 <li><strong>Service Improvement:</strong> To understand customer needs and improve our services</li>
-                <li><strong>Marketing:</strong> To send promotional materials, special offers, and newsletters (you may opt out at any time)</li>
-                <li><strong>Legal Compliance:</strong> To comply with legal obligations and protect our legal rights</li>
+                <li><strong>Marketing:</strong> To send promotional materials, special offers, and newsletters via email and SMS (you may opt out at any time)</li>
+                <li><strong>Legal Compliance:</strong> To comply with legal obligations including TCPA and A2P 10DLC requirements</li>
                 <li><strong>Safety and Security:</strong> To maintain the safety and security of our services, customers, and employees</li>
                 <li><strong>Website Analytics:</strong> To analyze website usage and improve user experience</li>
               </ul>
@@ -139,7 +141,9 @@ const Privacy = () => {
                 We do not sell your personal information. We may share your information in the following circumstances:
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                <li><strong>Service Providers:</strong> With trusted third-party service providers who assist us in operating our business (e.g., payment processors, scheduling software, email services). These providers are bound by confidentiality agreements.</li>
+                <li><strong>Service Providers:</strong> With trusted third-party service providers who assist us in operating our business (e.g., payment processors, scheduling software, email services, SMS service providers). These providers are bound by confidentiality agreements.</li>
+                <li><strong>SMS Service Providers:</strong> With third-party SMS service providers to deliver text messages, including appointment reminders, service confirmations, and marketing messages (with your consent)</li>
+                <li><strong>Mobile Carriers:</strong> Your mobile carrier and related service providers for the purpose of delivering SMS messages to your device</li>
                 <li><strong>Cleaning Team:</strong> With our employees and cleaning team members who need access to your information to perform services at your property</li>
                 <li><strong>Legal Requirements:</strong> When required by law, court order, or legal process, or to protect our rights and safety</li>
                 <li><strong>Business Transfers:</strong> In connection with a merger, sale, or transfer of company assets</li>
@@ -273,6 +277,98 @@ const Privacy = () => {
             </div>
 
             <div className="mb-12">
+              <h2 className="text-2xl font-bold text-two-trees-green mb-4">11.5. SMS/Text Messaging Communications</h2>
+              
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">SMS Program Overview</h3>
+              <p className="text-gray-600 mb-4">
+                Two Trees Cleaning offers SMS/text messaging services to provide you with appointment reminders, service confirmations, booking updates, and promotional offers. By providing your mobile phone number and opting in to receive text messages, you consent to receive automated text messages from Two Trees Cleaning at the phone number provided.
+              </p>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Consent to Receive SMS Messages</h3>
+              <p className="text-gray-600 mb-4">
+                By opting in to receive text messages from Two Trees Cleaning:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>You expressly consent to receive recurring automated promotional and transactional text messages (e.g., appointment reminders, service confirmations, special offers, cleaning tips) from Two Trees Cleaning at the mobile number you provided</li>
+                <li>Consent is not a condition of purchase or booking our cleaning services</li>
+                <li>You certify that you are the authorized user of the mobile phone number you provide</li>
+                <li>You agree to notify us immediately if you change your mobile phone number</li>
+                <li>Message and data rates may apply from your mobile carrier</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Message Frequency and Costs</h3>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li><strong>Message Frequency:</strong> Message frequency varies. You may receive approximately 2-8 messages per month, depending on your service schedule and promotional campaigns. Some months may have more or fewer messages.</li>
+                <li><strong>Standard Rates:</strong> Message and data rates may apply. Standard carrier messaging rates will apply to all SMS messages sent and received. Check with your mobile carrier for details about your messaging plan.</li>
+                <li><strong>No Additional Fees:</strong> Two Trees Cleaning does not charge any fees for text messages, but your carrier's standard rates apply</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">How to Opt Out (STOP)</h3>
+              <p className="text-gray-600 mb-4">
+                You may opt out of receiving text messages from Two Trees Cleaning at any time:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li><strong>Text STOP:</strong> Reply with "STOP", "UNSUBSCRIBE", "CANCEL", "END", or "QUIT" to any text message from us to immediately opt out</li>
+                <li><strong>Opt-Out Confirmation:</strong> After texting STOP, you will receive one final confirmation message that you have been unsubscribed</li>
+                <li><strong>Immediate Processing:</strong> Your opt-out request will be processed immediately, and you will stop receiving messages within a few minutes</li>
+                <li><strong>Contact Us:</strong> You may also opt out by contacting us at (805) 456-1421 or hello@twotreescleaning.com</li>
+                <li><strong>Important Note:</strong> Opting out of marketing messages does not opt you out of critical service-related messages such as appointment confirmations or cancellations for services you have already scheduled</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">How to Get Help (HELP)</h3>
+              <p className="text-gray-600 mb-4">
+                For help with our SMS program:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li><strong>Text HELP:</strong> Reply with "HELP" or "INFO" to any text message from us to receive assistance information</li>
+                <li><strong>Contact Support:</strong> Call us at (805) 456-1421 (Monday-Friday, 8am-6pm PT) or email hello@twotreescleaning.com</li>
+                <li><strong>Technical Support:</strong> For issues with receiving messages, contact your mobile carrier</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Phone Number Data Usage and Privacy</h3>
+              <p className="text-gray-600 mb-4">
+                Your mobile phone number and SMS data are protected:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>We will never sell, rent, or share your mobile phone number with third parties for their marketing purposes</li>
+                <li>Your phone number is used solely for the purposes you consented to (service communications and promotional messages from Two Trees Cleaning)</li>
+                <li>We store your phone number securely and retain opt-in/opt-out records as required by law</li>
+                <li>We comply with all applicable privacy laws including TCPA, CTIA guidelines, and carrier requirements</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Third-Party SMS Service Providers</h3>
+              <p className="text-gray-600 mb-4">
+                Two Trees Cleaning uses third-party SMS service providers to deliver text messages to you. These providers are bound by strict confidentiality agreements and are only permitted to use your information for the purpose of delivering our messages. We do not allow these providers to use your phone number for any other purpose.
+              </p>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">TCPA Compliance</h3>
+              <p className="text-gray-600 mb-4">
+                Two Trees Cleaning complies with the Telephone Consumer Protection Act (TCPA) and related regulations:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>We only send text messages to numbers that have provided express written consent</li>
+                <li>We maintain records of all opt-ins and opt-outs</li>
+                <li>We honor opt-out requests immediately and maintain an internal Do Not Text list</li>
+                <li>Our messages may be sent using automated telephone dialing systems</li>
+                <li>We comply with all federal and state regulations governing text message marketing</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Supported Carriers</h3>
+              <p className="text-gray-600 mb-4">
+                Our SMS program is supported by major U.S. carriers including: AT&T, T-Mobile, Verizon, Sprint, Boost Mobile, Cricket Wireless, MetroPCS, U.S. Cellular, Virgin Mobile, and other major carriers. If you experience any issues with message delivery, please contact your carrier or contact us for assistance.
+              </p>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Service Limitations and Disclaimers</h3>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                <li><strong>Carrier Limitations:</strong> Message delivery is subject to carrier network availability and may be affected by factors beyond our control</li>
+                <li><strong>Delivery Timing:</strong> While we strive for timely delivery, message delivery times may vary and are not guaranteed</li>
+                <li><strong>No Emergency Services:</strong> SMS messages are not monitored 24/7. Do not use text messages for emergency communications</li>
+                <li><strong>Compatible Devices:</strong> You must have a text-messaging-capable mobile device to participate</li>
+                <li><strong>Service Changes:</strong> We reserve the right to modify or discontinue our SMS program at any time with notice</li>
+              </ul>
+            </div>
+
+            <div className="mb-12">
               <h2 className="text-2xl font-bold text-two-trees-green mb-4">12. Changes to This Privacy Policy</h2>
               <p className="text-gray-600 mb-4">
                 We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we make changes:
@@ -313,7 +409,7 @@ const Privacy = () => {
 
             <div className="border-t border-gray-200 pt-8">
               <p className="text-sm text-gray-500">
-                This Privacy Policy is effective as of January 2025 and governs our collection, use, and disclosure of your personal information. 
+                This Privacy Policy is effective as of February 2025 and governs our collection, use, and disclosure of your personal information. 
                 By using our services, you acknowledge that you have read and understood this Privacy Policy.
               </p>
             </div>
