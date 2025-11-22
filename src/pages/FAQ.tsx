@@ -26,7 +26,7 @@ const FAQ = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:8054561421';
+    window.location.href = 'tel:8054365868';
   };
 
   useEffect(() => {
@@ -105,7 +105,7 @@ const FAQ = () => {
           question: "How do I schedule a cleaning service?",
           answer: (
             <>
-              You can schedule cleaning services three ways: <Link to="/book" className="text-two-trees-green hover:underline font-medium">book online</Link> through our website, call us at (805) 456-1421, or text us. We typically respond within a few hours and can often schedule same-week service. Our online booking system is available 24/7 for your convenience.
+              You can schedule cleaning services three ways: <Link to="/book" className="text-two-trees-green hover:underline font-medium">book online</Link> through our website, call us at (805) 436-5868, or text us. We typically respond within a few hours and can often schedule same-week service. Our online booking system is available 24/7 for your convenience.
             </>
           )
         },
@@ -250,7 +250,7 @@ const FAQ = () => {
                 className="inline-flex items-center justify-center border-2 border-two-trees-green text-two-trees-green px-8 py-4 rounded-lg hover:bg-two-trees-green hover:text-white transition-colors font-semibold"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (805) 456-1421
+                Call (805) 436-5868
               </button>
             </div>
           </div>
@@ -304,7 +304,7 @@ const FAQ = () => {
                   className="inline-flex items-center justify-center border border-two-trees-green text-two-trees-green px-6 py-3 rounded-lg hover:bg-two-trees-green hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  (805) 456-1421
+                  (805) 436-5868
                 </button>
               </div>
             </div>
@@ -338,7 +338,7 @@ const FAQ = () => {
                 "@type": "LocalBusiness",
                 "name": "Two Trees Cleaning",
                 "url": "https://twotreescleaning.com",
-                "telephone": "805-456-1421",
+                "telephone": "805-436-5868",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "2252 Channel Dr.",

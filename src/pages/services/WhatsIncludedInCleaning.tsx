@@ -50,7 +50,7 @@ const WhatsIncludedInCleaning = () => {
         event_label: 'Phone Number Click'
       });
     }
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-436-5868';
   };
 
   const breadcrumbData = [
@@ -437,7 +437,7 @@ const WhatsIncludedInCleaning = () => {
                       className="bg-amber-600 hover:bg-amber-700 text-white"
                     >
                       <Phone className="w-4 h-4 mr-2" />
-                      Call (805) 456-1421
+                      Call (805) 436-5868
                     </Button>
                     <Link to="/services/move-in-move-out">
                       <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50">
@@ -555,7 +555,7 @@ const WhatsIncludedInCleaning = () => {
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (805) 456-1421
+                Call (805) 436-5868
               </Button>
             </div>
             

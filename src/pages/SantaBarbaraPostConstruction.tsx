@@ -87,7 +87,7 @@ const SantaBarbaraPostConstruction = () => {
       <div className="min-h-screen flex flex-col">
         <Navigation 
           onBookingClick={() => window.location.href = "/contact"}
-          onPhoneClick={() => window.location.href = "tel:+18054561421"}
+          onPhoneClick={() => window.location.href = "tel:+18054365868"}
         />
         
         <main className="flex-1">

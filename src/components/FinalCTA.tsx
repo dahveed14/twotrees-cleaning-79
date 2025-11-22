@@ -24,7 +24,7 @@ export const FinalCTA = ({ onBookingClick, onPhoneClick }: FinalCTAProps) => {
           </Button>
           <Button variant="outline-white" size="lg" onClick={onPhoneClick} className="px-8 py-4 text-lg">
             <Phone className="w-5 h-5 mr-2" />
-            Call (805) 456-1421
+            Call (805) 436-5868
           </Button>
         </div>
 

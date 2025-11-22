@@ -18,7 +18,7 @@ const Terms = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:8054561421';
+    window.location.href = 'tel:8054365868';
   };
 
   useEffect(() => {
@@ -188,7 +188,7 @@ const Terms = () => {
               <div className="bg-gray-50 p-6 rounded-lg">
                 <p className="text-gray-700 font-semibold mb-2">Two Trees Cleaning</p>
                 <p className="text-gray-600">2252 Channel Dr., Ventura, CA 93001</p>
-                <p className="text-gray-600">Phone: (805) 456-1421</p>
+                <p className="text-gray-600">Phone: (805) 436-5868</p>
                 <p className="text-gray-600">Email: hello@twotreescleaning.com</p>
               </div>
             </div>

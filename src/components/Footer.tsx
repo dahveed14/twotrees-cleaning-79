@@ -35,7 +35,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">(805) 456-1421</span>
+                <span className="text-sm">(805) 436-5868</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />

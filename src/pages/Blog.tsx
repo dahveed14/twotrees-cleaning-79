@@ -22,7 +22,7 @@ const Blog = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:8054561421';
+    window.location.href = 'tel:8054365868';
   };
 
   useEffect(() => {

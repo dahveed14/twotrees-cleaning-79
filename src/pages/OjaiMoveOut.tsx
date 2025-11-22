@@ -42,7 +42,7 @@ export default function OjaiMoveOut() {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = "tel:8054561421";
+    window.location.href = "tel:8054365868";
   };
 
   const includedServices = [
@@ -138,7 +138,7 @@ export default function OjaiMoveOut() {
               "addressRegion": "CA",
               "postalCode": "93023"
             },
-            "telephone": "(805) 456-1421",
+            "telephone": "(805) 436-5868",
             "url": "https://twotreescleaning.com/ojai/move-out-cleaning",
             "areaServed": "Ojai, CA",
             "serviceType": "Move-out cleaning service"
@@ -185,7 +185,7 @@ export default function OjaiMoveOut() {
                     onClick={handlePhoneClick}
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    (805) 456-1421
+                    (805) 436-5868
                   </Button>
                 </div>
 
@@ -459,7 +459,7 @@ export default function OjaiMoveOut() {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 456-1421
+                  (805) 436-5868
                 </Button>
               </div>
             </div>

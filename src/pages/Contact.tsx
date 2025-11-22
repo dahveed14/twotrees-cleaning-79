@@ -60,7 +60,7 @@ const Contact = () => {
         event_label: 'Phone Number Click'
       });
     }
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-436-5868';
   };
 
   const breadcrumbData = [
@@ -147,8 +147,8 @@ const Contact = () => {
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
                         <p className="text-gray-600">
-                          <a href="tel:805-456-1421" className="hover:text-two-trees-green transition-colors">
-                            (805) 456-1421
+                           <a href="tel:805-436-5868" className="hover:text-two-trees-green transition-colors">
+                            (805) 436-5868
                           </a>
                         </p>
                       </div>
