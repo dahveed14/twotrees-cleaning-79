@@ -42,7 +42,7 @@ const About = () => {
         event_label: 'Phone Number Click'
       });
     }
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-436-5868';
   };
 
   const breadcrumbData = [
@@ -231,7 +231,7 @@ const About = () => {
                 className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10 px-8 py-4 text-lg"
                 onClick={handlePhoneClick}
               >
-                Call (805) 456-1421
+                Call (805) 436-5868
               </Button>
             </div>
           </div>

@@ -78,7 +78,7 @@ export const updateMetaTags = (config: MetaTagsConfig) => {
   }
 
   // Business-specific meta tags
-  updateMetaTag('business:contact_data:phone_number', '805-456-1421');
+  updateMetaTag('business:contact_data:phone_number', '805-436-5868');
   updateMetaTag('business:contact_data:email', 'hello@twotreescleaning.com');
   updateMetaTag('business:contact_data:region', 'CA');
   updateMetaTag('business:contact_data:country_name', 'United States');

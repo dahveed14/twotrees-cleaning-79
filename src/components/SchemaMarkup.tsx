@@ -30,7 +30,7 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
         ? `Professional house cleaning services for busy families in ${cityName}, Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.`
         : "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.",
       "url": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
-      "telephone": phoneNumber || "+1-805-456-1421",
+      "telephone": phoneNumber || "+1-805-436-5868",
       "email": "hello@twotreescleaning.com",
       "foundingDate": "2020",
       "address": {
@@ -287,7 +287,7 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       "logo": `${baseUrl}/favicon.ico`,
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": phoneNumber || "+1-805-456-1421",
+        "telephone": phoneNumber || "+1-805-436-5868",
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": cityName ? `${cityName}, CA` : "Ventura County, CA"

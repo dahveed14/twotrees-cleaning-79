@@ -18,7 +18,7 @@ const Privacy = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:8054561421';
+    window.location.href = 'tel:8054365868';
   };
 
   useEffect(() => {
@@ -311,7 +311,7 @@ const Privacy = () => {
                 <li><strong>Text STOP:</strong> Reply with "STOP", "UNSUBSCRIBE", "CANCEL", "END", or "QUIT" to any text message from us to immediately opt out</li>
                 <li><strong>Opt-Out Confirmation:</strong> After texting STOP, you will receive one final confirmation message that you have been unsubscribed</li>
                 <li><strong>Immediate Processing:</strong> Your opt-out request will be processed immediately, and you will stop receiving messages within a few minutes</li>
-                <li><strong>Contact Us:</strong> You may also opt out by contacting us at (805) 456-1421 or hello@twotreescleaning.com</li>
+                <li><strong>Contact Us:</strong> You may also opt out by contacting us at (805) 436-5868 or hello@twotreescleaning.com</li>
                 <li><strong>Important Note:</strong> Opting out of marketing messages does not opt you out of critical service-related messages such as appointment confirmations or cancellations for services you have already scheduled</li>
               </ul>
 
@@ -321,7 +321,7 @@ const Privacy = () => {
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
                 <li><strong>Text HELP:</strong> Reply with "HELP" or "INFO" to any text message from us to receive assistance information</li>
-                <li><strong>Contact Support:</strong> Call us at (805) 456-1421 (Monday-Friday, 8am-6pm PT) or email hello@twotreescleaning.com</li>
+                <li><strong>Contact Support:</strong> Call us at (805) 436-5868 (Monday-Friday, 8am-6pm PT) or email hello@twotreescleaning.com</li>
                 <li><strong>Technical Support:</strong> For issues with receiving messages, contact your mobile carrier</li>
               </ul>
 
@@ -392,7 +392,7 @@ const Privacy = () => {
                 <p className="text-gray-700 font-semibold mb-2">Two Trees Cleaning</p>
                 <p className="text-gray-600 mb-1">Privacy Officer</p>
                 <p className="text-gray-600 mb-1">2252 Channel Dr., Ventura, CA 93001</p>
-                <p className="text-gray-600 mb-1">Phone: (805) 456-1421</p>
+                <p className="text-gray-600 mb-1">Phone: (805) 436-5868</p>
                 <p className="text-gray-600 mb-1">Email: hello@twotreescleaning.com</p>
                 <p className="text-gray-600 mt-3 text-sm">
                   For privacy-related inquiries, please include "Privacy Request" in your email subject line or mention it when calling.

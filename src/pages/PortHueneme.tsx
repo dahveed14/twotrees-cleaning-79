@@ -26,7 +26,7 @@ const PortHueneme = () => {
         event_label: 'Phone Number Click'
       });
     }
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-436-5868';
   };
 
   const breadcrumbData = [
@@ -86,7 +86,7 @@ const PortHueneme = () => {
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                (805) 456-1421
+                (805) 436-5868
               </Button>
             </div>
           </div>
@@ -227,7 +227,7 @@ const PortHueneme = () => {
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (805) 456-1421
+                Call (805) 436-5868
               </Button>
             </div>
           </div>

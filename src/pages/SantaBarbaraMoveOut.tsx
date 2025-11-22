@@ -82,7 +82,7 @@ const SantaBarbaraMoveOut = () => {
       <div className="min-h-screen bg-background">
         <Navigation 
           onBookingClick={(location) => window.location.href = '/contact'}
-          onPhoneClick={() => window.location.href = 'tel:805-456-1421'}
+          onPhoneClick={() => window.location.href = 'tel:805-436-5868'}
         />
         
         <div className="pt-20">
@@ -105,7 +105,7 @@ const SantaBarbaraMoveOut = () => {
                 </Button>
                 <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4">
                   <Phone className="w-5 h-5 mr-2" />
-                  Call 805-456-1421
+                  Call 805-436-5868
                 </Button>
               </div>
             </div>
@@ -353,7 +353,7 @@ const SantaBarbaraMoveOut = () => {
                   className="bg-gold hover:bg-gold/90 text-white text-lg px-8 py-4"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call 805-456-1421
+                  Call 805-436-5868
                 </Button>
               </div>
             </div>

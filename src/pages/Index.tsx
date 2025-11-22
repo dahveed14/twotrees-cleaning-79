@@ -73,7 +73,7 @@ const Index = () => {
     import('../utils/analytics').then(({ trackPhoneClick }) => {
       trackPhoneClick('home');
     });
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-436-5868';
   };
 
   return (

@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: "How do I book a cleaning service?",
-    answer: "You can book online through our website or call us at (805) 456-1421. We'll schedule a convenient time and provide a free estimate based on your specific needs."
+    answer: "You can book online through our website or call us at (805) 436-5868. We'll schedule a convenient time and provide a free estimate based on your specific needs."
   }
 ];
 
@@ -81,10 +81,10 @@ export const HomepageFAQ = () => {
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">Have more questions?</p>
             <a 
-              href="tel:805-456-1421"
+              href="tel:805-436-5868"
               className="inline-flex items-center px-6 py-3 bg-[hsl(var(--primary))] text-white rounded-lg hover:bg-[hsl(var(--primary))]/90 transition-colors font-medium"
             >
-              Call Us: (805) 456-1421
+              Call Us: (805) 436-5868
             </a>
           </div>
         </div>

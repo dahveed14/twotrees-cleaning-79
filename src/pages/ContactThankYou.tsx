@@ -36,7 +36,7 @@ const ContactThankYou = () => {
         page: 'contact_thank_you'
       });
     }
-    window.location.href = 'tel:805-456-1421';
+    window.location.href = 'tel:805-436-5868';
   };
 
   const handleBackToHome = () => {
@@ -113,7 +113,7 @@ const ContactThankYou = () => {
             onClick={handlePhoneClick}
             className="text-two-trees-green hover:underline font-medium"
           >
-            Call us at (805) 456-1421
+            Call us at (805) 436-5868
           </button>
         </div>
       </div>

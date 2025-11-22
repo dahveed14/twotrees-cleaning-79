@@ -42,7 +42,7 @@ export default function SantaPaulaMoveOut() {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = "tel:8054561421";
+    window.location.href = "tel:8054365868";
   };
 
   const includedServices = [
@@ -133,7 +133,7 @@ export default function SantaPaulaMoveOut() {
               "addressRegion": "CA",
               "postalCode": "93060"
             },
-            "telephone": "(805) 456-1421",
+            "telephone": "(805) 436-5868",
             "url": "https://twotreescleaning.com/santa-paula/move-out-cleaning",
             "areaServed": "Santa Paula, CA",
             "serviceType": "Move-out cleaning service"
@@ -180,7 +180,7 @@ export default function SantaPaulaMoveOut() {
                     onClick={handlePhoneClick}
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    (805) 456-1421
+                    (805) 436-5868
                   </Button>
                 </div>
 
@@ -448,7 +448,7 @@ export default function SantaPaulaMoveOut() {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 456-1421
+                  (805) 436-5868
                 </Button>
               </div>
             </div>
