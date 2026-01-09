@@ -53,7 +53,7 @@ const ContactThankYou = () => {
             Thank You!
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            We've received your message and will get back to you with a free quote within 24 hours.
+            We've received your message and will get back to you with a free quote in less than 30 minutes during business hours.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const ContactThankYou = () => {
                 2
               </div>
               <p className="text-gray-700">
-                You'll receive a detailed quote via email within 24 hours
+                You'll receive a detailed quote via email in less than 30 minutes (business days)
               </p>
             </div>
             <div className="flex items-start space-x-3">
