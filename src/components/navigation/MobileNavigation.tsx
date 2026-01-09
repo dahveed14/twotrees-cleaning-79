@@ -122,7 +122,7 @@ export const MobileNavigation = ({
               <Button 
                 className="w-full bg-two-trees-green hover:bg-two-trees-green/90"
                 onClick={() => {
-                  window.location.href = '/book';
+                  window.open('https://optin.twotreescleaning.com/complete-estimate-form-3642', '_blank');
                   setMobileMenuOpen(false);
                 }}
               >

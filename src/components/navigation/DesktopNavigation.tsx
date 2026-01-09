@@ -51,7 +51,7 @@ export const DesktopNavigation = ({ onBookingClick, onPhoneClick }: DesktopNavig
         <Button 
           size="sm" 
           className="bg-two-trees-green hover:bg-two-trees-green/90"
-          onClick={() => window.location.href = '/book'}
+          onClick={() => window.open('https://optin.twotreescleaning.com/complete-estimate-form-3642', '_blank')}
         >
           Get a Quote
         </Button>
