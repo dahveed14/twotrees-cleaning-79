@@ -17,37 +17,16 @@ const Book = () => {
   useEffect(() => {
     if (typeof document === 'undefined' || typeof window === 'undefined') return;
     
-    // Load jQuery if not already loaded
-    if (!window.jQuery) {
-      const jqueryScript = document.createElement('script');
-      jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
-      jqueryScript.async = true;
-      document.head.appendChild(jqueryScript);
-    }
-
-    // Load ConvertLabs booking script
-    const convertLabsScript = document.createElement('script');
-    convertLabsScript.src = 'https://convertlabs.io/js/booking_embed.js';
-    convertLabsScript.async = true;
-    document.head.appendChild(convertLabsScript);
-
-    // Add ConvertLabs styles
-    const style = document.createElement('style');
-    style.textContent = '.Convertlabs{width: 1px;min-width: 100%; height: 1px; min-height: 100%;}';
-    document.head.appendChild(style);
+    // Load form embed script from links.twotreescleaning.com
+    const formScript = document.createElement('script');
+    formScript.src = 'https://links.twotreescleaning.com/js/form_embed.js';
+    formScript.async = true;
+    document.head.appendChild(formScript);
 
     // Cleanup function
     return () => {
-      // Remove scripts and styles when component unmounts
-      const scripts = document.querySelectorAll('script[src*="convertlabs.io"], script[src*="jquery"]');
+      const scripts = document.querySelectorAll('script[src*="links.twotreescleaning.com"]');
       scripts.forEach(script => script.remove());
-      
-      const convertLabsStyles = document.querySelectorAll('style');
-      convertLabsStyles.forEach(styleEl => {
-        if (styleEl.textContent?.includes('Convertlabs')) {
-          styleEl.remove();
-        }
-      });
     };
   }, []);
 
@@ -107,12 +86,21 @@ const Book = () => {
           {/* Quote Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <iframe 
-              src="https://convertlabs.io/quote_form/3296" 
-              frameBorder="0" 
-              scrolling="no" 
-              style={{ width: '100%' }} 
-              className="Convertlabs"
-              title="Two Trees Cleaning Quote Form"
+              src="https://links.twotreescleaning.com/widget/form/RgmzNYcM1z2wYu8Nb6uQ"
+              style={{ width: '100%', height: '800px', border: 'none', borderRadius: '3px' }}
+              id="inline-RgmzNYcM1z2wYu8Nb6uQ"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Website Residential Form"
+              data-height="undefined"
+              data-layout-iframe-id="inline-RgmzNYcM1z2wYu8Nb6uQ"
+              data-form-id="RgmzNYcM1z2wYu8Nb6uQ"
+              title="Website Residential Form"
             />
             
             {/* SMS Opt-in Disclosure */}
