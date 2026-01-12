@@ -75,7 +75,7 @@ const WhatsIncludedInCleaning = () => {
     { category: "Bathroom", task: "Toilet cleaning (inside & out)", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Bathroom", task: "Shower/tub cleaning", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Bathroom", task: "Mirror and glass cleaning", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bathroom", task: "Sink and vanity cleaning", regular: true, firstTime: true, moveout: true, construction: true },
+    { category: "Bathroom", task: "Sink and vanity cleaning (Exterior)", regular: true, firstTime: true, moveout: true, construction: true },
     { category: "Bathroom", task: "Tile and grout scrubbing", regular: false, firstTime: true, moveout: true, construction: true },
     
     // Living Areas
