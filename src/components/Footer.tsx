@@ -42,7 +42,7 @@ const officeLocations: Record<FooterLocation, OfficeInfo> = {
   },
   'camarillo': {
     name: 'Camarillo Office',
-    address: 'Camarillo, CA',
+    address: '1955 E Daily Dr\nCamarillo, CA 93010',
     city: 'Camarillo',
     phone: '805-764-2394',
     phoneFormatted: '(805) 764-2394'
