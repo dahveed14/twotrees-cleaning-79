@@ -408,7 +408,7 @@ const ThousandOaks = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 436-5868
+              Call (805) 764-2394
             </Button>
           </div>
         </div>
