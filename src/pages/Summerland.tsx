@@ -205,7 +205,7 @@ const Summerland = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer location="santa-barbara" />
     </div>
   );
 };

@@ -319,7 +319,7 @@ export const CarpinteriaMoveOut = () => {
       </div>
 
       <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
-      <Footer />
+      <Footer location="santa-barbara" />
     </>
   );
 };

@@ -215,7 +215,7 @@ const CamarilloPostConstruction = () => {
           onPhoneClick={handlePhoneClick}
         />
 
-        <Footer />
+        <Footer location="camarillo" />
       </div>
     </>
   );

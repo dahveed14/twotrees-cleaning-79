@@ -2,7 +2,55 @@
 import { Star, Phone, Mail, MapPin, Clock, Shield, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export const Footer = () => {
+// Location-specific office configurations
+export type FooterLocation = 'ventura' | 'santa-barbara' | 'thousand-oaks' | 'camarillo';
+
+interface OfficeInfo {
+  name: string;
+  address: string;
+  city: string;
+  phone: string;
+  phoneFormatted: string;
+}
+
+const officeLocations: Record<FooterLocation, OfficeInfo> = {
+  'ventura': {
+    name: 'Main Office',
+    address: 'Ventura, CA',
+    city: 'Ventura',
+    phone: '805-436-5868',
+    phoneFormatted: '(805) 436-5868'
+  },
+  'santa-barbara': {
+    name: 'Santa Barbara Office',
+    address: '7 W. Figueroa Street, Suite 300\nSanta Barbara, CA 93101',
+    city: 'Santa Barbara',
+    phone: '805-436-5868',
+    phoneFormatted: '(805) 436-5868'
+  },
+  'thousand-oaks': {
+    name: 'Thousand Oaks Office',
+    address: 'Thousand Oaks, CA',
+    city: 'Thousand Oaks',
+    phone: '805-262-9691',
+    phoneFormatted: '(805) 262-9691'
+  },
+  'camarillo': {
+    name: 'Camarillo Office',
+    address: 'Camarillo, CA',
+    city: 'Camarillo',
+    phone: '805-764-2394',
+    phoneFormatted: '(805) 764-2394'
+  }
+};
+
+interface FooterProps {
+  location?: FooterLocation;
+}
+
+export const Footer = ({ location = 'ventura' }: FooterProps) => {
+  const office = officeLocations[location];
+  
   return (
     <footer className="bg-gray-900 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
@@ -27,15 +75,15 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Santa Barbara Office</h4>
+            <h4 className="text-lg font-semibold mb-4">{office.name}</h4>
             <div className="space-y-3 text-gray-300">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0 text-two-trees-gold mt-1" />
-                <span className="text-sm">7 W. Figueroa Street, Suite 300<br />Santa Barbara, CA 93101</span>
+                <span className="text-sm whitespace-pre-line">{office.address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">(805) 436-5868</span>
+                <span className="text-sm">{office.phoneFormatted}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />

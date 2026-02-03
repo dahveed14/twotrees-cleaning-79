@@ -533,7 +533,7 @@ const Camarillo = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer location="camarillo" />
     </div>
   );
 };

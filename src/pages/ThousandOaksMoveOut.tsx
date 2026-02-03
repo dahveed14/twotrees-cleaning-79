@@ -494,7 +494,7 @@ const ThousandOaksMoveOut = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer location="thousand-oaks" />
     </div>
   );
 };

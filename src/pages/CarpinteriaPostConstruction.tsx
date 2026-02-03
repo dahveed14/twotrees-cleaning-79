@@ -175,7 +175,7 @@ export default function CarpinteriaPostConstruction() {
         </section>
       </main>
 
-      <Footer />
+      <Footer location="santa-barbara" />
     </>
   );
 }

@@ -417,7 +417,7 @@ const Montecito = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer location="santa-barbara" />
     </div>
   );
 };

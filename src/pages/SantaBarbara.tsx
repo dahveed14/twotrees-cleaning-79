@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Footer } from "@/components/Footer";
+import { Footer, FooterLocation } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { TestimonialSchema } from "@/components/TestimonialSchema";
 import { Button } from "@/components/ui/button";
@@ -490,7 +490,7 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer location="santa-barbara" />
     </div>
   );
 };
