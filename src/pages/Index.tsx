@@ -13,6 +13,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { LazySection } from "@/components/LazySection";
+import { OfficeLocationMap } from "@/components/OfficeLocationMap";
 import { updateMetaTags } from "@/utils/metaTags";
 
 
@@ -102,6 +103,14 @@ const Index = () => {
       </LazySection>
       <LazySection>
         <HomepageFAQ />
+      </LazySection>
+      <LazySection>
+        <OfficeLocationMap
+          title="Visit Our Main Office"
+          address="2252 Channel Dr, Ventura, CA 93001"
+          mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8950.374799972677!2d-119.27136054354615!3d34.27142549198656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e9ad24e50049e3%3A0xf50c60a11af645e5!2s2252%20Channel%20Dr%2C%20Ventura%2C%20CA%2093001!5e0!3m2!1sen!2sus!4v1770162985658!5m2!1sen!2sus"
+          mapTitle="Two Trees Cleaning Main Office Location"
+        />
       </LazySection>
       <LazySection>
         <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
