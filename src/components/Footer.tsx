@@ -27,11 +27,11 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Main Office</h4>
+            <h4 className="text-lg font-semibold mb-4">Santa Barbara Office</h4>
             <div className="space-y-3 text-gray-300">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0 text-two-trees-gold mt-1" />
-                <span className="text-sm">Ventura, CA</span>
+                <span className="text-sm">7 W. Figueroa Street, Suite 300<br />Santa Barbara, CA 93101</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
