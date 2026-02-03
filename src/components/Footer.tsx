@@ -13,6 +13,11 @@ interface OfficeInfo {
   phoneFormatted: string;
 }
 
+interface ServiceAreaLink {
+  name: string;
+  href: string;
+}
+
 const officeLocations: Record<FooterLocation, OfficeInfo> = {
   'ventura': {
     name: 'Main Office',
@@ -44,12 +49,48 @@ const officeLocations: Record<FooterLocation, OfficeInfo> = {
   }
 };
 
+const serviceAreasByLocation: Record<FooterLocation, ServiceAreaLink[]> = {
+  'ventura': [
+    { name: 'Santa Barbara', href: '/santa-barbara' },
+    { name: 'Montecito', href: '/montecito' },
+    { name: 'Summerland', href: '/summerland' },
+    { name: 'Carpinteria', href: '/carpinteria' },
+    { name: 'Ventura', href: '/ventura' },
+    { name: 'Oxnard', href: '/oxnard' },
+    { name: 'Port Hueneme', href: '/port-hueneme' },
+    { name: 'Camarillo', href: '/camarillo' },
+    { name: 'Thousand Oaks', href: '/thousand-oaks' },
+    { name: 'Newbury Park', href: '/newbury-park' },
+    { name: 'Westlake Village', href: '/westlake-village' },
+  ],
+  'santa-barbara': [
+    { name: 'Santa Barbara', href: '/santa-barbara' },
+    { name: 'Montecito', href: '/montecito' },
+    { name: 'Summerland', href: '/summerland' },
+    { name: 'Carpinteria', href: '/carpinteria' },
+    { name: 'Ojai', href: '/ojai' },
+  ],
+  'thousand-oaks': [
+    { name: 'Thousand Oaks', href: '/thousand-oaks' },
+    { name: 'Newbury Park', href: '/newbury-park' },
+    { name: 'Westlake Village', href: '/westlake-village' },
+  ],
+  'camarillo': [
+    { name: 'Camarillo', href: '/camarillo' },
+    { name: 'Oxnard', href: '/oxnard' },
+    { name: 'Port Hueneme', href: '/port-hueneme' },
+    { name: 'Ventura', href: '/ventura' },
+    { name: 'Santa Paula', href: '/santa-paula' },
+  ],
+};
+
 interface FooterProps {
   location?: FooterLocation;
 }
 
 export const Footer = ({ location = 'ventura' }: FooterProps) => {
   const office = officeLocations[location];
+  const serviceAreas = serviceAreasByLocation[location];
   
   return (
     <footer className="bg-gray-900 text-white py-12 px-4">
@@ -103,39 +144,15 @@ export const Footer = ({ location = 'ventura' }: FooterProps) => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Service Areas</h4>
             <div className="text-gray-300 space-y-1 text-sm">
-              <Link to="/santa-barbara" className="block hover:text-two-trees-gold transition-colors">
-                Santa Barbara
-              </Link>
-              <Link to="/montecito" className="block hover:text-two-trees-gold transition-colors">
-                Montecito
-              </Link>
-              <Link to="/summerland" className="block hover:text-two-trees-gold transition-colors">
-                Summerland
-              </Link>
-              <Link to="/carpinteria" className="block hover:text-two-trees-gold transition-colors">
-                Carpinteria
-              </Link>
-              <Link to="/ventura" className="block hover:text-two-trees-gold transition-colors">
-                Ventura
-              </Link>
-              <Link to="/oxnard" className="block hover:text-two-trees-gold transition-colors">
-                Oxnard
-              </Link>
-              <Link to="/port-hueneme" className="block hover:text-two-trees-gold transition-colors">
-                Port Hueneme
-              </Link>
-              <Link to="/camarillo" className="block hover:text-two-trees-gold transition-colors">
-                Camarillo
-              </Link>
-              <Link to="/thousand-oaks" className="block hover:text-two-trees-gold transition-colors">
-                Thousand Oaks
-              </Link>
-              <Link to="/newbury-park" className="block hover:text-two-trees-gold transition-colors">
-                Newbury Park
-              </Link>
-              <Link to="/westlake-village" className="block hover:text-two-trees-gold transition-colors">
-                Westlake Village
-              </Link>
+              {serviceAreas.map((area) => (
+                <Link 
+                  key={area.href} 
+                  to={area.href} 
+                  className="block hover:text-two-trees-gold transition-colors"
+                >
+                  {area.name}
+                </Link>
+              ))}
             </div>
           </div>
 
