@@ -25,7 +25,7 @@ const ThousandOaks = () => {
         event_label: 'Thousand Oaks Phone Click'
       });
     }
-    window.location.href = 'tel:805-764-2394';
+    window.location.href = 'tel:805-262-9691';
   };
 
   const breadcrumbData = [
@@ -125,7 +125,7 @@ const ThousandOaks = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 764-2394
+                  (805) 262-9691
                 </Button>
               </div>
             </div>
@@ -408,7 +408,7 @@ const ThousandOaks = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 764-2394
+              Call (805) 262-9691
             </Button>
           </div>
         </div>

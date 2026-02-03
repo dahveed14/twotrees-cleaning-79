@@ -16,7 +16,7 @@ const CamarilloPostConstruction = () => {
   };
 
   const handlePhoneClick = () => {
-    window.open('tel:8054308548', '_self');
+    window.open('tel:805-764-2394', '_self');
   };
 
   const breadcrumbItems = [
@@ -61,7 +61,7 @@ const CamarilloPostConstruction = () => {
                   <Link to="/contact">Get a Free Post-Construction Quote</Link>
                 </Button>
                 <Button variant="outline" size="lg" onClick={handlePhoneClick} className="px-8 py-4">
-                  Call (805) 430-8548
+                  Call (805) 764-2394
                 </Button>
               </div>
             </div>
