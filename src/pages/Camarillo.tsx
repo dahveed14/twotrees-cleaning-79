@@ -26,7 +26,7 @@ const Camarillo = () => {
         event_label: 'Camarillo Phone Click'
       });
     }
-    window.location.href = 'tel:805-436-5868';
+    window.location.href = 'tel:805-764-2394';
   };
 
   const neighborhoods = [
@@ -127,7 +127,7 @@ const Camarillo = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 436-5868
+                  (805) 764-2394
                 </Button>
               </div>
             </div>
@@ -527,7 +527,7 @@ const Camarillo = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 436-5868
+              Call (805) 764-2394
             </Button>
           </div>
         </div>
