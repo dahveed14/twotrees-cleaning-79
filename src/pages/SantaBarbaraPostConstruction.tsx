@@ -288,7 +288,7 @@ const SantaBarbaraPostConstruction = () => {
           </section>
         </main>
 
-        <Footer />
+        <Footer location="santa-barbara" />
       </div>
     </>
   );

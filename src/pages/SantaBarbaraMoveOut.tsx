@@ -360,7 +360,7 @@ const SantaBarbaraMoveOut = () => {
           </section>
         </div>
 
-        <Footer />
+        <Footer location="santa-barbara" />
       </div>
     </>
   );

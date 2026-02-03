@@ -207,7 +207,7 @@ const Carpinteria = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer location="santa-barbara" />
     </div>
   );
 };

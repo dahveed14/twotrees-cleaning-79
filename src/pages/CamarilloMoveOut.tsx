@@ -519,7 +519,7 @@ const CamarilloMoveOut = () => {
           </section>
         </main>
 
-        <Footer />
+        <Footer location="camarillo" />
       </div>
     </>
   );
