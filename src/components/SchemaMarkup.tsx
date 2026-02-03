@@ -35,10 +35,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       "foundingDate": "2020",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2252 Channel Dr.",
-        "addressLocality": cityName || "Ventura",
+        "streetAddress": "7 W. Figueroa Street, Suite 300",
+        "addressLocality": cityName || "Santa Barbara",
         "addressRegion": "CA",
-        "postalCode": "93001",
+        "postalCode": "93101",
         "addressCountry": "US"
       },
       "geo": {
@@ -294,10 +294,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2252 Channel Dr.",
-        "addressLocality": "Ventura",
+        "streetAddress": "7 W. Figueroa Street, Suite 300",
+        "addressLocality": "Santa Barbara",
         "addressRegion": "CA",
-        "postalCode": "93001",
+        "postalCode": "93101",
         "addressCountry": "US"
       },
       "sameAs": [
