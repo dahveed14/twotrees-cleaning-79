@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,33 +7,38 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone, CheckCircle, X, Star, BookOpen, AlertCircle } from "lucide-react";
+import { Phone, CheckCircle, X, Star, BookOpen, AlertCircle, Sparkles, RotateCcw, Crown } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const WhatsIncludedInCleaning = () => {
-  useEffect(() => {
-    const venturaCountyCoordinates = {
-      latitude: "34.3705",
-      longitude: "-119.1391"
-    };
+  const [activeRotationVisit, setActiveRotationVisit] = useState(0);
 
+  useEffect(() => {
     updateMetaTags({
       title: "What's Included in House Cleaning Services | Two Trees Cleaning Guide",
-      description: "Comprehensive guide to what's included and not included in our cleaning services. Compare Regular, Deep, Move-Out, Post-Construction, and Commercial cleaning services.",
+      description: "Choose the clean that fits your home. Compare our Essential, Signature, and Total Deep Clean tiers. No mandatory deep clean required. Transparent, honest service.",
       cityName: "Ventura County",
-      cityCoordinates: venturaCountyCoordinates,
+      cityCoordinates: { latitude: "34.3705", longitude: "-119.1391" },
       url: "https://twotreescleaning.com/services/whats-included-in-cleaning",
       keywords: [
         "house cleaning services included",
-        "what's included cleaning service",
+        "cleaning service tiers",
+        "essential cleaning service",
+        "signature cleaning service",
+        "deep cleaning service",
         "cleaning service comparison",
-        "house cleaning checklist",
-        "cleaning service guide",
-        "Two Trees Cleaning services",
-        "Ventura County cleaning guide"
+        "Two Trees Cleaning services"
       ]
     });
+  }, []);
+
+  // Auto-rotate the signature clean visits
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveRotationVisit((prev) => (prev + 1) % 9);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleBookingClick = (location: string) => {
@@ -59,69 +64,83 @@ const WhatsIncludedInCleaning = () => {
     { name: "What's Included", url: "https://twotreescleaning.com/services/whats-included-in-cleaning" }
   ];
 
-  // Service comparison data
-  const cleaningTasks = [
-    // Kitchen Tasks
-    { category: "Kitchen", task: "Wipe down countertops", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Kitchen", task: "Clean sink and faucet", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Kitchen", task: "Exterior appliance cleaning", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Kitchen", task: "Inside microwave cleaning", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Kitchen", task: "Cabinet fronts and handles", regular: "spot", firstTime: true, moveout: true, construction: true },
-    { category: "Kitchen", task: "Inside refrigerator cleaning", regular: "addon", firstTime: "addon", moveout: true, construction: true },
-    { category: "Kitchen", task: "Inside oven cleaning", regular: "addon", firstTime: "addon", moveout: true, construction: true },
-    { category: "Kitchen", task: "Range Hood Exterior Cleaning", regular: true, firstTime: true, moveout: true, construction: true },
-    
-    // Bathroom Tasks
-    { category: "Bathroom", task: "Toilet cleaning (inside & out)", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bathroom", task: "Shower/tub cleaning", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bathroom", task: "Mirror and glass cleaning", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bathroom", task: "Sink and vanity cleaning (Exterior)", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bathroom", task: "Tile and grout scrubbing", regular: false, firstTime: true, moveout: true, construction: true },
-    
-    // Living Areas
-    { category: "Living Areas", task: "Vacuum carpets/rugs", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Living Areas", task: "Mop hard floors", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Living Areas", task: "Dust furniture surfaces", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Living Areas", task: "Vacuum upholstered furniture", regular: "addon", firstTime: "addon", moveout: "addon", construction: true },
-    { category: "Living Areas", task: "Ceiling fan cleaning", regular: false, firstTime: true, moveout: true, construction: true },
-    
-    // Bedrooms
-    { category: "Bedrooms", task: "Make beds (if linens present)", regular: true, firstTime: true, moveout: false, construction: false },
-    { category: "Bedrooms", task: "Vacuum floors", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bedrooms", task: "Dust surfaces", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "Bedrooms", task: "Closet cleaning", regular: false, firstTime: false, moveout: true, construction: false },
-    
-    // General Tasks
-    { category: "General", task: "Empty trash bins", regular: true, firstTime: true, moveout: true, construction: true },
-    { category: "General", task: "Light switch/outlet cleaning", regular: "spot", firstTime: true, moveout: true, construction: true },
-    { category: "General", task: "Door frames and handles", regular: "spot", firstTime: true, moveout: true, construction: true },
-    { category: "General", task: "Window sill cleaning", regular: false, firstTime: true, moveout: true, construction: true },
-    { category: "General", task: "Interior windows", regular: "addon", firstTime: "addon", moveout: "addon", construction: true },
-    { category: "General", task: "Light fixture cleaning", regular: false, firstTime: true, moveout: true, construction: true },
-    { category: "General", task: "Blind/shade cleaning", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
-    { category: "General", task: "Load of laundry", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
-    { category: "General", task: "Dishes", regular: "addon", firstTime: "addon", moveout: "addon", construction: "addon" },
-    
-    // Construction Specific
-    { category: "Construction", task: "Dust removal from all surfaces", regular: false, firstTime: false, moveout: false, construction: true },
-    { category: "Construction", task: "Construction debris cleanup", regular: false, firstTime: false, moveout: false, construction: true },
-    { category: "Construction", task: "Paint overspray removal", regular: false, firstTime: false, moveout: false, construction: true },
+  const essentialItems = [
+    "Wipe down all countertops",
+    "Clean sink and faucet",
+    "Exterior appliance cleaning",
+    "Inside microwave cleaning",
+    "Range hood exterior cleaning",
+    "Toilet cleaning (inside & out)",
+    "Shower/tub cleaning",
+    "Mirror and glass cleaning",
+    "Sink and vanity cleaning (exterior)",
+    "Vacuum all carpets and rugs",
+    "Mop all hard floors",
+    "Dust all furniture surfaces",
+    "Make beds (if linens present)",
+    "Empty all trash bins"
   ];
 
-  const getStatusIcon = (status: boolean | string) => {
-    if (status === true) return <CheckCircle className="w-4 h-4 text-green-600" />;
-    if (status === false) return <X className="w-4 h-4 text-red-500" />;
-    if (status === "addon") return <Star className="w-4 h-4 text-amber-500" />;
-    if (status === "spot") return <CheckCircle className="w-4 h-4 text-blue-500" />;
-    return <X className="w-4 h-4 text-red-500" />;
-  };
+  const rotationSchedule = [
+    { visit: 1, area: "Throughout Home", item: "Baseboards" },
+    { visit: 2, area: "Throughout Home", item: "Ceiling Fans" },
+    { visit: 3, area: "Kitchen", item: "Cabinet Fronts (Full Clean)" },
+    { visit: 4, area: "Bathrooms", item: "Tile & Grout Scrubbing" },
+    { visit: 5, area: "Throughout Home", item: "Window Sills" },
+    { visit: 6, area: "Throughout Home", item: "Light Fixtures" },
+    { visit: 7, area: "Throughout Home", item: "Door Frames (Full Clean)" },
+    { visit: 8, area: "Throughout Home", item: "Light Switches & Outlets (Full)" },
+    { visit: 9, area: "Kitchen", item: "Inside Oven" }
+  ];
 
-  const getStatusText = (status: boolean | string) => {
-    if (status === true) return "Included";
-    if (status === false) return "Not Included";
-    if (status === "addon") return "Add-On";
-    if (status === "spot") return "Spot Clean";
-    return "Not Included";
+  const deepCleanItems = rotationSchedule.map(r => r.item);
+
+  const addOnServices = [
+    { service: "Inside Refrigerator Cleaning", availability: "All Tiers" },
+    { service: "Inside Oven Cleaning*", availability: "Essential & Signature only" },
+    { service: "Interior Window Cleaning", availability: "All Tiers" },
+    { service: "Vacuum Upholstered Furniture", availability: "All Tiers" },
+    { service: "Blind/Shade Deep Cleaning ($50/set)", availability: "All Tiers" },
+    { service: "Load of Laundry", availability: "All Tiers" },
+    { service: "Dishes", availability: "All Tiers" }
+  ];
+
+  const comparisonTasks = [
+    { task: "Wipe down countertops", essential: "included", signature: "included", deep: "included" },
+    { task: "Clean sink & faucet", essential: "included", signature: "included", deep: "included" },
+    { task: "Exterior appliance cleaning", essential: "included", signature: "included", deep: "included" },
+    { task: "Inside microwave", essential: "included", signature: "included", deep: "included" },
+    { task: "Range hood exterior", essential: "included", signature: "included", deep: "included" },
+    { task: "Toilet cleaning", essential: "included", signature: "included", deep: "included" },
+    { task: "Shower/tub cleaning", essential: "included", signature: "included", deep: "included" },
+    { task: "Mirror & glass cleaning", essential: "included", signature: "included", deep: "included" },
+    { task: "Sink & vanity (exterior)", essential: "included", signature: "included", deep: "included" },
+    { task: "Vacuum carpets/rugs", essential: "included", signature: "included", deep: "included" },
+    { task: "Mop hard floors", essential: "included", signature: "included", deep: "included" },
+    { task: "Dust furniture surfaces", essential: "included", signature: "included", deep: "included" },
+    { task: "Make beds", essential: "included", signature: "included", deep: "included" },
+    { task: "Empty trash bins", essential: "included", signature: "included", deep: "included" },
+    { task: "Baseboards", essential: "not", signature: "visit1", deep: "included" },
+    { task: "Ceiling fans", essential: "not", signature: "visit2", deep: "included" },
+    { task: "Cabinet fronts (full)", essential: "not", signature: "visit3", deep: "included" },
+    { task: "Tile & grout scrubbing", essential: "not", signature: "visit4", deep: "included" },
+    { task: "Window sills", essential: "not", signature: "visit5", deep: "included" },
+    { task: "Light fixtures", essential: "not", signature: "visit6", deep: "included" },
+    { task: "Door frames (full)", essential: "not", signature: "visit7", deep: "included" },
+    { task: "Light switches & outlets", essential: "not", signature: "visit8", deep: "included" },
+    { task: "Inside oven", essential: "not", signature: "visit9", deep: "included" }
+  ];
+
+  const getComparisonIcon = (status: string) => {
+    if (status === "included") return <CheckCircle className="w-5 h-5 text-green-600" />;
+    if (status === "not") return <span className="text-muted-foreground">—</span>;
+    if (status.startsWith("visit")) return (
+      <div className="flex items-center gap-1">
+        <RotateCcw className="w-4 h-4 text-two-trees-gold" />
+        <span className="text-xs text-two-trees-gold font-medium">Visit {status.replace("visit", "")}</span>
+      </div>
+    );
+    return null;
   };
 
   return (
@@ -143,227 +162,277 @@ const WhatsIncludedInCleaning = () => {
       <div className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <div className="flex justify-center mb-4">
               <BookOpen className="w-12 h-12 text-primary" />
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
-              What's Included in a Cleaning?
+              Choose the Clean That Fits Your Home.
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A comprehensive guide to understanding exactly what's included (and what's not) in each of our cleaning services. No surprises, just transparent service expectations.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
+              No mandatory deep clean required. No surprises. Just honest, transparent service — done right, every time.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              At Two Trees Cleaning, we believe you should be in control. That's why we offer three distinct service tiers — each clearly defined, professionally delivered, and priced for what you actually need.
             </p>
           </div>
 
-          {/* Service Comparison Table */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-primary text-center mb-12">
+          {/* Three Tier Cards */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+            {/* Essential Clean */}
+            <Card className="border-2 border-border shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
+              <CardHeader className="text-center pb-4">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Sparkles className="w-7 h-7 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-primary">Essential Clean</CardTitle>
+                <p className="text-sm text-two-trees-gold font-semibold mt-2">
+                  Everything your home needs, done consistently — every visit.
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  For clients who maintain a generally tidy home and want reliable, professional upkeep on a recurring schedule. This is the entry point — not the lesser option.
+                </p>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-sm text-primary">What's Included:</h4>
+                  <ul className="space-y-1.5">
+                    {essentialItems.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t">
+                  <p className="text-xs text-muted-foreground italic">
+                    Baseboards, ceiling fans, cabinet fronts, tile & grout, window sills, light fixtures, door frames, light switches, and inside oven are not included. These are covered in the Signature Clean rotation or the Total Deep Clean.
+                  </p>
+                </div>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90"
+                  onClick={() => handleBookingClick('Essential Clean Card')}
+                >
+                  Get a Quote
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Signature Clean */}
+            <Card className="border-2 border-two-trees-gold shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in relative" style={{ animationDelay: "0.1s" }}>
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-two-trees-gold text-white text-xs font-bold px-4 py-1 rounded-full">
+                MOST POPULAR
+              </div>
+              <CardHeader className="text-center pb-4">
+                <div className="w-14 h-14 bg-two-trees-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-7 h-7 text-two-trees-gold" />
+                </div>
+                <CardTitle className="text-2xl text-primary">Signature Clean</CardTitle>
+                <p className="text-sm text-two-trees-gold font-semibold mt-2">
+                  Essential Clean + one rotating deep clean item every visit.
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Our most popular tier. The smart middle ground for homeowners who care about the details without paying for a full deep clean every visit. Your entire home gets a deep clean every 4.5 months, automatically.
+                </p>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-sm text-primary">Includes everything in Essential, plus:</h4>
+                  <p className="text-sm text-muted-foreground">
+                    One predetermined deep clean item per visit from a 9-visit rotation. On biweekly service, every deep clean item is completed twice per year.
+                  </p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-3">
+                  <p className="text-xs text-muted-foreground mb-2 font-medium">
+                    <RotateCcw className="w-3 h-3 inline mr-1" />
+                    Current rotation preview:
+                  </p>
+                  <div className="space-y-1">
+                    {rotationSchedule.map((r, i) => (
+                      <div 
+                        key={i} 
+                        className={`flex items-center justify-between text-xs px-2 py-1 rounded transition-all duration-500 ${
+                          i === activeRotationVisit 
+                            ? 'bg-two-trees-gold/20 text-primary font-semibold scale-[1.02]' 
+                            : 'text-muted-foreground'
+                        }`}
+                      >
+                        <span>Visit {r.visit}: {r.item}</span>
+                        <span className="text-[10px] opacity-70">{r.area}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground italic">
+                  You'll receive a heads-up message before each visit letting you know which deep clean item is scheduled.
+                </p>
+                <Button 
+                  className="w-full bg-two-trees-gold hover:bg-two-trees-gold/90 text-white"
+                  onClick={() => handleBookingClick('Signature Clean Card')}
+                >
+                  Get a Quote
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Total Deep Clean */}
+            <Card className="border-2 border-primary bg-primary text-primary-foreground shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <CardHeader className="text-center pb-4">
+                <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Crown className="w-7 h-7 text-two-trees-gold" />
+                </div>
+                <CardTitle className="text-2xl text-primary-foreground">Total Deep Clean</CardTitle>
+                <p className="text-sm text-two-trees-gold font-semibold mt-2">
+                  Every deep clean item. Every surface. One visit. The complete reset.
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-primary-foreground/80">
+                  Ideal for move-ins, seasonal resets, post-renovation refresh, or homeowners who simply want the best. No compromises, no rotation — everything done at once.
+                </p>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-sm text-primary-foreground">Everything in Essential, plus all 9 deep items:</h4>
+                  <ul className="space-y-1.5">
+                    {deepCleanItems.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-primary-foreground/80">
+                        <CheckCircle className="w-4 h-4 text-two-trees-gold flex-shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-white/20">
+                  <p className="text-xs text-primary-foreground/60 italic">
+                    Does not include inside refrigerator cleaning. Available as an add-on.
+                  </p>
+                </div>
+                <Button 
+                  className="w-full bg-two-trees-gold hover:bg-two-trees-gold/90 text-primary font-semibold"
+                  onClick={() => handleBookingClick('Total Deep Clean Card')}
+                >
+                  Get a Quote
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Signature Clean Rotation Detail */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-primary text-center mb-4">
+              How the Signature Clean Rotation Works
+            </h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+              Every visit, your cleaner completes your full Essential Clean plus one predetermined deep clean item. The order never changes, so your home is systematically maintained over time.
+            </p>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-semibold text-primary">Visit</TableHead>
+                    <TableHead className="font-semibold text-primary">Area</TableHead>
+                    <TableHead className="font-semibold text-primary">Deep Clean Item</TableHead>
+                    <TableHead className="font-semibold text-primary text-right">Frequency</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {rotationSchedule.map((r, i) => (
+                    <TableRow 
+                      key={i} 
+                      className={`cursor-pointer transition-all duration-300 ${
+                        i === activeRotationVisit ? 'bg-two-trees-gold/10' : ''
+                      }`}
+                      onClick={() => setActiveRotationVisit(i)}
+                    >
+                      <TableCell className="font-semibold text-primary">{r.visit}</TableCell>
+                      <TableCell className="text-muted-foreground">{r.area}</TableCell>
+                      <TableCell className="font-medium">{r.item}</TableCell>
+                      <TableCell className="text-right text-sm text-muted-foreground">Every 9 visits</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+            <p className="text-sm text-muted-foreground text-center mt-4 italic">
+              On biweekly service, every deep clean item is completed twice per year.
+            </p>
+          </div>
+
+          {/* Full Comparison Chart */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-primary text-center mb-4">
               Service Comparison Chart
             </h2>
-            
+            <p className="text-center text-muted-foreground mb-8">
+              See exactly what's included in each tier at a glance.
+            </p>
+
             {/* Legend */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8 p-4 bg-gray-50 rounded-lg">
+            <div className="flex flex-wrap justify-center gap-6 mb-8 p-4 bg-muted/50 rounded-lg">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-600" />
                 <span className="text-sm">Included</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-blue-500" />
-                <span className="text-sm">Spot Clean Only</span>
+                <RotateCcw className="w-4 h-4 text-two-trees-gold" />
+                <span className="text-sm">Rotating</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-amber-500" />
-                <span className="text-sm">Available Add-On</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <X className="w-4 h-4 text-red-500" />
+                <span className="text-muted-foreground">—</span>
                 <span className="text-sm">Not Included</span>
               </div>
             </div>
 
             <div className="overflow-x-auto">
-              <Table className="min-w-full">
+              <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead className="font-semibold text-primary">Task</TableHead>
-                    <TableHead className="text-center font-semibold text-primary">Regular</TableHead>
-                    <TableHead className="text-center font-semibold text-primary">First Time</TableHead>
-                    <TableHead className="text-center font-semibold text-primary">Move-Out</TableHead>
-                    <TableHead className="text-center font-semibold text-primary">Post-Construction</TableHead>
+                    <TableHead className="text-center font-semibold text-primary">Essential</TableHead>
+                    <TableHead className="text-center font-semibold text-two-trees-gold">Signature</TableHead>
+                    <TableHead className="text-center font-semibold text-primary">Total Deep</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {Object.entries(
-                    cleaningTasks.reduce((acc, task) => {
-                      if (!acc[task.category]) acc[task.category] = [];
-                      acc[task.category].push(task);
-                      return acc;
-                    }, {} as Record<string, typeof cleaningTasks>)
-                  ).map(([category, tasks]) => (
-                    <>
-                      <TableRow key={category} className="bg-gray-50">
-                        <TableCell colSpan={5} className="font-semibold text-primary text-center py-3">
-                          {category}
-                        </TableCell>
-                      </TableRow>
-                      {tasks.map((task, index) => (
-                        <TableRow key={`${category}-${index}`}>
-                          <TableCell className="font-medium">{task.task}</TableCell>
-                          <TableCell className="text-center">
-                            <div className="flex flex-col items-center gap-1">
-                              {getStatusIcon(task.regular)}
-                              <span className="text-xs text-muted-foreground">
-                                {getStatusText(task.regular)}
-                              </span>
-                            </div>
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <div className="flex flex-col items-center gap-1">
-                              {getStatusIcon(task.firstTime)}
-                              <span className="text-xs text-muted-foreground">
-                                {getStatusText(task.firstTime)}
-                              </span>
-                            </div>
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <div className="flex flex-col items-center gap-1">
-                              {getStatusIcon(task.moveout)}
-                              <span className="text-xs text-muted-foreground">
-                                {getStatusText(task.moveout)}
-                              </span>
-                            </div>
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <div className="flex flex-col items-center gap-1">
-                              {getStatusIcon(task.construction)}
-                              <span className="text-xs text-muted-foreground">
-                                {getStatusText(task.construction)}
-                              </span>
-                            </div>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </>
+                  {comparisonTasks.map((t, i) => (
+                    <TableRow key={i}>
+                      <TableCell className="font-medium">{t.task}</TableCell>
+                      <TableCell className="text-center">{getComparisonIcon(t.essential)}</TableCell>
+                      <TableCell className="text-center">{getComparisonIcon(t.signature)}</TableCell>
+                      <TableCell className="text-center">{getComparisonIcon(t.deep)}</TableCell>
+                    </TableRow>
                   ))}
                 </TableBody>
               </Table>
             </div>
           </div>
 
-          {/* Service Breakdown Cards */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-primary text-center mb-12">
-              Service Details & Expectations
+          {/* Add-Ons */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-primary text-center mb-8">
+              Available Add-Ons
             </h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">Regular House Cleaning</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">Perfect for maintaining a clean home on a regular basis.</p>
+            <p className="text-center text-muted-foreground mb-8">
+              The following services are available as add-ons across all three tiers. Pricing available upon request.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {addOnServices.map((addon, i) => (
+                <div key={i} className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+                  <Star className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold mb-2">Always Included:</h4>
-                    <ul className="text-sm space-y-1 text-muted-foreground">
-                      <li>• All basic cleaning tasks</li>
-                      <li>• Kitchen and bathroom cleaning</li>
-                      <li>• Vacuuming and mopping</li>
-                      <li>• Dusting surfaces</li>
-                      <li>• Trash removal</li>
-                    </ul>
+                    <p className="font-medium text-sm">{addon.service}</p>
+                    <p className="text-xs text-muted-foreground">{addon.availability}</p>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Time Required:</h4>
-                    <p className="text-sm text-muted-foreground">1-3 hours depending on home size</p>
-                  </div>
-                  <Link to="/services/regular-house-cleaning">
-                    <Button variant="outline" size="sm">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">First Time Cleaning</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">Comprehensive top-to-bottom cleaning for special occasions or first-time service.</p>
-                  <div>
-                    <h4 className="font-semibold mb-2">Always Included:</h4>
-                    <ul className="text-sm space-y-1 text-muted-foreground">
-                      <li>• Everything in regular cleaning</li>
-                      <li>• Detailed scrubbing and sanitizing</li>
-                      <li>• Light fixtures and ceiling fans</li>
-                      <li>• Inside microwave cleaning</li>
-                      <li>• Range hood exterior cleaning</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Time Required:</h4>
-                    <p className="text-sm text-muted-foreground">3-6 hours depending on home size</p>
-                  </div>
-                  <Link to="/services/deep-cleaning">
-                    <Button variant="outline" size="sm">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">Move-In/Move-Out Cleaning</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">Thorough cleaning for property transitions.</p>
-                  <div>
-                    <h4 className="font-semibold mb-2">Always Included:</h4>
-                    <ul className="text-sm space-y-1 text-muted-foreground">
-                      <li>• Deep cleaning of all areas</li>
-                      <li>• Inside appliance cleaning</li>
-                      <li>• Cabinet interior cleaning</li>
-                      <li>• Detailed sanitizing</li>
-                      <li>• Window sill cleaning</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Time Required:</h4>
-                    <p className="text-sm text-muted-foreground">4-8 hours depending on condition</p>
-                  </div>
-                  <Link to="/services/move-in-move-out">
-                    <Button variant="outline" size="sm">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">Post-Construction Cleaning</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">Specialized cleaning after renovation or construction work.</p>
-                  <div>
-                    <h4 className="font-semibold mb-2">Always Included:</h4>
-                    <ul className="text-sm space-y-1 text-muted-foreground">
-                      <li>• Construction dust removal</li>
-                      <li>• Debris and material cleanup</li>
-                      <li>• Paint overspray removal</li>
-                      <li>• Deep sanitizing</li>
-                      <li>• Window cleaning (interior)</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Time Required:</h4>
-                    <p className="text-sm text-muted-foreground">4-12 hours depending on scope</p>
-                  </div>
-                  <Link to="/services/post-construction">
-                    <Button variant="outline" size="sm">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                </div>
+              ))}
             </div>
+            <p className="text-xs text-muted-foreground text-center mt-4 italic">
+              * Inside Oven Cleaning is included in the Total Deep Clean at no extra charge.
+            </p>
           </div>
 
           {/* Move-Out Cleaning Requirements Section */}
-          <div className="mb-16">
+          <div className="mb-20">
             <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl p-8">
               <div className="flex items-start gap-4 mb-6">
                 <AlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
@@ -450,19 +519,22 @@ const WhatsIncludedInCleaning = () => {
             </div>
           </div>
 
-          {/* What We DON'T Do Section */}
-          <div className="mb-16 bg-red-50 rounded-2xl p-8">
+          {/* What We DON'T Include */}
+          <div className="mb-20 bg-red-50 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-red-700 text-center mb-8">
-              What We DON'T Include
+              What We Don't Include
             </h2>
+            <p className="text-center text-red-700/80 mb-6">
+              We believe in complete transparency. The following are outside the scope of all Two Trees Cleaning services:
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "Personal organization/decluttering",
+                "Personal organization or decluttering",
                 "Exterior window cleaning",
                 "Pet waste cleanup",
                 "Biohazard cleanup",
                 "Home repairs or maintenance",
-                "Carpet shampooing",
+                "Carpet shampooing or steam cleaning",
                 "Furniture moving",
                 "Garage or basement cleaning",
                 "Outdoor area cleaning"
@@ -475,13 +547,13 @@ const WhatsIncludedInCleaning = () => {
             </div>
             <div className="mt-6 text-center">
               <p className="text-red-700 text-sm">
-                Many services are available as add-ons, including laundry and dishes. Contact us for custom requests.
+                Need something not on the list? <Link to="/contact" className="underline hover:no-underline font-medium">Contact us</Link> — we're happy to discuss custom requests.
               </p>
             </div>
           </div>
 
           {/* FAQ Section */}
-          <div className="mb-16">
+          <div className="mb-20">
             <h2 className="text-2xl font-bold text-primary text-center mb-8">
               Frequently Asked Questions
             </h2>
@@ -505,15 +577,24 @@ const WhatsIncludedInCleaning = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger>Can I request specific tasks not on the list?</AccordionTrigger>
+                <AccordionTrigger>Do I have to start with a deep clean?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Yes! Many additional services are available as add-ons. Contact us to discuss custom cleaning needs and we'll provide a quote for additional services.
+                    No! That's the beauty of our tier system. You can start with any tier that fits your needs. The Essential Clean is a great entry point, and the Signature Clean gradually deep cleans your home over time without a large upfront cost.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-4">
+                <AccordionTrigger>How does the Signature Clean rotation work?</AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Each visit, your cleaner completes the full Essential Clean plus one deep clean item from a fixed 9-visit schedule. The order never changes, so every area of your home gets deep cleaned systematically. On biweekly service, each item is completed twice per year.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
                 <AccordionTrigger>Do you bring your own cleaning supplies?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
@@ -521,25 +602,16 @@ const WhatsIncludedInCleaning = () => {
                   </p>
                 </AccordionContent>
               </AccordionItem>
-
-              <AccordionItem value="item-5">
-                <AccordionTrigger>How long does each type of cleaning take?</AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground">
-                    Regular cleaning: 1-3 hours, Deep cleaning: 3-6 hours, Move-out cleaning: 4-8 hours, Post-construction: 4-12 hours. Times vary based on home size, condition, and specific requirements.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
             </Accordion>
           </div>
 
-          {/* Next Steps Section */}
+          {/* CTA Section */}
           <div className="bg-primary text-primary-foreground rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Book Your Service?
+              Ready to Get Started?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Now that you know what's included, choose the perfect cleaning service for your needs
+              Choose your tier and book your first clean today. No contracts, no surprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button 
@@ -547,7 +619,7 @@ const WhatsIncludedInCleaning = () => {
                 className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-4 text-lg font-semibold"
                 onClick={() => handleBookingClick('Whats Included CTA')}
               >
-                Book Your Cleaning Today
+                Get a Quote
               </Button>
               <Button 
                 size="lg" 

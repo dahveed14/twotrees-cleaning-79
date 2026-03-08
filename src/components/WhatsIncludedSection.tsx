@@ -1,82 +1,66 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, ClipboardList } from "lucide-react";
+import { ArrowRight, Sparkles, Star, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const WhatsIncludedSection = () => {
-  const highlights = [
-    "Complete room-by-room checklist",
-    "Move-out cleaning requirements",
-    "Add-on services available",
-    "Clear pricing transparency"
+  const tiers = [
+    {
+      icon: Sparkles,
+      name: "Essential Clean",
+      description: "Reliable upkeep for tidy homes — done consistently, every visit.",
+      iconBg: "bg-primary/10",
+      iconColor: "text-primary"
+    },
+    {
+      icon: Star,
+      name: "Signature Clean",
+      description: "Essential + one rotating deep clean item per visit. Most popular.",
+      iconBg: "bg-two-trees-gold/10",
+      iconColor: "text-two-trees-gold"
+    },
+    {
+      icon: Crown,
+      name: "Total Deep Clean",
+      description: "Every surface, every detail — the complete home reset in one visit.",
+      iconBg: "bg-primary/10",
+      iconColor: "text-two-trees-gold"
+    }
   ];
 
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-            What's Included in Your Cleaning?
+            Choose the Clean That Fits Your Home
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transparency is important to us. See exactly what's included in each service and how to prepare for your cleaning.
+            No mandatory deep clean required. Three tiers — each clearly defined, professionally delivered, and priced for what you actually need.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-two-trees-green rounded-full flex items-center justify-center">
-                <ClipboardList className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-two-trees-green">
-                Detailed Service Breakdown
-              </h3>
-            </div>
-            
-            <div className="space-y-4 mb-8">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-two-trees-green flex-shrink-0" />
-                  <span className="text-gray-700">{highlight}</span>
+        <div className="grid md:grid-cols-3 gap-8 mb-10">
+          {tiers.map((tier, index) => (
+            <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow text-center">
+              <CardContent className="p-8">
+                <div className={`w-14 h-14 ${tier.iconBg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <tier.icon className={`w-7 h-7 ${tier.iconColor}`} />
                 </div>
-              ))}
-            </div>
+                <h3 className="text-xl font-bold text-two-trees-green mb-2">{tier.name}</h3>
+                <p className="text-gray-600 text-sm">{tier.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-            <Button asChild size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90">
-              <Link to="/services/whats-included-in-cleaning" className="flex items-center gap-2">
-                View Complete Checklist
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <Card className="shadow-xl">
-            <CardContent className="p-8">
-              <h4 className="text-xl font-bold text-two-trees-green mb-4">
-                Know Before You Book
-              </h4>
-              <div className="space-y-4">
-                <div className="border-l-4 border-two-trees-gold pl-4">
-                  <h5 className="font-semibold text-gray-800">Regular Cleaning</h5>
-                  <p className="text-sm text-gray-600">Kitchen, bathrooms, bedrooms, living areas</p>
-                </div>
-                <div className="border-l-4 border-two-trees-gold pl-4">
-                  <h5 className="font-semibold text-gray-800">Deep Cleaning</h5>
-                  <p className="text-sm text-gray-600">Everything in regular + detailed deep clean</p>
-                </div>
-                <div className="border-l-4 border-two-trees-gold pl-4">
-                  <h5 className="font-semibold text-gray-800">Move-Out</h5>
-                  <p className="text-sm text-gray-600">Empty home requirements + deposit prep</p>
-                </div>
-              </div>
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 italic">
-                  "I love that they show exactly what's included. No surprises!" - Sarah M.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="text-center">
+          <Button asChild size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90">
+            <Link to="/services/whats-included-in-cleaning" className="flex items-center gap-2">
+              Compare All Tiers
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
