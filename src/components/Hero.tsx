@@ -21,7 +21,7 @@ export const Hero = ({
               <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
                 Serving Ventura & Santa Barbara Counties Since 2020
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">House & Office Cleaning Services in Ventura, Santa Barbara & Beyond</h1>
+              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">House Cleaning in Ventura, Oxnard, Camarillo, Ojai & Thousand Oaks</h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 At Two Trees Cleaning, we help busy families across Ventura and Santa Barbara Counties enjoy more free time and less stress. From Santa Barbara to Thousand Oaks, Westlake Village to Camarillo, our detail-oriented team delivers consistently spotless homes—so you can focus on what matters most.
               </p>
