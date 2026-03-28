@@ -80,7 +80,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured</title>
+        <title>House Cleaning in Ventura, Oxnard, Camarillo, Ojai & Thousand Oaks | Two Trees Cleaning</title>
         <meta name="description" content="Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140." />
         <meta name="geo.region" content="US-CA" />
         <meta name="geo.placename" content="Ventura" />
