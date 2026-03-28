@@ -26,7 +26,7 @@ const Index = () => {
     
     // Set meta tags using the utility function
     updateMetaTags({
-      title: "Two Trees Cleaning - Professional House Cleaning in Ventura County | Licensed & Insured",
+      title: "House Cleaning in Ventura, Oxnard, Camarillo, Ojai & Thousand Oaks | Two Trees Cleaning",
       description: "Get your time back with Two Trees Cleaning. Professional house cleaning services in Ventura County since 2020. Licensed, insured & trusted by 200+ families. Starting at $140.",
       url: "https://twotreescleaning.com/",
       keywords: [
