@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X, Building2, Users, CheckCircle, GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
+import { Star, Clock, MapPin, Phone, Mail, X, Users, CheckCircle, GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
