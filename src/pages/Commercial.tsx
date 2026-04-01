@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Clock, MapPin, Phone, Mail, X, Users, CheckCircle, GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
+import { Star, Clock, MapPin, Phone, Mail, Users, CheckCircle, GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -10,7 +10,7 @@ import { updateMetaTags } from "@/utils/metaTags";
 
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
-  const [showPromoBar, setShowPromoBar] = useState(true);
+  
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
@@ -82,24 +82,6 @@ const Commercial = () => {
           { label: "School Cleaning", current: true }
         ]} 
       />
-
-      {/* Promotional Banner */}
-      {showPromoBar && (
-        <div className="bg-two-trees-gold text-two-trees-green py-3 px-4 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm md:text-base font-semibold">
-              🏫 Special offer for schools! Get 20% OFF your first month of cleaning service. Contact us today to secure your rate!
-            </p>
-          </div>
-          <button 
-            onClick={() => setShowPromoBar(false)} 
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-two-trees-green hover:text-two-trees-green/70 transition-colors" 
-            aria-label="Close promotional banner"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-      )}
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-white py-20 px-4">
