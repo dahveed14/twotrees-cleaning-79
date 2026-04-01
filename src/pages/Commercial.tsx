@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X, Building2, Users, CheckCircle } from "lucide-react";
+import { Star, Clock, Shield, Award, MapPin, Phone, Mail, X, Building2, Users, CheckCircle, GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -20,19 +20,21 @@ const Commercial = () => {
     };
 
     updateMetaTags({
-      title: "Commercial Cleaning Services Ventura County | Two Trees Cleaning - Licensed & Insured Office Cleaning",
-      description: "Professional office cleaning services in Ventura County. Two Trees Cleaning provides reliable commercial cleaning for businesses in Santa Barbara, Thousand Oaks, Oxnard & Camarillo. Licensed & insured.",
+      title: "School Cleaning Services Ventura County | Two Trees Cleaning - Licensed & Insured",
+      description: "Professional school cleaning services in Ventura County. Classrooms, cafeterias, gymnasiums & admin offices. Safe, non-toxic products. Licensed & insured. Serving schools since 2020.",
       cityName: "Ventura County",
       cityCoordinates: venturaCountyCoordinates,
       url: "https://twotreescleaning.com/commercial",
       image: "https://twotreescleaning.com/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png",
       keywords: [
-        "commercial cleaning Ventura County",
-        "office cleaning service",
-        "business cleaning Ventura County",
-        "commercial janitorial service",
-        "workplace cleaning Ventura County",
-        "professional business cleaning"
+        "school cleaning Ventura County",
+        "school janitorial service",
+        "classroom cleaning service",
+        "school sanitization Ventura County",
+        "education facility cleaning",
+        "school deep cleaning",
+        "daycare cleaning Ventura County",
+        "preschool cleaning service"
       ]
     });
 
@@ -50,37 +52,34 @@ const Commercial = () => {
     // Track page view for commercial
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
-        page_title: 'Two Trees Commercial Cleaning Landing Page',
+        page_title: 'Two Trees School Cleaning Landing Page',
         page_location: window.location.href
       });
     }
   }, []);
   const handleBookingClick = (location: string) => {
-    // Track the commercial conversion
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
-      (window as any).trackButtonClick('Email Commercial Inquiry', location);
+      (window as any).trackButtonClick('Email School Cleaning Inquiry', location);
     }
 
-    // Open email compose window
-    const subject = encodeURIComponent('Commercial Cleaning Quote Request');
-    const body = encodeURIComponent('Hi Two Trees Cleaning,\n\nI would like to request a quote for commercial cleaning services.\n\nPlease contact me to discuss my needs.\n\nThank you!');
+    const subject = encodeURIComponent('School Cleaning Quote Request');
+    const body = encodeURIComponent('Hi Two Trees Cleaning,\n\nI would like to request a quote for school cleaning services.\n\nSchool/Facility Name:\nLocation:\nNumber of Classrooms:\nCleaning Frequency Needed:\n\nPlease contact me to discuss our needs.\n\nThank you!');
     window.location.href = `mailto:hello@twotreescleaning.com?subject=${subject}&body=${body}`;
   };
   const handlePhoneClick = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'commercial_phone_click', {
-        event_category: 'Commercial Contact',
+      (window as any).gtag('event', 'school_phone_click', {
+        event_category: 'School Contact',
         event_label: 'Phone Number Click'
       });
     }
-    // Make the phone call
     window.location.href = 'tel:805-436-5868';
   };
   return (
     <div className="min-h-screen bg-white">
       <Breadcrumbs 
         items={[
-          { label: "Commercial Cleaning", current: true }
+          { label: "School Cleaning", current: true }
         ]} 
       />
 
@@ -89,7 +88,7 @@ const Commercial = () => {
         <div className="bg-two-trees-gold text-two-trees-green py-3 px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm md:text-base font-semibold">
-              🏢 Special offer for new commercial clients! Get 20% OFF your first month of service. Book by July 31st to secure your rate!
+              🏫 Special offer for schools! Get 20% OFF your first month of cleaning service. Contact us today to secure your rate!
             </p>
           </div>
           <button 
@@ -109,20 +108,20 @@ const Commercial = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
-                  Commercial Cleaning Services in Ventura County
+                  School Cleaning Services in Ventura County
                 </Badge>
                 <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">
-                  Professional Office Cleaning for Busy Ventura County Businesses
+                  Professional Cleaning for Schools & Educational Facilities
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Two Trees Cleaning helps Ventura County businesses in Santa Barbara, Thousand Oaks, Oxnard, and Camarillo maintain spotless, professional workspaces. Our reliable commercial cleaning team ensures your office always makes the right impression.
+                  Two Trees Cleaning keeps classrooms, hallways, and common areas spotless so students and staff can focus on what matters — learning. We serve schools across Ventura County including Santa Barbara, Thousand Oaks, Oxnard, and Camarillo.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Hero Section')}>
                   <Mail className="w-5 h-5 mr-2" />
-                  Email for Quote
+                  Get a School Cleaning Quote
                 </Button>
                 <Button variant="outline-green" size="lg" className="px-8 py-4 text-lg" onClick={handlePhoneClick}>
                   <Phone className="w-5 h-5 mr-2" />
@@ -157,7 +156,7 @@ const Commercial = () => {
             <div className="relative">
               <img 
                 src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png" 
-                alt="Two Trees Cleaning team professionally cleaning a modern Ventura County office space with commercial cleaning equipment in Santa Barbara area business" 
+                alt="Two Trees Cleaning team professionally cleaning a school facility in Ventura County" 
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[3/4]" 
               />
             </div>
@@ -165,15 +164,15 @@ const Commercial = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Why Schools Choose Us */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-              Why Ventura County Businesses Choose Two Trees Cleaning
+              Why Schools Trust Two Trees Cleaning
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We understand that your workspace reflects your professionalism. That's why we've built our commercial service around reliability, quality, and maintaining the highest standards for businesses throughout Santa Barbara, Thousand Oaks, and surrounding areas.
+              Schools need more than just clean — they need safe, healthy environments where students can thrive. We understand the unique cleaning demands of educational facilities.
             </p>
           </div>
 
@@ -181,11 +180,11 @@ const Commercial = () => {
             <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Building2 className="w-8 h-8 text-two-trees-green" />
+                  <ShieldCheck className="w-8 h-8 text-two-trees-green" />
                 </div>
-                <h3 className="text-2xl font-bold text-two-trees-green mb-4">Professional Image</h3>
+                <h3 className="text-2xl font-bold text-two-trees-green mb-4">Safe & Non-Toxic</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  A clean office creates the right impression for clients, customers, and employees. We help maintain your professional reputation across Ventura County.
+                  We use child-safe, non-toxic cleaning products that effectively sanitize without exposing students or staff to harsh chemicals.
                 </p>
               </CardContent>
             </Card>
@@ -195,9 +194,9 @@ const Commercial = () => {
                 <div className="w-16 h-16 bg-two-trees-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="w-8 h-8 text-two-trees-gold" />
                 </div>
-                <h3 className="text-2xl font-bold text-two-trees-green mb-4">Healthy Workplace</h3>
+                <h3 className="text-2xl font-bold text-two-trees-green mb-4">Healthier Students</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Regular professional cleaning reduces sick days and creates a healthier environment for your team to be productive.
+                  Regular professional cleaning and sanitization reduces the spread of germs, keeping students healthier and reducing absenteeism.
                 </p>
               </CardContent>
             </Card>
@@ -205,11 +204,11 @@ const Commercial = () => {
             <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-two-trees-green" />
+                  <Clock className="w-8 h-8 text-two-trees-green" />
                 </div>
-                <h3 className="text-2xl font-bold text-two-trees-green mb-4">Reliable Service</h3>
+                <h3 className="text-2xl font-bold text-two-trees-green mb-4">After-Hours Service</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We show up when scheduled and maintain consistent quality. Your business operations continue smoothly without interruption.
+                  We clean after school hours and on weekends so there's zero disruption to classes, activities, or events.
                 </p>
               </CardContent>
             </Card>
@@ -217,19 +216,107 @@ const Commercial = () => {
         </div>
       </section>
 
-      {/* About Section with Team Photo */}
+      {/* What We Clean */}
       <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-two-trees-green mb-4">
+              School Areas We Clean
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From classrooms to cafeterias, we handle every area of your school with care and attention to detail.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-two-trees-green/10 rounded-full flex items-center justify-center mb-6">
+                  <BookOpen className="w-6 h-6 text-two-trees-green" />
+                </div>
+                <h3 className="text-xl font-bold text-two-trees-green mb-4">Classrooms</h3>
+                <div className="space-y-3">
+                  {[
+                    "Desks, tables, and chairs sanitized",
+                    "Whiteboards and chalkboards cleaned",
+                    "Floors vacuumed and mopped",
+                    "Trash emptied and bins sanitized",
+                    "Doorknobs and light switches disinfected",
+                    "Windows and window sills wiped"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-two-trees-gold/10 rounded-full flex items-center justify-center mb-6">
+                  <Users className="w-6 h-6 text-two-trees-gold" />
+                </div>
+                <h3 className="text-xl font-bold text-two-trees-green mb-4">Common Areas</h3>
+                <div className="space-y-3">
+                  {[
+                    "Cafeteria tables and seating deep cleaned",
+                    "Gymnasium floors maintained",
+                    "Hallways swept and mopped",
+                    "Locker areas sanitized",
+                    "Entryways and lobbies kept spotless",
+                    "Library shelves and reading areas dusted"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-two-trees-green/10 rounded-full flex items-center justify-center mb-6">
+                  <GraduationCap className="w-6 h-6 text-two-trees-green" />
+                </div>
+                <h3 className="text-xl font-bold text-two-trees-green mb-4">Staff & Restrooms</h3>
+                <div className="space-y-3">
+                  {[
+                    "Admin offices and teacher lounges",
+                    "Restrooms fully sanitized daily",
+                    "Soap and paper product restocking",
+                    "Staff break rooms cleaned",
+                    "Front office and reception areas",
+                    "Nurse's office deep sanitized"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section with Team Photo */}
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl font-bold text-two-trees-green">
-                Commercial Cleaning Experts You Can Trust in Ventura County
+                A Cleaning Team Schools Can Count On
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                As a family-owned business, we understand the importance of maintaining professional standards. We've been serving Ventura County businesses in Santa Barbara, Oxnard, Camarillo, and Thousand Oaks since 2020, helping companies create clean, productive work environments.
+                As a family-owned business, we understand how important it is to keep children in a clean, safe environment. We've been serving Ventura County since 2020, and we bring the same care and attention to every school we clean.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our team is fully insured, bonded, and trained to handle the unique needs of commercial spaces. From small offices to large facilities, we deliver consistent, reliable service throughout Ventura County.
+                Our team is fully background-checked, insured, and bonded. We're trained specifically in educational facility cleaning protocols, including proper sanitization of high-touch surfaces and safe product usage around children.
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex">
@@ -237,16 +324,15 @@ const Commercial = () => {
                     <Star key={star} className="w-5 h-5 fill-two-trees-gold text-two-trees-gold" />
                   ))}
                 </div>
-                <span className="text-gray-600 italic">Trusted by 50+ Ventura County businesses</span>
+                <span className="text-gray-600 italic">Trusted by schools & families across Ventura County</span>
               </div>
             </div>
             <div className="relative">
               <img 
                 src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
-                alt="Two Trees Cleaning team owners - professional commercial cleaning service providers serving Ventura County businesses in Santa Barbara, Thousand Oaks, and surrounding areas" 
+                alt="Two Trees Cleaning team owners - professional school cleaning service providers serving Ventura County educational facilities" 
                 className="rounded-2xl shadow-xl w-full h-auto" 
                 onError={e => {
-                  // Silently fallback to default image without logging
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
                 }}
               />
@@ -256,14 +342,14 @@ const Commercial = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-              How Our Commercial Service Works
+              How Our School Cleaning Service Works
             </h2>
             <p className="text-xl text-gray-600">
-              Getting professional office cleaning is simple and straightforward
+              Getting your school professionally cleaned is simple
             </p>
           </div>
 
@@ -272,9 +358,9 @@ const Commercial = () => {
               <div className="w-16 h-16 bg-two-trees-green text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 1
               </div>
-              <h3 className="text-xl font-bold text-two-trees-green mb-4">Free Consultation</h3>
+              <h3 className="text-xl font-bold text-two-trees-green mb-4">Free Walkthrough</h3>
               <p className="text-gray-600">
-                We visit your facility to understand your specific needs and provide a customized cleaning plan and quote.
+                We visit your school to assess the facility, understand your needs, and provide a customized cleaning plan and quote.
               </p>
             </div>
 
@@ -282,9 +368,9 @@ const Commercial = () => {
               <div className="w-16 h-16 bg-two-trees-gold text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-xl font-bold text-two-trees-green mb-4">Scheduled Service</h3>
+              <h3 className="text-xl font-bold text-two-trees-green mb-4">After-Hours Cleaning</h3>
               <p className="text-gray-600">
-                Our professional team arrives at your preferred times and cleans your office to our high commercial standards.
+                Our team arrives after school hours and on weekends, cleaning every classroom, hallway, and restroom to our high standards.
               </p>
             </div>
 
@@ -292,30 +378,105 @@ const Commercial = () => {
               <div className="w-16 h-16 bg-two-trees-green text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 3
               </div>
-              <h3 className="text-xl font-bold text-two-trees-green mb-4">Professional Results</h3>
+              <h3 className="text-xl font-bold text-two-trees-green mb-4">Ready for Students</h3>
               <p className="text-gray-600">
-                Your workspace is consistently clean and professional, creating the right environment for productivity and success.
+                Every morning, students and staff walk into a clean, sanitized, and welcoming school — ready to learn.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section with Commercial Reviews */}
+      {/* Scheduling Options */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-two-trees-green mb-4">
+              Flexible Scheduling for Schools
+            </h2>
+            <p className="text-xl text-gray-600">
+              We work around your school's schedule — not the other way around
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            {[
+              { frequency: "Daily", description: "Monday through Friday after dismissal" },
+              { frequency: "Weekly", description: "Deep cleaning on a set day each week" },
+              { frequency: "Summer Break", description: "Full facility deep clean during breaks" },
+              { frequency: "Event Cleanup", description: "Before and after school events" }
+            ].map((option, index) => (
+              <Card key={index} className="border-none shadow-md">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-two-trees-green mb-2">{option.frequency}</h3>
+                  <p className="text-gray-600 text-sm">{option.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Types of Schools */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-            What Our Commercial Clients Say
+            Schools & Educational Facilities We Serve
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            Real reviews from business owners and office managers across Ventura County
+            We clean all types of educational environments across Ventura County
           </p>
 
-          <div className="mt-12">
-            <Badge variant="secondary" className="bg-two-trees-gold/10 text-two-trees-green border-two-trees-gold/20">
-              <Star className="w-4 h-4 mr-1 fill-two-trees-gold text-two-trees-gold" />
-              4.9/5 stars on Google Reviews
-            </Badge>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              "Elementary Schools",
+              "Middle Schools",
+              "High Schools",
+              "Preschools & Daycare Centers",
+              "Private & Charter Schools",
+              "After-School Programs",
+              "Tutoring Centers",
+              "Dance & Music Studios",
+              "Community Learning Centers"
+            ].map((type, index) => (
+              <div key={index} className="flex items-center gap-3 bg-gray-50 px-4 py-3 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0" />
+                <span className="text-gray-700 font-medium">{type}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-4">
+            Serving Schools Across Ventura County
+          </h2>
+          <p className="text-xl text-gray-600 mb-12">
+            We proudly clean schools throughout these communities
+          </p>
+
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { name: "Santa Barbara", href: "/santa-barbara" },
+              { name: "Ventura", href: "/ventura" },
+              { name: "Oxnard", href: "/oxnard" },
+              { name: "Thousand Oaks", href: "/thousand-oaks" },
+              { name: "Camarillo", href: "/camarillo" },
+              { name: "Ojai", href: "/ojai" },
+              { name: "Carpinteria", href: "/carpinteria" },
+              { name: "Montecito", href: "/montecito" }
+            ].map((area) => (
+              <Link
+                key={area.name}
+                to={area.href}
+                className="bg-white px-4 py-3 rounded-lg shadow hover:shadow-md transition-shadow text-two-trees-green hover:text-two-trees-green/80 font-medium"
+              >
+                {area.name}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -324,16 +485,16 @@ const Commercial = () => {
       <section className="py-20 px-4 bg-two-trees-green text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Elevate Your Office Environment?
+            Give Your Students a Cleaner, Healthier School
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join dozens of Ventura County businesses who trust Two Trees Cleaning with their workspace. Get your free consultation today and discover the difference professional commercial cleaning makes.
+            Partner with Two Trees Cleaning and provide a safe, spotless learning environment. Get your free walkthrough and customized quote today.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-4 text-lg font-semibold" onClick={() => handleBookingClick('Final CTA')}>
               <Mail className="w-5 h-5 mr-2" />
-              Email for Quote
+              Get a School Cleaning Quote
             </Button>
             <Button variant="outline-white" size="lg" onClick={handlePhoneClick} className="px-8 py-4 text-lg">
               <Phone className="w-5 h-5 mr-2" />
@@ -343,7 +504,7 @@ const Commercial = () => {
 
           <div className="mt-8 flex items-center justify-center gap-2 text-sm opacity-75">
             <MapPin className="w-4 h-4" />
-            <span>Proudly serving Ventura County businesses since 2020</span>
+            <span>Proudly serving Ventura County schools since 2020</span>
           </div>
         </div>
       </section>
@@ -355,7 +516,7 @@ const Commercial = () => {
             <div>
               <h3 className="text-2xl font-bold text-two-trees-gold mb-4">Two Trees Cleaning</h3>
               <p className="text-gray-300 mb-4">
-                Professional commercial cleaning services for Ventura County businesses.
+                Professional school cleaning services for Ventura County educational facilities.
               </p>
               <div className="flex items-center gap-2">
                 <Star className="w-4 h-4 fill-two-trees-gold text-two-trees-gold" />
