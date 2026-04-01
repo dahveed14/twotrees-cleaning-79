@@ -22,7 +22,7 @@ export const DesktopNavigation = ({ onBookingClick, onPhoneClick }: DesktopNavig
         <NavigationDropdown label="Services" items={services} />
 
         <Link to="/commercial" className="text-gray-700 hover:text-two-trees-green transition-colors">
-          Commercial
+          Schools
         </Link>
         
         <NavigationDropdown label="Service Areas" items={serviceAreas} />

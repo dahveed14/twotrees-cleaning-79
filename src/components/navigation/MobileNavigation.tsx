@@ -65,7 +65,7 @@ export const MobileNavigation = ({
               className="text-gray-700 hover:text-two-trees-green px-4 py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Commercial
+              Schools
             </Link>
             
             {/* Mobile Service Areas */}
