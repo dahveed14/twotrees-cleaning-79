@@ -10,7 +10,7 @@ import { updateMetaTags } from "@/utils/metaTags";
 
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
-  const [showPromoBar, setShowPromoBar] = useState(true);
+  
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
