@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Truck, CheckCircle, Home, HardHat, Calendar, BookOpen, ArrowRight } from "lucide-react";
+import { Phone, Truck, CheckCircle, Home, X, AlertCircle, Star } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
@@ -59,6 +59,60 @@ const MoveInMoveOut = () => {
     { name: "Move In Move Out", url: "https://twotreescleaning.com/services/move-in-move-out" }
   ];
 
+  const kitchenChecklist = [
+    "Inside/outside refrigerator",
+    "Oven and stovetop deep clean",
+    "Inside microwave",
+    "Dishwasher cleaning",
+    "Cabinet fronts and insides",
+    "Sink and faucet sanitizing",
+    "Countertops and backsplash",
+    "Range hood exterior",
+    "Light switches and outlets"
+  ];
+
+  const bathroomChecklist = [
+    "Toilet deep cleaning (inside & out)",
+    "Shower/tub scrubbing",
+    "Tile and grout cleaning",
+    "Mirror and glass fixtures",
+    "Sink and vanity cleaning (exterior)",
+    "Cabinet cleaning inside and out",
+    "Floor sanitization",
+    "Light fixtures and exhaust fan"
+  ];
+
+  const throughoutChecklist = [
+    "Baseboards and trim throughout",
+    "Ceiling fans",
+    "Window sills and tracks",
+    "Light fixtures and switches",
+    "Door frames (full clean)",
+    "Closet cleaning (shelves and rods)",
+    "Vacuum all carpets and rugs",
+    "Mop all hard floors",
+    "Dust all surfaces"
+  ];
+
+  const addOnServices = [
+    { service: "Inside Refrigerator Cleaning", note: "Included in move-out by default" },
+    { service: "Interior Window Cleaning", note: "Available add-on" },
+    { service: "Blind/Shade Deep Cleaning ($50/set)", note: "Available add-on" },
+    { service: "Garage Cleaning", note: "Available add-on" },
+    { service: "Load of Laundry", note: "Available add-on" }
+  ];
+
+  const notIncluded = [
+    "Personal organization or decluttering",
+    "Exterior window cleaning",
+    "Pet waste cleanup",
+    "Biohazard cleanup",
+    "Home repairs or maintenance",
+    "Carpet shampooing or steam cleaning",
+    "Furniture moving",
+    "Outdoor area cleaning"
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SchemaMarkup 
@@ -102,27 +156,6 @@ const MoveInMoveOut = () => {
                 <Phone className="w-5 h-5 mr-2" />
                 (805) 436-5868
               </Button>
-            </div>
-          </div>
-
-          {/* What's Included Link Section */}
-          <div className="mb-16 flex justify-center">
-            <div className="max-w-lg p-6 bg-primary/5 border border-primary/20 rounded-xl text-center">
-              <div className="flex justify-center mb-3">
-                <BookOpen className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold text-primary mb-2">
-                Want to see our move-in/out cleaning checklist?
-              </h3>
-              <p className="text-muted-foreground mb-4 text-sm">
-                Review exactly what's included in our thorough move-in and move-out cleaning services
-              </p>
-              <Link to="/services/whats-included-in-cleaning">
-                <Button variant="outline" className="inline-flex items-center gap-2">
-                  View Comprehensive Cleaning Guide
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
             </div>
           </div>
 
@@ -204,11 +237,14 @@ const MoveInMoveOut = () => {
             </div>
           </div>
 
-          {/* Detailed Checklist */}
+          {/* Comprehensive Move-Out Checklist */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-two-trees-green text-center mb-12">
-              Complete Move-In/Move-Out Checklist
+            <h2 className="text-3xl font-bold text-two-trees-green text-center mb-4">
+              Comprehensive Move-Out Cleaning Checklist
             </h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Every move-out clean includes the following — room by room, surface by surface. No shortcuts.
+            </p>
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="border-none shadow-lg">
                 <CardHeader>
@@ -216,14 +252,7 @@ const MoveInMoveOut = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {[
-                      "Inside/outside refrigerator",
-                      "Oven and stovetop deep clean", 
-                      "Microwave inside and out",
-                      "Dishwasher cleaning",
-                      "Cabinet fronts and insides",
-                      "Sink and faucet sanitizing"
-                    ].map((item, index) => (
+                    {kitchenChecklist.map((item, index) => (
                       <div key={index} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-two-trees-gold flex-shrink-0 mt-1" />
                         <span className="text-gray-700 text-sm">{item}</span>
@@ -239,14 +268,7 @@ const MoveInMoveOut = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {[
-                      "Toilet deep cleaning",
-                      "Shower/tub scrubbing",
-                      "Tile and grout cleaning",
-                      "Mirror and fixtures",
-                      "Cabinet cleaning",
-                      "Floor sanitization"
-                    ].map((item, index) => (
+                    {bathroomChecklist.map((item, index) => (
                       <div key={index} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-two-trees-gold flex-shrink-0 mt-1" />
                         <span className="text-gray-700 text-sm">{item}</span>
@@ -258,18 +280,11 @@ const MoveInMoveOut = () => {
 
               <Card className="border-none shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl text-two-trees-green">Throughout</CardTitle>
+                  <CardTitle className="text-xl text-two-trees-green">Throughout Home</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {[
-                      "Baseboards and trim",
-                      "Window sills and tracks",
-                      "Light fixtures and fans",
-                      "Closet cleaning",
-                      "Door frames and switches",
-                      "Floor deep cleaning"
-                    ].map((item, index) => (
+                    {throughoutChecklist.map((item, index) => (
                       <div key={index} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-two-trees-gold flex-shrink-0 mt-1" />
                         <span className="text-gray-700 text-sm">{item}</span>
@@ -278,6 +293,118 @@ const MoveInMoveOut = () => {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+
+          {/* Move-Out Cleaning Requirements */}
+          <div className="mb-16">
+            <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl p-8">
+              <div className="flex items-start gap-4 mb-6">
+                <AlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
+                <div>
+                  <h2 className="text-2xl font-bold text-amber-800 mb-2">
+                    Move-Out Cleaning Requirements
+                  </h2>
+                  <p className="text-amber-700">
+                    Please read these requirements carefully to ensure your move-out cleaning goes smoothly and avoid cancellation fees.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-white rounded-lg p-6 border border-amber-200">
+                  <h3 className="text-lg font-semibold text-amber-800 mb-3 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" />
+                    The Home Must Be Completely Empty
+                  </h3>
+                  <p className="text-gray-700 mb-3">
+                    For our cleaners to do their best work, the home must be completely empty with no one inside moving or packing. This includes:
+                  </p>
+                  <ul className="text-gray-700 space-y-1 ml-4">
+                    <li>• All cupboards, fridge, and storage spaces must be cleared</li>
+                    <li>• No garbage should remain in the property</li>
+                    <li>• No belongings or furniture should be present</li>
+                    <li>• No movers or other people should be on-site during cleaning</li>
+                  </ul>
+                  <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-700 font-medium text-sm">
+                      ⚠️ If movers are present or belongings remain, our team will leave and a same-day cancellation fee of $79 will apply.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg p-6 border border-amber-200">
+                  <h3 className="text-lg font-semibold text-amber-800 mb-3 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" />
+                    Running Water and Electricity Required
+                  </h3>
+                  <p className="text-gray-700">
+                    The property must have running water and electricity for our cleaning equipment and supplies to work properly.
+                  </p>
+                  <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-700 font-medium text-sm">
+                      ⚠️ Failure to provide water or electricity will result in a cancellation fee of $79.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg p-6 border border-amber-200">
+                  <h3 className="text-lg font-semibold text-amber-800 mb-3">
+                    Important Notes About Our Service
+                  </h3>
+                  <div className="space-y-3 text-gray-700">
+                    <p>• Our cleaners do not remove garbage or clean fridges with items inside</p>
+                    <p>• Two Trees Cleaning is not responsible for cleaning metal vertical blinds</p>
+                    <p>• Horizontal blinds will receive light dusting only</p>
+                    <p>• Deep blind cleaning is available for $50 per set if heavily soiled</p>
+                    <p>• No refunds or price reductions will be provided due to restricted access caused by unprepared spaces</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Available Add-Ons */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-two-trees-green text-center mb-8">
+              Available Add-Ons
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Customize your move-out clean with these additional services. Pricing available upon request.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {addOnServices.map((addon, i) => (
+                <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                  <Star className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-sm">{addon.service}</p>
+                    <p className="text-xs text-gray-500">{addon.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* What We Don't Include */}
+          <div className="mb-16 bg-red-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-red-700 text-center mb-8">
+              What We Don't Include
+            </h2>
+            <p className="text-center text-red-700/80 mb-6">
+              We believe in complete transparency. The following are outside the scope of all Two Trees Cleaning services:
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {notIncluded.map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-red-800">{item}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-red-700 text-sm">
+                Need something not on the list? <Link to="/contact" className="underline hover:no-underline font-medium">Contact us</Link> — we're happy to discuss custom requests.
+              </p>
             </div>
           </div>
 
