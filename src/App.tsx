@@ -98,8 +98,9 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/contact-thank-you" element={<ContactThankYou />} />
           {/* Service Routes */}
-          <Route path="/services/regular-house-cleaning" element={<RegularHouseCleaning />} />
-          <Route path="/services/deep-cleaning" element={<DeepCleaning />} />
+          <Route path="/services/essential-clean" element={<EssentialClean />} />
+          <Route path="/services/signature-clean" element={<SignatureClean />} />
+          <Route path="/services/total-deep-clean" element={<TotalDeepClean />} />
           <Route path="/services/move-in-move-out" element={<MoveInMoveOut />} />
           <Route path="/services/post-construction" element={<PostConstruction />} />
           <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />

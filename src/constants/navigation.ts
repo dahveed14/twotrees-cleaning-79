@@ -13,10 +13,10 @@ export const serviceAreas = [
 export const services = [
   { name: "All Services", href: "/services" },
   { name: "What's Included in Cleaning", href: "/services/whats-included-in-cleaning" },
-  { name: "Regular House Cleaning", href: "/services/regular-house-cleaning" },
-  { name: "Deep Cleaning", href: "/services/deep-cleaning" },
+  { name: "Essential Clean", href: "/services/essential-clean" },
+  { name: "Signature Clean", href: "/services/signature-clean" },
+  { name: "Total Deep Clean", href: "/services/total-deep-clean" },
   { name: "Move-In/Move-Out", href: "/services/move-in-move-out" },
   { name: "Post-Construction", href: "/services/post-construction" },
-  { name: "Commercial Cleaning", href: "/services/commercial-cleaning" },
   { name: "Vacation Rental", href: "/services/vacation-rental" },
 ];
