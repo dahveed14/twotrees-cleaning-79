@@ -85,7 +85,7 @@ const WhatsIncludedInCleaning = () => {
     { visit: 1, area: "Throughout Home", item: "Baseboards" },
     { visit: 2, area: "Throughout Home", item: "Ceiling Fans" },
     { visit: 3, area: "Kitchen", item: "Cabinet Fronts (Full Clean)" },
-    { visit: 4, area: "Bathrooms", item: "Tile & Grout Scrubbing" },
+    { visit: 4, area: "Bathrooms", item: "Shower Tile & Grout Scrubbing" },
     { visit: 5, area: "Throughout Home", item: "Window Sills" },
     { visit: 6, area: "Throughout Home", item: "Light Fixtures" },
     { visit: 7, area: "Throughout Home", item: "Door Frames (Full Clean)" },
