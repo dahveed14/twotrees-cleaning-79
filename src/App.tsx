@@ -46,8 +46,9 @@ import ThankYou from "./pages/ThankYou";
 import ContactThankYou from "./pages/ContactThankYou";
 import CRMTest from "./pages/CRMTest";
 import NotFound from "./pages/NotFound";
-import RegularHouseCleaning from "./pages/services/RegularHouseCleaning";
-import DeepCleaning from "./pages/services/DeepCleaning";
+import EssentialClean from "./pages/services/EssentialClean";
+import SignatureClean from "./pages/services/SignatureClean";
+import TotalDeepClean from "./pages/services/TotalDeepClean";
 import MoveInMoveOut from "./pages/services/MoveInMoveOut";
 import PostConstruction from "./pages/services/PostConstruction";
 import CommercialCleaning from "./pages/services/CommercialCleaning";
@@ -97,8 +98,9 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/contact-thank-you" element={<ContactThankYou />} />
           {/* Service Routes */}
-          <Route path="/services/regular-house-cleaning" element={<RegularHouseCleaning />} />
-          <Route path="/services/deep-cleaning" element={<DeepCleaning />} />
+          <Route path="/services/essential-clean" element={<EssentialClean />} />
+          <Route path="/services/signature-clean" element={<SignatureClean />} />
+          <Route path="/services/total-deep-clean" element={<TotalDeepClean />} />
           <Route path="/services/move-in-move-out" element={<MoveInMoveOut />} />
           <Route path="/services/post-construction" element={<PostConstruction />} />
           <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />

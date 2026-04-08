@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Home, Sparkles, Truck, HardHat, Building, Key, BookOpen, ArrowRight } from "lucide-react";
+import { Phone, Home, Sparkles, Truck, HardHat, Key, BookOpen, ArrowRight } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
@@ -45,18 +45,25 @@ const Services = () => {
 
   const services = [
     {
-      title: "Regular House Cleaning",
-      description: "Weekly, bi-weekly, and monthly cleaning services to maintain your home's cleanliness.",
+      title: "Essential Clean",
+      description: "Reliable upkeep for tidy homes — all core tasks done consistently, every visit.",
       icon: Home,
       price: "Starting at $140",
-      link: "/services/regular-house-cleaning"
+      link: "/services/essential-clean"
     },
     {
-      title: "Deep Cleaning",
-      description: "Comprehensive top-to-bottom cleaning for spring cleaning or first-time service.",
+      title: "Signature Clean",
+      description: "Essential Clean + one rotating deep clean item per visit. Most popular.",
+      icon: Sparkles,
+      price: "Starting at $160",
+      link: "/services/signature-clean"
+    },
+    {
+      title: "Total Deep Clean",
+      description: "Every surface, every detail — the complete home reset in one visit.",
       icon: Sparkles,
       price: "Starting at $220",
-      link: "/services/deep-cleaning"
+      link: "/services/total-deep-clean"
     },
     {
       title: "Move-In/Move-Out Cleaning",
@@ -71,13 +78,6 @@ const Services = () => {
       icon: HardHat,
       price: "Starting at $350",
       link: "/services/post-construction"
-    },
-    {
-      title: "Commercial Cleaning",
-      description: "Professional cleaning services for offices and businesses.",
-      icon: Building,
-      price: "Custom Quote",
-      link: "/services/commercial-cleaning"
     },
     {
       title: "Vacation Rental Cleaning",
