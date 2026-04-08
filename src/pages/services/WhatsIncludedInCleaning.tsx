@@ -123,7 +123,7 @@ const WhatsIncludedInCleaning = () => {
     { task: "Baseboards", essential: "not", signature: "visit1", deep: "included" },
     { task: "Ceiling fans", essential: "not", signature: "visit2", deep: "included" },
     { task: "Cabinet fronts (full)", essential: "not", signature: "visit3", deep: "included" },
-    { task: "Tile & grout scrubbing", essential: "not", signature: "visit4", deep: "included" },
+    { task: "Shower tile & grout scrubbing", essential: "not", signature: "visit4", deep: "included" },
     { task: "Window sills", essential: "not", signature: "visit5", deep: "included" },
     { task: "Light fixtures", essential: "not", signature: "visit6", deep: "included" },
     { task: "Door frames (full)", essential: "not", signature: "visit7", deep: "included" },
