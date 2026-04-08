@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Home, Sparkles, Truck, HardHat, Building, Key, BookOpen, ArrowRight } from "lucide-react";
+import { Phone, Home, Sparkles, Truck, HardHat, Key, BookOpen, ArrowRight } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
