@@ -85,7 +85,7 @@ const WhatsIncludedInCleaning = () => {
     { visit: 1, area: "Throughout Home", item: "Baseboards" },
     { visit: 2, area: "Throughout Home", item: "Ceiling Fans" },
     { visit: 3, area: "Kitchen", item: "Cabinet Fronts (Full Clean)" },
-    { visit: 4, area: "Bathrooms", item: "Tile & Grout Scrubbing" },
+    { visit: 4, area: "Bathrooms", item: "Shower Tile & Grout Scrubbing" },
     { visit: 5, area: "Throughout Home", item: "Window Sills" },
     { visit: 6, area: "Throughout Home", item: "Light Fixtures" },
     { visit: 7, area: "Throughout Home", item: "Door Frames (Full Clean)" },
@@ -123,7 +123,7 @@ const WhatsIncludedInCleaning = () => {
     { task: "Baseboards", essential: "not", signature: "visit1", deep: "included" },
     { task: "Ceiling fans", essential: "not", signature: "visit2", deep: "included" },
     { task: "Cabinet fronts (full)", essential: "not", signature: "visit3", deep: "included" },
-    { task: "Tile & grout scrubbing", essential: "not", signature: "visit4", deep: "included" },
+    { task: "Shower tile & grout scrubbing", essential: "not", signature: "visit4", deep: "included" },
     { task: "Window sills", essential: "not", signature: "visit5", deep: "included" },
     { task: "Light fixtures", essential: "not", signature: "visit6", deep: "included" },
     { task: "Door frames (full)", essential: "not", signature: "visit7", deep: "included" },
@@ -207,7 +207,7 @@ const WhatsIncludedInCleaning = () => {
                 </div>
                 <div className="pt-4 border-t">
                   <p className="text-xs text-muted-foreground italic">
-                    Baseboards, ceiling fans, cabinet fronts, tile & grout, window sills, light fixtures, door frames, light switches, and inside oven are not included. These are covered in the Signature Clean rotation or the Total Deep Clean.
+                    Baseboards, ceiling fans, cabinet fronts, shower tile & grout, window sills, light fixtures, door frames, light switches, and inside oven are not included. These are covered in the Signature Clean rotation or the Total Deep Clean.
                   </p>
                 </div>
                 <Button 
