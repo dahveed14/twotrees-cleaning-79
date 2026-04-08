@@ -207,7 +207,7 @@ const WhatsIncludedInCleaning = () => {
                 </div>
                 <div className="pt-4 border-t">
                   <p className="text-xs text-muted-foreground italic">
-                    Baseboards, ceiling fans, cabinet fronts, tile & grout, window sills, light fixtures, door frames, light switches, and inside oven are not included. These are covered in the Signature Clean rotation or the Total Deep Clean.
+                    Baseboards, ceiling fans, cabinet fronts, shower tile & grout, window sills, light fixtures, door frames, light switches, and inside oven are not included. These are covered in the Signature Clean rotation or the Total Deep Clean.
                   </p>
                 </div>
                 <Button 
