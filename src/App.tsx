@@ -43,6 +43,7 @@ import CarpinteriaPostConstruction from "./pages/CarpinteriaPostConstruction";
 import WestlakeVillagePostConstruction from "./pages/WestlakeVillagePostConstruction";
 import SantaBarbaraPostConstruction from "./pages/SantaBarbaraPostConstruction";
 import ThankYou from "./pages/ThankYou";
+import Van from "./pages/Van";
 import ContactThankYou from "./pages/ContactThankYou";
 import CRMTest from "./pages/CRMTest";
 import NotFound from "./pages/NotFound";
@@ -97,6 +98,7 @@ const App = () => (
           <Route path="/westlake-village" element={<WestlakeVillage />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/contact-thank-you" element={<ContactThankYou />} />
+          <Route path="/van" element={<Van />} />
           {/* Service Routes */}
           <Route path="/services/essential-clean" element={<EssentialClean />} />
           <Route path="/services/signature-clean" element={<SignatureClean />} />

@@ -52,6 +52,7 @@ const routesToPrerender = [
   "/westlake-village",
   "/thank-you",
   "/contact-thank-you",
+  "/van",
   // Service Routes
   "/services/regular-house-cleaning",
   "/services/deep-cleaning",
