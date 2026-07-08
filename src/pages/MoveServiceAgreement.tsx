@@ -57,20 +57,6 @@ const MoveServiceAgreement = () => {
           </div>
         </section>
 
-        {/* Table of Contents */}
-        <section className="py-8 px-4 bg-slate-50 border-b border-gray-200">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-lg font-bold text-two-trees-green mb-4">Quick Links</h2>
-            <div className="grid md:grid-cols-2 gap-4 text-sm">
-              <a href="#whats-included" className="text-two-trees-green hover:underline">→ What's Included</a>
-              <a href="#whats-not-included" className="text-two-trees-green hover:underline">→ What's Not Included</a>
-              <a href="#requirements" className="text-two-trees-green hover:underline">→ Property Requirements</a>
-              <a href="#preparation" className="text-two-trees-green hover:underline">→ How to Prepare</a>
-              <a href="#add-ons" className="text-two-trees-green hover:underline">→ Add-Ons Menu</a>
-              <a href="#terms" className="text-two-trees-green hover:underline">→ Terms & Conditions</a>
-            </div>
-          </div>
-        </section>
 
         {/* What's Included */}
         <section id="whats-included" className="py-16 px-4">
