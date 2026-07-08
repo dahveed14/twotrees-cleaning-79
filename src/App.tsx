@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
@@ -54,7 +55,6 @@ import TotalDeepClean from "./pages/services/TotalDeepClean";
 import MoveInMoveOut from "./pages/services/MoveInMoveOut";
 import PostConstruction from "./pages/services/PostConstruction";
 import CommercialCleaning from "./pages/services/CommercialCleaning";
-import VacationRental from "./pages/services/VacationRental";
 import WhatsIncludedInCleaning from "./pages/services/WhatsIncludedInCleaning";
 import Services from "./pages/Services";
 import Book from "./pages/Book";
@@ -107,7 +107,6 @@ const App = () => (
           <Route path="/services/move-in-move-out" element={<MoveInMoveOut />} />
           <Route path="/services/post-construction" element={<PostConstruction />} />
           <Route path="/services/commercial-cleaning" element={<CommercialCleaning />} />
-          <Route path="/services/vacation-rental" element={<VacationRental />} />
           <Route path="/services/whats-included-in-cleaning" element={<WhatsIncludedInCleaning />} />
           {/* Location-specific service routes */}
           <Route path="/thousand-oaks/move-out-cleaning" element={<ThousandOaksMoveOut />} />
@@ -132,6 +131,10 @@ const App = () => (
          <Route path="/crm-test" element={<CRMTest />} />
           <Route path="/move-service-agreement" element={<MoveServiceAgreement />} />
            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* 301 Redirects for removed/renamed pages */}
+          <Route path="/services/regular-house-cleaning" element={<Navigate to="/services/essential-clean" replace />} />
+          <Route path="/services/deep-cleaning" element={<Navigate to="/services/total-deep-clean" replace />} />
+          <Route path="/services/vacation-rental" element={<Navigate to="/services" replace />} />
            <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
