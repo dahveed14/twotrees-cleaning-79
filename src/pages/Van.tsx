@@ -199,6 +199,16 @@ const Van = () => {
                 />
               </div>
             </div>
+            {/* CTA after reviews */}
+            <div className="mt-8 text-center">
+              <Button
+                size="lg"
+                className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-6 text-lg font-semibold"
+                onClick={handleQuoteClick}
+              >
+                Book Now
+              </Button>
+            </div>
           </div>
         </section>
 
