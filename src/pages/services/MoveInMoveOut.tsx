@@ -95,24 +95,26 @@ const MoveInMoveOut = () => {
   ];
 
   const addOnServices = [
-    { service: "Inside Refrigerator Cleaning", note: "Included in move-out by default" },
-    { service: "Interior Window Cleaning", note: "Available add-on" },
-    { service: "Blind/Shade Deep Cleaning ($50/set)", note: "Available add-on" },
-    { service: "Garage Cleaning", note: "Available add-on" },
-    { service: "Load of Laundry", note: "Available add-on" }
+    { service: "Interior Window Cleaning", note: "$5 per pane" },
+    { service: "Blind Deep Cleaning (Any Kind)", note: "$30–$50 per set" },
+    { service: "Shutter Cleaning", note: "$25 per set" },
+    { service: "Garage Sweep", note: "$35" },
+    { service: "Garage Deep Clean", note: "$75" },
+    { service: "Exterior Laundry Room", note: "$25" }
   ];
 
   const notIncluded = [
-    "Personal organization or decluttering",
-    "Exterior window cleaning",
-    "Pet waste cleanup",
-    "Biohazard cleanup",
-    "Home repairs or maintenance",
+    "Blinds, windows, or shutters (add-ons only)",
+    "Exterior structures (garage, sheds, detached units) — unless add-on",
+    "Outdoor areas (patios, balconies, walkways)",
+    "Wall cleaning or stain removal",
+    "Ceiling cleaning",
     "Carpet shampooing or steam cleaning",
-    "Furniture moving",
-    "Outdoor area cleaning"
+    "Wall hole repair or paint touch-up",
+    "Personal item removal or decluttering",
+    "Pet waste or biohazard cleanup",
+    "Furniture moving"
   ];
-
   return (
     <div className="min-h-screen bg-white">
       <SchemaMarkup 
