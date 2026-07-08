@@ -16,7 +16,8 @@ const QUOTE_BASE_URL = "https://optin.twotreescleaning.com/complete-estimate-for
 const PHONE_NUMBER = "805-436-5868";
 const PHONE_HREF = `tel:${PHONE_NUMBER}`;
 
-// Calculate days until end of month
+// Calculate days until end of month - offer auto-renews every month
+// No manual updates needed: expires end of current month, resets start of next month
 const getDaysUntilEndOfMonth = () => {
   const now = new Date();
   const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
