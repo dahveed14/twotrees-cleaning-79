@@ -39,7 +39,7 @@ const MoveServiceAgreement = () => {
         <link rel="canonical" href="https://twotreescleaning.com/move-service-agreement" />
       </Helmet>
 
-      <Navigation onBookingClick={() => {}} onPhoneClick={handlePhoneClick} />
+      
 
       <main>
         {/* Header */}
