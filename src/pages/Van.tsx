@@ -166,7 +166,7 @@ const Van = () => {
             </h2>
 
             {/* Team Photo */}
-            <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
+            <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
               <img
                 src="/lovable-uploads/WhatsApp%20Image%202026-07-07%20at%2008.12.00.jpeg"
                 alt="Two Trees Cleaning team in front of the van"
@@ -174,21 +174,26 @@ const Van = () => {
               />
             </div>
 
+            {/* Photo Caption */}
+            <p className="text-center text-gray-600 mb-12 text-lg font-medium">
+              Meet your cleaners: Lili, Vero, and Angelica
+            </p>
+
             {/* Reviews Widget */}
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm">
               <h3 className="text-2xl font-bold text-two-trees-green mb-6 text-center">
                 What Our Customers Say
               </h3>
-              <div className="lc_reviews_widget_container">
+              <div className="lc_reviews_widget_container overflow-y-auto max-h-96 md:max-h-full">
                 <iframe
                   className="lc_reviews_widget"
                   src="https://links.twotreescleaning.com/reputation/widgets/review_widget/ntG4xxs61YZCKPtne4SP"
                   frameBorder="0"
-                  scrolling="no"
+                  scrolling="yes"
                   style={{
                     minWidth: "100%",
                     width: "100%",
-                    height: "600px",
+                    minHeight: "500px",
                   }}
                   title="Two Trees Cleaning Reviews"
                 />
