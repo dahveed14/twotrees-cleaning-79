@@ -162,10 +162,6 @@ export const Footer = ({ location = 'ventura' }: FooterProps) => {
               <Link to="/services/whats-included-in-cleaning" className="block hover:text-two-trees-gold transition-colors font-medium">
                 What's Included in Cleaning
               </Link>
-                Regular House Cleaning
-              </Link>
-                Deep Cleaning
-              </Link>
               <Link to="/services/move-in-move-out" className="block hover:text-two-trees-gold transition-colors">
                 Move-In/Move-Out Cleaning
               </Link>
@@ -174,8 +170,6 @@ export const Footer = ({ location = 'ventura' }: FooterProps) => {
               </Link>
               <Link to="/services/commercial-cleaning" className="block hover:text-two-trees-gold transition-colors">
                 Commercial Cleaning
-              </Link>
-                Vacation Rental Cleaning
               </Link>
               <p className="text-two-trees-gold font-medium pt-2">Starting at $140</p>
             </div>
