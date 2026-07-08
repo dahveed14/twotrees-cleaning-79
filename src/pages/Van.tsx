@@ -168,7 +168,7 @@ const Van = () => {
             {/* Team Photo */}
             <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://twotreescleaning.com/lovable-uploads/van-team.jpg"
+                src="/lovable-uploads/WhatsApp%20Image%202026-07-07%20at%2008.12.00.jpeg"
                 alt="Two Trees Cleaning team in front of the van"
                 className="w-full h-auto object-cover"
               />
