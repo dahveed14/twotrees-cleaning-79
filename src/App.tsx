@@ -47,6 +47,7 @@ import Van from "./pages/Van";
 import ContactThankYou from "./pages/ContactThankYou";
 import CRMTest from "./pages/CRMTest";
 import NotFound from "./pages/NotFound";
+import MoveServiceAgreement from "./pages/MoveServiceAgreement";
 import EssentialClean from "./pages/services/EssentialClean";
 import SignatureClean from "./pages/services/SignatureClean";
 import TotalDeepClean from "./pages/services/TotalDeepClean";
@@ -129,6 +130,7 @@ const App = () => (
          <Route path="/carpinteria/move-out-cleaning" element={<CarpinteriaMoveOut />} />
          <Route path="/carpinteria/post-construction-cleaning" element={<CarpinteriaPostConstruction />} />
          <Route path="/crm-test" element={<CRMTest />} />
+          <Route path="/move-service-agreement" element={<MoveServiceAgreement />} />
            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
            <Route path="*" element={<NotFound />} />
         </Routes>
