@@ -1,10 +1,8 @@
 import { useEffect, useState, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Phone, Shield, Award, Calendar, CheckCircle, Sparkles, MapPin } from "lucide-react";
+import { Star, Phone, ShieldCheck, Flame, Clock, CheckCircle2 } from "lucide-react";
 import { trackPhoneClick, trackBookingClick, trackPageView } from "@/utils/analytics";
 import { updateMetaTags } from "@/utils/metaTags";
 
@@ -18,14 +16,22 @@ const QUOTE_BASE_URL = "https://optin.twotreescleaning.com/complete-estimate-for
 const PHONE_NUMBER = "805-436-5868";
 const PHONE_HREF = `tel:${PHONE_NUMBER}`;
 
+// Calculate days until end of month
+const getDaysUntilEndOfMonth = () => {
+  const now = new Date();
+  const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+  const daysLeft = Math.ceil((lastDay.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  return Math.max(0, daysLeft);
+};
+
 const Van = () => {
   const [search, setSearch] = useState("");
+  const [daysLeft, setDaysLeft] = useState(getDaysUntilEndOfMonth());
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const urlParams = new URLSearchParams(window.location.search);
-    // Default to the van-wrap UTMs if none are present, but preserve any overrides
     const merged = new URLSearchParams();
     Object.entries(VAN_UTMS).forEach(([key, value]) => {
       if (!urlParams.has(key)) {
@@ -38,19 +44,17 @@ const Van = () => {
     setSearch(merged.toString());
 
     updateMetaTags({
-      title: "Saw Us Around Town? Get a Free House Cleaning Quote | Two Trees Cleaning",
+      title: "FREE Oven Cleaning + First Cleaning | Two Trees Cleaning QR Offer",
       description:
-        "Scanned our van? Welcome! Two Trees Cleaning serves Ventura & Santa Barbara Counties. Book professional house cleaning online or call (805) 436-5868.",
+        "Scanned our van? Get a FREE oven cleaning with your first house cleaning service. Ventura & Santa Barbara Counties. Offer expires end of month.",
       url: "https://twotreescleaning.com/van",
       image: "https://twotreescleaning.com/og-image.jpg",
       keywords: [
-        "house cleaning Ventura County",
-        "house cleaning Santa Barbara County",
-        "professional cleaning service",
-        "van wrap QR code",
-        "Two Trees Cleaning",
-        "cleaning quote Ventura",
-        "home cleaning service",
+        "free oven cleaning",
+        "house cleaning offer",
+        "Ventura cleaning service",
+        "free first cleaning",
+        "two trees cleaning",
       ],
     });
 
@@ -76,153 +80,191 @@ const Van = () => {
     window.location.href = PHONE_HREF;
   };
 
-  const handleBookingClick = (location: string) => {
-    trackBookingClick(location);
-    window.open(quoteUrl, "_blank");
-  };
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       <Helmet>
-        <title>Saw Us Around Town? Get a Free House Cleaning Quote | Two Trees Cleaning</title>
+        <title>FREE Oven Cleaning + First Cleaning | Two Trees Cleaning QR Offer</title>
         <meta
           name="description"
-          content="Scanned our van? Welcome! Two Trees Cleaning serves Ventura & Santa Barbara Counties. Book professional house cleaning online or call (805) 436-5868."
+          content="Scanned our van? Get a FREE oven cleaning with your first house cleaning service. Ventura & Santa Barbara Counties. Offer expires end of month."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://twotreescleaning.com/van" />
       </Helmet>
 
-      <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
+      <main className="bg-gradient-to-b from-two-trees-green to-two-trees-green/95">
+        {/* URGENT OFFER BANNER - Mobile First */}
+        <section className="relative pt-8 pb-6 px-4 text-center">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-two-trees-gold/10 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -z-10"></div>
 
-      <main>
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-50 to-white py-16 md:py-24 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="bg-two-trees-gold text-two-trees-green font-medium mb-6">
-              <Sparkles className="w-3.5 h-3.5 mr-1.5" />
-              Spotted on the Road
+          {/* Urgency Badge */}
+          <div className="flex justify-center mb-4">
+            <Badge className="bg-two-trees-gold text-two-trees-green font-bold text-sm px-4 py-2">
+              <Clock className="w-3.5 h-3.5 mr-1.5" />
+              {daysLeft} days left — expires end of month
             </Badge>
+          </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-two-trees-green leading-tight mb-6">
-              Saw Us Around Town? <br className="hidden md:block" />
-              Let's Get Your Home Sparkling.
-            </h1>
+          {/* Main Headline */}
+          <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-4">
+            <span className="block mb-2">FREE</span>
+            <span className="bg-two-trees-gold text-two-trees-green px-3 py-2 rounded-lg inline-block">
+              Oven Cleaning
+            </span>
+          </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Thanks for scanning our van! Two Trees Cleaning is a locally trusted, licensed & insured
-              cleaning team serving Ventura and Santa Barbara Counties. Get your time back with a
-              spotless home — starting at just $140.
-            </p>
+          <p className="text-white text-lg font-semibold mb-2 mt-4">
+            With Your First House Cleaning
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <Button
-                size="lg"
-                className="bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-6 text-lg font-semibold"
-                onClick={handleQuoteClick}
-              >
-                Get a Free Quote
-              </Button>
-              <Button
-                variant="outline-green"
-                size="lg"
-                className="px-8 py-6 text-lg"
-                onClick={handlePhoneClick}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call (805) 436-5868
-              </Button>
-            </div>
+          <p className="text-white/90 text-base mb-8 max-w-sm mx-auto">
+            Saw our van? Now's the perfect time. Get your home sparkling — plus a free professional oven cleaning.
+          </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-600">
-              <div className="flex items-center gap-1.5">
-                <Star className="w-4 h-4 fill-two-trees-gold text-two-trees-gold" />
-                <span className="font-semibold">4.9/5 stars</span>
-                <span>from 200+ reviews</span>
+          {/* Primary CTA */}
+          <div className="flex flex-col gap-3 mb-6">
+            <Button
+              size="lg"
+              className="w-full bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-7 text-lg font-bold rounded-xl shadow-lg"
+              onClick={handleQuoteClick}
+            >
+              Claim Your Free Offer
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full text-white border-white hover:bg-white/10 px-8 py-7 text-lg font-semibold rounded-xl"
+              onClick={handlePhoneClick}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Call Now: (805) 436-5868
+            </Button>
+          </div>
+
+          {/* Social Proof - Compact */}
+          <div className="bg-white/10 backdrop-blur rounded-lg py-3 px-4 inline-block">
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-two-trees-gold text-two-trees-gold" />
+                ))}
               </div>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <div className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4 text-two-trees-green" />
-                <span>Licensed & Insured</span>
-              </div>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <div className="flex items-center gap-1.5">
-                <Award className="w-4 h-4 text-two-trees-green" />
-                <span>As featured in Montecito Journal</span>
-              </div>
+              <span className="text-white font-semibold">4.9/5</span>
+              <span className="text-white/80 text-sm">200+ reviews</span>
             </div>
           </div>
         </section>
 
-        {/* Quick benefits */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6 rounded-2xl bg-gray-50">
-                <div className="w-14 h-14 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="w-7 h-7 text-two-trees-green" />
-                </div>
-                <h3 className="text-xl font-bold text-two-trees-green mb-2">Easy Online Booking</h3>
-                <p className="text-gray-600">
-                  Get a personalized quote in minutes. No phone tag, no hassle.
-                </p>
-              </div>
-
-              <div className="text-center p-6 rounded-2xl bg-gray-50">
-                <div className="w-14 h-14 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-7 h-7 text-two-trees-green" />
-                </div>
-                <h3 className="text-xl font-bold text-two-trees-green mb-2">Detailed 72-Point Clean</h3>
-                <p className="text-gray-600">
-                  We clean the spots others miss — baseboards, ceiling fans, inside appliances, and more.
-                </p>
-              </div>
-
-              <div className="text-center p-6 rounded-2xl bg-gray-50">
-                <div className="w-14 h-14 bg-two-trees-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-7 h-7 text-two-trees-green" />
-                </div>
-                <h3 className="text-xl font-bold text-two-trees-green mb-2">Local & Reliable</h3>
-                <p className="text-gray-600">
-                  Serving Ventura, Oxnard, Camarillo, Thousand Oaks, Santa Barbara, and everywhere in between.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-16 px-4 bg-two-trees-green">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready for a Cleaner Home?
+        {/* OFFER DETAILS & T&Cs */}
+        <section className="bg-white rounded-t-3xl mt-8 px-4 py-8">
+          {/* What's Included */}
+          <div className="max-w-md mx-auto mb-8">
+            <h2 className="text-2xl font-bold text-two-trees-green mb-6 text-center">
+              Here's What You Get
             </h2>
-            <p className="text-lg text-white/90 mb-8">
-              Mention you saw our van and get your first cleaning scheduled today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green px-8 py-6 text-lg font-semibold"
-                onClick={handleQuoteClick}
-              >
-                Get a Free Quote
-              </Button>
-              <Button
-                variant="outline-white"
-                size="lg"
-                className="px-8 py-6 text-lg"
-                onClick={handlePhoneClick}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call (805) 436-5868
-              </Button>
+
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0">
+                  <Flame className="w-6 h-6 text-two-trees-gold mt-1" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Free Professional Oven Cleaning</h3>
+                  <p className="text-sm text-gray-600">Deep cleaned, degreased, & sparkling</p>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <div className="flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-two-trees-green mt-1" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Complete House Cleaning</h3>
+                  <p className="text-sm text-gray-600">Starting at just $140 for first-time customers</p>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <div className="flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6 text-two-trees-green mt-1" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Licensed & Insured</h3>
+                  <p className="text-sm text-gray-600">Professional, trustworthy, local team</p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          {/* Terms & Conditions */}
+          <div className="bg-gray-50 rounded-lg p-4 mb-8 max-w-md mx-auto">
+            <h3 className="font-bold text-gray-900 mb-3 text-sm">Terms & Conditions</h3>
+            <ul className="text-xs text-gray-600 space-y-2">
+              <li>✓ First-time customers only</li>
+              <li>✓ Valid through end of {new Date().toLocaleString("default", { month: "long" })}</li>
+              <li>✓ Must mention "Van QR Code" and "Free Oven Cleaning" in booking form notes</li>
+              <li>✓ Cannot be combined with other offers</li>
+            </ul>
+          </div>
+
+          {/* Secondary CTA */}
+          <div className="flex flex-col gap-2 max-w-md mx-auto mb-6">
+            <Button
+              size="lg"
+              className="w-full bg-two-trees-green hover:bg-two-trees-green/90 text-white px-8 py-6 text-lg font-bold rounded-xl"
+              onClick={handleQuoteClick}
+            >
+              Book Your Free Offer
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full border-two-trees-green text-two-trees-green hover:bg-two-trees-green/5 px-8 py-6 text-lg font-semibold rounded-xl"
+              onClick={handlePhoneClick}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              (805) 436-5868
+            </Button>
+          </div>
+
+          {/* Why Choose Us - Quick List */}
+          <div className="max-w-md mx-auto mt-10 pt-8 border-t border-gray-200">
+            <h3 className="font-bold text-two-trees-green mb-4 text-center">Why People Love Us</h3>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-2">
+                <span className="text-two-trees-gold font-bold">✓</span>
+                <span className="text-gray-600"><strong>Reliable:</strong> We show up on time, every time</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-two-trees-gold font-bold">✓</span>
+                <span className="text-gray-600"><strong>Detailed:</strong> We notice what others miss</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-two-trees-gold font-bold">✓</span>
+                <span className="text-gray-600"><strong>Local:</strong> Serving Ventura & Santa Barbara for 4+ years</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer CTA */}
+          <div className="max-w-md mx-auto mt-10 pt-6 border-t border-gray-200 text-center">
+            <p className="text-gray-600 text-sm mb-4">
+              Questions? Call us anytime — we're here to help.
+            </p>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full border-two-trees-green text-two-trees-green hover:bg-two-trees-green/5 px-8 py-5 font-semibold rounded-xl"
+              onClick={handlePhoneClick}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Call (805) 436-5868
+            </Button>
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };
