@@ -59,6 +59,19 @@ const Van = () => {
     });
 
     trackPageView("Van Wrap Landing Page");
+
+    // Load the review widget script
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://links.twotreescleaning.com/reputation/assets/review-widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
   }, []);
 
   const quoteUrl = useMemo(() => {
@@ -140,6 +153,45 @@ const Van = () => {
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-two-trees-green" />
                 <span>Licensed & Insured</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof - Team & Reviews */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-two-trees-green text-center mb-12">
+              Meet the Team
+            </h2>
+
+            {/* Team Photo */}
+            <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="https://twotreescleaning.com/lovable-uploads/van-team.jpg"
+                alt="Two Trees Cleaning team in front of the van"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Reviews Widget */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="text-2xl font-bold text-two-trees-green mb-6 text-center">
+                What Our Customers Say
+              </h3>
+              <div className="lc_reviews_widget_container">
+                <iframe
+                  className="lc_reviews_widget"
+                  src="https://links.twotreescleaning.com/reputation/widgets/review_widget/ntG4xxs61YZCKPtne4SP"
+                  frameBorder="0"
+                  scrolling="no"
+                  style={{
+                    minWidth: "100%",
+                    width: "100%",
+                    height: "600px",
+                  }}
+                  title="Two Trees Cleaning Reviews"
+                />
               </div>
             </div>
           </div>
