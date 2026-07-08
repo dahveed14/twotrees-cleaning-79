@@ -97,7 +97,7 @@ const MoveInMoveOut = () => {
   const addOnServices = [
     { service: "Interior Window Cleaning", note: "$5 per pane" },
     { service: "Blind Deep Cleaning (Any Kind)", note: "$30–$50 per set" },
-    { service: "Shutter Cleaning", note: "$25 per set" },
+    { service: "Shutter Cleaning", note: "$10 per set" },
     { service: "Garage Sweep", note: "$35" },
     { service: "Garage Deep Clean", note: "$75" },
     { service: "Exterior Laundry Room", note: "$25" }
