@@ -197,7 +197,7 @@ const MoveServiceAgreement = () => {
             <div className="bg-slate-50 p-6 rounded-lg mb-10">
               <h4 className="font-bold text-two-trees-green mb-2">What We Mean By "Cleaning"</h4>
               <p className="text-sm text-gray-700 leading-relaxed">
-                For wipe-down surfaces (baseboards, door frames, trim, walls): cleaning means dust removal with attention to top edges where dust collects, followed by a wipe-down with a damp cloth and all-purpose cleaner to lift surface grime. Marks that come off with a normal single wipe pass come off. Anything beyond that is excluded from standard scope.
+                For wipe-down surfaces (baseboards, door frames, trim): cleaning means dust removal with attention to top edges where dust collects, followed by a wipe-down with a damp cloth and all-purpose cleaner to lift surface grime. Marks that come off with a normal single wipe pass come off. Anything beyond that is excluded from standard scope.
               </p>
             </div>
           </div>
@@ -213,12 +213,21 @@ const MoveServiceAgreement = () => {
             <p className="text-gray-700 mb-6">
               The following are explicitly excluded from all move-in and move-out cleanings unless specifically purchased as an add-on. This list prevents scope disputes.
             </p>
+
+            {/* Special Callout for Blinds/Windows/Shutters */}
+            <div className="mb-8 p-4 bg-red-100 border-2 border-red-600 rounded">
+              <h3 className="font-bold text-red-900 mb-2">⚠️ IMPORTANT: Blinds, Windows & Shutters</h3>
+              <p className="text-red-900 text-sm">
+                <strong>Blinds (of any kind), windows, and shutters are NOT included in our standard moving package.</strong> These must be requested and confirmed as add-ons BEFORE your cleaning date. Failure to request these in advance may result in them not being included in your service.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <ul className="space-y-2 text-gray-700 text-sm">
                   <li>• Exterior structures (garage, sheds, detached units)</li>
                   <li>• Outdoor areas (patios, balconies, walkways)</li>
-                  <li>• Wall stains beyond standard wipe-down</li>
+                  <li>• Wall cleaning or stain removal</li>
                   <li>• Ceiling cleaning or ceiling stains</li>
                   <li>• Scuff/mark scrubbing (Magic Eraser work)</li>
                   <li>• Carpet shampooing or steam cleaning</li>
@@ -228,7 +237,9 @@ const MoveServiceAgreement = () => {
                 <ul className="space-y-2 text-gray-700 text-sm">
                   <li>• Wall hole repair or paint touch-up</li>
                   <li>• Personal item removal or decluttering</li>
-                  <li>• Metal vertical blinds</li>
+                  <li>• <strong>Blinds (any kind)</strong> — Add-on only</li>
+                  <li>• <strong>Windows</strong> — Add-on only</li>
+                  <li>• <strong>Shutters</strong> — Add-on only</li>
                   <li>• Pet waste or biohazard cleanup</li>
                   <li>• Furniture moving</li>
                   <li>• Any task requiring multiple wipe passes</li>
@@ -343,7 +354,7 @@ const MoveServiceAgreement = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-two-trees-green mb-8">Add-Ons Menu</h2>
             <p className="text-gray-600 mb-8">
-              Customize your service with these available add-ons. Must be requested in advance. Add-ons requested after work begins are subject to availability.
+              Customize your service with these available add-ons. <strong>Must be requested in advance.</strong> Add-ons requested after work begins are subject to availability.
             </p>
 
             <div className="overflow-x-auto">
@@ -357,37 +368,43 @@ const MoveServiceAgreement = () => {
                 </thead>
                 <tbody>
                   <tr className="border-b">
-                    <td className="p-3 font-semibold text-gray-900">Garage Sweep</td>
-                    <td className="p-3 text-gray-700">$35</td>
-                    <td className="p-3 text-gray-600">Floor sweep only. No shelving, no cobwebs.</td>
-                  </tr>
-                  <tr className="border-b bg-slate-50">
-                    <td className="p-3 font-semibold text-gray-900">Garage Deep Clean</td>
-                    <td className="p-3 text-gray-700">$75</td>
-                    <td className="p-3 text-gray-600">Includes cobweb removal, shelf wipe-down, floor sweep.</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-3 font-semibold text-gray-900">Exterior Laundry Room</td>
-                    <td className="p-3 text-gray-700">$25</td>
-                    <td className="p-3 text-gray-600">Sweep, wipe-down of washer/dryer, surface clean.</td>
-                  </tr>
-                  <tr className="border-b bg-slate-50">
                     <td className="p-3 font-semibold text-gray-900">Interior Window Cleaning</td>
                     <td className="p-3 text-gray-700">$5/pane</td>
                     <td className="p-3 text-gray-600">Per individual pane. Quote based on pane count.</td>
                   </tr>
-                  <tr className="border-b">
+                  <tr className="border-b bg-slate-50">
                     <td className="p-3 font-semibold text-gray-900">Blind Deep Cleaning</td>
                     <td className="p-3 text-gray-700">$30–$50/set</td>
-                    <td className="p-3 text-gray-600">Pricing varies by size. Confirmed at quote.</td>
+                    <td className="p-3 text-gray-600">Any kind of blinds. Pricing varies by size. Confirmed at quote.</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-3 font-semibold text-gray-900">Shutter Cleaning</td>
+                    <td className="p-3 text-gray-700">$25/set</td>
+                    <td className="p-3 text-gray-600">Professional shutter cleaning. Must be requested in advance.</td>
+                  </tr>
+                  <tr className="border-b bg-slate-50">
+                    <td className="p-3 font-semibold text-gray-900">Garage Sweep</td>
+                    <td className="p-3 text-gray-700">$35</td>
+                    <td className="p-3 text-gray-600">Floor sweep only. No shelving, no cobwebs.</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-3 font-semibold text-gray-900">Garage Deep Clean</td>
+                    <td className="p-3 text-gray-700">$75</td>
+                    <td className="p-3 text-gray-600">Includes cobweb removal, shelf wipe-down, floor sweep.</td>
                   </tr>
                   <tr className="bg-slate-50">
-                    <td className="p-3 font-semibold text-gray-900">Targeted Wall Spot-Cleaning</td>
-                    <td className="p-3 text-gray-700">$50/hour</td>
-                    <td className="p-3 text-gray-600">For marks beyond standard scope. 30-minute increments.</td>
+                    <td className="p-3 font-semibold text-gray-900">Exterior Laundry Room</td>
+                    <td className="p-3 text-gray-700">$25</td>
+                    <td className="p-3 text-gray-600">Sweep, wipe-down of washer/dryer, surface clean.</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            <div className="mt-6 p-4 bg-orange-50 border border-orange-200 rounded">
+              <p className="text-sm text-orange-900">
+                <strong>⚠️ Remember:</strong> Blinds (of any kind), windows, and shutters are NOT included in your standard service. These are add-ons and must be confirmed before your appointment.
+              </p>
             </div>
           </div>
         </section>
@@ -407,7 +424,7 @@ const MoveServiceAgreement = () => {
                 <div className="bg-white p-4 rounded border border-gray-200 text-sm text-gray-700 space-y-3">
                   <p><strong>Heavy Condition:</strong> Tenant did not clean, visible grime in kitchen/bath, soap scum, dust accumulation.</p>
                   <p><strong>Severe Condition:</strong> Neglected for extended period, grease layers, mold spots, heavy staining.</p>
-                  <p><strong>Time Overage Rate:</strong> If actual condition exceeds Standard, time beyond estimated hours bills at <strong>$100/hour</strong> (30-minute increments).</p>
+                  <p><strong>Condition-Based Adjustments:</strong> If the actual condition of the property at time of cleaning exceeds Standard, your final quote may be adjusted accordingly. We'll communicate any changes before completing the job.</p>
                 </div>
               </div>
 
@@ -428,10 +445,10 @@ const MoveServiceAgreement = () => {
               <div>
                 <h3 className="text-xl font-bold text-two-trees-green mb-4">Payment Terms</h3>
                 <div className="bg-white p-4 rounded border border-gray-200 text-sm text-gray-700 space-y-3">
-                  <p><strong>Payment Due:</strong> Net 15 (within 15 calendar days of invoice)</p>
-                  <p><strong>Accepted Methods:</strong> Check or ACH. Credit card payments incur 3% processing fee.</p>
-                  <p><strong>Invoicing:</strong> Issued upon job completion. Itemizes base estimate, any condition overage, and add-ons.</p>
-                  <p><strong>Late Payments:</strong> Invoices unpaid after 30 days are subject to 1.5% monthly late fee and may pause future scheduling.</p>
+                  <p><strong>Card on File Required:</strong> To reserve your move-out cleaning appointment, we require a credit card on file.</p>
+                  <p><strong>Charging:</strong> Your card will be charged immediately upon job completion.</p>
+                  <p><strong>Invoicing:</strong> Issued upon job completion. Itemizes base estimate and any add-ons requested.</p>
+                  <p><strong>Accepted Cards:</strong> Visa, Mastercard, American Express, Discover</p>
                 </div>
               </div>
 
