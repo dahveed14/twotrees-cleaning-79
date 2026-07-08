@@ -242,7 +242,6 @@ const MoveServiceAgreement = () => {
                   <li>• <strong>Shutters</strong> — Add-on only</li>
                   <li>• Pet waste or biohazard cleanup</li>
                   <li>• Furniture moving</li>
-                  <li>• Any task requiring multiple wipe passes</li>
                 </ul>
               </div>
             </div>
