@@ -5,8 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Phone, ShieldCheck, Flame, Clock, CheckCircle2 } from "lucide-react";
 import { trackPhoneClick, trackBookingClick, trackPageView } from "@/utils/analytics";
 import { updateMetaTags } from "@/utils/metaTags";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 
 const VAN_UTMS = {
   utm_source: "vehicle",
@@ -82,11 +80,6 @@ const Van = () => {
     window.location.href = PHONE_HREF;
   };
 
-  const handleBookingClick = (location: string) => {
-    trackBookingClick(location);
-    window.open(quoteUrl, "_blank");
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
@@ -98,8 +91,6 @@ const Van = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://twotreescleaning.com/van" />
       </Helmet>
-
-      <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
 
       <main>
         {/* Hero - Urgent Offer */}
@@ -277,8 +268,6 @@ const Van = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };
