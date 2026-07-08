@@ -159,22 +159,21 @@ const MoveInMoveOut = () => {
             </div>
           </div>
 
-          {/* Service Types */}
+          {/* Unified Moving Cleaning Service */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-two-trees-green text-center mb-12">
-              Choose Your Moving Cleaning Service
+              Move-In/Move-Out Cleaning Service
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="max-w-2xl mx-auto">
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-two-trees-green flex items-center justify-center gap-2">
-                    <Truck className="w-8 h-8" />
-                    Move-Out Cleaning
+                  <CardTitle className="text-2xl text-two-trees-green text-center">
+                    Moving Cleaning — Whether Coming or Going
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-600 text-center">
-                    Get your deposit back and leave your rental spotless for the next tenant.
+                <CardContent className="space-y-6">
+                  <p className="text-gray-600 text-center text-lg">
+                    Whether you're getting your deposit back on move-out or starting fresh in a new home, we deliver the same comprehensive clean. Professional, thorough, and move-ready.
                   </p>
                   <div className="space-y-3">
                     {[
@@ -187,57 +186,20 @@ const MoveInMoveOut = () => {
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700 text-sm">{item}</span>
+                        <span className="text-gray-700">{item}</span>
                       </div>
                     ))}
                   </div>
                   <Button 
-                    className="w-full bg-two-trees-green hover:bg-two-trees-green/90 mt-4"
-                    onClick={() => handleBookingClick('Move Out Cleaning')}
+                    className="w-full bg-two-trees-green hover:bg-two-trees-green/90 mt-6 py-6 text-lg"
+                    onClick={() => handleBookingClick('Move-In/Move-Out Cleaning')}
                   >
-                    Book Move-Out Cleaning
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-two-trees-green flex items-center justify-center gap-2">
-                    <Home className="w-8 h-8" />
-                    Move-In Cleaning
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-600 text-center">
-                    Start fresh in your new home with a thorough sanitizing clean.
-                  </p>
-                  <div className="space-y-3">
-                    {[
-                      "Sanitize all surfaces",
-                      "Deep clean bathrooms",
-                      "Kitchen sanitization",
-                      "Floor deep cleaning",
-                      "Light fixture cleaning",
-                      "Move-in ready condition"
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-two-trees-gold flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700 text-sm">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button 
-                    className="w-full bg-two-trees-gold hover:bg-two-trees-gold/90 text-two-trees-green font-semibold mt-4"
-                    onClick={() => handleBookingClick('Move In Cleaning')}
-                  >
-                    Book Move-In Cleaning
+                    Book Your Moving Cleaning
                   </Button>
                 </CardContent>
               </Card>
             </div>
           </div>
-
-          {/* Comprehensive Move-Out Checklist */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-two-trees-green text-center mb-4">
               Comprehensive Move-Out Cleaning Checklist
