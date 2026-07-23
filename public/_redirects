@@ -3,5 +3,8 @@
 /robots.txt /robots.txt 200!
 /*.xml /:splat 200!
 
+# Standalone static campaign pages - clean URL without .html
+/referral-campaign /referral-campaign.html 200!
+
 # SPA fallback - all other routes go to index.html  
 /* /index.html 200
