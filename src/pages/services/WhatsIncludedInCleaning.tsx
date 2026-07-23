@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone, CheckCircle, X, Star, BookOpen, AlertCircle, Sparkles, RotateCcw, Crown } from "lucide-react";
+import { Phone, CheckCircle, X, Star, BookOpen, Sparkles, RotateCcw, Crown } from "lucide-react";
 import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
@@ -429,94 +429,6 @@ const WhatsIncludedInCleaning = () => {
             <p className="text-xs text-muted-foreground text-center mt-4 italic">
               * Inside Oven Cleaning is included in the Total Deep Clean at no extra charge.
             </p>
-          </div>
-
-          {/* Move-Out Cleaning Requirements Section */}
-          <div className="mb-20">
-            <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl p-8">
-              <div className="flex items-start gap-4 mb-6">
-                <AlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
-                <div>
-                  <h2 className="text-2xl font-bold text-amber-800 mb-2">
-                    Move-Out Cleaning Requirements
-                  </h2>
-                  <p className="text-amber-700">
-                    Please read these requirements carefully to ensure your move-out cleaning goes smoothly and avoid cancellation fees.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6 border border-amber-200">
-                  <h3 className="text-lg font-semibold text-amber-800 mb-3 flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    The Home Must Be Completely Empty
-                  </h3>
-                  <p className="text-gray-700 mb-3">
-                    For our cleaners to do their best work, the home must be completely empty with no one inside moving or packing. This includes:
-                  </p>
-                  <ul className="text-gray-700 space-y-1 ml-4">
-                    <li>• All cupboards, fridge, and storage spaces must be cleared</li>
-                    <li>• No garbage should remain in the property</li>
-                    <li>• No belongings or furniture should be present</li>
-                    <li>• No movers or other people should be on-site during cleaning</li>
-                  </ul>
-                  <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                    <p className="text-red-700 font-medium text-sm">
-                      ⚠️ If movers are present or belongings remain, our team will leave and a same-day cancellation fee of $79 will apply.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 border border-amber-200">
-                  <h3 className="text-lg font-semibold text-amber-800 mb-3 flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    Running Water and Electricity Required
-                  </h3>
-                  <p className="text-gray-700">
-                    The property must have running water and electricity for our cleaning equipment and supplies to work properly.
-                  </p>
-                  <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                    <p className="text-red-700 font-medium text-sm">
-                      ⚠️ Failure to provide water or electricity will result in a cancellation fee of $79.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 border border-amber-200">
-                  <h3 className="text-lg font-semibold text-amber-800 mb-3">
-                    Important Notes About Our Service
-                  </h3>
-                  <div className="space-y-3 text-gray-700">
-                    <p>• Our cleaners do not remove garbage or clean fridges with items inside</p>
-                    <p>• Two Trees Cleaning is not responsible for cleaning metal vertical blinds</p>
-                    <p>• Horizontal blinds will receive light dusting only</p>
-                    <p>• Deep blind cleaning is available for $50 per set if heavily soiled</p>
-                    <p>• No refunds or price reductions will be provided due to restricted access caused by unprepared spaces</p>
-                  </div>
-                </div>
-
-                <div className="text-center pt-4">
-                  <p className="text-amber-700 font-medium mb-4">
-                    Questions about move-out cleaning requirements? Contact us before your scheduled appointment.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button 
-                      onClick={handlePhoneClick}
-                      className="bg-amber-600 hover:bg-amber-700 text-white"
-                    >
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call (805) 436-5868
-                    </Button>
-                    <Link to="/services/move-in-move-out">
-                      <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50">
-                        View Move-Out Service Details
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* What We DON'T Include */}
