@@ -54,13 +54,17 @@ const routesToPrerender = [
   "/contact-thank-you",
   "/van",
   // Service Routes
-  "/services/regular-house-cleaning",
-  "/services/deep-cleaning",
+  "/services/essential-clean",
+  "/services/signature-clean",
+  "/services/total-deep-clean",
   "/services/move-in-move-out",
   "/services/post-construction",
   "/services/commercial-cleaning",
-  "/services/vacation-rental",
   "/services/whats-included-in-cleaning",
+  // 301 redirect routes (still worth a static page for crawlers/bookmarks)
+  "/services/regular-house-cleaning",
+  "/services/deep-cleaning",
+  "/services/vacation-rental",
   // Location-specific service routes
   "/thousand-oaks/move-out-cleaning",
   "/thousand-oaks/post-construction-cleaning",
@@ -82,13 +86,66 @@ const routesToPrerender = [
   "/carpinteria/move-out-cleaning",
   "/carpinteria/post-construction-cleaning",
   "/crm-test",
+  "/move-service-agreement",
 ];
+
+const SITE_BASE_URL = "https://twotreescleaning.com";
+
+function applyHeadTags(html, helmet, url) {
+  if (!helmet) return html;
+
+  const title = helmet.title ? helmet.title.toString() : "";
+  const metaHtml = helmet.meta ? helmet.meta.toString() : "";
+  const linkHtml = helmet.link ? helmet.link.toString() : "";
+  const scriptHtml = helmet.script ? helmet.script.toString() : "";
+
+  let result = html;
+
+  // helmet.title.toString() always returns a `<title>` tag wrapper once
+  // HelmetProvider has rendered, even when no page ever set one — only
+  // replace the static default when there's real text inside the tag.
+  const titleMatch = title.match(/<title[^>]*>([^<]*)<\/title>/);
+  if (titleMatch && titleMatch[1].trim().length > 0) {
+    result = result.replace(/<title>[\s\S]*?<\/title>/, title);
+  }
+
+  // Strip any static default <meta> tag whose name/property is also being
+  // set by this page's Helmet, so the two don't end up duplicated (e.g. a
+  // page-specific og:title/twitter:description alongside the generic ones
+  // hardcoded in index.html).
+  const overriddenKeys = new Set();
+  const metaKeyRe = /<meta[^>]*\s(?:name|property)="([^"]+)"/g;
+  let keyMatch;
+  while ((keyMatch = metaKeyRe.exec(metaHtml))) {
+    overriddenKeys.add(keyMatch[1]);
+  }
+  overriddenKeys.forEach((key) => {
+    const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const staticTagRe = new RegExp(
+      `<meta[^>]*\\s(?:name|property)="${escapedKey}"[^>]*>\\s*`,
+      "g"
+    );
+    result = result.replace(staticTagRe, "");
+  });
+
+  const canonicalHtml = linkHtml.includes('rel="canonical"')
+    ? ""
+    : `<link rel="canonical" href="${SITE_BASE_URL}${url === "/" ? "" : url}">`;
+
+  result = result.replace(
+    "</head>",
+    `${metaHtml}${linkHtml}${canonicalHtml}${scriptHtml}</head>`
+  );
+
+  return result;
+}
 
 let ok = 0;
 for (const url of routesToPrerender) {
   try {
-    const appHtml = render(url);
-    const html = template.replace("<!--app-html-->", appHtml);
+    const { appHtml, helmet } = render(url);
+    let html = template.replace("<!--app-html-->", appHtml);
+    html = applyHeadTags(html, helmet, url);
     const outPath = `dist${url === "/" ? "/index" : url}.html`;
     fs.mkdirSync(path.dirname(toAbs(outPath)), { recursive: true });
     fs.writeFileSync(toAbs(outPath), html);

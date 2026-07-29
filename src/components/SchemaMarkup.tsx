@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SchemaMarkupProps {
   cityName?: string;
@@ -12,14 +12,13 @@ interface SchemaMarkupProps {
   }>;
   businessName?: string;
   phoneNumber?: string;
+  streetAddress?: string;
+  postalCode?: string;
 }
 
-export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessName, phoneNumber }: SchemaMarkupProps) => {
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    
+export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessName, phoneNumber, streetAddress, postalCode }: SchemaMarkupProps) => {
     const baseUrl = "https://twotreescleaning.com";
-    
+
     // Local Business Schema with city-specific data
     const localBusinessSchema = {
       "@context": "https://schema.org",
@@ -35,10 +34,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       "foundingDate": "2020",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2252 Channel Dr.",
+        "streetAddress": streetAddress || "3445 Telegraph Rd, Suite 103",
         "addressLocality": cityName || "Ventura",
         "addressRegion": "CA",
-        "postalCode": "93001",
+        "postalCode": postalCode || "93003",
         "addressCountry": "US"
       },
       "geo": {
@@ -294,10 +293,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2252 Channel Dr.",
+        "streetAddress": "3445 Telegraph Rd, Suite 103",
         "addressLocality": "Ventura",
         "addressRegion": "CA",
-        "postalCode": "93001",
+        "postalCode": "93003",
         "addressCountry": "US"
       },
       "sameAs": [
@@ -568,38 +567,19 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       ]
     };
 
-    // Add schemas to head
-    const addSchema = (schema: object, id: string) => {
-      const existingScript = document.getElementById(id);
-      if (existingScript) {
-        existingScript.remove();
-      }
-      
-      const script = document.createElement('script');
-      script.id = id;
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
-    };
+  // react-helmet-async doesn't HTML-escape <script> inner content, so guard
+  // against a stray "</script>" in any (currently hardcoded, but not
+  // guaranteed to stay that way) prop value breaking out of the tag.
+  const toJsonLd = (schema: object) => JSON.stringify(schema).replace(/</g, '\\u003c');
 
-    addSchema(localBusinessSchema, 'local-business-schema');
-    addSchema(organizationSchema, 'organization-schema');
-    addSchema(servicesSchema, 'services-schema');
-    
-    if (breadcrumbSchema) {
-      addSchema(breadcrumbSchema, 'breadcrumb-schema');
-    }
-
-    return () => {
-      // Cleanup function to remove schemas when component unmounts
-      ['local-business-schema', 'organization-schema', 'services-schema', 'breadcrumb-schema'].forEach(id => {
-        const script = document.getElementById(id);
-        if (script) {
-          script.remove();
-        }
-      });
-    };
-  }, [cityName, cityCoordinates, breadcrumbs]);
-
-  return null; // This component doesn't render anything visible
+  return (
+    <Helmet>
+      <script type="application/ld+json">{toJsonLd(localBusinessSchema)}</script>
+      <script type="application/ld+json">{toJsonLd(organizationSchema)}</script>
+      <script type="application/ld+json">{toJsonLd(servicesSchema)}</script>
+      {breadcrumbSchema && (
+        <script type="application/ld+json">{toJsonLd(breadcrumbSchema)}</script>
+      )}
+    </Helmet>
+  );
 };
