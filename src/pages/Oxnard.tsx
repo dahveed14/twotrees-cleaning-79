@@ -25,7 +25,7 @@ const Oxnard = () => {
         event_label: 'Oxnard Phone Click'
       });
     }
-    window.location.href = 'tel:805-436-5868';
+    window.location.href = 'tel:805-764-2394';
   };
 
   const neighborhoods = [
@@ -79,10 +79,13 @@ const Oxnard = () => {
         <meta name="description" content="Affordable house cleaning services in Oxnard, CA. Serving coastal communities, family neighborhoods, and agricultural areas. Licensed, insured & reliable. Book today!" />
         
       </Helmet>
-      <SchemaMarkup 
+      <SchemaMarkup
         cityName="Oxnard"
         cityCoordinates={oxnardCoordinates}
         breadcrumbs={breadcrumbData}
+        streetAddress="1601 Carmen Dr., Suite 101-D"
+        postalCode="93010"
+        phoneNumber="+1-805-764-2394"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
@@ -135,7 +138,7 @@ const Oxnard = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 436-5868
+                  (805) 764-2394
                 </Button>
               </div>
             </div>
@@ -489,7 +492,7 @@ const Oxnard = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 436-5868
+              Call (805) 764-2394
             </Button>
           </div>
         </div>

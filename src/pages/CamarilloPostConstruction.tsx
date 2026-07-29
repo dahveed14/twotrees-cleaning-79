@@ -39,7 +39,12 @@ const CamarilloPostConstruction = () => {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <SchemaMarkup cityName="Camarillo" />
+      <SchemaMarkup
+        cityName="Camarillo"
+        streetAddress="1601 Carmen Dr., Suite 101-D"
+        postalCode="93010"
+        phoneNumber="+1-805-764-2394"
+      />
 
       <div className="min-h-screen bg-background">
         <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />

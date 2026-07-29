@@ -27,7 +27,7 @@ const SantaBarbara = () => {
         event_label: 'Santa Barbara Phone Click'
       });
     }
-    window.location.href = 'tel:805-892-6881';
+    window.location.href = 'tel:805-436-5868';
   };
 
   const breadcrumbData = [
@@ -76,15 +76,13 @@ const SantaBarbara = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Santa Barbara House Cleaning Services | Two Trees Cleaning - Santa Barbara and Goleta</title>
-        <meta name="description" content="Premium house cleaning services in Santa Barbara and Goleta, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners. Call 805-892-6881" />
+        <meta name="description" content="Premium house cleaning services in Santa Barbara and Goleta, CA. Luxury home care with meticulous attention to detail. Licensed, insured & trusted by discerning homeowners. Call 805-436-5868" />
         
       </Helmet>
-      <SchemaMarkup 
+      <SchemaMarkup
         cityName="Santa Barbara"
         cityCoordinates={santaBarbaraCoordinates}
         breadcrumbs={breadcrumbData}
-        businessName="Two Trees Cleaning - Santa Barbara and Goleta"
-        phoneNumber="+1-805-892-6881"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
@@ -128,7 +126,7 @@ const SantaBarbara = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 892-6881
+                  (805) 436-5868
                 </Button>
               </div>
             </div>
@@ -460,32 +458,6 @@ const SantaBarbara = () => {
         </div>
       </section>
 
-      {/* Google Map Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-two-trees-green mb-4">
-              Visit Our Santa Barbara Office
-            </h2>
-            <p className="text-xl text-gray-600">
-              7 W Figueroa St, Santa Barbara, CA 93101
-            </p>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6582.3670148869!2d-119.70584662351982!3d34.42209357302001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e9147c3444ee95%3A0xe9ed20e2e9ac0b5a!2s7%20W%20Figueroa%20St%2C%20Santa%20Barbara%2C%20CA%2093101!5e0!3m2!1sen!2sus!4v1770162837645!5m2!1sen!2sus" 
-              width="100%" 
-              height="450" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Two Trees Cleaning Santa Barbara Office Location"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -510,7 +482,7 @@ const SantaBarbara = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 892-6881
+              Call (805) 436-5868
             </Button>
           </div>
         </div>

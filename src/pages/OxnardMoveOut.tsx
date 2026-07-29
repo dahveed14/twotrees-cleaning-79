@@ -42,7 +42,7 @@ export default function OxnardMoveOut() {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = "tel:8054365868";
+    window.location.href = "tel:8057642394";
   };
 
   const includedServices = [

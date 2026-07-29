@@ -15,7 +15,7 @@ export default function CarpinteriaPostConstruction() {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = "tel:+18055555555";
+    window.location.href = "tel:+18054365868";
   };
 
   return (

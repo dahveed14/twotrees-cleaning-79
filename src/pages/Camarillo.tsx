@@ -80,10 +80,13 @@ const Camarillo = () => {
         <meta name="description" content="Professional house cleaning services in Camarillo, CA. Serving Premium Outlets area, family neighborhoods, and suburban communities. Licensed & insured. Book today!" />
         
       </Helmet>
-      <SchemaMarkup 
+      <SchemaMarkup
         cityName="Camarillo"
         cityCoordinates={camarilloCoordinates}
         breadcrumbs={breadcrumbData}
+        streetAddress="1601 Carmen Dr., Suite 101-D"
+        postalCode="93010"
+        phoneNumber="+1-805-764-2394"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
@@ -510,12 +513,12 @@ const Camarillo = () => {
               Visit Our Camarillo Office
             </h2>
             <p className="text-xl text-gray-600">
-              Located at Paseo Del Sol Shopping Center - 1955 E Daily Dr, Camarillo, CA 93010
+              Located at 1601 Carmen Dr., Suite 101-D, Camarillo, CA 93010
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.1929537529836!2d-119.0463478235267!3d34.218091273094934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e8361dc817f517%3A0x265ff4b3b996d1b6!2sPaseo%20Del%20Sol%20Shopping%20Center%2C%201955%20E%20Daily%20Dr%2C%20Camarillo%2C%20CA%2093010!5e0!3m2!1sen!2sus!4v1770162514555!5m2!1sen!2sus" 
+            <iframe
+              src="https://www.google.com/maps?q=1601+Carmen+Dr+Suite+101-D+Camarillo+CA+93010&output=embed"
               width="100%" 
               height="450" 
               style={{ border: 0 }} 

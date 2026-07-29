@@ -52,7 +52,7 @@ const ThousandOaksPostConstruction = () => {
         event_label: 'Thousand Oaks Post Construction Phone Click'
       });
     }
-    window.location.href = 'tel:805-262-9691';
+    window.location.href = 'tel:805-764-2394';
   };
 
   const breadcrumbData = [
@@ -79,10 +79,13 @@ const ThousandOaksPostConstruction = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <SchemaMarkup
         cityName="Thousand Oaks"
         cityCoordinates={{ latitude: "34.1706", longitude: "-118.8376" }}
         breadcrumbs={breadcrumbData}
+        streetAddress="1601 Carmen Dr., Suite 101-D"
+        postalCode="93010"
+        phoneNumber="+1-805-764-2394"
       />
       <Navigation onBookingClick={handleQuoteClick} onPhoneClick={handlePhoneClick} />
       
@@ -125,7 +128,7 @@ const ThousandOaksPostConstruction = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 262-9691
+                  (805) 764-2394
                 </Button>
               </div>
             </div>
@@ -425,7 +428,7 @@ const ThousandOaksPostConstruction = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              (805) 262-9691
+              (805) 764-2394
             </Button>
           </div>
         </div>

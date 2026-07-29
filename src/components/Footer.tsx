@@ -21,28 +21,28 @@ interface ServiceAreaLink {
 const officeLocations: Record<FooterLocation, OfficeInfo> = {
   'ventura': {
     name: 'Main Office',
-    address: 'Ventura, CA',
+    address: '3445 Telegraph Rd, Suite 103\nVentura, CA 93003',
     city: 'Ventura',
     phone: '805-436-5868',
     phoneFormatted: '(805) 436-5868'
   },
   'santa-barbara': {
-    name: 'Santa Barbara Office',
-    address: '7 W. Figueroa Street, Suite 300\nSanta Barbara, CA 93101',
-    city: 'Santa Barbara',
+    name: 'Main Office',
+    address: '3445 Telegraph Rd, Suite 103\nVentura, CA 93003',
+    city: 'Ventura',
     phone: '805-436-5868',
     phoneFormatted: '(805) 436-5868'
   },
   'thousand-oaks': {
-    name: 'Thousand Oaks Office',
-    address: 'Thousand Oaks, CA',
-    city: 'Thousand Oaks',
-    phone: '805-262-9691',
-    phoneFormatted: '(805) 262-9691'
+    name: 'Camarillo Office',
+    address: '1601 Carmen Dr., Suite 101-D\nCamarillo, CA 93010',
+    city: 'Camarillo',
+    phone: '805-764-2394',
+    phoneFormatted: '(805) 764-2394'
   },
   'camarillo': {
     name: 'Camarillo Office',
-    address: '1955 E Daily Dr\nCamarillo, CA 93010',
+    address: '1601 Carmen Dr., Suite 101-D\nCamarillo, CA 93010',
     city: 'Camarillo',
     phone: '805-764-2394',
     phoneFormatted: '(805) 764-2394'

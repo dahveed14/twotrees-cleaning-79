@@ -103,7 +103,7 @@ const WestlakeVillageMoveOut = () => {
                       onClick={handlePhoneClick}
                       asChild
                     >
-                      <a href="tel:805-436-5868">805-436-5868</a>
+                      <a href="tel:805-764-2394">805-764-2394</a>
                     </Button>
                   </div>
                   
@@ -548,7 +548,7 @@ const WestlakeVillageMoveOut = () => {
                   onClick={handlePhoneClick}
                   asChild
                 >
-                  <a href="tel:805-436-5868">Call 805-436-5868</a>
+                  <a href="tel:805-764-2394">Call 805-764-2394</a>
                 </Button>
               </div>
             </div>

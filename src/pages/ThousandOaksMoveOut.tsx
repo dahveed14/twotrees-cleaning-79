@@ -51,7 +51,7 @@ const ThousandOaksMoveOut = () => {
         event_label: 'Thousand Oaks Move Out Phone Click'
       });
     }
-    window.location.href = 'tel:805-262-9691';
+    window.location.href = 'tel:805-764-2394';
   };
 
   const breadcrumbData = [
@@ -98,10 +98,13 @@ const ThousandOaksMoveOut = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <SchemaMarkup
         cityName="Thousand Oaks"
         cityCoordinates={{ latitude: "34.1706", longitude: "-118.8376" }}
         breadcrumbs={breadcrumbData}
+        streetAddress="1601 Carmen Dr., Suite 101-D"
+        postalCode="93010"
+        phoneNumber="+1-805-764-2394"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
@@ -145,7 +148,7 @@ const ThousandOaksMoveOut = () => {
                   onClick={handlePhoneClick}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (805) 262-9691
+                  (805) 764-2394
                 </Button>
               </div>
             </div>
@@ -430,7 +433,7 @@ const ThousandOaksMoveOut = () => {
               onClick={handlePhoneClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (805) 262-9691
+              Call (805) 764-2394
             </Button>
           </div>
         </div>

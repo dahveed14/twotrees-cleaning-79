@@ -92,7 +92,7 @@ export const CarpinteriaMoveOut = () => {
 
   const handlePhoneClick = () => {
     console.log('Phone clicked');
-    window.open('tel:+18056413200', '_self');
+    window.open('tel:+18054365868', '_self');
   };
 
   return (
@@ -142,7 +142,7 @@ export const CarpinteriaMoveOut = () => {
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Call (805) 641-3200
+                Call (805) 436-5868
               </Button>
             </div>
           </div>
@@ -311,7 +311,7 @@ export const CarpinteriaMoveOut = () => {
                 onClick={handlePhoneClick}
               >
                 <Phone className="w-4 h-4 mr-2" />
-                (805) 641-3200
+                (805) 436-5868
               </Button>
             </div>
           </section>

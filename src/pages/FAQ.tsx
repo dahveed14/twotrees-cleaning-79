@@ -341,10 +341,10 @@ const FAQ = () => {
                 "telephone": "805-436-5868",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "2252 Channel Dr.",
+                  "streetAddress": "3445 Telegraph Rd, Suite 103",
                   "addressLocality": "Ventura",
                   "addressRegion": "CA",
-                  "postalCode": "93001"
+                  "postalCode": "93003"
                 }
               }
             }

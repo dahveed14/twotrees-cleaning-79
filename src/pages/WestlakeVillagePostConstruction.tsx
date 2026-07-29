@@ -84,7 +84,7 @@ const WestlakeVillagePostConstruction = () => {
                 "addressRegion": "CA",
                 "postalCode": "91361"
               },
-              "telephone": "(805) 626-0555"
+              "telephone": "(805) 764-2394"
             },
             "serviceType": "Post-Construction Cleaning",
             "areaServed": {
@@ -98,7 +98,7 @@ const WestlakeVillagePostConstruction = () => {
 
       <Navigation 
         onBookingClick={() => window.location.href = '/contact'}
-        onPhoneClick={() => window.location.href = 'tel:(805) 626-0555'}
+        onPhoneClick={() => window.location.href = 'tel:(805) 764-2394'}
       />
       <Breadcrumbs items={breadcrumbItems} />
 
@@ -117,9 +117,9 @@ const WestlakeVillagePostConstruction = () => {
                 <a href="/contact">Request a Post-Construction Quote</a>
               </Button>
               <Button variant="outline-green" size="lg" className="px-8 py-4" asChild>
-                <a href="tel:(805) 626-0555">
+                <a href="tel:(805) 764-2394">
                   <Phone className="w-4 h-4 mr-2" />
-                  (805) 626-0555
+                  (805) 764-2394
                 </a>
               </Button>
             </div>

@@ -40,7 +40,7 @@ const VenturaPostConstruction = () => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Phone Call', 'Ventura Post Construction');
     }
-    window.location.href = 'tel:8053405488';
+    window.location.href = 'tel:8054365868';
   };
 
   const breadcrumbData = [
@@ -93,7 +93,7 @@ const VenturaPostConstruction = () => {
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green hover:text-white px-8 py-4 text-lg"
                   onClick={handlePhoneClick}
                 >
-                  Call (805) 340-5488
+                  Call (805) 436-5868
                 </Button>
               </div>
             </div>
@@ -289,7 +289,7 @@ const VenturaPostConstruction = () => {
               Request a Post-Construction Quote
             </Button>
             <div className="text-lg">
-              <p>Or call us directly: <a href="tel:8053405488" className="font-semibold hover:underline">(805) 340-5488</a></p>
+              <p>Or call us directly: <a href="tel:8054365868" className="font-semibold hover:underline">(805) 436-5868</a></p>
             </div>
           </div>
         </div>

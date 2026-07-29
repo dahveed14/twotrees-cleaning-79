@@ -391,7 +391,7 @@ const Privacy = () => {
               <div className="bg-gray-50 p-6 rounded-lg">
                 <p className="text-gray-700 font-semibold mb-2">Two Trees Cleaning</p>
                 <p className="text-gray-600 mb-1">Privacy Officer</p>
-                <p className="text-gray-600 mb-1">2252 Channel Dr., Ventura, CA 93001</p>
+                <p className="text-gray-600 mb-1">3445 Telegraph Rd, Suite 103, Ventura, CA 93003</p>
                 <p className="text-gray-600 mb-1">Phone: (805) 436-5868</p>
                 <p className="text-gray-600 mb-1">Email: hello@twotreescleaning.com</p>
                 <p className="text-gray-600 mt-3 text-sm">
