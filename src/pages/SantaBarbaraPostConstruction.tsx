@@ -111,10 +111,15 @@ const SantaBarbaraPostConstruction = () => {
                   </Button>
                 </div>
                 <div className="relative">
-                  <img 
-                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
-                    alt="Post-construction cleaning in Santa Barbara" 
-                    className="rounded-2xl shadow-2xl w-full h-auto" 
+                  <img
+                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.jpg"
+                    alt="Post-construction cleaning in Santa Barbara"
+                    className="rounded-2xl shadow-2xl w-full h-auto"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    width="1400"
+                    height="1224"
                   />
                 </div>
               </div>
@@ -233,11 +238,11 @@ const SantaBarbaraPostConstruction = () => {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-6">Our Other Services</h3>
                   <div className="space-y-4">
-                    <a href="/services/regular-house-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                    <a href="/services/essential-clean" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                       <span className="text-lg font-medium text-two-trees-green">Regular House Cleaning</span>
                       <p className="text-gray-600 mt-1">Weekly, bi-weekly, and monthly cleaning services</p>
                     </a>
-                    <a href="/services/deep-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                    <a href="/services/total-deep-clean" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                       <span className="text-lg font-medium text-two-trees-green">Deep Cleaning</span>
                       <p className="text-gray-600 mt-1">Comprehensive top-to-bottom cleaning</p>
                     </a>

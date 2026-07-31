@@ -18,5 +18,5 @@ export const services = [
   { name: "Total Deep Clean", href: "/services/total-deep-clean" },
   { name: "Move-In/Move-Out", href: "/services/move-in-move-out" },
   { name: "Post-Construction", href: "/services/post-construction" },
-  { name: "Vacation Rental", href: "/services/vacation-rental" },
+  { name: "Vacation Rental", href: "/services" },
 ];

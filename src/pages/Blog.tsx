@@ -1,9 +1,8 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
@@ -25,23 +24,6 @@ const Blog = () => {
     window.location.href = 'tel:8054365868';
   };
 
-  useEffect(() => {
-    updateMetaTags({
-      title: "House Cleaning Blog - Tips & Guides | Two Trees Cleaning",
-      description: "Expert house cleaning tips, seasonal guides, and local insights from Two Trees Cleaning. Learn professional cleaning techniques for your Ventura County home.",
-      url: "https://twotreescleaning.com/blog",
-      keywords: [
-        "house cleaning blog",
-        "cleaning tips",
-        "home maintenance blog",
-        "Ventura cleaning advice",
-        "professional cleaning tips",
-        "seasonal cleaning guides",
-        "eco-friendly cleaning tips",
-        "home organization tips"
-      ]
-    });
-  }, []);
 
   const blogPosts: any[] = [];
 
@@ -49,8 +31,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>House Cleaning Blog - Tips &amp; Guides | Two Trees Cleaning</title>
+        <meta name="description" content="Expert house cleaning tips, seasonal guides, and local insights from Two Trees Cleaning. Learn professional cleaning techniques for your Ventura County home." />
+      </Helmet>
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
-      
+
       <main>
         {/* Breadcrumbs */}
         <div className="bg-gray-50 py-4 px-4">

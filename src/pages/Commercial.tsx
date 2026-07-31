@@ -3,40 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, MapPin, Phone, Mail, Users, CheckCircle, GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
-import { updateMetaTags } from "@/utils/metaTags";
 
 const Commercial = () => {
   const [utmParams, setUtmParams] = useState<any>({});
-  
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
-    const venturaCountyCoordinates = {
-      latitude: "34.3705",
-      longitude: "-119.1391"
-    };
-
-    updateMetaTags({
-      title: "School Cleaning Services Ventura County | Two Trees Cleaning - Licensed & Insured",
-      description: "Professional school cleaning services in Ventura County. Classrooms, cafeterias, gymnasiums & admin offices. Safe, non-toxic products. Licensed & insured. Serving schools since 2020.",
-      cityName: "Ventura County",
-      cityCoordinates: venturaCountyCoordinates,
-      url: "https://twotreescleaning.com/commercial",
-      image: "https://twotreescleaning.com/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png",
-      keywords: [
-        "school cleaning Ventura County",
-        "school janitorial service",
-        "classroom cleaning service",
-        "school sanitization Ventura County",
-        "education facility cleaning",
-        "school deep cleaning",
-        "daycare cleaning Ventura County",
-        "preschool cleaning service"
-      ]
-    });
 
     // Capture UTM parameters for display
     const urlParams = new URLSearchParams(window.location.search);
@@ -77,10 +53,14 @@ const Commercial = () => {
   };
   return (
     <div className="min-h-screen bg-white">
-      <Breadcrumbs 
+      <Helmet>
+        <title>School Cleaning Services Ventura County | Two Trees Cleaning - Licensed &amp; Insured</title>
+        <meta name="description" content="Professional school cleaning services in Ventura County. Classrooms, cafeterias, gymnasiums &amp; admin offices. Safe, non-toxic products. Licensed &amp; insured. Serving schools since 2020." />
+      </Helmet>
+      <Breadcrumbs
         items={[
           { label: "School Cleaning", current: true }
-        ]} 
+        ]}
       />
 
       {/* Hero Section */}
@@ -136,10 +116,15 @@ const Commercial = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png" 
-                alt="Two Trees Cleaning team professionally cleaning a school facility in Ventura County" 
-                className="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[3/4]" 
+              <img
+                src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.jpg"
+                alt="Two Trees Cleaning team professionally cleaning a school facility in Ventura County"
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[3/4]"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1299"
+                height="1732"
               />
             </div>
           </div>
@@ -310,10 +295,14 @@ const Commercial = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
-                alt="Two Trees Cleaning team owners - professional school cleaning service providers serving Ventura County educational facilities" 
-                className="rounded-2xl shadow-xl w-full h-auto" 
+              <img
+                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.jpg"
+                alt="Two Trees Cleaning team owners - professional school cleaning service providers serving Ventura County educational facilities"
+                className="rounded-2xl shadow-xl w-full h-auto"
+                loading="lazy"
+                decoding="async"
+                width="1400"
+                height="933"
                 onError={e => {
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80';
                 }}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -6,27 +6,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, CheckCircle, Crown, Home, Sparkles, BookOpen, ArrowRight } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const TotalDeepClean = () => {
-  useEffect(() => {
-    updateMetaTags({
-      title: "Total Deep Clean | Every Surface, Every Detail | Two Trees Cleaning | Ventura County",
-      description: "The complete home reset. Every deep clean item, every surface — done in one visit. Perfect for move-ins, seasonal resets, or homeowners who want the best. Ventura County.",
-      cityName: "Ventura County",
-      cityCoordinates: { latitude: "34.3705", longitude: "-119.1391" },
-      url: "https://twotreescleaning.com/services/total-deep-clean",
-      keywords: [
-        "total deep cleaning Ventura County",
-        "comprehensive house cleaning",
-        "deep clean service",
-        "spring cleaning Ventura County",
-        "complete house cleaning service"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -90,7 +72,11 @@ const TotalDeepClean = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Total Deep Clean | Every Surface, Every Detail | Two Trees Cleaning | Ventura County</title>
+        <meta name="description" content="The complete home reset. Every deep clean item, every surface — done in one visit. Perfect for move-ins, seasonal resets, or homeowners who want the best. Ventura County." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}

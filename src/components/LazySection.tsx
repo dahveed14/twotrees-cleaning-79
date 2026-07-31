@@ -6,12 +6,17 @@ interface LazySectionProps {
   className?: string;
 }
 
-export const LazySection = ({ 
-  children, 
+export const LazySection = ({
+  children,
   rootMargin = "50px",
   className = ""
 }: LazySectionProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  // Starts true so content is present during server rendering (crawlers only
+  // read the static HTML) and on the client's first paint, matching the SSR
+  // output to avoid a hydration mismatch. useEffect below never runs during
+  // SSR, so a `false` default here would mean this content is never in the
+  // static HTML at all.
+  const [isVisible, setIsVisible] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

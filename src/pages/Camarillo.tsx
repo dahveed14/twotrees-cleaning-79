@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const Camarillo = () => {
@@ -135,10 +136,15 @@ const Camarillo = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/6233f4b8-7ae7-45c2-897d-96684e21c575.png" 
+              <img
+                src="/lovable-uploads/6233f4b8-7ae7-45c2-897d-96684e21c575.jpg"
                 alt="Beautiful Spanish Colonial Revival home in Camarillo CA with white stucco walls, red clay tile roof, lush tropical landscaping featuring banana plants and bougainvillea, brick walkway and arched entrance - professional house cleaning services for luxury homes, family residences, and suburban communities throughout Camarillo including Sterling Hills, Mission Oaks, Spanish Hills, and Premium Outlets area"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="1236"
               />
             </div>
           </div>
@@ -267,6 +273,9 @@ const Camarillo = () => {
                   <li>• Custom cleaning checklists</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $130</p>
+                <Link to="/services/essential-clean" className="text-sm text-two-trees-green hover:underline inline-block">
+                  Learn more about Essential Clean →
+                </Link>
               </CardContent>
             </Card>
 
@@ -286,6 +295,9 @@ const Camarillo = () => {
                   <li>• Seasonal deep cleaning</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $190</p>
+                <Link to="/services/total-deep-clean" className="text-sm text-two-trees-green hover:underline inline-block">
+                  Learn more about Total Deep Clean →
+                </Link>
               </CardContent>
             </Card>
 
@@ -305,6 +317,9 @@ const Camarillo = () => {
                   <li>• Deposit-ready standards</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $170</p>
+                <Link to="/services/move-in-move-out" className="text-sm text-two-trees-green hover:underline inline-block">
+                  Learn more about Move-In/Move-Out →
+                </Link>
               </CardContent>
             </Card>
 
@@ -324,6 +339,9 @@ const Camarillo = () => {
                   <li>• Construction cleanup</li>
                 </ul>
                 <p className="font-semibold text-two-trees-green">Starting at $210</p>
+                <Link to="/services/post-construction" className="text-sm text-two-trees-green hover:underline inline-block">
+                  Learn more about Post-Construction →
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -527,6 +545,80 @@ const Camarillo = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Two Trees Cleaning Camarillo Office Location"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Service Areas */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Oxnard</h3>
+                <p className="text-sm text-gray-600 mb-4">Affordable cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/oxnard">Oxnard house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Thousand Oaks</h3>
+                <p className="text-sm text-gray-600 mb-4">Family-focused cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/thousand-oaks">Thousand Oaks house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
+                <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/ventura">Ventura house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Port Hueneme</h3>
+                <p className="text-sm text-gray-600 mb-4">Military family cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/port-hueneme">Port Hueneme house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

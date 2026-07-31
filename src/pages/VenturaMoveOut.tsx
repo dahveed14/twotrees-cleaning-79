@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -8,37 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, CheckCircle, DollarSign, Star, MapPin, HelpCircle } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const VenturaMoveOut = () => {
-  useEffect(() => {
-    const venturaCoordinates = {
-      latitude: "34.2818",
-      longitude: "-119.2945"
-    };
-
-    updateMetaTags({
-      title: "Ventura Move-Out Cleaning Services | Two Trees Cleaning",
-      description: "Professional move-out cleaning in Ventura by Two Trees Cleaning. Trusted by 200+ families. Licensed, insured, and ready to help you get your deposit back.",
-      cityName: "Ventura",
-      cityCoordinates: venturaCoordinates,
-      url: "https://twotreescleaning.com/ventura/move-out-cleaning",
-      keywords: [
-        "move out cleaning Ventura",
-        "deposit back cleaning Ventura",
-        "end of lease cleaning Ventura",
-        "rental cleaning Ventura",
-        "Ventura move out service",
-        "Midtown Ventura cleaning",
-        "Pierpont move out cleaning",
-        "93001 move out cleaning",
-        "93003 move out cleaning",
-        "93004 move out cleaning"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', `Ventura Move Out - ${location}`);
@@ -100,7 +72,11 @@ const VenturaMoveOut = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Ventura Move-Out Cleaning Services | Two Trees Cleaning</title>
+        <meta name="description" content="Professional move-out cleaning in Ventura by Two Trees Cleaning. Trusted by 200+ families. Licensed, insured, and ready to help you get your deposit back." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura"
         cityCoordinates={{ latitude: "34.2818", longitude: "-119.2945" }}
         breadcrumbs={breadcrumbData}
@@ -154,10 +130,15 @@ const VenturaMoveOut = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
+              <img
+                src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.jpg"
                 alt="Two Trees Cleaning professional move-out cleaning service in Ventura - expert team member preparing a coastal home for final inspection to help tenants get their security deposit back"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="1224"
               />
             </div>
           </div>
@@ -414,7 +395,7 @@ const VenturaMoveOut = () => {
                 <Button 
                   variant="outline" 
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/services/deep-cleaning'}
+                  onClick={() => window.location.href = '/services/total-deep-clean'}
                 >
                   Learn More
                 </Button>
@@ -428,7 +409,7 @@ const VenturaMoveOut = () => {
                 <Button 
                   variant="outline" 
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/services/vacation-rental'}
+                  onClick={() => window.location.href = '/services'}
                 >
                   Learn More
                 </Button>

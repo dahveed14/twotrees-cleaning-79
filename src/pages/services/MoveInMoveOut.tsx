@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,35 +7,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Truck, CheckCircle, Home, X, AlertCircle, Star } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const MoveInMoveOut = () => {
-  useEffect(() => {
-    const venturaCountyCoordinates = {
-      latitude: "34.3705",
-      longitude: "-119.1391"
-    };
-
-    updateMetaTags({
-      title: "Move In Move Out Cleaning Services | Two Trees Cleaning | Ventura County Moving Cleaners",
-      description: "Professional move-in and move-out cleaning services in Ventura County. Make your transition smooth with thorough cleaning. Perfect for rentals, real estate, and relocations.",
-      cityName: "Ventura County",
-      cityCoordinates: venturaCountyCoordinates,
-      url: "https://twotreescleaning.com/services/move-in-move-out",
-      keywords: [
-        "move out cleaning Ventura County",
-        "move in cleaning service",
-        "rental cleaning service",
-        "end of lease cleaning",
-        "real estate cleaning",
-        "relocation cleaning service",
-        "tenant cleaning Ventura County",
-        "property cleaning service"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -117,7 +91,11 @@ const MoveInMoveOut = () => {
   ];
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Move In Move Out Cleaning Services | Two Trees Cleaning | Ventura County Moving Cleaners</title>
+        <meta name="description" content="Professional move-in and move-out cleaning services in Ventura County. Make your transition smooth with thorough cleaning. Perfect for rentals, real estate, and relocations." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}

@@ -120,10 +120,15 @@ const WestlakeVillageMoveOut = () => {
                 </div>
                 
                 <div className="relative">
-                  <img 
-                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png"
+                  <img
+                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.jpg"
                     alt="Professional move-out cleaning service in Westlake Village by Two Trees Cleaning team"
                     className="rounded-2xl shadow-2xl w-full h-auto"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    width="1400"
+                    height="1224"
                   />
                 </div>
               </div>
@@ -366,10 +371,14 @@ const WestlakeVillageMoveOut = () => {
                 </div>
                 
                 <div className="relative">
-                  <img 
-                    src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.png"
+                  <img
+                    src="/lovable-uploads/81626ea3-9e8e-4daf-be35-0776b0cb8870.jpg"
                     alt="Move-out cleaning before and after in Westlake Village by Two Trees Cleaning"
                     className="rounded-2xl shadow-2xl w-full h-auto"
+                    loading="lazy"
+                    decoding="async"
+                    width="1299"
+                    height="1732"
                   />
                 </div>
               </div>
@@ -404,7 +413,7 @@ const WestlakeVillageMoveOut = () => {
                     <h3 className="text-xl font-semibold text-foreground mb-4">Deep Cleaning Service</h3>
                     <p className="text-muted-foreground mb-6">Comprehensive seasonal cleaning for luxury homes</p>
                     <Button variant="outline" asChild>
-                      <a href="/services/deep-cleaning">Learn More</a>
+                      <a href="/services/total-deep-clean">Learn More</a>
                     </Button>
                   </CardContent>
                 </Card>

@@ -91,7 +91,7 @@ const SantaBarbaraMoveOut = () => {
           {/* Hero Section */}
           <section 
             className="relative py-20 px-4 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.png)' }}
+            style={{ backgroundImage: 'url(/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.jpg)' }}
           >
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative max-w-4xl mx-auto text-center text-white">
@@ -269,7 +269,7 @@ const SantaBarbaraMoveOut = () => {
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                       <h4 className="font-semibold text-primary mb-2">
-                        <a href="/services/deep-cleaning" className="hover:underline">Deep Cleaning</a>
+                        <a href="/services/total-deep-clean" className="hover:underline">Deep Cleaning</a>
                       </h4>
                       <p className="text-gray-600 text-sm">Comprehensive one-time cleaning service</p>
                     </div>

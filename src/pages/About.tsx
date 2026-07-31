@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,27 +7,10 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Shield, Users, Heart } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 
 
 
 const About = () => {
-  useEffect(() => {
-    updateMetaTags({
-      title: "About Two Trees Cleaning - David & Eli's Story | Family-Owned Ventura County Cleaning Service",
-      description: "Meet David and Eli, the husband-and-wife team behind Two Trees Cleaning. Serving Ventura County families since 2020 with professional, reliable house cleaning services. Licensed & insured.",
-      url: "https://twotreescleaning.com/about",
-      keywords: [
-        "family owned cleaning service Ventura County",
-        "David and Eli Two Trees Cleaning",
-        "professional house cleaners Santa Barbara",
-        "licensed insured cleaning service",
-        "husband wife cleaning team",
-        "local cleaning business Ventura County"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -52,6 +35,10 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>About Two Trees Cleaning - David &amp; Eli's Story | Family-Owned Ventura County Cleaning Service</title>
+        <meta name="description" content="Meet David and Eli, the husband-and-wife team behind Two Trees Cleaning. Serving Ventura County families since 2020 with professional, reliable house cleaning services. Licensed &amp; insured." />
+      </Helmet>
       <SchemaMarkup breadcrumbs={breadcrumbData} />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
@@ -98,10 +85,15 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.png" 
-                alt="David and Eli, the husband-and-wife team behind Two Trees Cleaning - professional house cleaning service owners in Ventura County" 
-                className="rounded-2xl shadow-xl w-full h-auto" 
+              <img
+                src="/lovable-uploads/753bc8de-6a12-41a5-9eb4-067177715fdf.jpg"
+                alt="David and Eli, the husband-and-wife team behind Two Trees Cleaning - professional house cleaning service owners in Ventura County"
+                className="rounded-2xl shadow-xl w-full h-auto"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="933"
               />
             </div>
           </div>

@@ -1,31 +1,13 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Home, Sparkles, Truck, HardHat, Key, BookOpen, ArrowRight } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const Services = () => {
-  useEffect(() => {
-    updateMetaTags({
-      title: "House Cleaning Services | Two Trees Cleaning | Ventura County",
-      description: "Professional house cleaning services in Ventura County. Regular cleaning, deep cleaning, move-in/out, post-construction, commercial, and vacation rental cleaning. Starting at $140.",
-      cityName: "Ventura County",
-      cityCoordinates: { latitude: "34.3705", longitude: "-119.1391" },
-      url: "https://twotreescleaning.com/services",
-      keywords: [
-        "house cleaning services Ventura County",
-        "residential cleaning",
-        "commercial cleaning",
-        "deep cleaning",
-        "regular cleaning service"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -84,14 +66,18 @@ const Services = () => {
       description: "Fast turnaround cleaning for short-term rental properties.",
       icon: Key,
       price: "Starting at $180",
-      link: "/services/vacation-rental"
+      link: "/services"
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>House Cleaning Services | Two Trees Cleaning | Ventura County</title>
+        <meta name="description" content="Professional house cleaning services in Ventura County. Regular cleaning, deep cleaning, move-in/out, post-construction, commercial, and vacation rental cleaning. Starting at $140." />
+      </Helmet>
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
-      
+
       <div className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

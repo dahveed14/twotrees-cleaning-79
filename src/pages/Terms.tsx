@@ -1,9 +1,8 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { updateMetaTags } from "@/utils/metaTags";
 
 const Terms = () => {
   const handleBookingClick = (location: string) => {
@@ -21,24 +20,12 @@ const Terms = () => {
     window.location.href = 'tel:8054365868';
   };
 
-  useEffect(() => {
-    updateMetaTags({
-      title: "Terms and Conditions - Two Trees Cleaning | Service Terms",
-      description: "Read our terms and conditions for house cleaning services in Ventura and Santa Barbara Counties. Service agreements, policies, and legal information.",
-      url: "https://twotreescleaning.com/terms",
-      keywords: [
-        "Two Trees Cleaning terms",
-        "house cleaning terms",
-        "service agreement",
-        "cleaning service policies",
-        "Ventura cleaning terms",
-        "terms and conditions"
-      ]
-    });
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Terms and Conditions - Two Trees Cleaning | Service Terms</title>
+        <meta name="description" content="Read our terms and conditions for house cleaning services in Ventura and Santa Barbara Counties. Service agreements, policies, and legal information." />
+      </Helmet>
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <main>

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Crown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const Montecito = () => {
@@ -141,10 +142,15 @@ const Montecito = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/4042e633-3464-473f-8856-715aa7b5b0f1.png" 
+              <img
+                src="/lovable-uploads/4042e633-3464-473f-8856-715aa7b5b0f1.jpg"
                 alt="Stunning aerial view of Montecito coastline with pristine beaches, dramatic cliffs, and luxury homes nestled between mountains and ocean - Two Trees Cleaning service area"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="786"
               />
             </div>
           </div>
@@ -383,6 +389,80 @@ const Montecito = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Service Areas */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Santa Barbara</h3>
+                <p className="text-sm text-gray-600 mb-4">Premium cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/santa-barbara">Santa Barbara house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Summerland</h3>
+                <p className="text-sm text-gray-600 mb-4">Coastal cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/summerland">Summerland house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Carpinteria</h3>
+                <p className="text-sm text-gray-600 mb-4">Beachside cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/carpinteria">Carpinteria house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
+                <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/ventura">Ventura house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

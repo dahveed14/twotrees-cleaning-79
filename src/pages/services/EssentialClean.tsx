@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -6,27 +6,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, CheckCircle, Clock, BookOpen, ArrowRight, Sparkles } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const EssentialClean = () => {
-  useEffect(() => {
-    updateMetaTags({
-      title: "Essential Clean | Recurring House Cleaning | Two Trees Cleaning | Ventura County",
-      description: "Professional recurring house cleaning in Ventura County. Our Essential Clean covers every core task — countertops, floors, bathrooms, kitchen — done consistently every visit. Starting at $140.",
-      cityName: "Ventura County",
-      cityCoordinates: { latitude: "34.3705", longitude: "-119.1391" },
-      url: "https://twotreescleaning.com/services/essential-clean",
-      keywords: [
-        "essential house cleaning Ventura County",
-        "recurring cleaning service",
-        "weekly house cleaning",
-        "bi-weekly cleaning service",
-        "regular maid service Ventura County"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -81,7 +63,11 @@ const EssentialClean = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Essential Clean | Recurring House Cleaning | Two Trees Cleaning | Ventura County</title>
+        <meta name="description" content="Professional recurring house cleaning in Ventura County. Our Essential Clean covers every core task — countertops, floors, bathrooms, kitchen — done consistently every visit. Starting at $140." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}

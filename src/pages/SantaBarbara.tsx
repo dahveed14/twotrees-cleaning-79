@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const SantaBarbara = () => {
@@ -131,10 +132,15 @@ const SantaBarbara = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/santa-barbara-hero.jpg" 
+              <img
+                src="/lovable-uploads/santa-barbara-hero.jpg"
                 alt="Santa Barbara house cleaning service for Spanish Colonial homes with tile work and bougainvillea landscaping"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1368"
+                height="1824"
               />
               <p className="text-center text-sm text-gray-600 mt-4 italic">
                 Professional house cleaning services for Santa Barbara and Goleta homes - from historic Spanish Colonial estates to modern coastal properties
@@ -412,13 +418,13 @@ const SantaBarbara = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Montecito</h3>
                 <p className="text-sm text-gray-600 mb-4">Luxury estate cleaning</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/montecito'}
+                  asChild
                 >
-                  View Montecito
+                  <Link to="/montecito"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -428,13 +434,13 @@ const SantaBarbara = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
                 <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/ventura'}
+                  asChild
                 >
-                  View Ventura
+                  <Link to="/ventura"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -444,13 +450,13 @@ const SantaBarbara = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
                 <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/camarillo'}
+                  asChild
                 >
-                  View Camarillo
+                  <Link to="/camarillo"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>

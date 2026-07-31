@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,27 +7,8 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Shield, Users } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 
 const Contact = () => {
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    
-    updateMetaTags({
-      title: "Contact Two Trees Cleaning - Get Your Free Quote | Ventura County House Cleaning",
-      description: "Get a free quote for professional house cleaning services in Ventura County. Contact David and Eli at Two Trees Cleaning. Licensed, insured, and serving 200+ families.",
-      url: "https://twotreescleaning.com/contact",
-      keywords: [
-        "contact cleaning service Ventura County",
-        "free quote house cleaning",
-        "Two Trees Cleaning contact",
-        "professional cleaners phone number",
-        "house cleaning estimate Santa Barbara",
-        "cleaning service contact form"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -52,6 +33,10 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Contact Two Trees Cleaning - Get Your Free Quote | Ventura County House Cleaning</title>
+        <meta name="description" content="Get a free quote for professional house cleaning services in Ventura County. Contact David and Eli at Two Trees Cleaning. Licensed, insured, and serving 200+ families." />
+      </Helmet>
       <SchemaMarkup breadcrumbs={breadcrumbData} />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       

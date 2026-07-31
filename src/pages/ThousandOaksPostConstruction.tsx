@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,37 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, CheckCircle, HardHat, Hammer, MapPin, Star, Clock, Shield, HelpCircle, Users, Award } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const ThousandOaksPostConstruction = () => {
-  useEffect(() => {
-    const thousandOaksCoordinates = {
-      latitude: "34.1706",
-      longitude: "-118.8376"
-    };
-
-    updateMetaTags({
-      title: "Thousand Oaks Post-Construction Cleaning | Two Trees Cleaning",
-      description: "Construction cleanup done right in Thousand Oaks. Trusted by builders, contractors, and homeowners. Licensed, insured, and dust-free guaranteed.",
-      cityName: "Thousand Oaks",
-      cityCoordinates: thousandOaksCoordinates,
-      url: "https://twotreescleaning.com/thousand-oaks/post-construction-cleaning",
-      keywords: [
-        ...generateCityKeywords("Thousand Oaks"),
-        "post construction cleaning Thousand Oaks",
-        "construction cleanup Thousand Oaks",
-        "renovation cleaning Thousand Oaks",
-        "contractor cleaning service Thousand Oaks",
-        "Newbury Park construction cleanup",
-        "91320 post construction cleaning",
-        "91360 construction cleanup",
-        "91362 renovation cleaning",
-        "dust-free cleaning Thousand Oaks"
-      ]
-    });
-  }, []);
-
   const handleQuoteClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Request Quote', `Thousand Oaks Post Construction - ${location}`);
@@ -79,6 +51,10 @@ const ThousandOaksPostConstruction = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Thousand Oaks Post-Construction Cleaning | Two Trees Cleaning</title>
+        <meta name="description" content="Construction cleanup done right in Thousand Oaks. Trusted by builders, contractors, and homeowners. Licensed, insured, and dust-free guaranteed." />
+      </Helmet>
       <SchemaMarkup
         cityName="Thousand Oaks"
         cityCoordinates={{ latitude: "34.1706", longitude: "-118.8376" }}
@@ -133,10 +109,15 @@ const ThousandOaksPostConstruction = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/4042e633-3464-473f-8856-715aa7b5b0f1.png" 
+              <img
+                src="/lovable-uploads/4042e633-3464-473f-8856-715aa7b5b0f1.jpg"
                 alt="Professional post-construction cleaning team in Thousand Oaks transforming a construction site into a move-in ready space"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="786"
               />
             </div>
           </div>

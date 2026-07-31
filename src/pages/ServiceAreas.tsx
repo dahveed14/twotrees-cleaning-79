@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,38 +8,8 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone } from "lucide-react";
-import { updateMetaTags, generateCityKeywords } from "@/utils/metaTags";
 
 const ServiceAreas = () => {
-  useEffect(() => {
-    const venturaCountyCoordinates = {
-      latitude: "34.3705",
-      longitude: "-119.1391"
-    };
-
-    updateMetaTags({
-      title: "Ventura County House Cleaning Services | Two Trees Cleaning | All Areas Served",
-      description: "Professional house cleaning services throughout Ventura County, CA. Serving Santa Barbara, Thousand Oaks, Oxnard, Camarillo, Ventura & more. Licensed & insured since 2020.",
-      cityName: "Ventura County",
-      cityCoordinates: venturaCountyCoordinates,
-      url: "https://twotreescleaning.com/service-areas",
-      keywords: [
-        ...generateCityKeywords("Santa Barbara"),
-        ...generateCityKeywords("Thousand Oaks"),
-        ...generateCityKeywords("Oxnard"),
-        ...generateCityKeywords("Camarillo"),
-        ...generateCityKeywords("Ventura"),
-        ...generateCityKeywords("Summerland"),
-        ...generateCityKeywords("Carpinteria"),
-        ...generateCityKeywords("Port Hueneme"),
-        ...generateCityKeywords("Newbury Park"),
-        ...generateCityKeywords("Westlake Village"),
-        "Ventura County cleaning service",
-        "house cleaning Ventura County"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -144,7 +114,11 @@ const ServiceAreas = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Ventura County House Cleaning Services | Two Trees Cleaning | All Areas Served</title>
+        <meta name="description" content="Professional house cleaning services throughout Ventura County, CA. Serving Santa Barbara, Thousand Oaks, Oxnard, Camarillo, Ventura &amp; more. Licensed &amp; insured since 2020." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={venturaCountyCoordinates}
         breadcrumbs={breadcrumbData}
@@ -178,7 +152,7 @@ const ServiceAreas = () => {
                   <CardTitle className="flex items-center gap-2 text-two-trees-green text-xl">
                     <MapPin className="w-5 h-5" />
                     <Link to={area.href} className="hover:underline">
-                      {area.name}
+                      {area.name} House Cleaning
                     </Link>
                   </CardTitle>
                 </CardHeader>

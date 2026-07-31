@@ -1,9 +1,8 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { updateMetaTags } from "@/utils/metaTags";
 import {
   Accordion,
   AccordionContent,
@@ -29,28 +28,6 @@ const FAQ = () => {
     window.location.href = 'tel:8054365868';
   };
 
-  useEffect(() => {
-    updateMetaTags({
-      title: "Frequently Asked Questions - Two Trees Cleaning | House Cleaning FAQ",
-      description: "Get answers to common questions about our professional house cleaning services in Ventura and Santa Barbara Counties. Pricing, scheduling, and service details.",
-      url: "https://twotreescleaning.com/faq",
-      keywords: [
-        "house cleaning FAQ",
-        "cleaning service questions",
-        "Two Trees Cleaning FAQ",
-        "Ventura cleaning FAQ",
-        "Santa Barbara cleaning questions",
-        "house cleaning pricing",
-        "cleaning service scheduling",
-        "professional cleaning FAQ",
-        "maid service questions",
-        "residential cleaning FAQ",
-        "cleaning company questions",
-        "house cleaner FAQ",
-        "cleaning service policies"
-      ]
-    });
-  }, []);
 
   const faqData = [
     {
@@ -60,7 +37,7 @@ const FAQ = () => {
           question: "How much does house cleaning cost?",
           answer: (
             <>
-              Our <Link to="/services" className="text-two-trees-green hover:underline font-medium">house cleaning services</Link> start at $140 for <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular cleaning</Link>. Pricing varies based on home size, cleaning frequency, and specific services requested. We offer <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">deep cleaning</Link>, <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-in/move-out cleaning</Link>, and <Link to="/services/post-construction" className="text-two-trees-green hover:underline font-medium">post-construction cleaning</Link>. <Link to="/contact" className="text-two-trees-green hover:underline font-medium">Contact us</Link> for a personalized quote based on your specific needs.
+              Our <Link to="/services" className="text-two-trees-green hover:underline font-medium">house cleaning services</Link> start at $140 for <Link to="/services/essential-clean" className="text-two-trees-green hover:underline font-medium">regular cleaning</Link>. Pricing varies based on home size, cleaning frequency, and specific services requested. We offer <Link to="/services/total-deep-clean" className="text-two-trees-green hover:underline font-medium">deep cleaning</Link>, <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-in/move-out cleaning</Link>, and <Link to="/services/post-construction" className="text-two-trees-green hover:underline font-medium">post-construction cleaning</Link>. <Link to="/contact" className="text-two-trees-green hover:underline font-medium">Contact us</Link> for a personalized quote based on your specific needs.
             </>
           )
         },
@@ -68,7 +45,7 @@ const FAQ = () => {
           question: "What's included in your regular house cleaning service?",
           answer: (
             <>
-              Our <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular house cleaning service</Link> includes dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathrooms (toilets, sinks, tubs, showers), kitchen cleaning (counters, appliances, sink), and trash removal. We use eco-friendly cleaning products and bring all necessary supplies. For complete details, check out our <Link to="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">comprehensive cleaning checklist</Link> that explains exactly what's included and what's not.
+              Our <Link to="/services/essential-clean" className="text-two-trees-green hover:underline font-medium">regular house cleaning service</Link> includes dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathrooms (toilets, sinks, tubs, showers), kitchen cleaning (counters, appliances, sink), and trash removal. We use eco-friendly cleaning products and bring all necessary supplies. For complete details, check out our <Link to="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">comprehensive cleaning checklist</Link> that explains exactly what's included and what's not.
             </>
           )
         },
@@ -76,7 +53,7 @@ const FAQ = () => {
           question: "What's the difference between regular and deep cleaning?",
           answer: (
             <>
-              <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. Inside appliances are only included in <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-out cleaning services</Link>. We recommend starting with a deep clean for first-time customers to establish a clean baseline. See our detailed <Link to="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">what's included guide</Link> for a complete breakdown of each service.
+              <Link to="/services/essential-clean" className="text-two-trees-green hover:underline font-medium">Regular cleaning</Link> maintains your home's cleanliness with weekly, bi-weekly, or monthly service. <Link to="/services/total-deep-clean" className="text-two-trees-green hover:underline font-medium">Deep cleaning</Link> is more thorough and includes baseboards, light fixtures, window sills, and other areas not covered in regular cleaning. Inside appliances are only included in <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">move-out cleaning services</Link>. We recommend starting with a deep clean for first-time customers to establish a clean baseline. See our detailed <Link to="/services/whats-included-in-cleaning" className="text-two-trees-green hover:underline font-medium">what's included guide</Link> for a complete breakdown of each service.
             </>
           )
         },
@@ -92,7 +69,7 @@ const FAQ = () => {
           question: "Do you offer commercial cleaning services?",
           answer: (
             <>
-              Yes, we provide <Link to="/services/commercial-cleaning" className="text-two-trees-green hover:underline font-medium">commercial cleaning services</Link> for offices, retail spaces, and other business facilities. We also specialize in <Link to="/services/vacation-rental" className="text-two-trees-green hover:underline font-medium">vacation rental cleaning</Link> for property managers and Airbnb hosts. Visit our <Link to="/commercial" className="text-two-trees-green hover:underline font-medium">commercial cleaning page</Link> for more details about business cleaning solutions.
+              Yes, we provide <Link to="/services/commercial-cleaning" className="text-two-trees-green hover:underline font-medium">commercial cleaning services</Link> for offices, retail spaces, and other business facilities. We also specialize in <Link to="/services" className="text-two-trees-green hover:underline font-medium">vacation rental cleaning</Link> for property managers and Airbnb hosts. Visit our <Link to="/commercial" className="text-two-trees-green hover:underline font-medium">commercial cleaning page</Link> for more details about business cleaning solutions.
             </>
           )
         }
@@ -171,7 +148,7 @@ const FAQ = () => {
           question: "How long does a typical cleaning take?",
           answer: (
             <>
-              Cleaning time varies by home size and service type. A typical 2-3 bedroom home takes 2-3 hours for <Link to="/services/regular-house-cleaning" className="text-two-trees-green hover:underline font-medium">regular cleaning</Link> and 3-5 hours for <Link to="/services/deep-cleaning" className="text-two-trees-green hover:underline font-medium">deep cleaning</Link>. <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">Move-in/move-out cleaning</Link> typically takes 4-6 hours. We'll provide an estimated timeframe when scheduling your service.
+              Cleaning time varies by home size and service type. A typical 2-3 bedroom home takes 2-3 hours for <Link to="/services/essential-clean" className="text-two-trees-green hover:underline font-medium">regular cleaning</Link> and 3-5 hours for <Link to="/services/total-deep-clean" className="text-two-trees-green hover:underline font-medium">deep cleaning</Link>. <Link to="/services/move-in-move-out" className="text-two-trees-green hover:underline font-medium">Move-in/move-out cleaning</Link> typically takes 4-6 hours. We'll provide an estimated timeframe when scheduling your service.
             </>
           )
         }
@@ -210,8 +187,12 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Frequently Asked Questions - Two Trees Cleaning | House Cleaning FAQ</title>
+        <meta name="description" content="Get answers to common questions about our professional house cleaning services in Ventura and Santa Barbara Counties. Pricing, scheduling, and service details." />
+      </Helmet>
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
-      
+
       <main>
         {/* Breadcrumbs */}
         <div className="bg-gray-50 py-4 px-4">

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,36 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, CheckCircle, DollarSign, Star, MapPin, HelpCircle } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const ThousandOaksMoveOut = () => {
-  useEffect(() => {
-    const thousandOaksCoordinates = {
-      latitude: "34.1706",
-      longitude: "-118.8376"
-    };
-
-    updateMetaTags({
-      title: "Thousand Oaks Move-Out Cleaning Services | Two Trees Cleaning",
-      description: "Moving out? Get your deposit back with expert move-out cleaning in Thousand Oaks. Trusted by 200+ families. Licensed, insured, and satisfaction guaranteed.",
-      cityName: "Thousand Oaks",
-      cityCoordinates: thousandOaksCoordinates,
-      url: "https://twotreescleaning.com/thousand-oaks/move-out-cleaning",
-      keywords: [
-        "move out cleaning Thousand Oaks",
-        "deposit back cleaning",
-        "end of lease cleaning Thousand Oaks",
-        "rental cleaning Thousand Oaks",
-        "Thousand Oaks move out service",
-        "Newbury Park move out cleaning",
-        "Conejo Valley move out cleaning",
-        "91360 move out cleaning",
-        "91362 move out cleaning"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', `Thousand Oaks Move Out - ${location}`);
@@ -98,6 +71,10 @@ const ThousandOaksMoveOut = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Thousand Oaks Move-Out Cleaning Services | Two Trees Cleaning</title>
+        <meta name="description" content="Moving out? Get your deposit back with expert move-out cleaning in Thousand Oaks. Trusted by 200+ families. Licensed, insured, and satisfaction guaranteed." />
+      </Helmet>
       <SchemaMarkup
         cityName="Thousand Oaks"
         cityCoordinates={{ latitude: "34.1706", longitude: "-118.8376" }}
@@ -153,10 +130,15 @@ const ThousandOaksMoveOut = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
+              <img
+                src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.jpg"
                 alt="Two Trees Cleaning professional move-out cleaning service in Thousand Oaks - expert team member preparing a home for final inspection to help tenants get their security deposit back"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="1224"
               />
             </div>
           </div>
@@ -456,7 +438,7 @@ const ThousandOaksMoveOut = () => {
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <h4 className="font-semibold text-two-trees-green mb-2">
-                    <Link to="/services/deep-cleaning" className="hover:underline">Deep Cleaning</Link>
+                    <Link to="/services/total-deep-clean" className="hover:underline">Deep Cleaning</Link>
                   </h4>
                   <p className="text-gray-600 text-sm">Comprehensive one-time cleaning service</p>
                 </div>

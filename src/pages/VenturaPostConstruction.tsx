@@ -1,34 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { updateMetaTags } from '@/utils/metaTags';
 import { Navigation } from '@/components/Navigation';
 import { SchemaMarkup } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CheckCircle, Users, Building, MapPin, Clock, Truck, Wrench, Zap } from 'lucide-react';
 
 const VenturaPostConstruction = () => {
-  useEffect(() => {
-    updateMetaTags({
-      title: "Ventura Post-Construction Cleaning | Two Trees Cleaning",
-      description: "Post-construction cleaning in Ventura for remodels, new builds, and commercial spaces. Licensed, insured, and 5-star rated across Ventura County.",
-      keywords: [
-        "post construction cleaning Ventura",
-        "construction cleanup Ventura", 
-        "remodel cleaning Ventura",
-        "new build cleaning Ventura",
-        "contractor cleaning services Ventura",
-        "debris removal Ventura",
-        "drywall dust cleaning Ventura",
-        "commercial construction cleaning Ventura"
-      ],
-      url: "https://twotreescleaning.com/ventura/post-construction-cleaning",
-      cityName: "Ventura",
-      cityCoordinates: { latitude: "34.2746", longitude: "-119.2290" }
-    });
-  }, []);
-
   const handleQuoteClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Request Quote', `Ventura Post Construction - ${location}`);
@@ -52,7 +32,11 @@ const VenturaPostConstruction = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Ventura Post-Construction Cleaning | Two Trees Cleaning</title>
+        <meta name="description" content="Post-construction cleaning in Ventura for remodels, new builds, and commercial spaces. Licensed, insured, and 5-star rated across Ventura County." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura"
         cityCoordinates={{ latitude: "34.2746", longitude: "-119.2290" }}
         breadcrumbs={breadcrumbData}
@@ -98,10 +82,15 @@ const VenturaPostConstruction = () => {
               </div>
             </div>
             <div className="lg:text-right">
-              <img 
-                src="/lovable-uploads/bbe8108f-d132-4156-8869-023d6ebe830b.png" 
+              <img
+                src="/lovable-uploads/bbe8108f-d132-4156-8869-023d6ebe830b.jpg"
                 alt="Post-construction cleaning services in Ventura"
                 className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="888"
+                height="888"
               />
             </div>
           </div>

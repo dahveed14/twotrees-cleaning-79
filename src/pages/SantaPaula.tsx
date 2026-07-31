@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Truck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SantaPaula = () => {
 
@@ -129,10 +130,15 @@ const SantaPaula = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.png" 
+              <img
+                src="/lovable-uploads/7a231da2-6877-46a0-be55-52b1023419b0.jpg"
                 alt="Santa Paula house cleaning service"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="909"
               />
             </div>
           </div>
@@ -287,13 +293,13 @@ const SantaPaula = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Oxnard</h3>
                 <p className="text-sm text-gray-600 mb-4">Coastal & family cleaning</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/oxnard'}
+                  asChild
                 >
-                  View Oxnard
+                  <Link to="/oxnard"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -303,13 +309,13 @@ const SantaPaula = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
                 <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/ventura'}
+                  asChild
                 >
-                  View Ventura
+                  <Link to="/ventura"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>

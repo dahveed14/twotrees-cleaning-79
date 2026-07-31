@@ -60,7 +60,7 @@ export const Hero = ({
           
           <div className="relative">
             <img 
-              src="/lovable-uploads/c95b0054-77f3-4718-819c-e36e27daae21.png" 
+              src="/lovable-uploads/c95b0054-77f3-4718-819c-e36e27daae21.jpg" 
               alt="Professional Two Trees Cleaning service technician with industrial cleaning equipment at Spanish-style home in Ventura County - trusted house cleaning service for Santa Barbara and Ventura areas" 
               className="rounded-2xl shadow-2xl w-full h-auto" 
               loading="eager"

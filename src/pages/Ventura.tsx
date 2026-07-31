@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Anchor } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Ventura = () => {
 
@@ -140,10 +141,15 @@ const Ventura = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/75bded66-c848-4790-a808-6efcbd3b250f.png" 
+              <img
+                src="/lovable-uploads/75bded66-c848-4790-a808-6efcbd3b250f.jpg"
                 alt="Ventura Pier at sunset with golden beach and coastal buildings - professional house cleaning services available throughout Ventura CA including Pierpont Bay, downtown historic district, and beachfront properties near the pier"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1400"
+                height="1050"
               />
             </div>
           </div>
@@ -377,13 +383,13 @@ const Ventura = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Oxnard</h3>
                 <p className="text-sm text-gray-600 mb-4">Affordable cleaning services</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/oxnard'}
+                  asChild
                 >
-                  View Oxnard
+                  <Link to="/oxnard"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -393,13 +399,13 @@ const Ventura = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
                 <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/camarillo'}
+                  asChild
                 >
-                  View Camarillo
+                  <Link to="/camarillo"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -409,13 +415,13 @@ const Ventura = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Santa Barbara</h3>
                 <p className="text-sm text-gray-600 mb-4">Premium cleaning services</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/santa-barbara'}
+                  asChild
                 >
-                  View Santa Barbara
+                  <Link to="/santa-barbara"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -425,13 +431,13 @@ const Ventura = () => {
                 <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Thousand Oaks</h3>
                 <p className="text-sm text-gray-600 mb-4">Family-focused cleaning</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
-                  onClick={() => window.location.href = '/thousand-oaks'}
+                  asChild
                 >
-                  View Thousand Oaks
+                  <Link to="/thousand-oaks"> house cleaning services</Link>
                 </Button>
               </CardContent>
             </Card>

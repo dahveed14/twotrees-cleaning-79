@@ -113,10 +113,15 @@ const OxnardPostConstruction = () => {
                   </Button>
                 </div>
                 <div className="relative">
-                  <img 
-                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
-                    alt="Post-construction cleaning in Oxnard" 
-                    className="rounded-2xl shadow-2xl w-full h-auto" 
+                  <img
+                    src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.jpg"
+                    alt="Post-construction cleaning in Oxnard"
+                    className="rounded-2xl shadow-2xl w-full h-auto"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    width="1400"
+                    height="1224"
                   />
                 </div>
               </div>
@@ -219,7 +224,7 @@ const OxnardPostConstruction = () => {
                       <span className="text-lg font-medium text-two-trees-green">Move-In/Move-Out Cleaning</span>
                       <p className="text-gray-600 mt-1">Prepare your property for new tenants or residents</p>
                     </a>
-                    <a href="/services/deep-cleaning" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                    <a href="/services/total-deep-clean" className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                       <span className="text-lg font-medium text-two-trees-green">Deep Cleaning</span>
                       <p className="text-gray-600 mt-1">Comprehensive top-to-bottom cleaning</p>
                     </a>

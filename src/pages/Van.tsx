@@ -172,6 +172,10 @@ const Van = () => {
                 src="/lovable-uploads/WhatsApp%20Image%202026-07-07%20at%2008.12.00.jpeg"
                 alt="Two Trees Cleaning team in front of the van"
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+                width="1086"
+                height="1448"
               />
             </div>
 

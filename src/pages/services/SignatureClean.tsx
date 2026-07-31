@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,28 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Phone, CheckCircle, Star, BookOpen, ArrowRight, RotateCcw, Crown } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const SignatureClean = () => {
   const [activeRotationVisit, setActiveRotationVisit] = useState(0);
-
-  useEffect(() => {
-    updateMetaTags({
-      title: "Signature Clean | Essential + Rotating Deep Clean | Two Trees Cleaning | Ventura County",
-      description: "Our most popular tier. Essential Clean plus one rotating deep clean item every visit. Your entire home gets deep cleaned every 4.5 months, automatically. Ventura County.",
-      cityName: "Ventura County",
-      cityCoordinates: { latitude: "34.3705", longitude: "-119.1391" },
-      url: "https://twotreescleaning.com/services/signature-clean",
-      keywords: [
-        "signature cleaning service Ventura County",
-        "recurring deep cleaning",
-        "rotating deep clean",
-        "best house cleaning service",
-        "premium recurring cleaning Ventura County"
-      ]
-    });
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -91,7 +74,11 @@ const SignatureClean = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Signature Clean | Essential + Rotating Deep Clean | Two Trees Cleaning | Ventura County</title>
+        <meta name="description" content="Our most popular tier. Essential Clean plus one rotating deep clean item every visit. Your entire home gets deep cleaned every 4.5 months, automatically. Ventura County." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}

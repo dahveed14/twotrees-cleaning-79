@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -8,30 +9,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, CheckCircle, X, Star, BookOpen, Sparkles, RotateCcw, Crown } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const WhatsIncludedInCleaning = () => {
   const [activeRotationVisit, setActiveRotationVisit] = useState(0);
-
-  useEffect(() => {
-    updateMetaTags({
-      title: "What's Included in House Cleaning Services | Two Trees Cleaning Guide",
-      description: "Choose the clean that fits your home. Compare our Essential, Signature, and Total Deep Clean tiers. No mandatory deep clean required. Transparent, honest service.",
-      cityName: "Ventura County",
-      cityCoordinates: { latitude: "34.3705", longitude: "-119.1391" },
-      url: "https://twotreescleaning.com/services/whats-included-in-cleaning",
-      keywords: [
-        "house cleaning services included",
-        "cleaning service tiers",
-        "essential cleaning service",
-        "signature cleaning service",
-        "deep cleaning service",
-        "cleaning service comparison",
-        "Two Trees Cleaning services"
-      ]
-    });
-  }, []);
 
   // Auto-rotate the signature clean visits
   useEffect(() => {
@@ -145,7 +126,11 @@ const WhatsIncludedInCleaning = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SchemaMarkup 
+      <Helmet>
+        <title>What's Included in House Cleaning Services | Two Trees Cleaning Guide</title>
+        <meta name="description" content="Choose the clean that fits your home. Compare our Essential, Signature, and Total Deep Clean tiers. No mandatory deep clean required. Transparent, honest service." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}

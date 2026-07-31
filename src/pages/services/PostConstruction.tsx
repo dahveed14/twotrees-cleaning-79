@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,50 +7,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, CheckCircle, HardHat, Hammer, BookOpen, ArrowRight } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const PostConstruction = () => {
-  useEffect(() => {
-    const venturaCountyCoordinates = {
-      latitude: "34.3705",
-      longitude: "-119.1391"
-    };
-
-    updateMetaTags({
-      title: "Post Construction Cleaning Services | Two Trees Cleaning | Construction Cleanup | Ventura County",
-      description: "Professional post-construction cleaning services in Ventura County. Specialized cleanup after renovations, remodels, and new construction. Safe debris removal and detailed cleaning.",
-      cityName: "Ventura County",
-      cityCoordinates: venturaCountyCoordinates,
-      url: "https://twotreescleaning.com/services/post-construction",
-      keywords: [
-        "post construction cleaning Ventura County",
-        "construction cleanup service",
-        "renovation cleaning",
-        "remodel cleaning service",
-        "construction debris cleanup",
-        "builder cleaning Ventura County",
-        "new construction cleaning",
-        "contractor cleaning service",
-        "post renovation cleanup",
-        "construction site cleaning",
-        "final construction cleaning",
-        "construction dust removal",
-        "paint removal cleaning service",
-        "window cleaning after construction",
-        "floor cleaning post construction",
-        "HVAC cleaning after construction",
-        "fixture cleaning post construction",
-        "construction cleanup Santa Barbara",
-        "construction cleanup Thousand Oaks",
-        "construction cleanup Oxnard",
-        "construction cleanup Camarillo",
-        "residential construction cleanup",
-        "commercial construction cleanup"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -76,7 +35,11 @@ const PostConstruction = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Post Construction Cleaning Services | Two Trees Cleaning | Construction Cleanup | Ventura County</title>
+        <meta name="description" content="Professional post-construction cleaning services in Ventura County. Specialized cleanup after renovations, remodels, and new construction. Safe debris removal and detailed cleaning." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}
@@ -323,7 +286,7 @@ const PostConstruction = () => {
                 {
                   title: "Deep Cleaning",
                   description: "Comprehensive cleaning for homes that need extra attention",
-                  href: "/services/deep-cleaning"
+                  href: "/services/total-deep-clean"
                 },
                 {
                   title: "Move-Out Cleaning", 

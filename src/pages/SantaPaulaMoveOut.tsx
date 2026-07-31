@@ -192,10 +192,15 @@ export default function SantaPaulaMoveOut() {
               </div>
               
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.png" 
-                  alt="Move-out cleaning service in Santa Paula - professional cleaner working in a spotless home" 
-                  className="rounded-2xl shadow-2xl w-full h-auto" 
+                <img
+                  src="/lovable-uploads/854ae905-37ee-4e73-a5f8-a01c6f2e9bb4.jpg"
+                  alt="Move-out cleaning service in Santa Paula - professional cleaner working in a spotless home"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  width="1400"
+                  height="1224"
                 />
               </div>
             </div>
@@ -339,7 +344,7 @@ export default function SantaPaulaMoveOut() {
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                       <h4 className="font-semibold text-two-trees-green mb-2">
-                        <a href="/services/deep-cleaning" className="hover:underline">Deep Cleaning Service</a>
+                        <a href="/services/total-deep-clean" className="hover:underline">Deep Cleaning Service</a>
                       </h4>
                       <p className="text-gray-600 text-sm">Thorough one-time cleaning for rural and residential properties</p>
                     </div>

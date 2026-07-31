@@ -7,6 +7,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Summerland = () => {
 
@@ -175,7 +176,81 @@ const Summerland = () => {
             </div>
           </div>
 
-          {/* CTA Section */}
+          {/* Nearby Service Areas */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Santa Barbara</h3>
+                <p className="text-sm text-gray-600 mb-4">Premium cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/santa-barbara">Santa Barbara house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Montecito</h3>
+                <p className="text-sm text-gray-600 mb-4">Luxury cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/montecito">Montecito house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Carpinteria</h3>
+                <p className="text-sm text-gray-600 mb-4">Beachside cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/carpinteria">Carpinteria house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
+                <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/ventura">Ventura house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
           <div className="bg-two-trees-green text-white rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ready for a Spotless Summerland Home?

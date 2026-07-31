@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -7,35 +7,9 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, CheckCircle, Building, Users, Clock } from "lucide-react";
-import { updateMetaTags } from "@/utils/metaTags";
 import { Link } from "react-router-dom";
 
 const CommercialCleaning = () => {
-  useEffect(() => {
-    const venturaCountyCoordinates = {
-      latitude: "34.3705",
-      longitude: "-119.1391"
-    };
-
-    updateMetaTags({
-      title: "Commercial Cleaning Services | Two Trees Cleaning | Office & Business Cleaning | Ventura County",
-      description: "Professional commercial cleaning services in Ventura County. Office cleaning, retail spaces, medical facilities. Flexible scheduling, licensed & insured. Serving businesses since 2020.",
-      cityName: "Ventura County",
-      cityCoordinates: venturaCountyCoordinates,
-      url: "https://twotreescleaning.com/services/commercial-cleaning",
-      keywords: [
-        "commercial cleaning Ventura County",
-        "office cleaning service",
-        "business cleaning Ventura County",
-        "retail cleaning service",
-        "medical office cleaning",
-        "commercial janitorial service",
-        "workplace cleaning Ventura County",
-        "professional business cleaning"
-      ]
-    });
-  }, []);
-
   const handleBookingClick = (location: string) => {
     if (typeof window !== 'undefined' && (window as any).trackButtonClick) {
       (window as any).trackButtonClick('Book a Cleaning', location);
@@ -61,7 +35,11 @@ const CommercialCleaning = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SchemaMarkup 
+      <Helmet>
+        <title>Commercial Cleaning Services | Two Trees Cleaning | Office &amp; Business Cleaning | Ventura County</title>
+        <meta name="description" content="Professional commercial cleaning services in Ventura County. Office cleaning, retail spaces, medical facilities. Flexible scheduling, licensed &amp; insured. Serving businesses since 2020." />
+      </Helmet>
+      <SchemaMarkup
         cityName="Ventura County"
         cityCoordinates={{ latitude: "34.3705", longitude: "-119.1391" }}
         breadcrumbs={breadcrumbData}

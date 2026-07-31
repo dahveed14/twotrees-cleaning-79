@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Mountain } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Ojai = () => {
 
@@ -129,10 +130,15 @@ const Ojai = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/a841cb20-105c-4965-926c-7c1867b4524b.png" 
+              <img
+                src="/lovable-uploads/a841cb20-105c-4965-926c-7c1867b4524b.jpg"
                 alt="Ojai Valley Topa Topa Mountains with dramatic layered sandstone formations and blue sky - professional house cleaning services for mountain homes, artist studios, spiritual retreats, and vacation rentals throughout Ojai CA including downtown Ojai, East End, Arbolada, and Meiners Oaks neighborhoods"
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="1077"
+                height="920"
               />
             </div>
           </div>
@@ -255,6 +261,80 @@ const Ojai = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Service Areas */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Ventura</h3>
+                <p className="text-sm text-gray-600 mb-4">Historic & coastal cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/ventura">Ventura house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Santa Paula</h3>
+                <p className="text-sm text-gray-600 mb-4">Reliable & affordable cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/santa-paula">Santa Paula house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Santa Barbara</h3>
+                <p className="text-sm text-gray-600 mb-4">Premium cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/santa-barbara">Santa Barbara house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
+                <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/camarillo">Camarillo house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

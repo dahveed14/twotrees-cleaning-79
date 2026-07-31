@@ -134,7 +134,7 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
         }
       ],
       "image": [
-        `${baseUrl}/lovable-uploads/c95b0054-77f3-4718-819c-e36e27daae21.png`,
+        `${baseUrl}/lovable-uploads/c95b0054-77f3-4718-819c-e36e27daae21.jpg`,
         `${baseUrl}/favicon.ico`
       ],
       "priceRange": "$140-$500",

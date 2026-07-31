@@ -1,9 +1,8 @@
 
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { updateMetaTags } from "@/utils/metaTags";
 
 const Privacy = () => {
   const handleBookingClick = (location: string) => {
@@ -21,24 +20,12 @@ const Privacy = () => {
     window.location.href = 'tel:8054365868';
   };
 
-  useEffect(() => {
-    updateMetaTags({
-      title: "Privacy Policy - Two Trees Cleaning | Your Privacy Matters",
-      description: "Read our privacy policy to understand how Two Trees Cleaning collects, uses, and protects your personal information. We are committed to your privacy and data security.",
-      url: "https://twotreescleaning.com/privacy",
-      keywords: [
-        "Two Trees Cleaning privacy",
-        "privacy policy",
-        "data protection",
-        "personal information",
-        "CCPA compliance",
-        "cleaning service privacy"
-      ]
-    });
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Privacy Policy - Two Trees Cleaning | Your Privacy Matters</title>
+        <meta name="description" content="Read our privacy policy to understand how Two Trees Cleaning collects, uses, and protects your personal information. We are committed to your privacy and data security." />
+      </Helmet>
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <main>

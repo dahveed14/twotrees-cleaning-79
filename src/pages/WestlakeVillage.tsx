@@ -7,6 +7,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Star, Shield, Award, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const WestlakeVillage = () => {
@@ -230,7 +231,81 @@ const WestlakeVillage = () => {
             </div>
           </div>
 
-          {/* CTA Section */}
+          {/* Nearby Service Areas */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
+            Nearby Service Areas
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Thousand Oaks</h3>
+                <p className="text-sm text-gray-600 mb-4">Family-focused cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/thousand-oaks">Thousand Oaks house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Newbury Park</h3>
+                <p className="text-sm text-gray-600 mb-4">Conejo Valley cleaning</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/newbury-park">Newbury Park house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Camarillo</h3>
+                <p className="text-sm text-gray-600 mb-4">Professional cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/camarillo">Camarillo house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow border-none shadow-md">
+              <CardContent className="p-6 text-center">
+                <MapPin className="w-8 h-8 text-two-trees-green mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Oxnard</h3>
+                <p className="text-sm text-gray-600 mb-4">Affordable cleaning services</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-two-trees-green text-two-trees-green hover:bg-two-trees-green/10"
+                  asChild
+                >
+                  <Link to="/oxnard">Oxnard house cleaning services</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
           <div className="bg-two-trees-green text-white rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ready for a Pristine Westlake Village Home?
