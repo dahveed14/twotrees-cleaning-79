@@ -12,8 +12,23 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        // Ensure clean production builds without dev scripts
-        manualChunks: undefined,
+        // Split vendor deps from app code so the vendor chunk (which
+        // changes far less often than app code) stays cached across
+        // deploys for visitors who navigate multiple pages in a session.
+        // This is a static-import-only split (no dynamic import()/React.lazy) —
+        // the site prerenders every route via ReactDOMServer.renderToString,
+        // which doesn't support Suspense-based lazy loading, so per-route
+        // code splitting isn't safe here without a larger SSR rewrite.
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return undefined;
+          if (/[\\/](react|react-dom|react-router-dom|scheduler)[\\/]/.test(id)) {
+            return "react-vendor";
+          }
+          if (/[\\/](@radix-ui|lucide-react|class-variance-authority|tailwind-merge|clsx)[\\/]/.test(id)) {
+            return "ui-vendor";
+          }
+          return "vendor";
+        },
       }
     }
   },
