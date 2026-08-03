@@ -12,7 +12,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 
 const CamarilloPostConstruction = () => {
   const handleBookingClick = () => {
-    // Analytics tracking would go here
+    window.location.href = "/contact";
   };
 
   const handlePhoneClick = () => {
