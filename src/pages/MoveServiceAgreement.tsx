@@ -158,6 +158,10 @@ const MoveServiceAgreement = () => {
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle2 className="w-5 h-5 text-two-trees-green flex-shrink-0 mt-0.5" />
+                  <span>Shutters: dust and wipe-down</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-two-trees-green flex-shrink-0 mt-0.5" />
                   <span>Light fixtures and switches</span>
                 </li>
                 <li className="flex gap-3">
@@ -200,11 +204,11 @@ const MoveServiceAgreement = () => {
               The following are explicitly excluded from all move-in and move-out cleanings unless specifically purchased as an add-on. This list prevents scope disputes.
             </p>
 
-            {/* Special Callout for Blinds/Windows/Shutters */}
+            {/* Special Callout for Blinds/Windows */}
             <div className="mb-8 p-4 bg-red-100 border-2 border-red-600 rounded">
-              <h3 className="font-bold text-red-900 mb-2">⚠️ IMPORTANT: Blinds, Windows & Shutters</h3>
+              <h3 className="font-bold text-red-900 mb-2">⚠️ IMPORTANT: Blinds & Windows</h3>
               <p className="text-red-900 text-sm">
-                <strong>Blinds (of any kind), windows, and shutters are NOT included in our standard moving package.</strong> These must be requested and confirmed as add-ons BEFORE your cleaning date. Failure to request these in advance may result in them not being included in your service.
+                <strong>Blinds (of any kind) and windows are NOT included in our standard moving package.</strong> These must be requested and confirmed as add-ons BEFORE your cleaning date. Failure to request these in advance may result in them not being included in your service. Shutters, however, are included in every standard move-in and move-out cleaning.
               </p>
             </div>
 
@@ -225,7 +229,6 @@ const MoveServiceAgreement = () => {
                   <li>• Personal item removal or decluttering</li>
                   <li>• <strong>Blinds (any kind)</strong> — Add-on only</li>
                   <li>• <strong>Windows</strong> — Add-on only</li>
-                  <li>• <strong>Shutters</strong> — Add-on only</li>
                   <li>• Pet waste or biohazard cleanup</li>
                   <li>• Furniture moving</li>
                 </ul>
@@ -363,21 +366,16 @@ const MoveServiceAgreement = () => {
                     <td className="p-3 text-gray-600">Any kind of blinds. Pricing varies by size. Confirmed at quote.</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-3 font-semibold text-gray-900">Shutter Cleaning</td>
-                    <td className="p-3 text-gray-700">$25/set</td>
-                    <td className="p-3 text-gray-600">Professional shutter cleaning. Must be requested in advance.</td>
-                  </tr>
-                  <tr className="border-b bg-slate-50">
                     <td className="p-3 font-semibold text-gray-900">Garage Sweep</td>
                     <td className="p-3 text-gray-700">$35</td>
                     <td className="p-3 text-gray-600">Floor sweep only. No shelving, no cobwebs.</td>
                   </tr>
-                  <tr className="border-b">
+                  <tr className="border-b bg-slate-50">
                     <td className="p-3 font-semibold text-gray-900">Garage Deep Clean</td>
                     <td className="p-3 text-gray-700">$75</td>
                     <td className="p-3 text-gray-600">Includes cobweb removal, shelf wipe-down, floor sweep.</td>
                   </tr>
-                  <tr className="bg-slate-50">
+                  <tr>
                     <td className="p-3 font-semibold text-gray-900">Exterior Laundry Room</td>
                     <td className="p-3 text-gray-700">$25</td>
                     <td className="p-3 text-gray-600">Sweep, wipe-down of washer/dryer, surface clean.</td>
@@ -388,7 +386,7 @@ const MoveServiceAgreement = () => {
 
             <div className="mt-6 p-4 bg-orange-50 border border-orange-200 rounded">
               <p className="text-sm text-orange-900">
-                <strong>⚠️ Remember:</strong> Blinds (of any kind), windows, and shutters are NOT included in your standard service. These are add-ons and must be confirmed before your appointment.
+                <strong>⚠️ Remember:</strong> Blinds (of any kind) and windows are NOT included in your standard service. These are add-ons and must be confirmed before your appointment. Shutters are included standard.
               </p>
             </div>
           </div>

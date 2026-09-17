@@ -60,6 +60,7 @@ const MoveInMoveOut = () => {
     "Baseboards and trim throughout",
     "Ceiling fans",
     "Window sills and tracks",
+    "Shutters: dust and wipe-down",
     "Light fixtures and switches",
     "Door frames (full clean)",
     "Closet cleaning (shelves and rods)",
@@ -71,14 +72,13 @@ const MoveInMoveOut = () => {
   const addOnServices = [
     { service: "Interior Window Cleaning", note: "$5 per pane" },
     { service: "Blind Deep Cleaning (Any Kind)", note: "$30–$50 per set" },
-    { service: "Shutter Cleaning", note: "$10 per set" },
     { service: "Garage Sweep", note: "$35" },
     { service: "Garage Deep Clean", note: "$75" },
     { service: "Exterior Laundry Room", note: "$25" }
   ];
 
   const notIncluded = [
-    "Blinds, windows, or shutters (add-ons only)",
+    "Blinds or windows (add-ons only)",
     "Exterior structures (garage, sheds, detached units) — unless add-on",
     "Outdoor areas (patios, balconies, walkways)",
     "Wall cleaning or stain removal",
