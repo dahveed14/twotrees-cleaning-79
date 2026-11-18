@@ -376,8 +376,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -409,8 +412,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -435,8 +441,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -461,8 +470,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -487,8 +499,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -513,8 +528,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -539,8 +557,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -565,8 +586,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
@@ -591,8 +615,11 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
             "name": office.name,
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": office.streetAddress,
               "addressLocality": office.locality,
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": office.postalCode,
+              "addressCountry": "US"
             }
           },
           "areaServed": {
