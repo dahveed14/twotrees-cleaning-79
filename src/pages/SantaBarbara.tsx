@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer, FooterLocation } from "@/components/Footer";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { TestimonialSchema } from "@/components/TestimonialSchema";
 import { Button } from "@/components/ui/button";
@@ -494,6 +495,7 @@ const SantaBarbara = () => {
         </div>
       </section>
 
+      <ReviewsSection />
       <Footer location="santa-barbara" />
     </div>
   );

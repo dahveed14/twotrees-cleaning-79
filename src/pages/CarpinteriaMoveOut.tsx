@@ -6,6 +6,7 @@ import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Star, MapPin, Phone, Clock, Shield, CheckCircle, Home, Sparkles } from "lucide-react";
 import { Footer } from "../components/Footer";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { FinalCTA } from "../components/FinalCTA";
 import { SchemaMarkup } from "../components/SchemaMarkup";
 import { updateMetaTags } from "../utils/metaTags";
@@ -319,6 +320,7 @@ export const CarpinteriaMoveOut = () => {
       </div>
 
       <FinalCTA onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
+      <ReviewsSection />
       <Footer location="santa-barbara" />
     </>
   );

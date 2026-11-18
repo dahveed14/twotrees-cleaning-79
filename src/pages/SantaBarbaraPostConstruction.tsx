@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -293,6 +294,7 @@ const SantaBarbaraPostConstruction = () => {
           </section>
         </main>
 
+        <ReviewsSection />
         <Footer location="santa-barbara" />
       </div>
     </>

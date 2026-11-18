@@ -8,6 +8,7 @@ import { WhatsIncludedSection } from "@/components/WhatsIncludedSection";
 import { About } from "@/components/About";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SocialProof } from "@/components/SocialProof";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { HomepageFAQ } from "@/components/HomepageFAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -100,6 +101,9 @@ const Index = () => {
       </LazySection>
       <LazySection>
         <SocialProof />
+      </LazySection>
+      <LazySection>
+        <ReviewsSection />
       </LazySection>
       <LazySection>
         <HomepageFAQ />

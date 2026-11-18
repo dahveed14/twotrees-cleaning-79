@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -360,6 +361,7 @@ const SantaBarbaraMoveOut = () => {
           </section>
         </div>
 
+        <ReviewsSection />
         <Footer location="santa-barbara" />
       </div>
     </>

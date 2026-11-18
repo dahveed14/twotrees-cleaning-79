@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Star, MapPin, Clock, Shield, Leaf } from "lucide-react";
@@ -292,6 +293,7 @@ const OjaiPostConstruction = () => {
           </section>
         </main>
 
+        <ReviewsSection />
         <Footer />
       </div>
     </>
