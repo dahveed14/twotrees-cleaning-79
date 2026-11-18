@@ -6,7 +6,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Home } from "lucide-react";
+import { MapPin, Phone, Clock, Shield, CheckCircle, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 const thousandOaksHero = "/lovable-uploads/9c1b3024-acd2-473d-8874-bcf5134eefbe.jpg";
 
@@ -50,27 +50,6 @@ const ThousandOaks = () => {
     "The Oaks Mall", "Thousand Oaks Civic Arts Plaza", "Conejo Valley Botanic Garden",
     "California Lutheran University", "Wildwood Regional Park", "Gardens of the World",
     "Thousand Oaks Library", "Civic Center", "Newbury Park Adventist Academy"
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah J.",
-      location: "Newbury Park",
-      rating: 5,
-      text: "Perfect for our busy family schedule. Two Trees works around our kids' activities and keeps our home spotless. Great communication!"
-    },
-    {
-      name: "Michael T.",
-      location: "North Ranch", 
-      rating: 5,
-      text: "We've been using Two Trees for over a year. They're reliable, thorough, and our home always feels fresh after their visits."
-    },
-    {
-      name: "Lisa R.",
-      location: "Dos Vientos",
-      rating: 5,
-      text: "Moving from LA, we needed a trustworthy cleaning service. Two Trees exceeded our expectations with their attention to detail."
-    }
   ];
 
   return (
@@ -228,33 +207,6 @@ const ThousandOaks = () => {
                 <p className="font-semibold text-two-trees-green">Starting at $180</p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            What Thousand Oaks Families Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border-none shadow-md">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-two-trees-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <p className="font-semibold text-two-trees-green">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

@@ -39,21 +39,6 @@ const ThousandOaksMoveOut = () => {
     "Westlake Village Border", "Hillcrest", "Lang Ranch", "Oak Park Border"
   ];
 
-  const testimonials = [
-    {
-      name: "Jennifer M.",
-      location: "Newbury Park",
-      rating: 5,
-      text: "Got our full deposit back thanks to Two Trees! They cleaned everything perfectly for our move-out inspection."
-    },
-    {
-      name: "David K.",
-      location: "Dos Vientos",
-      rating: 5,
-      text: "Professional and thorough. Our landlord was impressed with how clean they left our rental home."
-    }
-  ];
-
   const faqs = [
     {
       question: "How far in advance should I book my move-out cleaning?",
@@ -332,29 +317,8 @@ const ThousandOaksMoveOut = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            Recent Move-Out Cleanings in Thousand Oaks
+            Thousand Oaks Neighborhoods We Serve
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-none shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-two-trees-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-two-trees-green" />
-                    <div>
-                      <p className="font-semibold text-two-trees-green">{testimonial.name}</p>
-                      <p className="text-sm text-gray-500">{testimonial.location}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
           
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-6">

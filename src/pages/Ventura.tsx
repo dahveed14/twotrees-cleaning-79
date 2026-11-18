@@ -7,7 +7,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Anchor } from "lucide-react";
+import { MapPin, Phone, Clock, Shield, CheckCircle, Anchor } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Ventura = () => {
@@ -50,27 +50,6 @@ const Ventura = () => {
     "Ventura Pier", "San Buenaventura Mission", "Downtown Ventura", "Ventura Harbor",
     "County Fairgrounds", "Surfers Point", "Ventura Beach", "Main Street",
     "Ventura College", "Grant Park", "Seaside Park"
-  ];
-
-  const testimonials = [
-    {
-      name: "Susan T.",
-      location: "Downtown Ventura",
-      rating: 5,
-      text: "Two Trees has been cleaning our historic downtown home for three years. They understand the special care old homes need."
-    },
-    {
-      name: "Mark D.",
-      location: "Pierpont Bay",
-      rating: 5,
-      text: "Living by the beach means dealing with sand and salt air. Two Trees handles the extra cleaning challenges perfectly."
-    },
-    {
-      name: "Rachel W.",
-      location: "Midtown",
-      rating: 5,
-      text: "Professional, reliable, and fair pricing. They work around our family schedule and always do excellent work."
-    }
   ];
 
   return (
@@ -452,24 +431,6 @@ const Ventura = () => {
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
             What Ventura Customers Say
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border-none shadow-md">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-two-trees-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <p className="font-semibold text-two-trees-green">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
           <div className="mt-12">
             <GoogleReviewsWidget />
           </div>

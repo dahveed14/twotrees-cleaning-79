@@ -9,7 +9,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Star, Clock, Shield, CheckCircle, Crown } from "lucide-react";
+import { MapPin, Phone, Clock, Shield, CheckCircle, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
@@ -47,27 +47,6 @@ const Montecito = () => {
   const landmarks = [
     "Four Seasons Resort", "San Ysidro Ranch", "Montecito Country Club", "Coral Casino",
     "Coast Village Road", "Upper Village", "Lotusland Gardens", "Butterfly Beach"
-  ];
-
-  const testimonials = [
-    {
-      name: "Elizabeth H.",
-      location: "Upper Village",
-      rating: 5,
-      text: "Two Trees provides the discretion and quality we expect for our Montecito estate. They're professional, trustworthy, and detail-oriented."
-    },
-    {
-      name: "Robert K.",
-      location: "Coast Village Road",
-      rating: 5,
-      text: "After trying several services, Two Trees is the only one that meets our luxury home standards. Highly recommend for Montecito properties."
-    },
-    {
-      name: "Patricia M.",
-      location: "East Valley Road",
-      rating: 5,
-      text: "They handle our vacation rental cleanings with absolute professionalism. Our guests always comment on the pristine condition."
-    }
   ];
 
   const montecitoCoordinates = {
@@ -363,33 +342,6 @@ const Montecito = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            What Montecito Clients Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border-none shadow-md">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-two-trees-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <p className="font-semibold text-two-trees-green">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

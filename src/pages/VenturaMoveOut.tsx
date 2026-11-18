@@ -4,7 +4,6 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
-import { TestimonialSchema } from "@/components/TestimonialSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -41,21 +40,6 @@ const VenturaMoveOut = () => {
     "Ventura Keys", "Downtown Ventura", "San Buenaventura", "East Ventura"
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah L.",
-      location: "Pierpont",
-      rating: 5,
-      text: "Two Trees helped us get our full security deposit back! Their attention to detail for our coastal rental was amazing."
-    },
-    {
-      name: "Michael R.",
-      location: "Midtown Ventura",
-      rating: 5,
-      text: "Professional service and fair pricing. They cleaned everything perfectly for our landlord's final inspection."
-    }
-  ];
-
   const faqs = [
     {
       question: "How long does a move-out cleaning take?",
@@ -82,7 +66,6 @@ const VenturaMoveOut = () => {
         cityCoordinates={{ latitude: "34.2818", longitude: "-119.2945" }}
         breadcrumbs={breadcrumbData}
       />
-      <TestimonialSchema testimonials={testimonials} cityName="Ventura" />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />
       
       <Breadcrumbs 
@@ -335,29 +318,8 @@ const VenturaMoveOut = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            Recent Move-Out Cleanings in Ventura
+            Ventura Neighborhoods We Serve
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-none shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-two-trees-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-two-trees-green" />
-                    <div>
-                      <p className="font-semibold text-two-trees-green">{testimonial.name}</p>
-                      <p className="text-sm text-gray-500">{testimonial.location}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
           
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-6">

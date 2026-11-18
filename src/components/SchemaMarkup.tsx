@@ -184,13 +184,6 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumb
       "priceRange": "$140-$500",
       "currenciesAccepted": "USD",
       "paymentAccepted": "Cash, Credit Card, Check",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "200",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "House Cleaning Services",

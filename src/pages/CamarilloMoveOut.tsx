@@ -350,7 +350,7 @@ const CamarilloMoveOut = () => {
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="text-center mb-16">
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                  Recent Cleanings in Camarillo
+                  Move-Out Cleaning Across Camarillo
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                   We're proud to serve families and property managers throughout Camarillo's neighborhoods.
@@ -359,25 +359,6 @@ const CamarilloMoveOut = () => {
               
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                  <Card className="border-none shadow-lg">
-                    <CardContent className="p-8">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="flex text-yellow-500">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-current" />
-                          ))}
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground mb-4 italic">
-                        "Two Trees Cleaning did an amazing job on our move-out clean in Mission Oaks. They were thorough, professional, and helped us get our full deposit back. Highly recommend!"
-                      </p>
-                      <div className="text-sm">
-                        <p className="font-semibold text-foreground">Sarah M.</p>
-                        <p className="text-muted-foreground">Mission Oaks, Camarillo</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  
                   <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-foreground">Areas We Serve in Camarillo:</h3>
                     <div className="grid grid-cols-2 gap-2 text-muted-foreground">

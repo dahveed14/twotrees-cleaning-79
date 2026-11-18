@@ -420,23 +420,6 @@ export default function OjaiMoveOut() {
             </div>
           </section>
 
-          {/* Reviews Section */}
-          <section className="py-20 px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-two-trees-green mb-6">
-                  What Our Clients Say
-                </h2>
-                <div className="flex items-center justify-center space-x-2 mb-8">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-two-trees-gold text-two-trees-gold" />
-                  ))}
-                  <span className="text-xl font-semibold text-gray-700 ml-2">5.0 Stars</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* Final CTA Section */}
           <section className="py-20 px-4 bg-two-trees-green text-white">
             <div className="max-w-4xl mx-auto text-center">

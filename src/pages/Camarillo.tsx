@@ -7,7 +7,7 @@ import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Star, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, Clock, Shield, CheckCircle, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
@@ -40,27 +40,6 @@ const Camarillo = () => {
     "Camarillo Premium Outlets", "Camarillo Ranch House", "Adolfo Camarillo High School",
     "Camarillo Library", "Central Park", "Camarillo Community Center", "Dizdar Park",
     "Las Posas Country Club", "Camarillo Airport", "Oxnard College"
-  ];
-
-  const testimonials = [
-    {
-      name: "Jennifer K.",
-      location: "Sterling Hills",
-      rating: 5,
-      text: "Two Trees has been cleaning our family home for over a year. They're professional, thorough, and work perfectly with our schedule."
-    },
-    {
-      name: "Robert M.",
-      location: "Mission Oaks",
-      rating: 5,
-      text: "Great service at competitive prices. Our house always feels fresh and clean after their visits. Highly recommend!"
-    },
-    {
-      name: "Amanda S.",
-      location: "Spanish Hills",
-      rating: 5,
-      text: "They handle our busy family life perfectly. Flexible scheduling and always accommodate our changing needs."
-    }
   ];
 
   const breadcrumbData = [
@@ -342,33 +321,6 @@ const Camarillo = () => {
                 </Link>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-two-trees-green mb-12 text-center">
-            What Camarillo Customers Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border-none shadow-md">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-two-trees-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <p className="font-semibold text-two-trees-green">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

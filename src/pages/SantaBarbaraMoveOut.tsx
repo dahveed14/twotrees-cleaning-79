@@ -239,17 +239,6 @@ const SantaBarbaraMoveOut = () => {
                 ))}
               </div>
               
-              <div className="mt-12 p-8 bg-gray-50 rounded-2xl">
-                <div className="flex items-start gap-4">
-                  <Star className="w-6 h-6 text-gold mt-1" />
-                  <div>
-                    <p className="text-lg italic text-gray-700 mb-2">
-                      "Two Trees cleaned our luxury home in Montecito before we moved. Every detail was perfect - from the marble countertops to the custom cabinetry. They truly understand high-end properties."
-                    </p>
-                    <p className="text-primary font-medium">— Santa Barbara Homeowner, 93108</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 
