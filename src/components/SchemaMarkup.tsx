@@ -277,7 +277,8 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       ]
     };
 
-    // Organization Schema
+    // Organization Schema (Camarillo pages use the Camarillo office address, matching the GBP)
+    const isCamarilloOffice = cityName === "Camarillo" && !!streetAddress && !!postalCode;
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -293,10 +294,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "3445 Telegraph Rd, Suite 103",
-        "addressLocality": "Ventura",
+        "streetAddress": isCamarilloOffice ? streetAddress : "3445 Telegraph Rd, Suite 103",
+        "addressLocality": isCamarilloOffice ? "Camarillo" : "Ventura",
         "addressRegion": "CA",
-        "postalCode": "93003",
+        "postalCode": isCamarilloOffice ? postalCode : "93003",
         "addressCountry": "US"
       },
       "sameAs": [
