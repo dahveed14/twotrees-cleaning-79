@@ -19,11 +19,11 @@ export const Hero = ({
           <div className="space-y-8">
             <div className="space-y-4">
               <Badge className="bg-two-trees-gold text-two-trees-green font-medium">
-                Serving Ventura & Santa Barbara Counties Since 2020
+                Serving Ventura County & Carpinteria Since 2020
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">House Cleaning in Ventura, Oxnard, Camarillo, Ojai & Thousand Oaks</h1>
+              <h1 className="text-5xl lg:text-6xl font-bold text-two-trees-green leading-tight">House Cleaning in Ventura, Carpinteria, Oxnard, Camarillo, Ojai & Thousand Oaks</h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                At Two Trees Cleaning, we help busy families across Ventura and Santa Barbara Counties enjoy more free time and less stress. From Santa Barbara to Thousand Oaks, Westlake Village to Camarillo, our detail-oriented team delivers consistently spotless homes—so you can focus on what matters most.
+                At Two Trees Cleaning, we help busy families across Ventura County and Carpinteria enjoy more free time and less stress. From Carpinteria to Thousand Oaks, Westlake Village to Camarillo, our detail-oriented team delivers consistently spotless homes—so you can focus on what matters most.
               </p>
             </div>
             
@@ -53,7 +53,7 @@ export const Hero = ({
             <div className="mt-6">
               <p className="text-sm text-gray-600 mb-2">Looking for office cleaning?</p>
               <Link to="/commercial" className="text-two-trees-green hover:text-two-trees-green/80 font-medium underline">
-                Learn about our commercial cleaning services in Ventura & Santa Barbara Counties →
+                Learn about our commercial cleaning services in Ventura County & Carpinteria →
               </Link>
             </div>
           </div>
@@ -61,7 +61,7 @@ export const Hero = ({
           <div className="relative">
             <img 
               src="/lovable-uploads/c95b0054-77f3-4718-819c-e36e27daae21.jpg" 
-              alt="Professional Two Trees Cleaning service technician with industrial cleaning equipment at Spanish-style home in Ventura County - trusted house cleaning service for Santa Barbara and Ventura areas" 
+              alt="Professional Two Trees Cleaning service technician with industrial cleaning equipment at Spanish-style home in Ventura County - trusted house cleaning service for Ventura County and Carpinteria" 
               className="rounded-2xl shadow-2xl w-full h-auto" 
               loading="eager"
               decoding="async"
