@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { GoogleReviewsWidget } from "@/components/GoogleReviewsWidget";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -468,6 +469,9 @@ const Ventura = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="mt-12">
+            <GoogleReviewsWidget />
           </div>
         </div>
       </section>
