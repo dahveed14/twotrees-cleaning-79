@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { SchemaMarkup } from '@/components/SchemaMarkup';
 import { CheckCircle, Clock, Star, Shield, Award, Users } from 'lucide-react';
 import { updateMetaTags } from '@/utils/metaTags';
 
@@ -58,6 +59,21 @@ const CamarilloMoveOut = () => {
         <meta name="description" content="Professional move-out cleaning in Camarillo. Trusted by 200+ families. Licensed, insured, and ready to help you leave your space spotless." />
         
       </Helmet>
+
+      <SchemaMarkup
+        cityName="Camarillo"
+        businessName="Two Trees Cleaning - House Cleaning Camarillo"
+        cityCoordinates={{ latitude: "34.2164", longitude: "-119.0376" }}
+        breadcrumbs={[
+          { name: "Home", url: "https://twotreescleaning.com/" },
+          { name: "Service Areas", url: "https://twotreescleaning.com/service-areas" },
+          { name: "Camarillo", url: "https://twotreescleaning.com/camarillo" },
+          { name: "Move-Out Cleaning", url: "https://twotreescleaning.com/camarillo/move-out-cleaning" }
+        ]}
+        streetAddress="1601 Carmen Dr., Suite 101-D"
+        postalCode="93010"
+        phoneNumber="+1-805-764-2394"
+      />
 
       <div className="min-h-screen bg-background">
         <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />

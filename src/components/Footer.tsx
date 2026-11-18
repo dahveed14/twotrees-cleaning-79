@@ -41,7 +41,7 @@ const officeLocations: Record<FooterLocation, OfficeInfo> = {
     phoneFormatted: '(805) 764-2394'
   },
   'camarillo': {
-    name: 'Camarillo Office',
+    name: 'Two Trees Cleaning - House Cleaning Camarillo',
     address: '1601 Carmen Dr., Suite 101-D\nCamarillo, CA 93010',
     city: 'Camarillo',
     phone: '805-764-2394',

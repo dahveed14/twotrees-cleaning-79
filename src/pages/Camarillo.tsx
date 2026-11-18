@@ -83,6 +83,7 @@ const Camarillo = () => {
       </Helmet>
       <SchemaMarkup
         cityName="Camarillo"
+        businessName="Two Trees Cleaning - House Cleaning Camarillo"
         cityCoordinates={camarilloCoordinates}
         breadcrumbs={breadcrumbData}
         streetAddress="1601 Carmen Dr., Suite 101-D"
@@ -531,7 +532,8 @@ const Camarillo = () => {
               Visit Our Camarillo Office
             </h2>
             <p className="text-xl text-gray-600">
-              Located at 1601 Carmen Dr., Suite 101-D, Camarillo, CA 93010
+              <span className="font-semibold">Two Trees Cleaning - House Cleaning Camarillo</span><br />
+              1601 Carmen Dr., Suite 101-D, Camarillo, CA 93010
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -543,7 +545,7 @@ const Camarillo = () => {
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Two Trees Cleaning Camarillo Office Location"
+              title="Two Trees Cleaning - House Cleaning Camarillo Office Location"
             />
           </div>
         </div>
