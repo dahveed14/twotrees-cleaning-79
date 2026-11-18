@@ -10,40 +10,83 @@ interface SchemaMarkupProps {
     name: string;
     url: string;
   }>;
-  businessName?: string;
   phoneNumber?: string;
-  streetAddress?: string;
-  postalCode?: string;
 }
 
-export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessName, phoneNumber, streetAddress, postalCode }: SchemaMarkupProps) => {
+interface Office {
+  name: string;
+  streetAddress: string;
+  locality: string;
+  postalCode: string;
+  telephone: string;
+  latitude: string;
+  longitude: string;
+}
+
+const MAIN_OFFICE: Office = {
+  name: "Two Trees Cleaning",
+  streetAddress: "3445 Telegraph Rd, Suite 103",
+  locality: "Ventura",
+  postalCode: "93003",
+  telephone: "+1-805-436-5868",
+  latitude: "34.2818",
+  longitude: "-119.2945"
+};
+
+// One entry per Google Business Profile. `name` must match the GBP exactly.
+// Add a city here once its GBP is verified; cities not listed use MAIN_OFFICE
+// and appear in the schema as service areas only.
+const GBP_LOCATIONS: Record<string, Office> = {
+  "ventura": MAIN_OFFICE,
+  "camarillo": {
+    name: "Two Trees Cleaning - House Cleaning Camarillo",
+    streetAddress: "1601 Carmen Dr., Suite 101-D",
+    locality: "Camarillo",
+    postalCode: "93010",
+    telephone: "+1-805-764-2394",
+    latitude: "34.2164",
+    longitude: "-119.0376"
+  }
+};
+
+// Cities without their own GBP are shown as service areas of the nearest office.
+// Anything not listed here falls back to MAIN_OFFICE (Ventura).
+const SERVED_FROM: Record<string, string> = {
+  "thousand oaks": "camarillo",
+  "newbury park": "camarillo",
+  "westlake village": "camarillo"
+};
+
+export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, phoneNumber }: SchemaMarkupProps) => {
     const baseUrl = "https://twotreescleaning.com";
+    const cityKey = cityName?.toLowerCase() ?? "";
+    const office = GBP_LOCATIONS[cityKey] || GBP_LOCATIONS[SERVED_FROM[cityKey]] || MAIN_OFFICE;
 
     // Local Business Schema with city-specific data
     const localBusinessSchema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
-      "name": businessName || (cityName ? `Two Trees Cleaning - ${cityName}` : "Two Trees Cleaning"),
+      "name": office.name,
       "description": cityName 
         ? `Professional house cleaning services for busy families in ${cityName}, Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.`
         : "Professional house cleaning services for busy families in Ventura County. Licensed, insured, and trusted by 200+ customers since 2020.",
       "url": `${baseUrl}${cityName ? `/${cityName.toLowerCase().replace(/\s+/g, '-')}` : ''}`,
-      "telephone": phoneNumber || "+1-805-436-5868",
+      "telephone": phoneNumber || office.telephone,
       "email": "hello@twotreescleaning.com",
       "foundingDate": "2020",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": streetAddress || "3445 Telegraph Rd, Suite 103",
-        "addressLocality": cityName || "Ventura",
+        "streetAddress": office.streetAddress,
+        "addressLocality": office.locality,
         "addressRegion": "CA",
-        "postalCode": postalCode || "93003",
+        "postalCode": office.postalCode,
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": cityCoordinates?.latitude || "34.2818",
-        "longitude": cityCoordinates?.longitude || "-119.2945"
+        "latitude": office.latitude,
+        "longitude": office.longitude
       },
       "openingHours": [
         "Mo-Fr 08:00-17:00",
@@ -74,7 +117,8 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
         {
           "@type": "City",
           "name": cityName,
-          "addressRegion": "CA"
+          "addressRegion": "CA",
+          ...(cityCoordinates && { "geo": { "@type": "GeoCoordinates", "latitude": cityCoordinates.latitude, "longitude": cityCoordinates.longitude } })
         }
       ] : [
         {
@@ -277,8 +321,7 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       ]
     };
 
-    // Organization Schema (Camarillo pages use the Camarillo office address, matching the GBP)
-    const isCamarilloOffice = cityName === "Camarillo" && !!streetAddress && !!postalCode;
+    // Organization Schema
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -287,17 +330,17 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
       "logo": `${baseUrl}/favicon.ico`,
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": phoneNumber || "+1-805-436-5868",
+        "telephone": phoneNumber || office.telephone,
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": cityName ? `${cityName}, CA` : "Ventura County, CA"
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": isCamarilloOffice ? streetAddress : "3445 Telegraph Rd, Suite 103",
-        "addressLocality": isCamarilloOffice ? "Camarillo" : "Ventura",
+        "streetAddress": office.streetAddress,
+        "addressLocality": office.locality,
         "addressRegion": "CA",
-        "postalCode": isCamarilloOffice ? postalCode : "93003",
+        "postalCode": office.postalCode,
         "addressCountry": "US"
       },
       "sameAs": [
@@ -330,10 +373,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "General House Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -363,10 +406,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Deep Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -389,10 +432,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Move-in/Move-out Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -415,10 +458,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Post Construction Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -441,10 +484,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Office Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -467,10 +510,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Commercial Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -493,10 +536,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Janitorial Services",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -519,10 +562,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Facility Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },
@@ -545,10 +588,10 @@ export const SchemaMarkup = ({ cityName, cityCoordinates, breadcrumbs, businessN
           "name": "Vacation Rental Cleaning",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Two Trees Cleaning",
+            "name": office.name,
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": cityName || "Ventura",
+              "addressLocality": office.locality,
               "addressRegion": "CA"
             }
           },

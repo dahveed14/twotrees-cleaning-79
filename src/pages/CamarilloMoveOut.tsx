@@ -62,7 +62,6 @@ const CamarilloMoveOut = () => {
 
       <SchemaMarkup
         cityName="Camarillo"
-        businessName="Two Trees Cleaning - House Cleaning Camarillo"
         cityCoordinates={{ latitude: "34.2164", longitude: "-119.0376" }}
         breadcrumbs={[
           { name: "Home", url: "https://twotreescleaning.com/" },
@@ -70,8 +69,6 @@ const CamarilloMoveOut = () => {
           { name: "Camarillo", url: "https://twotreescleaning.com/camarillo" },
           { name: "Move-Out Cleaning", url: "https://twotreescleaning.com/camarillo/move-out-cleaning" }
         ]}
-        streetAddress="1601 Carmen Dr., Suite 101-D"
-        postalCode="93010"
         phoneNumber="+1-805-764-2394"
       />
 

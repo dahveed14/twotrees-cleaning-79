@@ -79,8 +79,6 @@ const ThousandOaksMoveOut = () => {
         cityName="Thousand Oaks"
         cityCoordinates={{ latitude: "34.1706", longitude: "-118.8376" }}
         breadcrumbs={breadcrumbData}
-        streetAddress="1601 Carmen Dr., Suite 101-D"
-        postalCode="93010"
         phoneNumber="+1-805-764-2394"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />

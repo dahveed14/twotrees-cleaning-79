@@ -49,8 +49,6 @@ const NewburyPark = () => {
         cityName="Newbury Park"
         cityCoordinates={newburyParkCoordinates}
         breadcrumbs={breadcrumbData}
-        streetAddress="1601 Carmen Dr., Suite 101-D"
-        postalCode="93010"
         phoneNumber="+1-805-764-2394"
       />
       <Navigation onBookingClick={handleBookingClick} onPhoneClick={handlePhoneClick} />

@@ -81,15 +81,12 @@ const OxnardPostConstruction = () => {
           latitude: "34.1975",
           longitude: "-119.1771"
         }}
-        streetAddress="1601 Carmen Dr., Suite 101-D"
-        postalCode="93010"
-        phoneNumber="+1-805-764-2394"
       />
 
       <div className="min-h-screen flex flex-col">
         <Navigation 
           onBookingClick={() => window.location.href = "/contact"}
-          onPhoneClick={() => window.location.href = "tel:+18057642394"}
+          onPhoneClick={() => window.location.href = "tel:+18054365868"}
         />
         
         <main className="flex-1">
